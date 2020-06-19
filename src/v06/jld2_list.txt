@@ -1,0 +1,30 @@
+2/25/2020
+
+These files have been copied to /Users/ericagol/Observing/Spitzer/DDT2019/Campaign04/v06/Hyak/:
+
+
+-rw-r--r-- 1 agol hyak-astro 70912297 Feb 24 10:52 T1_pd_MCMC_run_111_001.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 24 10:41 T1_pd_MCMC_run_101_003.jld2
+-rw-r--r-- 1 agol hyak-astro 70912297 Feb 24 10:29 T1_pd_MCMC_run_111_002.jld2
+-rw-r--r-- 1 agol hyak-astro 70912297 Feb 24 10:26 T1_pd_MCMC_run_111_003.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 24 10:21 T1_pd_MCMC_run_101_001.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 24 10:15 T1_pd_MCMC_run_101_002.jld2
+-rw-r--r-- 1 agol hyak-astro 64512281 Feb 24 06:27 T1_pd_MCMC_run_100_003.jld2
+-rw-r--r-- 1 agol hyak-astro 64512281 Feb 24 05:03 T1_pd_MCMC_run_100_001.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 24 03:40 T1_pd_MCMC_run_110_003.jld2
+-rw-r--r-- 1 agol hyak-astro 64512281 Feb 24 03:36 T1_pd_MCMC_run_100_002.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 24 03:21 T1_pd_MCMC_run_110_002.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 24 03:07 T1_pd_MCMC_run_110_001.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 23 23:28 T1_pd_MCMC_run_001_003.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 23 23:25 T1_pd_MCMC_run_001_002.jld2
+-rw-r--r-- 1 agol hyak-astro 70912297 Feb 23 23:25 T1_pd_MCMC_run_011_003.jld2
+-rw-r--r-- 1 agol hyak-astro 70912297 Feb 23 23:23 T1_pd_MCMC_run_011_001.jld2
+-rw-r--r-- 1 agol hyak-astro 70912297 Feb 23 23:21 T1_pd_MCMC_run_011_002.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 23 23:20 T1_pd_MCMC_run_001_001.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 23 20:35 T1_pd_MCMC_run_010_003.jld2
+-rw-r--r-- 1 agol hyak-astro 64512281 Feb 23 18:55 T1_pd_MCMC_run_000_003.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 23 18:53 T1_pd_MCMC_run_010_002.jld2
+-rw-r--r-- 1 agol hyak-astro 67712289 Feb 23 18:53 T1_pd_MCMC_run_010_001.jld2
+-rw-r--r-- 1 agol hyak-astro 64512281 Feb 23 18:52 T1_pd_MCMC_run_000_002.jld2
+-rw-r--r-- 1 agol hyak-astro 64512281 Feb 23 18:43 T1_pd_MCMC_run_000_001.jld2
+

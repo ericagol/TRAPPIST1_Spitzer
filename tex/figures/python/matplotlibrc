@@ -1,0 +1,4 @@
+backend: agg
+#backend: MacOSX
+text.usetex: False # debug
+mathtext.fontset: stix
