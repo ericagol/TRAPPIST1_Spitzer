@@ -6,7 +6,7 @@ using GSL
 using Optim
 using DelimitedFiles
 
-include("loglinspace.jl")
+include("../../../src/loglinspace.jl")
 
 function students_t_pdf(x,nx,sig,nu)
 # PDF of the Student's t distribution.
@@ -42,7 +42,7 @@ function fit_students_t(resid,s1,ndof)
   nresid = size(resid)[1]
   function student_model(x)
     s1,ndof = x
-#    println("s1: ",s1," ndof: ",ndof)
+    println("s1: ",s1," ndof: ",ndof)
     if ndof >= 0.5 && s1 > 0.0
       pdf = students_t_pdf(resid,nresid,s1,ndof)
     else
@@ -64,7 +64,7 @@ function fit_students_t_hist(resid,binhist,s1,ndof)
   sigbin[sigbin .== 0.0] .= 1.0
   function student_model(x)
     s1,ndof,norm_hist = x
-#    println("s1: ",s1," ndof: ",ndof," norm: ",norm_hist)
+    println("s1: ",s1," ndof: ",ndof," norm: ",norm_hist)
     if ndof >= 0.0
       pdf = students_t_pdf(resid,size(resid)[1],s1,ndof)
     else
@@ -87,7 +87,7 @@ fig,axes = subplots(1,2,figsize=(10,5))
 
 #clf()
 # Read in the residuals:
-dev = readdlm("residuals_nomixture_rescale.txt")
+dev = readdlm("../../../data/residuals_nomixture_rescale.txt")
 # Plot the cumulative distribution function of the residuals:
 ax = axes[1]
 nobs = 447
@@ -179,4 +179,4 @@ stpdf = students_t_pdf(devs,nx,sig_est,dof)
 ax.plot(devs,stpdf*norm_hist*0.3,linestyle=":",linewidth=3)
 #ax.legend(ncol=3,fontsize=8)
 
-savefig("Students_t_optimized.pdf",bbox_inches="tight")
+savefig("../Students_t_optimized.pdf",bbox_inches="tight")
