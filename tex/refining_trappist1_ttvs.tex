@@ -1546,7 +1546,40 @@ Other possible causes of the timing outliers are correlated stellar variability,
 %- Summarize conclusions. (Probably will indicate that the outliers are 
 %some stellar or instrumental systematic.)
 
-\subsection{Planet masses and radii}
+\subsection{Possible systematic errors}
+
+In this section we consider possible factors which might affect our
+inference of the densities of the planets.  Simulated planetary
+densities predict core-mass-fractions which are similar to 
+Earth, with a very small scatter \citep{Scora2020}.  Hence, the
+fact that the TRAPPIST-1 planets have inferred planetary densities
+which are less than this could be due to systematic uncertainties
+which are not captured by our modeling.
+
+The transit depths
+determine the radius-ratios of the planets to the star, but these
+measurements are affected by the lack of uniform surface brightness
+of the star.  Fortunately the multiple impact parameters of the
+planets yield a constraint upon the infrared limb-darkening, which
+is fairly weak compared with optical bands.  However, star-spots
+can also affect the inferred transit depths \citep{Rackham2018,
+Kipping2012b}.  If spots are present on an active latitude
+which is not on the same hemisphere as the planetary transit chords,
+this can cause all of the planet radii to be mis-inferred by a similar
+factor.
+
+TRAPPIST-1 may have complex surface inhomogeneities, including regions brighter or darker than the mean photosphere  \citep{Morris2018d,Wakeford2019}. It is possible that bright or dark regions could bias the apparent transit depths towards larger or smaller measurements, depending on which type of inhomogeneity dominates. We revisited the photodynamic simulations with a contamination parameter,
+$\varepsilon$, such that the effective transit depth (neglecting limb-darkening) is given by $(R_p/R_*)^2(1-\varepsilon)$ 
+ \citep{Morris2018b,Morris2018c}.  Re-running the Markov chains 
+including $\varepsilon$ as a free parameter in our fits, we
+find that $\varepsilon = 2\pm 13$\% at 68.3\% confidence.  Note that $\varepsilon$ is assumed to be time-steady and to have the same value for all planets; in practice the value might vary between planets, say, if some traversed active latitudes.  
+This constraint is similar to the analysis of planet b from \citet{Morris2018c}, but our new constraint based on all seven planets does have a median value closer to zero.
+This indicates that from these data alone we cannot rule out a significant systematic error on the planets' radii caused by an inhomogeneous stellar photosphere.
+Improved constraints would likely require a wavelength-dependent analysis \citep[e.g.][]{Rackham2018,Wakeford2019}.
+
+Our mass precisions are predicated on a complete model of the dynamics of the system.  Should an eighth planet be lurking at longer orbital periods, which has yet to reveal itself via significant transit-timing variations or transits, this may modify our timing solution and shift the masses slightly.  In our timing search for an additional planet, however, we found that such a planet might only cause shifts at the ${\approx} 1{-}\sigma$ level.  This possibility begs for caution in interpreting the potential variation of iron fraction with orbital period:  should an eighth planet be present beyond planet h, its timing impact would likely affect the masses of the exterior planets more significantly than the interior planets.  Drawing stronger conclusions about the variation of planet iron/core mass fractions will likely require longer-term monitoring, especially of planet h, and/or higher precision timing measurements such as are expected with JWST, to place tighter constraints on an eighth planet.
+
+\subsection{Planet masses and radii in context}
 
 In our current analysis of the transit-timing data
 for TRAPPIST-1, we have found larger mass ratios for
@@ -1560,10 +1593,11 @@ in the transit-timing solution, they all shift.  With
 the more extensive dataset analyzed here, we provide
 a better constraint over the transit-timing timescale,
 and can also better account for outliers thanks to some
-redundancy in our measurements, and thus we
-expect that our current analysis may remain the most
-reliable constraint upon the masses of the planets until
-the transit times can be measured with JWST.
+redundancy in our measurements. Given the high precision of
+the Spitzer timing measurements, we expect that our current 
+analysis may remain the most reliable constraint upon the 
+masses of the planets until the transit times can be measured 
+with JWST.
 
 %- Place these in the context of the Solar System and other planetary systems.
 
@@ -1571,13 +1605,13 @@ the transit times can be measured with JWST.
 %zoom in to show the TRAPPIST-1 planets and SS?
 
 
-In Figure \ref{fig:mass_radius_comparison} we compare the measured uncertainties for
+In Figure \ref{fig:mass_radius_comparison} we compare our measurements for
 the seven TRAPPIST-1 planets with our Solar System planets and with exoplanets
 with radii ${<}1.7 R_\oplus$ and masses measured to ${>}5-\sigma$ retrieved from
 the NexSci database on 26 Feb 2020 \citep{Akeson2013,Christiansen2018}, as well
 as planet parameters reported in \citet{Dai2019} and Kepler-93b from \citet{Dressing2015}.
 \footnote{Note: Kepler-105b has been corrected for a GAIA DR2 revised radius of
-    the host star (cite: Berger \& Huber and/or Petigura \& Fulton).}   The uncertainties
+    the host star \citep{Berger2018,Fulton2018}.}   The uncertainties
 on the other planets' masses are the best available to date from radial-velocity measurements, and yet they are much larger than the uncertainties for the TRAPPIST-1 planets, whether considered in
 a relative or absolute sense.  The larger uncertainties of the RV planets makes the core-mass fractions difficult to constrain
 for these more massive planets - core-free and cored models are consistent with most of these planets' parameters at the 1$-\sigma$ level (Fig.\ \ref{fig:mass_radius_comparison}).   Nevertheless, it is notable that the
@@ -1602,7 +1636,7 @@ a composition which is a mix of silicates and iron \citep{Owen2017}.
 \subsection{Comparison with radial velocities}
 
 Given the measurements of the masses we have made with transit-timing,
-this begs the question:  what radial-velocity precision would be
+this brings up the question:  what radial-velocity precision would be
 required to make the same mass measurements?  
 
 The precision of the mass measurements may be placed in
@@ -1618,28 +1652,31 @@ the star (near 218 days in the plotted figure).  How does this compare
 with current RV measurements?
 
 Recently \citet{Hirano2020} were able to make high precision
-measurements of the radial velocity of the TRAPPIST-1 host star,
+measurements of the radial velocity (RV) of the TRAPPIST-1 host star,
 achieving a constraint on the linear variation of the star to
-a precision of 2.5 m/sec (although they interpret this variation as being
-due to intrinsic stellar variability).  To compare this with our
+a precision of 2.5 m/sec which they ascribe to
+to stellar variability.  To compare this with our
 transit-timing results, the semi-amplitude precision
 which would be needed to achieve the same mass error bars that
 we have achieved with transit-timing ranges from 2.4-19 cm/sec,
-over 100 times more precise than the radial-velocity measurements.
+up to 100 times more precise than the radial-velocity measurements.
 Future observations may be able to achieve higher precision radial
-velocity measurements of TRAPPIST-1, but will also have to contend with stellar
-systematic variability \citep{Klein2019}.
+velocity measurements of TRAPPIST-1, but will continue to contend with stellar
+variability \citep{Klein2019}.
 
-Were these planets orbiting a Sun-like star, the semi-amplitude measurement
-precision with radial-velocity would be even more stringent to achieve
+Were these planets orbiting a Sun-like star, the semi-amplitude RV error
+need to be even smaller to achieve
 the same mass precision we have achieved with transit timing.
 Table \ref{tab:rv_equivalent} lists what semi-amplitudes precisions
 would be required if each one of these planets was placed around a
 Solar twin at one astronomical unit.  The required precision range
 from 1-6 millimeters/second.  This is nearly two orders of magnitude
-more precise than the highest precision radial velocity measurements
+more precise than the highest precision RV measurements
 for short-period exoplanets reported to date, such as Tau Ceti g,
 which has a reported RV semi-amplitude precision of 11 cm/sec \citep{Feng2017}.
+We conclude that the mass precisions of Earth-sized, Earth-insolation
+planets based on radial velocity must be improved by two orders
+of magnitude to match our TTV precision for the TRAPPIST-1 system.
 
 \begin{table*}
     \centering
@@ -1669,39 +1706,6 @@ which has a reported RV semi-amplitude precision of 11 cm/sec \citep{Feng2017}.
     to achieve the same mass precision as measured with TTVs.}
     \label{fig:rv_forecast}
 \end{figure*}
-
-\subsection{Possible systematic errors}
-
-In this section we consider possible factors which might affect our
-inference of the densities of the planets.  Simulated planetary
-densities predict core-mass-fractions which are similar to 
-Earth, with a very small scatter \citep{Scora2020}.  Hence, the
-fact that the TRAPPIST-1 planets have inferred planetary densities
-which are less than this could be due to systematic uncertainties
-which are not captured by our modeling.
-
-The transit depths
-determine the radius-ratios of the planets to the star, but these
-measurements are affected by the lack of uniform surface brightness
-of the star.  Fortunately the multiple impact parameters of the
-planets yield a constraint upon the infrared limb-darkening, which
-is fairly weak compared with optical bands.  However, star-spots
-can also affect the inferred transit depths \citep{Rackham2018,
-Kipping2012b}.  If spots are present on an active latitude
-which is not on the same hemisphere as the planetary transit chords,
-this can cause all of the planet radii to be mis-inferred by a similar
-factor.
-
-TRAPPIST-1 may have complex surface inhomogeneities, including regions brighter or darker than the mean photosphere  \citep{Morris2018d,Wakeford2019}. It is possible that bright or dark regions could bias the apparent transit depths towards larger or smaller measurements, depending on which type of inhomogeneity dominates. We revisited the photodynamic simulations with a contamination parameter,
-$\varepsilon$, such that the effective transit depth (neglecting limb-darkening) is given by $(R_p/R_*)^2(1-\varepsilon) +
-\varepsilon$ \citep{Morris2018b,Morris2018c}.  Re-running the Markov chains 
-including $\varepsilon$ as a free parameter in our fits, we
-find that $\varepsilon = 2\pm 13$\% at 68.3\% confidence.  Note that $\varepsilon$ is assumed to be time-steady and to have the same value for all planets; in practice the value might vary between planets, say, if some traversed active latitudes.  
-This constraint is not as tight as the analysis of planet b from \citet{Morris2018c}, but our new constraint based on all seven planets does have a median value closer to zero.
-This indicates that from these data alone we cannot rule out a significant systematic error on the planets' radii caused by an inhomogeneous stellar photosphere.
-Improved constraints would likely require a wavelength-dependent analysis \citep[e.g.][]{Rackham2018,Wakeford2019}.
-
-Our mass precisions are predicated on a complete model of the dynamics of the system.  Should an eighth planet be lurking at longer orbital periods, which has yet to reveal itself via significant transit-timing variations or transits, this may modify our timing solution and shift the masses slightly.  In our timing search for an additional planet, however, we found that such a planet might only cause shifts at the $\approx 1-\sigma$ level.  This possibility begs for caution in interpreting the potential variation of iron fraction with orbital period:  should an eighth planet be present beyond planet h, its timing impact would likely affect the masses of the exterior planets more significantly than the interior planets.  Drawing stronger conclusions about the variation of planet iron/core mass fractions will likely require longer-term monitoring, especially of planet h, and/or higher precision timing measurements such as are expected with JWST.
 
 \subsection{Planetary dynamics}
 
@@ -1822,9 +1826,9 @@ anti-alignment. %This is the case for the inner two Galilean satellites, Io and 
 
 Planets b and c are close to an 8/5 mean motion resonance, and planets c and d are close to a 5/3 mean motion resonance. These being third order and second order resonances, respectively, the resonance widths are approximately given by~\citep{Murray1999}
 \begin{equation}
-\frac{\Delta P}{P} = (12\mu\alpha |f(\alpha)| e^q)^{1/2}
+\frac{\Delta P}{P} = (12\mu\alpha |f(\alpha)| e^k)^{1/2}
 \label{e:reswidth}\end{equation}
-where $\mu$ is the ratio of the perturbing planet's mass to the stellar mass, $\alpha{=}a_1/a_2{<}1$ is the ratio of planets' semi-major axes, $f(\alpha)$ is a coefficient of the resonant term in the interaction potential, $e$ is orbital eccentricity, and $q$ is the order of the resonance.  For the resonances of interest here, we find that $\Delta P/P\lesssim10^{-4}$. The observed period ratios are $\gtrsim3\times10^{-3}$ wide of the exact resonance, i.e., more than 30 times the resonance width(s).
+where $\mu$ is the ratio of the perturbing planet's mass to the stellar mass, $\alpha{=}a_1/a_2{<}1$ is the ratio of planets' semi-major axes, $f(\alpha)$ is a coefficient of the resonant term in the interaction potential, $e$ is orbital eccentricity, and $k$ is the order of the resonance.  For the resonances of interest here, we find that $\Delta P/P\lesssim10^{-4}$. The observed period ratios are $\gtrsim3\times10^{-3}$ wide of the exact resonance, i.e., more than 30 times the resonance width(s).
 
 
 In these circumstances, the mean motion resonant perturbations are negligible, and the secular interactions of planets b and c provide a fair first approximation to their orbital dynamics. (We acknowledge that in the following analysis we have neglected secular perturbations from the other planets in the system which will introduce some quantitative differences, not germane to the qualitative question of aligned or anti-aligned periastrons of planets b and c.) To leading order in the eccentricities, the orbit-averaged (secular) interaction potential of a pair of planets is given by
@@ -1959,13 +1963,11 @@ the system.  Given the much tighter constraints we have placed upon
 the masses of the planets and the orbital eccentricities, here we
 re-examine the long-term stability of our posterior distribution.
 
-We have used the GPU N-body integrator GENGA \citep{Grimm2014} to carry out long-term simulations of a set of $10^4$ samples from the posterior probability distribution of the transit-timing analysis of the system.  These simulations were carried out for $10^7$ years, which corresponds to 2.4 billion orbital periods of planet b, and 2 million orbital periods of planet h. We used a time step of 0.06 days, which gives a total number of $6.1 \cdot 10^{10}$ integration steps. We find that 100\% of these posterior samples are stable over this entire timescale. %Text added by Simon Grimm
+We have used the GPU N-body integrator GENGA \citep{Grimm2014} to carry out long-term simulations of a set of $10^4$ posterior samples from the timing analysis.  These simulations were carried out for $10^7$ years, which corresponds to 2.4 billion orbital periods of planet b, and 195 million orbital periods of planet h. We used a time step of 0.06 days, which gives a total number of $6.1 \cdot 10^{10}$ integration steps. We find that 100\% of these posterior samples are stable over this entire timescale. %Text added by Simon Grimm
 %as shown in Figures \ref{fig:taM} and \ref{fig:teM}. 
-To check the stability of the samples, we analyzed the evolution of the semi-major axis $a$ and $eccentricity$ of all samples and planets. We compare the average values over the first Myr and the last Myr. In Table \ref{tab:averageAE} are shown the averages over all samples and the maximal difference between the first and the last Myr. 
+To check the stability of the samples, we analyzed the evolution of the semi-major axis, $a$, and eccentricity, $e$, of all samples and planets. We compared the average values over the first Myr and the last Myr. Table \ref{tab:averageAE} gives the average over all samples, and the maximum differences between the first and the last Myr.  In all cases the variations are small, ${\le}0.002$.  These results suggest that the simulations could be stable even on a much longer time scale. 
 
-
-These results suggest that the simulations could be stable even on a much longer time scale. 
-More interesting than the evolution of the semi-major axis and the eccentricity, is the evolution of the five GLR resonant angles, shown in Figure \ref{fig:tlM}. In order to describe the evolution of the GLR angles, we define three categories: 
+More interesting is the evolution of the five GLR resonant angles, shown in Figure \ref{fig:tlM}. In order to describe the evolution of the GLR angles, we define three categories: 
 \begin{itemize}
     \item Category I: remaining in GLR for 10 Myr, with a maximum difference to the initial value of less than $45^\circ$
     \item Category II: remaining in GLR for 10 Myr, with a maximum difference to the initial value of more than $45^\circ$. In this category, the GLR angles can jump between different states. 
@@ -2008,7 +2010,7 @@ g      &  8.24e-08  & 5.01e-05 & 2.19e-05  & 0.0011 \\
 h      & -1.23e-07  & 2.11e-04 & 3.00e-05  & 0.0035
 
 \end{tabular}
-\caption{Evolution of the semi-major axis $a$ and eccentricities $e$ from 10,000 samples over 10Myr. For each sample and planet, the average of $a$ and $e$ over the first and last Myr, are compared.  $\Delta \bar{a}$ and  $\Delta \bar{e}$ are the differences between the first and the last Myr from the average values over all samples, while $\max (\Delta a)$ and $\max (\Delta e)$ are the maximal differences from the samples. The numbers show that all samples remain stable over 10Myr.}
+\caption{Evolution of the semi-major axes, $a$, and eccentricities, $e$, from $10^4$ samples over 10Myr. For each sample and planet, the difference of the average of $a$ and $e$ over the first and last Myr are compute as $\Delta \bar{a}$ and  $\Delta \bar{e}$; we report the maximum over all samples. These numbers show that all samples remain stable over 10Myr.}
 \label{tab:averageAE}
 \end{table}
 
