@@ -3,7 +3,7 @@ using JLD2; using DelimitedFiles; using Printf; using PyPlot
 using Statistics
 
 include("../../src/regress.jl")
-include("../../NbodyGradient/src/ttv.jl")
+include("../../src/NbodyGradient/ttv.jl")
 
 
 @load "../../data/T1_hmc_total_02212020.jld2"

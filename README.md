@@ -5,7 +5,7 @@
   </p>
 </h1>
 <p align="center">
-Code, figures, tables, and latex supporting material for TRAPPIST-1 transit timing paper.
+Code, data, figures, tables, and latex supporting material for TRAPPIST-1 transit timing paper.
   </p>
  <p align="center">
  

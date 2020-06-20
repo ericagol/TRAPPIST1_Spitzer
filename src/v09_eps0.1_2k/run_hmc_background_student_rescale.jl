@@ -20,7 +20,7 @@ include("../nlog_prior.jl")
 include("../loglinspace.jl")
 include("../regress.jl")
 # Use NbodyGradient code:
-include("../../NbodyGradient/src/ttv.jl")
+include("../../src/NbodyGradient/ttv.jl")
 
 using Main.CGS
 #using PyPlot

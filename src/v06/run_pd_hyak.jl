@@ -20,7 +20,7 @@ end
 #include("/Users/ericagol/Computer/Julia/regress.jl")
  include("../regress.jl")
 #include("/Users/ericagol/Software/NbodyGradient/src/ttv.jl")
- include("../../NbodyGradient/src/ttv.jl")
+ include("../../src/NbodyGradient/ttv.jl")
 
 function run_pd(datafile,foutput,numwalkers,burnin,thinning,astep,numsamples_perwalker;nout=1000,
     limbprior=false,incprior=false,contamination=false)
