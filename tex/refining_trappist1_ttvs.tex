@@ -479,17 +479,6 @@ With the description of the dataset complete, we next describe our efforts to mo
     \label{fig:timing_residuals}
 \end{figure*}
 
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=\hsize]{figures/timing_residuals_domprior_mixture_21April2019_color.png}
-%    \caption{Timing residuals normalized by the standard deviation versus time
-%    of transit for each planet.  Points are colored by the probability of being
-%    drawn from the foreground model (green) versus background model (blue); background
-%    indicates that the points are outliers. [This figure is out of date - based on
-%    April 2019 analysis.]}
-%    \label{fig:timing_residuals}
-%\end{figure}
-
 \section{Transit-timing analysis} \label{sec:transit_timing}
 
 In this section we describe our transit-timing analysis in detail, starting first with a description of our dynamical model.
@@ -754,7 +743,6 @@ precision of the measurements of the planet
 masses in this paper.
 
 \begin{figure*}
-	%\includegraphics[width=\hsize]{figures/T1_TTV_complete.png}
 	\includegraphics[width=0.95\hsize]{figures/T1_ttvs_4panel_stacked.pdf}
     \caption{Transit time variation measurements (orange/purple error bars) and best-fit
     transit-time model (blue/red lines) for a subset of our
@@ -868,7 +856,7 @@ higher eccentricities.
 
 \begin{figure*}
     \centering
-    \includegraphics[width=\hsize]{figures/T1_eccentricity_vectors_likelihood_profile_hmc.png}
+    \includegraphics[width=\hsize]{figures/T1_eccentricity_vectors_likelihood_profile_hmc.pdf}
     \caption{Eccentricity vector probability distribution for each planet (y-axes are relative probability).  Thick histogram is the posterior distribution from the Markov chain analysis.  Light, thin line is the Laplace approximation.  Thin dark line is the likelihood profile.  The lower right panel shows the distribution of
     $e\cos{\omega}$ or $e\sin{\omega}$ for a uniform prior on
     $e \in \mathcal{U}(0,0.1)$ and $\omega \in \mathcal{U}(0,2\pi)$.}
@@ -878,7 +866,7 @@ higher eccentricities.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\columnwidth]{figures/T1_students_params_transformed.png}
+    \includegraphics[width=\columnwidth]{figures/T1_students_params_transformed.pdf}
     \caption{Likelihood profile (dark line) and Gaussian distribution
     with Laplace approximation uncertainty (light line) for $\log{\nu}$ (left) and
     $V_1 e^{1/(2\nu)}$ (right).  The posterior probability distributions are shown with blue histograms.}
@@ -1252,7 +1240,7 @@ The TRAPPIST-1 system has the advantage that the planets sample different chords
 
 \begin{figure}
     \centering
-    \includegraphics[width=\hsize]{figures/limb_darkening_nouprior.png}
+    \includegraphics[width=\hsize]{figures/limb_darkening_nouprior.pdf}
     \caption{Limb-darkening constraints, 1- and 2-$\sigma$ confidence contours.  Red is Spitzer IRAC Channel 1 (3.6$\mu$m), while green is Channel 2 (4.5$\mu$m).  Error bars indicate the limb-darkening parameters and uncertainties used as priors in \citet{Ducrot2020}}.
     \label{fig:limb_darkening}
 \end{figure}
@@ -1741,7 +1729,7 @@ all consistent with the predictions of the tidal evolution model
 
 \begin{figure}
     \centering
-    \includegraphics[width=\hsize]{figures/eccentricity_posterior.png}
+    \includegraphics[width=\hsize]{figures/eccentricity_posterior.pdf}
     \caption{Probability distribution of the eccentricities of the planets at the initial time
     based upon the transit-timing model.}
     \label{fig:eccentricity_posterior}
@@ -2093,7 +2081,6 @@ Of course, it will be impossible to arrange such a large number of transit obser
 
 \begin{figure}
     \centering
-    %\includegraphics[width=\hsize]{figures/Recovered_masses_JWST_5yr_all_transits_NIRSPEC.png}
     \includegraphics[width=\hsize]{figures/Recovered_masses_JWST_5yr_all_transits_NIRSPEC.pdf}
     \caption{Simulated planet massses based on 5 years of JWST observations
     of \emph{every} TRAPPIST-1 transit with NIRSPEC.  The recovered minus
