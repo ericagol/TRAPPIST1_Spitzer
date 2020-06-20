@@ -191,10 +191,10 @@ for i=1:nplanet
   #ax.title(pname[i])
   #ax.tick_params(axis="x",labelsize=6)
   if i == 4 
-    ax.set_xlabel(L"Time [hr] - $\mathrm{t_n}$")
+    ax.set_xlabel(L"Time [hr] - $\mathdefault{t_n}$")
   end
   if i == 1
-    ax.set_ylabel(L"Time [days] - $\mathrm{t_0}$}")
+    ax.set_ylabel(L"Time [days] - $\mathdefault{t_0}$")
   else
         ax.set_yticks([])
   end
