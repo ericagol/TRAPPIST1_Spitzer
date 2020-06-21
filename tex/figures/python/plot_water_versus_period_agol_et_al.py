@@ -168,4 +168,4 @@ mpl.legend(loc=2,numpoints=1)
 mpl.semilogy()
 mpl.tick_params(top = None)
 
-mpl.savefig('figure_water_content_versus_period_agol_et_al.pdf',dpi=500)
+mpl.savefig('../figure_water_content_versus_period_agol_et_al.pdf',dpi=500)

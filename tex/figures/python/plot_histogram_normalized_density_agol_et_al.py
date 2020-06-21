@@ -15,13 +15,13 @@ from    matplotlib.patches import Ellipse
 from    scipy.interpolate import interp1d
 from    scipy import stats  
 
-T1b = loadtxt('POSTERIOR_NORM_DENSITY/out_T1b_norm')
-T1c = loadtxt('POSTERIOR_NORM_DENSITY/out_T1c_norm')
-T1d = loadtxt('POSTERIOR_NORM_DENSITY/out_T1d_norm')
-T1e = loadtxt('POSTERIOR_NORM_DENSITY/out_T1e_norm')
-T1f = loadtxt('POSTERIOR_NORM_DENSITY/out_T1f_norm')
-T1g = loadtxt('POSTERIOR_NORM_DENSITY/out_T1g_norm')
-T1h = loadtxt('POSTERIOR_NORM_DENSITY/out_T1h_norm')
+T1b = loadtxt('../../../data/POSTERIOR_NORM_DENSITY/out_T1b_norm')
+T1c = loadtxt('../../../data/POSTERIOR_NORM_DENSITY/out_T1c_norm')
+T1d = loadtxt('../../../data/POSTERIOR_NORM_DENSITY/out_T1d_norm')
+T1e = loadtxt('../../../data/POSTERIOR_NORM_DENSITY/out_T1e_norm')
+T1f = loadtxt('../../../data/POSTERIOR_NORM_DENSITY/out_T1f_norm')
+T1g = loadtxt('../../../data/POSTERIOR_NORM_DENSITY/out_T1g_norm')
+T1h = loadtxt('../../../data/POSTERIOR_NORM_DENSITY/out_T1h_norm')
 
 
 mpl.figure(1)
@@ -50,4 +50,4 @@ mpl.ylim(0.,16.)
 mpl.ylabel(r'Probability Density Function')
 mpl.xlabel(r'Normalized density (by a 20$\%$ Fe, 80$\%$ MgSiO$_3$ interior)')
 mpl.legend()
-mpl.savefig('plot_normalized_density_agol_et_al.pdf',dpi=300)
+mpl.savefig('../plot_normalized_density_agol_et_al.pdf',dpi=300)
