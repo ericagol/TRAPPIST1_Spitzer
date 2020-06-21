@@ -111,16 +111,15 @@ M. Turbet,$^{2}$ %[x]
 \\
 % List of institutions
 $^{1}$Astronomy Department and Virtual Planetary Laboratory, University of Washington, Seattle, WA 98195 USA\\
-%$^{2}$Observatoire astronomique de l'Université de Genève, 51 chemin de Pégase, 1290 Sauverny, Switzerland\\
-$^{2}$ Observatoire de Genève, Université de Genève, 51 Chemin des Maillettes, CH-1290 Sauverny, Switzerland\\
+$^{2}$ Observatoire de Gen\'eve, Universit\'e de Gen\'eve, 51 Chemin des Maillettes, CH-1290 Sauverny, Switzerland\\
 $^{3}$Center for Astrophysics and Space Science, University of California San Diego, La Jolla, CA, 92093, USA\\
 $^{4}$Department of Earth, Atmospheric and Planetary Science, Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA 02139, USA\\
 $^{5}$IPAC, California Institute of Technology, 1200 E California Boulevard, Mail Code 314-6, Pasadena, California 91125, USA\\
-$^{6}$Astrobiology Research Unit, Université de Liège, Alléee du 6 Août 19C, B-4000 Liège, Belgium\\
-$^{7}$Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Université de Liège, Allée du 6 Août 19C, B-4000 Liège, Belgium\\
+$^{6}$Astrobiology Research Unit, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium\\
+$^{7}$Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium\\
 $^{8}$Center for Space and Habitability, University of Bern, Gesellschaftsstrasse 6, CH-3012, Bern, Switzerland\\
 $^{9}$Department of Astronomy \& Astrophysics, University of Chicago, 5640 S. Ellis Ave., Chicago, IL 60637 USA\\
-$^{10}$Harvard–Smithsonian Center for Astrophysics, 60 Garden St., MS 51, Cambridge, MA 02138, USA\\
+$^{10}$Harvard-Smithsonian Center for Astrophysics, 60 Garden St., MS 51, Cambridge, MA 02138, USA\\
 $^{11}$Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France\\
 $^{12}$NASA Johnson Space Center, 2101 NASA Pkwy., Houston TX, 77058, USA\\
 $^{13}$Lunar and Planetary Laboratory, The University of Arizona, Tucson, AZ 85721 USA\\
@@ -1719,14 +1718,6 @@ $\la 10^{-3}$ \citep{Luger2017a,Turbet2018}.  The other planets are
 all consistent with the predictions of the tidal evolution model
 \citep{Luger2017b}. 
 
-% {\color{red} Emeline Bolmont and Dan Fabrycky:  can we add your
-%predictions for the planets' ecccentricities to this plot.  Emeline from 
-%Luger et al. 2018, and Dan from your Kepler/K2 Science Conference IV 
-%presentation?  Dan, you said one could place constraints on tidal Q' of planet 
-%d in your talk.  Also, can we compare with your predicted Laplace angles?
-%Does an eighth planet interfere with the predictions for the Laplace angle
-%of the outer three planets?}
-
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/eccentricity_posterior.pdf}
@@ -1848,20 +1839,6 @@ the difference in longitude.
     \label{fig:delta_omega}
 \end{figure}'
 
-
-%- Discuss expectation for longitudes of the inner two planets:
-%1).  Laplace resonance for the Galilean moons causes the inner two
-%moons to be anti-aligned. 2).  Simulations of migration with damping
-%predict the inner two should be anti-aligned (Papaloizou, Bolmont,
-%Fabrycky). \citep{Papaloizou2017} 3). Minimum energy is for anti-alignment 
-%(Malhotra).
-
-%- Discuss the measured orientations of the longitudes of periastron,
-%which used to prefer anti-alignment.
-
-%- Discuss results with longitude prior, and how this affects the
-%eccentricity amplitudes.
-
 \subsubsection{Laplace angles}
 
 A remarkable property of the TRAPPIST-1 system is the near-commensurability
@@ -1941,7 +1918,7 @@ re-examine the long-term stability of our posterior distribution.
 
 We have used the GPU N-body integrator GENGA \citep{Grimm2014} to carry out long-term simulations of a set of $10^4$ posterior samples from the timing analysis.  These simulations were carried out for $10^7$ years, which corresponds to 2.4 billion orbital periods of planet b, and 195 million orbital periods of planet h. We used a time step of 0.06 days, which gives a total number of $6.1 \cdot 10^{10}$ integration steps. We find that 100\% of these posterior samples are stable over this entire timescale. %Text added by Simon Grimm
 %as shown in Figures \ref{fig:taM} and \ref{fig:teM}. 
-To check the stability of the samples, we analyzed the evolution of the semi-major axis, $a$, and eccentricity, $e$, of all samples and planets. We compared the average values over the first Myr and the last Myr. Table \ref{tab:averageAE} gives the average over all samples, and the maximum differences between the first and the last Myr.  In all cases the variations are small, ${\le}0.002$.  These results suggest that the simulations could be stable even on a much longer time scale. 
+To check the stability of the samples, we analyzed the evolution of the semi-major axis, $a$, and eccentricity, $e$, of all samples and planets. We compared the average values over the first Myr and the last Myr. Table \ref{tab:averageAE} gives the average over all samples, and the maximum differences between the first and the last Myr.  In all cases the variations are small, ${\le}0.002$.  These results suggest that the simulations could be stable even on a much longer time scale. In addition, we have carried out long-term (50 Myr) integrations of two posterior samples with low and high values of the eccentricity of planet b. Using a range of values of tidal damping (from 1/10 to 10 times Earth's), we find in all cases that the system remained stable \citep{Bolmont2020}.
 
 More interesting is the evolution of the five GLR resonant angles, shown in Figure \ref{fig:tlM}. In order to describe the evolution of the GLR angles, we define three categories: 
 \begin{itemize}
