@@ -14,6 +14,6 @@ for the TRAPPIST-1 Spitzer paper.
 Recreate the paper PDF by typing:
 
 ```
-tex\$ tectonic refining_trappist1_ttvs.tex
+tex$ tectonic refining_trappist1_ttvs.tex
 ```
 from the shell prompt.
