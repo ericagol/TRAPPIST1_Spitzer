@@ -8,9 +8,9 @@ using Statistics
 using Printf
 using MCMCDiagnostics
 using PyPlot
-include("../nlog_prior.jl")
+include("../../../src/nlog_prior.jl")
 if !@isdefined(CGS)
-  include("/Users/ericagol/Computer/Julia/CGS.jl")
+  include("../../../src/CGS.jl")
   using Main.CGS
 end
 
@@ -21,7 +21,7 @@ nstep = 2000
 
 #fnames = readdlm("jld2_list.txt")
 #fnames = readdlm("jld2_list_eps0.1.txt")
-fnames = readdlm("jld2_list_nstep2000_eps0.1.txt")
+fnames = readdlm("../../../data/jld2_list_nstep2000_eps0.1.txt")
 
 nfile = size(fnames)[1]
 #ncurr = 250
@@ -34,7 +34,7 @@ neff_tot = zeros(nfile,37)
 for i=1:nfile
   i1 = (i-1)*ncurr+1
   i2 = i*ncurr
-  @load fnames[i] state nacc
+  @load string("../../../data/output_files/",fnames[i]) state nacc
   nacc_all[i] = nacc
   state_total[:,i1:i2] = state[:,1:ncurr]
   for j=1:37
@@ -47,9 +47,9 @@ end
 
 clf()
 plot(nacc_all)
-read(stdin,Char)
+#read(stdin,Char)
 
-@load "T1_run_hmc_student_ecc_lgndof_V1exp2nuinv_nstep2000_eps0.1_nleap20_201.jld2"
+@load "../../../data/output_files/T1_run_hmc_student_ecc_lgndof_V1exp2nuinv_nstep2000_eps0.1_nleap20_201.jld2"
 
 x_opt = [4.598791344049799e-5, 1.5108213441190745, 7257.550484415569, -0.00495015358026971, 0.004671261296998595, 
          4.40588192304326e-5, 2.4219505838480635, 7258.587230337616, -0.001188890950465861, 0.0014051713506332184, 
@@ -90,7 +90,7 @@ for iparam=1:nparam
     pname = "V1 e^{1/(2nu)}"
   end
   println(iparam," ",pname," chains: ",@sprintf("%6.3g",mean(state_total[iparam,:])),"+-",@sprintf("%6.3g",std(state_total[iparam,:]))," Fisher: ",@sprintf("%6.3g",x_opt[iparam]),"+-",@sprintf("%6.3g",sqrt(cov_save[iparam,iparam]))," ratio: ",@sprintf("%6.3g",std(state_total[iparam,:])/sqrt(cov_save[iparam,iparam])))
-  read(stdin,Char)
+#  read(stdin,Char)
 end
 
 clf()
@@ -100,9 +100,9 @@ plot(state_total[9,:],state_total[10,:],".",alpha=0.02)
 plot([0,0],[0,0],".")
 xlabel(L"$e_b \cos{\omega_b}$")
 ylabel(L"$e_b \sin{\omega_b}$")
-read(stdin,Char)
+#read(stdin,Char)
 
-include("histogram_code.jl")
+include("../../../src/histogram_code.jl")
 
 # plot histogram of each
 
@@ -118,7 +118,7 @@ plot(esinc_bin_square,esinc_hist_square ./ maximum(esinc_hist_square),label=L"$e
 plot(ecosc_bin_square,ecosc_hist_square ./ maximum(ecosc_hist_square),label=L"$e_c \cos{\omega_c}$")
 axis([-0.01,0.01,0,1.05])
 legend()
-read(stdin,Char)
+#read(stdin,Char)
 
 # Now plot histogram of longitudes of inner two planets:
  
@@ -142,7 +142,8 @@ clf(); plot(domega_bin_square*180/pi,domega_hist_square./maximum(domega_hist_squ
 xlabel(L"$\omega_c - \omega_b - 180^\circ$",fontsize=20)
 ylabel("Probability",fontsize=20)
 axis([-180,180,0,1.05])
-
+tight_layout()
+savefig("../delta_omega_bc.pdf",bbox_inches="tight")
 # Now print mass ratios:
 xfit = zeros(2,nplanet)
 fac = 0.09*MSUN/MEARTH
@@ -151,4 +152,4 @@ for i=1:nplanet
   println("planet: ",i," mass: ",@sprintf("%6.4f",xfit[1,i]),"+-",@sprintf("%6.4f",xfit[2,i]))
 end
 
-@save "T1_hmc_total_02212020.jld2" state_total
+#@save "T1_hmc_total_02212020.jld2" state_total

@@ -161,7 +161,7 @@ ylabel("Probability")
 
 rho_bin_incprior =  rho_bin
 rho_hist_incprior = rho_hist
-@save "T1_density_incprior.jld2" rho_bin_incprior rho_hist_incprior
+#@save "T1_density_incprior.jld2" rho_bin_incprior rho_hist_incprior
 
 #plot(log.(rho_bin_square./54.0),log.(rho_hist_square))
 
