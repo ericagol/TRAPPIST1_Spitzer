@@ -10,3 +10,9 @@ for the TRAPPIST-1 Spitzer paper.
 
 - figures/python/ Contains the Python scripts, which can be run
   with python [scriptname].py
+
+Recreate the paper PDF by typing:
+
+```tex% tectonic refining_trappist1_ttvs.tex
+```
+from the shell prompt.
