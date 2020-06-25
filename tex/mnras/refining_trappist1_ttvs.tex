@@ -1,303 +1,147 @@
-%% Beginning of file 'sample63.tex'
-%%
-%% Modified 2019 June
-%%
-%% This is a sample manuscript marked up using the
-%% AASTeX v6.3 LaTeX 2e macros.
-%%
-%% AASTeX is now based on Alexey Vikhlinin's emulateapj.cls 
-%% (Copyright 2000-2015).  See the classfile for details.
+% mnras_template.tex 
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
 
-%% AASTeX requires revtex4-1.cls (http://publish.aps.org/revtex4/) and
-%% other external packages (latexsym, graphicx, amssymb, longtable, and epsf).
-%% All of these external packages should already be present in the modern TeX 
-%% distributions.  If not they can also be obtained at www.ctan.org.
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
 
-%% The first piece of markup in an AASTeX v6.x document is the \documentclass
-%% command. LaTeX will ignore any data that comes before this command. The 
-%% documentclass can take an optional argument to modify the output style.
-%% The command below calls the preprint style which will produce a tightly 
-%% typeset, one-column, single-spaced document.  It is the default and thus
-%% does not need to be explicitly stated.
-%%
-%%
-%% using aastex version 6.3
-\documentclass[twocolumn]{aastex63}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras} % https://www.overleaf.com/project/5e22241aad2a0b00016288df
 
-%% The default is a single spaced, 10 point font, single spaced article.
-%% There are 5 other style options available via an optional argument. They
-%% can be invoked like this:
-%%
-%% \documentclass[arguments]{aastex63}
-%% 
-%% where the layout options are:
-%%
-%%  twocolumn   : two text columns, 10 point font, single spaced article.
-%%                This is the most compact and represent the final published
-%%                derived PDF copy of the accepted manuscript from the publisher
-%%  manuscript  : one text column, 12 point font, double spaced article.
-%%  preprint    : one text column, 12 point font, single spaced article.  
-%%  preprint2   : two text columns, 12 point font, single spaced article.
-%%  modern      : a stylish, single text column, 12 point font, article with
-%% 		  wider left and right margins. This uses the Daniel
-%% 		  Foreman-Mackey and David Hogg design.
-%%  RNAAS       : Preferred style for Research Notes which are by design 
-%%                lacking an abstract and brief. DO NOT use \begin{abstract}
-%%                and \end{abstract} with this style.
-%%
-%% Note that you can submit to the AAS Journals in any of these 6 styles.
-%%
-%% There are other optional arguments one can invoke to allow other stylistic
-%% actions. The available options are:
-%%
-%%   astrosymb    : Loads Astrosymb font and define \astrocommands. 
-%%   tighten      : Makes baselineskip slightly smaller, only works with 
-%%                  the twocolumn substyle.
-%%   times        : uses times font instead of the default
-%%   linenumbers  : turn on lineno package.
-%%   trackchanges : required to see the revision mark up and print its output
-%%   longauthor   : Do not use the more compressed footnote style (default) for 
-%%                  the author/collaboration/affiliations. Instead print all
-%%                  affiliation information after each name. Creates a much 
-%%                  longer author list but may be desirable for short 
-%%                  author papers.
-%% twocolappendix : make 2 column appendix.
-%%   anonymous    : Do not show the authors, affiliations and acknowledgments 
-%%                  for dual anonymous review.
-%%
-%% these can be used in any combination, e.g.
-%%
-%% \documentclass[twocolumn,linenumbers,trackchanges]{aastex63}
-%%
-%% AASTeX v6.* now includes \hyperref support. While we have built in specific
-%% defaults into the classfile you can manually override them with the
-%% \hypersetup command. For example,
-%%
-%% \hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
-%%
-%% will change the color of the internal links to red, the links to the
-%% bibliography to green, the file links to cyan, and the external links to
-%% magenta. Additional information on \hyperref options can be found here:
-%% https://www.tug.org/applications/hyperref/manual.html#x1-40003
-%%
-%% Note that in v6.3 "bookmarks" has been changed to "true" in hyperref
-%% to improve the accessibility of the compiled pdf file.
-%%
-%% If you want to create your own macros, you can do so
-%% using \newcommand. Your macros should appear before
-%% the \begin{document} command.
-%%
-\newcommand{\vdag}{(v)^\dagger}
-\newcommand\aastex{AAS\TeX}
-\newcommand\latex{La\TeX}
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext,newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{wasysym}
+
+% Allow "Thomas van Noord" and "Simon de Laguarde" and alike to be sorted by "N" and "L" etc. in the bibliography.
+% Write the name in the bibliography as "\VAN{Noord}{Van}{van} Noord, Thomas"
+\DeclareRobustCommand{\VAN}[3]{#2}
+\let\VANthebibliography\thebibliography
+\def\thebibliography{\DeclareRobustCommand{\VAN}[3]{##3}\VANthebibliography}
+
+\newcommand{\comment}[1]{}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
 
 % Only include extra packages if you really need them. Common packages are:
 \usepackage{graphicx}	% Including figure files
 \usepackage{amsmath}	% Advanced maths commands
 \usepackage{amssymb}	% Extra maths symbols
 \usepackage{longtable}
-\usepackage{wasysym}
 
-%% Reintroduced the \received and \accepted commands from AASTeX v5.2
-\received{June 26, 2020}
-\revised{July 10, 2020}
-\accepted{\today}
-%% Command to document which AAS Journal the manuscript was submitted to.
-%% Adds "Submitted to " the argument.
-\submitjournal{PSJ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% For manuscript that include authors in collaborations, AASTeX v6.3
-%% builds on the \collaboration command to allow greater freedom to 
-%% keep the traditional author+affiliation information but only show
-%% subsets. The \collaboration command now must appear AFTER the group
-%% of authors in the collaboration and it takes TWO arguments. The last
-%% is still the collaboration identifier. The text given in this
-%% argument is what will be shown in the manuscript. The first argument
-%% is the number of author above the \collaboration command to show with
-%% the collaboration text. If there are authors that are not part of any
-%% collaboration the \nocollaboration command is used. This command takes
-%% one argument which is also the number of authors above to show. A
-%% dashed line is shown to indicate no collaboration. This example manuscript
-%% shows how these commands work to display specific set of authors 
-%% on the front page.
-%%
-%% For manuscript without any need to use \collaboration the 
-%% \AuthorCollaborationLimit command from v6.2 can still be used to 
-%% show a subset of authors.
-%
-%\AuthorCollaborationLimit=2
-%
-%% will only show Schwarz & Muench on the front page of the manuscript
-%% (assuming the \collaboration and \nocollaboration commands are
-%% commented out).
-%%
-%% Note that all of the author will be shown in the published article.
-%% This feature is meant to be used prior to acceptance to make the
-%% front end of a long author article more manageable. Please do not use
-%% this functionality for manuscripts with less than 20 authors. Conversely,
-%% please do use this when the number of authors exceeds 40.
-%%
-%% Use \allauthors at the manuscript end to show the full author list.
-%% This command should only be used with \AuthorCollaborationLimit is used.
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
 
-%% The following command can be used to set the latex table counters.  It
-%% is needed in this document because it uses a mix of latex tabular and
-%% AASTeX deluxetables.  In general it should not be needed.
-%\setcounter{table}{1}
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% The following section outlines numerous optional output that
-%% can be displayed in the front matter or as running meta-data.
-%%
-%% If you wish, you may supply running head information, although
-%% this information may be modified by the editorial offices.
-\shorttitle{T1 masses, radii, densities}
-\shortauthors{Agol et al.}
-%%
-%% You can add a light gray and diagonal water-mark to the first page 
-%% with this command:
-%% \watermark{text}
-%% where "text", e.g. DRAFT, is the text to appear.  If the text is 
-%% long you can control the water-mark size with:
-%% \setwatermarkfontsize{dimension}
-%% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\graphicspath{{./}{figures/}}
-%% This is the end of the preamble.  Indicate the beginning of the
-%% manuscript itself with \begin{document}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{document}
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
 
-\title{Refining the transit timing and photometric 
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[T1 masses, radii, densities]{Refining the transit timing and photometric 
 analysis of TRAPPIST-1: Masses, radii, densities, dynamics, and ephemerides.}
 
-%% LaTeX will automatically break titles if they run longer than
-%% one line. However, you may use \\ to force a line break if
-%% you desire. In v6.3 you can include a footnote in the title.
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
 
-%% A significant change from earlier AASTEX versions is in the structure for 
-%% calling author and affiliations. The change was necessary to implement 
-%% auto-indexing of affiliations which prior was a manual process that could 
-%% easily be tedious in large author manuscripts.
-%%
-%% The \author command is the same as before except it now takes an optional
-%% argument which is the 16 digit ORCID. The syntax is:
-%% \author[xxxx-xxxx-xxxx-xxxx]{Author Name}
-%%
-%% This will hyperlink the author name to the author's ORCID page. Note that
-%% during compilation, LaTeX will do some limited checking of the format of
-%% the ID to make sure it is valid. If the "orcid-ID.png" image file is 
-%% present or in the LaTeX pathway, the OrcID icon will appear next to
-%% the authors name.
-%%
-%% Use \affiliation for affiliation information. The old \affil is now aliased
-%% to \affiliation. AASTeX v6.3 will automatically index these in the header.
-%% When a duplicate is found its index will be the same as its previous entry.
-%%
-%% Note that \altaffilmark and \altaffiltext have been removed and thus 
-%% can not be used to document secondary affiliations. If they are used latex
-%% will issue a specific error message and quit. Please use multiple 
-%% \affiliation calls for to document more than one affiliation.
-%%
-%% The new \altaffiliation can be used to indicate some secondary information
-%% such as fellowships. This command produces a non-numeric footnote that is
-%% set away from the numeric \affiliation footnotes.  NOTE that if an
-%% \altaffiliation command is used it must come BEFORE the \affiliation call,
-%% right after the \author command, in order to place the footnotes in
-%% the proper location.
-%%
-%% Use \email to set provide email addresses. Each \email will appear on its
-%% own line so you can put multiple email address in one \email call. A new
-%% \correspondingauthor command is available in V6.3 to identify the
-%% corresponding author of the manuscript. It is the author's responsibility
-%% to make sure this name is also in the author list.
-%%
-%% While authors can be grouped inside the same \author and \affiliation
-%% commands it is better to have a single author for each. This allows for
-%% one to exploit all the new benefits and should make book-keeping easier.
-%%
-%% If done correctly the peer review system will be able to
-%% automatically put the author and affiliation information from the manuscript
-%% and save the corresponding author the trouble of entering it by hand.
+\author[Agol et al.]{
+E. Agol,$^{1}$\thanks{E-mail: agol@uw.edu} %[x] \orcid{0000-0002-0802-9145}
+K. Barkaoui,$^{6,18}$
+Z. Benkhaldoun, $^{18}$
+E. Bolmont,$^{2}$ %[x]
+A. Burgasser,$^{3}$ %[x]
+\newauthor A. Burdanov,$^{4}$ %[x]
+ S. Carey,$^{5}$ %[x]
+L. Delrez,$^{6,7,2}$
+B.-O. Demory,$^{8}$ %[x]
+J. de Wit,$^{4}$ %[x]
+ C. Dorn,$^{16}$ %[x]
+\newauthor E. Ducrot,$^{6}$ %[x]
+ D. Fabrycky,$^{9}$  %[x] \orcid{0000-0003-3750-0183}
+D. Foreman-Mackey $^{17}$
+ M. Gillon,$^{6}$ % [x]
+S. L. Grimm,$^{8}$ %[x]
+\newauthor D. M. Hernandez,$^{10}$ %[x]
+J. Ingalls,$^{5}$ %[x]
+ E. Jehin,$^{7}$ %[x]
+Z. Langford,$^{1}$ %[x]
+ J. Leconte,$^{11}$ %[x]
+S. M. Lederer,$^{12}$ %[x]
+\newauthor R. Malhotra,$^{13}$ %[x]
+ V. Meadows, $^1$
+B. M. Morris,$^{8}$ %[x]
+ F. J. Pozuelos,$^{6,7}$
+D. Queloz,$^{14}$ %[x]
+\newauthor S.~N. Raymond,$^{11}$ %[x]
+ F. Selsis,$^{11}$ %[x]
+M. Sestovic,$^{8}$ %[x]
+ A. H.M.J. Triaud,$^{15}$ %[x]
+M. Turbet,$^{2}$ %[x]
+\newauthor and V. Van Grootel$^{7}$ %[x]
+\\
+% List of institutions
+$^{1}$Astronomy Department and Virtual Planetary Laboratory, University of Washington, Seattle, WA 98195 USA\\
+$^{2}$ Observatoire de Gen\'eve, Universit\'e de Gen\'eve, 51 Chemin des Maillettes, CH-1290 Sauverny, Switzerland\\
+$^{3}$Center for Astrophysics and Space Science, University of California San Diego, La Jolla, CA, 92093, USA\\
+$^{4}$Department of Earth, Atmospheric and Planetary Science, Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA 02139, USA\\
+$^{5}$IPAC, California Institute of Technology, 1200 E California Boulevard, Mail Code 314-6, Pasadena, California 91125, USA\\
+$^{6}$Astrobiology Research Unit, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium\\
+$^{7}$Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium\\
+$^{8}$Center for Space and Habitability, University of Bern, Gesellschaftsstrasse 6, CH-3012, Bern, Switzerland\\
+$^{9}$Department of Astronomy \& Astrophysics, University of Chicago, 5640 S. Ellis Ave., Chicago, IL 60637 USA\\
+$^{10}$Harvard-Smithsonian Center for Astrophysics, 60 Garden St., MS 51, Cambridge, MA 02138, USA\\
+$^{11}$Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France\\
+$^{12}$NASA Johnson Space Center, 2101 NASA Pkwy., Houston TX, 77058, USA\\
+$^{13}$Lunar and Planetary Laboratory, The University of Arizona, Tucson, AZ 85721 USA\\
+$^{14}$Cavendish Laboratory, JJ Thomson Avenue, Cambridge, CB3 0H3, UK \\
+$^{15}$School of Physics \& Astronomy, University of Birmingham, Edgbaston, Birmimgham B15 2TT, UK\\
+$^{16}$ University of Zurich, Institute of Computational Sciences, Winterthurerstrasse 190, CH-8057, Zurich, Switzerland \\
+$^{17}$ Center for Computational Astrophysics, Flatiron Institute, Simons Foundation, 162 5th Ave., New York, NY 10010, USA\\
+$^{18}$ Oukaimeden Observatory, High Energy Physics and Astrophysics Laboratory, Cadi Ayyad University, Marrakech, Morocco}
 
-\correspondingauthor{Eric Agol}
-\email{agol@uw.edu}
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
 
-\author[0000-0002-0802-9145]{Eric Agol}
-\affiliation{Astronomy Department and Virtual Planetary Laboratory, University of Washington, Seattle, WA 98195 USA}
-\author[0000-0003-1464-9276]{Khalid Barkaoui}
-\affiliation{Oukaimeden Observatory, High Energy Physics and Astrophysics Laboratory, Cadi Ayyad University, Marrakech, Morocco}
-\affiliation{Astrobiology Research Unit, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
-\author[0000-0001-6285-9847]{Zouhair Benkhaldoun}
-\affiliation{Oukaimeden Observatory, High Energy Physics and Astrophysics Laboratory, Cadi Ayyad University, Marrakech, Morocco}
-\author[0000-0001-5657-4503]{Emeline Bolmont}
-\affiliation{Observatoire de Gen\'eve, Universit\'e de Gen\'eve, 51 Chemin des Maillettes, CH-1290 Sauverny, Switzerland}
-\author[0000-0002-6523-9536]{Adam Burgasser}
-\affiliation{Center for Astrophysics and Space Science, University of California San Diego, La Jolla, CA, 92093, USA}
-\author[0000-0001-9892-2406]{Artem Burdanov}
-\affiliation{Department of Earth, Atmospheric and Planetary Science, Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA 02139, USA}
-\author[0000-0002-0221-6871]{Sean Carey}
-\affiliation{IPAC, California Institute of Technology, 1200 E California Boulevard, Mail Code 314-6, Pasadena, California 91125, USA}
-\author[0000-0001-6108-4808]{Laetitia Delrez}
-\affiliation{Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
-\affiliation{Observatoire de Gen\'eve, Universit\'e de Gen\'eve, 51 Chemin des Maillettes, CH-1290 Sauverny, Switzerland}
-\affiliation{Astrobiology Research Unit, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
-\author[0000-0002-9355-5165]{Brice-Olivier Demory}
-\affiliation{Center for Space and Habitability, University of Bern, Gesellschaftsstrasse 6, CH-3012, Bern, Switzerland}
-\author[0000-0003-2415-2191]{Julien de Wit}
-\affiliation{Department of Earth, Atmospheric and Planetary Science, Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA 02139, USA}
-\author[0000-0001-6110-4610]{Caroline Dorn}
-\affiliation{University of Zurich, Institute of Computational Sciences, Winterthurerstrasse 190, CH-8057, Zurich, Switzerland}
-\author[0000-0002-7008-6888]{Elsa Ducrot}
-\affiliation{Astrobiology Research Unit, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
-\author[0000-0003-3750-0183]{Daniel Fabrycky}
-\affiliation{Department of Astronomy \& Astrophysics, University of Chicago, 5640 S. Ellis Ave., Chicago, IL 60637 USA}
-\author[0000-0002-9328-5652]{D. Foreman-Mackey}
-\affiliation{Center for Computational Astrophysics, Flatiron Institute, Simons Foundation, 162 5th Ave., New York, NY 10010, USA}
-\author[0000-0003-1462-7739]{Micha\"el Gillon}
-\affiliation{Astrobiology Research Unit, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
-\author[0000-0002-0632-4407]{Simon L. Grimm}
-\affiliation{Center for Space and Habitability, University of Bern, Gesellschaftsstrasse 6, CH-3012, Bern, Switzerland}
-\author{David M. Hernandez}
-\affiliation{Harvard-Smithsonian Center for Astrophysics, 60 Garden St., MS 51, Cambridge, MA 02138, USA}
-\author[0000-0003-4714-1364]{James Ingalls}
-\affiliation{IPAC, California Institute of Technology, 1200 E California Boulevard, Mail Code 314-6, Pasadena, California 91125, USA}
-\author[0000-0001-8923-488X]{Emmanuel Jehin}
-\affiliation{Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
-\author{Zachary Langford}
-\affiliation{Astronomy Department and Virtual Planetary Laboratory, University of Washington, Seattle, WA 98195 USA}
-\author[0000-0002-3555-480X]{J\'er\'emy Leconte}
-\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France}
-\author[0000-0002-0296-3826]{Rodrigo Luger}
-\affiliation{Center for Computational Astrophysics, Flatiron Institute, Simons Foundation, 162 5th Ave., New York, NY 10010, USA}
-\author{Susan M. Lederer}
-\affiliation{NASA Johnson Space Center, 2101 NASA Pkwy., Houston TX, 77058, USA}
-\author[0000-0002-1226-3305]{Renu Malhotra}
-\affiliation{Lunar and Planetary Laboratory, The University of Arizona, Tucson, AZ 85721 USA}
-\author[0000-0002-1386-1710]{Victoria S. Meadows}
-\affiliation{Astronomy Department and Virtual Planetary Laboratory, University of Washington, Seattle, WA 98195 USA}
-\author[0000-0003-2528-3409]{Brett M. Morris}
-\affiliation{Center for Space and Habitability, University of Bern, Gesellschaftsstrasse 6, CH-3012, Bern, Switzerland}
-\author[0000-0003-1572-7707]{Francisco J. Pozuelos}
-\affiliation{Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
-\affiliation{Astrobiology Research Unit, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
-\author[0000-0002-3012-0316]{Didier Queloz}
-\affiliation{Cavendish Laboratory, JJ Thomson Avenue, Cambridge, CB3 0H3, UK}
-\author[0000-0001-8974-0758]{Sean N. Raymond}
-\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France}
-\author[0000-0001-9619-5356]{Franck Selsis}
-\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France}
-\author[0000-0002-8124-8360]{Marko Sestovic}
-\affiliation{Center for Space and Habitability, University of Bern, Gesellschaftsstrasse 6, CH-3012, Bern, Switzerland}
-\author[0000-0002-5510-8751]{Amaury H.M.J. Triaud}
-\affiliation{School of Physics \& Astronomy, University of Birmingham, Edgbaston, Birmimgham B15 2TT, UK}
-\author[0000-0003-2260-9856]{Martin Turbet}
-\affiliation{Observatoire de Gen\'eve, Universit\'e de Gen\'eve, 51 Chemin des Maillettes, CH-1290 Sauverny, Switzerland}
-\author[0000-0003-2144-4316]{Valerie Van Grootel}
-\affiliation{Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
+% Enter the current year, for the copyright statements etc.
+\pubyear{2020}
 
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% Abstract of the paper
 \begin{abstract}
 We have collected transit times for the TRAPPIST-1 system with the Spitzer
 space telescope over three years.  We add to these ground-based, HST and K2 transit time
@@ -319,61 +163,17 @@ explain these, which we attribute to systematic errors using a robust likelihood
 We forecast JWST timing observations, and speculate on possible implications of the planet densities for the formation, migration and evolution of the planet system. 
 \end{abstract}
 
-%% Keywords should appear after the \end{abstract} command. 
-%% See the online documentation for the full list of available subject
-%% keywords and the rules for their use.
-\keywords{ infrared: planetary systems --- planets and satellites: terrestrial planets 
---- planets and satellites: compositions --- planets and satellites: fundamental parameters}
-
-%% From the front matter, we move on to the body of the paper.
-%% Sections are demarcated by \section and \subsection, respectively.
-%% Observe the use of the LaTeX \label
-%% command after the \subsection to give a symbolic KEY to the
-%% subsection for cross-referencing in a \ref command.
-%% You can use LaTeX's \ref and \label commands to keep track of
-%% cross-references to sections, equations, tables, and figures.
-%% That way, if you change the order of any elements, LaTeX will
-%% automatically renumber them.
-%%
-%% We recommend that authors also use the natbib \citep
-%% and \citet commands to identify citations.  The citations are
-%% tied to the reference list via symbolic KEYs. The KEY corresponds
-%% to the KEY in the \bibitem in the reference list below. 
-
-%\usepackage{newtxtext,newtxmath}
-
-%\usepackage[T1]{fontenc}
-%\usepackage{amsmath}
-
-%\DeclareRobustCommand{\VAN}[3]{#2}
-%\let\VANthebibliography\thebibliography
-%\def\thebibliography{\DeclareRobustCommand{\VAN}[3]{##3}\VANthebibliography}
-
-\newcommand{\comment}[1]{}
-
-
-%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
-
-
-XXX
-% These dates will be filled out by the publisher
-%\date{Accepted XXX. Received YYY; in original form ZZZ}
-
-% Enter the current year, for the copyright statements etc.
-%\pubyear{2020}
-
-% Don't change these lines
-%\begin{document}
-%\label{firstpage}
-%\pagerange{\pageref{firstpage}--\pageref{lastpage}}
-%\maketitle
-
+% Select between one and six entries from the list of approved keywords.
+% Don't make up new ones.
+\begin{keywords}
+infrared: planetary systems -- planets and satellites: terrestrial planets -- planets and satellites: compositions -- planets and satellites: fundamental parameters
+\end{keywords}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
 
-%\tableofcontents
+\tableofcontents
 
 \section{Introduction}
 
@@ -2417,7 +2217,7 @@ using Hyak.  We thank Rory Barnes, Jim Davenport and Dave Joswiak for useful dis
 
 % The best way to enter references is to use BibTeX:
 
-\bibliographystyle{aasjournal}
+\bibliographystyle{mnras}
 \bibliography{trappist1_references} % if your bibtex file is called example.bib
 
 
@@ -2517,7 +2317,7 @@ best-fit transit times (Table \ref{tab:transit_times_observed_and_calculated}), 
 the  forecast times (Table \ref{tab:transit_times_forecast})
 are given in this appendix.
 
-%\onecolumn
+\onecolumn
 \begin{longtable}{|c|c|c|c|c|c|c|}
 %\centering
  %   \begin{tabular}{c|c|c|c|c|c}
@@ -2536,7 +2336,7 @@ are given in this appendix.
     \label{tab:transit_times_observed_and_calculated}
 \end{longtable}
 
-%\onecolumn
+\onecolumn
 \begin{longtable}{|c|c|c|c|}
  \hline
          Planet & Epoch & $t_\mathrm{post}$ & $\sigma_\mathrm{post}$ \endfirsthead
@@ -2549,14 +2349,14 @@ are given in this appendix.
     forecast times from the posterior sample.  Times are in $JD - 2,450,000$ while uncertainties are in days.  Thirty lines are previewed; full table is available electronically.}
     \label{tab:transit_times_forecast}
 \end{longtable}
-%\twocolumn
+\twocolumn
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % Don't change these lines
-%\bsp	% typesetting comment
-%\label{lastpage}
+\bsp	% typesetting comment
+\label{lastpage}
 \end{document}
 
 % End of mnras_template.tex
