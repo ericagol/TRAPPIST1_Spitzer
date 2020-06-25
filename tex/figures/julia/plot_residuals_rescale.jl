@@ -115,7 +115,7 @@ d2 = 0.5*(1 .+erf.(x./sqrt(2)./s2))
 # Student's t distribution - first optimize the fit to the histogram:
 sig_est = 0.835
 dof = 3.27
-ax.plot(x,students_t_cdf(x,nx,sig_est,dof),label=L"Student's-t",linewidth=2,linestyle=":")
+ax.plot(x,students_t_cdf(x,nx,sig_est,dof),label="Student's-t",linewidth=2,linestyle=":")
 ax.set_title("Cumulative distribution")
 # Label the plot:
 ax.set_xlabel(L"$z = (t_{\mathrm{obs},ij}-t_{ij}(\mathbf{x}))/\sigma_{ij}$")

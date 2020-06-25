@@ -104,7 +104,7 @@ ax.plot(m8_all*fac_mass,chi7 .-chi_all,".",alpha=0.5)
 ax.plot(m8_all[ecc8_all .< 0.01]*fac_mass,chi7 .-chi_all[ecc8_all .< 0.01],"o")
 
 ax.plot([0.0,1.0],[30.5,30.5])
-ax.text([0.5],[28],L"$\Delta$ BIC = 0")
+ax.text([0.5],[29],L"$\Delta$ BIC = 0")
 ax.axis([0.0,1.0,0,40])
 ax.set_xlabel(L"$M_i/M_\oplus$")
 #ax.set_ylabel(L"$\Delta 2\log\mathcal{L}$")
