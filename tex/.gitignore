@@ -1,3 +1,5 @@
 *.pdf
 *.png
 *.aux
+__latexindent_temp.tex
+indent.log
