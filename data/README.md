@@ -26,6 +26,9 @@ References for some of these files:
   to the transit-timing uncertainties.
 - sources.txt: Telescopes used for the 447 transit time observations.
 - times_obs_and_posterior.txt:  Observed times and model posterior in ascii format.
+- file_list.txt: List of HDF files (*jld2) contained in this directory (these
+  are not in the github version since they are too large - .gitignore masks these),
+  and a brief description of the files and where they are read.
 
 The following lists the directories and their contents:
 
@@ -38,3 +41,6 @@ The following lists the directories and their contents:
    from the posterior.
 - POSTERIOR_NORM_DENSITY/ The "normalized density" (relative to a 20%iron/80% rock
    model) computed for 10^4 draws from the posterior.
+- output_files/ This contains the results from the HMC transit-timing analysis
+   based on code in v09_eps0.1_2k/
+
