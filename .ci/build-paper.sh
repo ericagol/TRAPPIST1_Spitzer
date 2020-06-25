@@ -12,6 +12,10 @@ then
     which pdftex
     which tlmgr
     
+    # Generate figure placeholders
+    cd $TRAVIS_BUILD_DIR/tex/figures
+    python figure_placeholders.py
+
     # Generate the Julia figures
     # https://github.com/JuliaPy/PyPlot.jl/issues/317#issuecomment-337348563
     echo "Generating julia figures..."
