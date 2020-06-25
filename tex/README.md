@@ -11,6 +11,8 @@ for the TRAPPIST-1 Spitzer paper.
 - figures/python/ Contains the Python scripts, which can be run
   with python [scriptname].py
 
+- tables/  Contains scripts for creating some of the tables in the paper.
+
 Recreate the paper PDF by typing:
 
 ```
