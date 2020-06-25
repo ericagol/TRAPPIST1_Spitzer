@@ -668,7 +668,7 @@ With the description of the dataset complete, we next describe our efforts to mo
 \begin{figure*}
     \centering
     \includegraphics[width=\hsize]{figures/Students_t_optimized.pdf}
-    \oscaption{}%
+    \oscaption{julia/plot_residuals_rescale.jl}%
     {Probability distribution of outliers.  Left:  Cumulative distribution
         function of the normalized residuals, $z$.  Blue line is a sequence of normalized residuals.
         Orange line is the CDF of a Gaussian distribution. % Green line is the CDF of a  mixture-model (double-Gaussian). 
@@ -949,7 +949,8 @@ masses in this paper.
 
 \begin{figure*}
     \includegraphics[width=0.95\hsize]{figures/T1_ttvs_4panel_stacked.pdf}
-    \caption{Transit time variation measurements (orange/purple error bars) and best-fit
+    \oscaption{julia/plot_ttv_4panel_stacked.jl}%
+    {Transit time variation measurements (orange/purple error bars) and best-fit
         transit-time model (blue/red lines) for a subset of our
         Spitzer/K2/ground-based data set.  The TTVs are the transit times for each planet
         with a best-fit linear ephemeris removed.  Brown error bars indicate $>3\sigma$ outliers.  The light green/brown curves are polynomial fits
@@ -963,7 +964,8 @@ masses in this paper.
 \begin{figure*}
     \centering
     \includegraphics[width=\hsize]{figures/T1_chopping.pdf}
-    \caption{Transit times with a polynomial subtracted (orange error bars) to reveal short-timescale chopping variations (blue model).  Green dots show the analytic chopping relation from \citet{Agol2005,Deck2015} due to adjacent planets, also with a low-order polynomial removed. For the inner four planets we have
+    \oscaption{julia/plot_ttv_diff.jl}%
+    {Transit times with a polynomial subtracted (orange error bars) to reveal short-timescale chopping variations (blue model).  Green dots show the analytic chopping relation from \citet{Agol2005,Deck2015} due to adjacent planets, also with a low-order polynomial removed. For the inner four planets we have
         only plotted data with
         uncertainties smaller than the chopping semi-amplitude  (many observations have large uncertainties which would obscure the plot).}
     \label{fig:chopping}
@@ -1053,7 +1055,8 @@ higher eccentricities \citep{Ford2006}.
 \begin{figure*}
     \centering
     \includegraphics[width=\hsize]{figures/T1_masses_03312020.pdf}
-    \caption{Probability distribution of the mass-ratios of each planet to the star, scaled to a stellar mass of $M_*  = 0.09 M_\odot$; panels range from small masses to large.   Thick
+    \oscaption{julia/plot_masses.jl}%
+    {Probability distribution of the mass-ratios of each planet to the star, scaled to a stellar mass of $M_*  = 0.09 M_\odot$; panels range from small masses to large.   Thick
         histograms show the posterior probability distribution of the Markov chain analysis.
         Horizontal error bars show the $1-\sigma$ mass-ratios from \citet{Grimm2018}.
         Dark solid curve is the likelihood profile; light, dotted curve is the Laplace approximation.}
@@ -1063,7 +1066,8 @@ higher eccentricities \citep{Ford2006}.
 \begin{figure*}
     \centering
     \includegraphics[width=\hsize]{figures/T1_eccentricity_vectors_likelihood_profile_hmc.pdf}
-    \caption{Eccentricity vector probability distribution for each planet (y-axes are relative probability).  Thick histogram is the posterior distribution from the Markov chain analysis.  Light, thin line is the Laplace approximation.  Thin dark line is the likelihood profile.  The lower right panel shows the distribution of
+    \oscaption{julia/plot_likelihood_profile.jl}%
+    {Eccentricity vector probability distribution for each planet (y-axes are relative probability).  Thick histogram is the posterior distribution from the Markov chain analysis.  Light, thin line is the Laplace approximation.  Thin dark line is the likelihood profile.  The lower right panel shows the distribution of
         $e\cos{\omega}$ or $e\sin{\omega}$ for a uniform prior on
         $e \in \mathcal{U}(0,0.1)$ and $\omega \in \mathcal{U}(0,2\pi)$.}
     \label{fig:ecc_likelihood_profile}
@@ -1073,7 +1077,8 @@ higher eccentricities \citep{Ford2006}.
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figures/T1_students_params_transformed.pdf}
-    \caption{Likelihood profile (dark line) and Gaussian distribution
+    \oscaption{julia/plot_likelihood_profile.jl}%
+    {Likelihood profile (dark line) and Gaussian distribution
         with Laplace approximation uncertainty (light line) for $\log{\nu}$ (left) and
         $V_1 e^{1/(2\nu)}$ (right).  The posterior probability distributions are shown with blue histograms.}
     \label{fig:student_param_likelihood_profile}
@@ -1193,7 +1198,8 @@ for the outer 4 planets is the slight zig-zag of transits due to chopping (shown
 \begin{figure*}
     \centering
     \includegraphics[width=\hsize]{figures/T1_riverplot.pdf}
-    \caption{River plots showing every transit over 1600 days for one planet per panel
+    \oscaption{julia/T1_photodynamics_riverplot.jl}%
+    {River plots showing every transit over 1600 days for one planet per panel
         (left to right are b-h, as labelled; the
         transits of companion planets are omitted from each panel).
         The x-axis ranges over 200/400$\times$ 30-second exposures centered on the mean ephemeris for the $n$th transit
@@ -1284,21 +1290,24 @@ densities of the planets given the assumptions inherent in the inclination prior
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/impact_parameter_noprior.pdf}
-    \caption{Probability of planet impact parameters using the photodynamic model described in the text.}
+    \oscaption{julia/photodynamic_table_noprior.jl}%
+    {Probability of planet impact parameters using the photodynamic model described in the text.}
     \label{fig:impact_parameter}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/stellar_density_noprior.pdf}
-    \caption{Stellar density derived from the photodynamic model relative to the solar density, with no prior (blue solid line) and with relative inclination prior (orange dashed line).}
+    \oscaption{julia/photodynamic_table_noprior.jl}%
+    {Stellar density derived from the photodynamic model relative to the solar density, with no prior (blue solid line) and with relative inclination prior (orange dashed line).}
     \label{fig:stellar_density}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/inclination_noprior.pdf}
-    \caption{Posterior distribution of inclination angles of the planets given
+    \oscaption{julia/photodynamic_table_noprior.jl}%
+    {Posterior distribution of inclination angles of the planets given
         the photodynamical model.}
     \label{fig:inclination_distribution}
 \end{figure}
@@ -1306,7 +1315,8 @@ densities of the planets given the assumptions inherent in the inclination prior
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/inclination_nouprior_incprior.pdf}
-    \caption{Posterior distribution of inclination angles of the planets from the photodynamical model assuming
+    \oscaption{julia/photodynamic_table_nouprior_incprior.jl}%
+    {Posterior distribution of inclination angles of the planets from the photodynamical model assuming
         a prior on the mutual inclinations of $\Pi_i (2\pi\sigma_\theta^2)^{-1/2} e^{(I_i-\langle I\rangle)^2(2\sigma_\theta^2)^{-1}}$.}
     \label{fig:inclination_prior}
 \end{figure}
@@ -1372,7 +1382,8 @@ from 57\% of Earth (planet h) to 110\% of Earth (planet b).
     \centering
     % \includegraphics[width=\hsize]{figures/T1_mass_radius_000.png}
     \includegraphics[width=\hsize]{figures/Figure_MR_v8.png}
-    \caption{Mass-radius relation for the seven TRAPPIST-1 planets based on
+    \oscaption{}% TODO: No file
+    {Mass-radius relation for the seven TRAPPIST-1 planets based on
         our transit-timing and photodynamic analysis.
         %The maximum likelihood value 
         %for each planet is plotted with a solid dot, 
@@ -1451,7 +1462,8 @@ The TRAPPIST-1 system has the advantage that the planets sample different chords
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/limb_darkening_nouprior.pdf}
-    \caption{Limb-darkening constraints, 1- and 2-$\sigma$ confidence contours.  Red is Spitzer IRAC Channel 1 (3.6$\mu$m), while green is Channel 2 (4.5$\mu$m).  Error bars indicate the limb-darkening parameters and uncertainties used as priors in \citet{Ducrot2020}}.
+    \oscaption{julia/photodynamic_table_noprior.jl}%
+    {Limb-darkening constraints, 1- and 2-$\sigma$ confidence contours.  Red is Spitzer IRAC Channel 1 (3.6$\mu$m), while green is Channel 2 (4.5$\mu$m).  Error bars indicate the limb-darkening parameters and uncertainties used as priors in \citet{Ducrot2020}}.
     \label{fig:limb_darkening}
 \end{figure}
 
@@ -1599,7 +1611,8 @@ We defer such analysis to future work.
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/Planet_i_properties.pdf}
-    \caption{Limits on an eighth planet, ``i", for a search near
+    \oscaption{julia/TTV_search_8planet_noprior_rand.jl}%
+    {Limits on an eighth planet, ``i", for a search near
         the periods in table \ref{tab:laplace_p_i}.  The 8-planet
         models are only plotted if they led to an improvement in log likelihood.
         Only two of the optimized
@@ -1625,7 +1638,8 @@ The comparison of measured masses and radii with theoretical mass-radius relatio
     \centering
     %\includegraphics[width=\hsize]{figures/figure_TTV_norm_density_histograms.png}
     \includegraphics[width=\hsize]{figures/plot_normalized_density_agol_et_al.pdf}
-    \caption{Probability density function of the normalized density of all seven planets in the system.
+    \oscaption{python/plot_histogram_normalized_density_agol_et_al.py}%
+    {Probability density function of the normalized density of all seven planets in the system.
         The normalized densities were calculated by dividing the density of each pair of mass and radius of the TTV/photodynamic posterior distribution by the local density (i.e. of the closest pair of mass and radius) of a planet with an interior composition of 20 wt\% iron and 80 wt\% MgSiO$_3$. A planet with a normalized density of 1 has exactly the same density as a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet. A normalized density ${>}1$ (or ${<}1$, resp.) is denser (or lighter, resp.) than a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet.}
     \label{fig:norm_density_histo}
 \end{figure}
@@ -1639,7 +1653,8 @@ The interpretation of these observations in terms of internal compositions is di
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/Norm_dens_vs_period.pdf}
-    \caption{Normalized planet densities (with 1$\sigma$ error-bars) versus planet orbital periods. The light blue band is the 68\% confidence interval of the weighted mean normalized density of all seven planets.  The orange lines show the 68.3\% confidence intervals of linear fits to the normalized densities computed from $10^4$
+    \oscaption{julia/plot_norm_density.jl}%
+    {Normalized planet densities (with 1$\sigma$ error-bars) versus planet orbital periods. The light blue band is the 68\% confidence interval of the weighted mean normalized density of all seven planets.  The orange lines show the 68.3\% confidence intervals of linear fits to the normalized densities computed from $10^4$
         draws from the posterior.  The mean fit to the normalized density versus period is $y = a P + b$ where $a= 1.02\pm 0.03$ and $b=-0.0045\pm0.0035$.}
     \label{fig:norm_density_vs_period}
 \end{figure}
@@ -1668,7 +1683,8 @@ There may be a slight trend of the inferred CMF, which decreases with increasing
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/Norm_cmf_vs_period.pdf}
-    \caption{Iron core mass fraction versus the planetary orbital periods.  The approximate values for Earth \citep{McDonough2014}, Mars \citep{Khan2018}, the Moon \citep{Barr2016}, and common chondrites \citep{Palme2014} are indicated, as well as the 1-$\sigma$ confidence intervals of the TRAPPIST-1 planets.
+    \oscaption{julia/plot_cmf.jl}%
+    {Iron core mass fraction versus the planetary orbital periods.  The approximate values for Earth \citep{McDonough2014}, Mars \citep{Khan2018}, the Moon \citep{Barr2016}, and common chondrites \citep{Palme2014} are indicated, as well as the 1-$\sigma$ confidence intervals of the TRAPPIST-1 planets.
         The light blue box is the 68.3\% confidence region of the weighted mean of all seven planets. The orange lines show the median and 68.3\% confidence interval for linear fits to the $10^4$ posterior values for all seven planets.}
     \label{fig:cmf}
 \end{figure}
@@ -1690,7 +1706,8 @@ There may be a slight trend of the inferred CMF, which decreases with increasing
     \centering
     \includegraphics[width=\hsize]{figures/figure_water_period_TTV_trim.png}
     %    \includegraphics[width=\hsize]{figures/figure_water_period_TTV_trim.pdf}
-    \caption{Theoretical water content (along with 1$\sigma$ error bar) versus planetary orbital periods, for four distinct interior compositions (18, 25, 32.5 and 50 wt\% iron content).}
+    \oscaption{}% TODO
+    {Theoretical water content (along with 1$\sigma$ error bar) versus planetary orbital periods, for four distinct interior compositions (18, 25, 32.5 and 50 wt\% iron content).}
     \label{fig:water_vs_period}
 \end{figure}
 
@@ -1824,7 +1841,7 @@ a composition which is a mix of silicates and iron \citep{Owen2017}.
 \begin{figure*}
     \centering
     \includegraphics[width = \hsize]{figures/mass_radius_relation_comparison.pdf}
-    \caption{Radius versus mass for Solar-System terrestrial planets (green dots),
+    \oscaption{julia/plot_planets.jl}{Radius versus mass for Solar-System terrestrial planets (green dots),
         TRAPPIST-1 (orange error bars), and other potentially rocky exoplanets from the NExSci database, \citet{Dressing2015},
         and \citet{Dai2019}
         (red error bars).  Planets with smaller mass uncertainty are shown in a darker red color.  Also
@@ -1897,7 +1914,7 @@ of magnitude to match our TTV precision for the TRAPPIST-1 system.
 \begin{figure*}
     \centering
     \includegraphics[width=\hsize]{figures/Equivalent_RV_precision.pdf}
-    \caption{Predicted radial-velocity variation of the TRAPPIST-1 host star
+    \oscaption{julia/T1_mass_radius_update.jl}{Predicted radial-velocity variation of the TRAPPIST-1 host star
         induced by its seven known transiting planets, as well as the current
         measurement error bar reported by \citet{Hirano2020}, which they interpret
         as an upper limit, thanks to stellar variability.  Also plotted are
@@ -1933,7 +1950,7 @@ all consistent with the predictions of the tidal evolution model
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/eccentricity_posterior.pdf}
-    \caption{Probability distribution of the eccentricities of the planets at the initial time
+    \oscaption{julia/plot_likelihood_profile.jl}{Probability distribution of the eccentricities of the planets at the initial time
         based upon the transit-timing model.}
     \label{fig:eccentricity_posterior}
 \end{figure}
@@ -1947,7 +1964,7 @@ c (blue and orange contours).  The other five planets have non-zero eccentriciti
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/esin_vs_ecos.pdf}
-    \caption{Posterior probability distribution for the eccentricity vectors  at the
+    \oscaption{julia/plot_evectors.jl}{Posterior probability distribution for the eccentricity vectors  at the
         initial time for each of the planets.  Contours are 1- and 2-$\sigma$ confidence limits.
         The maximum likelihood parameters are shown as solid points.}
     \label{fig:eccentricity_vectors}
@@ -1980,7 +1997,7 @@ variations, and so there is a much wider range of eccentricity vectors which is 
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/T1_evector_forced.pdf}
-    \caption{Variable component of the osculating eccentricity vectors plotted from a simulation over 12 days for planets b and c, and over $\approx 485$
+    \oscaption{julia/plot_eccentricities.jl}{Variable component of the osculating eccentricity vectors plotted from a simulation over 12 days for planets b and c, and over $\approx 485$
         days for planets d-h, with initial parameters drawn from the posterior distribution.}
     \label{fig:forced_eccentricity}
 \end{figure}
@@ -1988,7 +2005,7 @@ variations, and so there is a much wider range of eccentricity vectors which is 
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/T1_evector.pdf}
-    \caption{Osculating eccentricity vectors computed from a simulation for all seven planets shown for three different draws from
+    \oscaption{julia/plot_eccentricities.jl}{Osculating eccentricity vectors computed from a simulation for all seven planets shown for three different draws from
         the posterior:  the first with eccentricities nearest the median of the posterior distribution;
         the second with eccentricties furthest from the median, and a third drawn randomly from
         the posterior.  As with Figure \ref{fig:forced_eccentricity}, planets b and c are plotted
@@ -2051,7 +2068,7 @@ the difference in longitude.
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/delta_omega_bc.pdf}
-    \caption{Difference in the longitudes of pericenter of planets b and
+    \oscaption{julia/plot_chains.jl}{Difference in the longitudes of pericenter of planets b and
         c minus $\pi$.}
     \label{fig:delta_omega}
 \end{figure}
@@ -2113,7 +2130,7 @@ simulation.
 \begin{figure}
     \centering
     \includegraphics[width =\hsize]{figures/Laplace_angle.pdf}
-    \caption{GLR angles plotted over 100 years for
+    \oscaption{julia/plot_elements.jl}{GLR angles plotted over 100 years for
         three draws from the posterior distribution:  one with low eccentricities,
         one with high, and one randomly chosen.  These are
         compared with the predictions from \citet{Mah2018}, shown by
@@ -2164,7 +2181,7 @@ Our new samples show a better conservation of the GLR angles than was found in \
 \begin{figure}
     \centering
     \includegraphics[width =\hsize]{figures/tlM.png}
-    \caption{Evolution of the GLR angles $\phi$ for 10000 samples over 10 Myr. The simulations can be split into three categories: I remaining in resonance (black), II remaining in resonance but jump between states (dark blue), and III not remaining in resonance (light blue).}
+    \oscaption{python/plotphiM2.py}{Evolution of the GLR angles $\phi$ for 10000 samples over 10 Myr. The simulations can be split into three categories: I remaining in resonance (black), II remaining in resonance but jump between states (dark blue), and III not remaining in resonance (light blue).}
     \label{fig:tlM}
 \end{figure}
 
@@ -2251,7 +2268,8 @@ Of course, it will be impossible to arrange such a large number of transit obser
     \centering
     %\includegraphics[width=\hsize]{figures/T1_JWST_all_transits.pdf}
     \includegraphics[width=\hsize]{figures/T1_JWST_all_transits_tight.png}
-    \caption{Simulated observations of all of the transits of TRAPPIST-1
+    \oscaption{}% TODO
+    {Simulated observations of all of the transits of TRAPPIST-1
         detectable with JWST.  Each transit has an
         uncertainty of ${\approx} 0.6-1.7   $ seconds, assumed to be observed with
         NIRSPEC (which maximizes the number of photons collected of any JWST
@@ -2263,7 +2281,7 @@ Of course, it will be impossible to arrange such a large number of transit obser
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/Recovered_masses_JWST_5yr_all_transits_NIRSPEC.pdf}
-    \caption{Simulated planet massses based on 5 years of JWST observations
+    \oscaption{julia/plot_mass_recovery.jl}{Simulated planet massses based on 5 years of JWST observations
         of \emph{every} TRAPPIST-1 transit with NIRSPEC.  The recovered minus
         the input mass versus the input mass.  The masses can be recovered to
         better than 0.1\% precision.}
