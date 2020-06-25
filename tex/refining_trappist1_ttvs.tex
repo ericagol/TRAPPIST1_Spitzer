@@ -419,7 +419,7 @@ confusion, revealing the periods of six of the seven transiting planets \citep{G
 but only a single transit observed of the outermost planet left its orbit in question.  
 A subsequent observation campaign of the system with the K2 spacecraft included four 
 additional transits of the outer planet, identifying its period, and reveals a series
-of generalized three-body Laplace relations (GLR) \footnote{This refers to the condition 
+of generalized three-body Laplace relations (GLRs)\footnote{This refers to the condition 
 $pP_1^{-1}-(p+q)P_2^{-1}+qP_3^{-1} \approx 0$, which is a generalization of the Laplace 
 resonance with $p=1$ and $q=2$ \citep{Papaloizou2014}. } between adjacent triplets of 
 planets \citep{Luger2017a}.  Additional observations with Spitzer 
@@ -432,11 +432,11 @@ includes 188 transits \citep{Ducrot2020}.
 Although the planets in the TRAPPIST-1 system have short orbital periods, ranging from
 1.5 to 19 days, the dynamical interactions accumulate gradually with time, which requires 
 longer-timescale monitoring to accurately constrain the orbital model.
-The GLR also cause adjacent pairs of planets to reside near mean-motion resonances, 
-for which $j P_i^{-1} \approx k P_{i+1}^{-1}$ for integers $j$ and $k$ for the $i$th and $i+1$th planets.  This proximity causes a resonant timescale 
+The GLRs also cause adjacent pairs of planets to reside near mean-motion resonances, 
+for which $j P_i^{-1} \approx (j+k) P_{i+1}^{-1}$ for integers $j$ and $k$ for the $i$th and $i+1$th planets.  This proximity causes a resonant timescale 
 given by
 \begin{equation}
-    P_{TTV} = \frac{k-j}{j P_i^{-1} - k P_{i+1}^{-1}}.
+    P_{TTV} = \frac{k}{j P_i^{-1} - (j+k) P_{i+1}^{-1}}.
 \end{equation} 
 The period of the resonant terms for each of these pairs of planets is $P_{TTV} \approx 487\pm 24$ 
 days (ranging from 453 to 519 days for each pair).  This timescale has two consequences for 
@@ -972,16 +972,16 @@ masses in this paper.
 	\label{tab:TTV_parameters}
 	\begin{tabular}{lccccccc} 
 		\hline
-Planet & $\mu = \frac{M_p}{M_*}$ & $M_p$ & $\frac{\sigma_\mu}{\mu}$ & $P$& $t_0$  & $ e\cos{\omega}$ & $ e\sin{\omega}$  \cr
+& $\mu = \frac{M_p}{M_*}$ & $M_p$ & $\frac{\sigma_\mu}{\mu}$ & $P$& $t_0$  & $ e\cos{\omega}$ & $ e\sin{\omega}$  \cr
 & [$M_\oplus\left(\frac{0.09 M_\odot}{M_*}\right)$] & [$10^{-5} M_*$] & \% & [day] & [BJD-2,450,000] &  & \cr 
 \hline
-b & $1.3771{\pm} 0.0593$ & $ 4.596{\pm}  0.198$ & $4.31$ & $1.510826{\pm} 0.000006$ & $7257.55044{\pm} 0.00015$ & $-0.00215{\pm} 0.00332$ & $0.00217{\pm} 0.00244$ \cr 
-c & $1.3105{\pm} 0.0453$ & $ 4.374{\pm}  0.151$ & $3.46$ & $2.421937{\pm} 0.000018$ & $7258.58728{\pm} 0.00027$ & $0.00055{\pm} 0.00232$ & $0.00001{\pm} 0.00171$ \cr 
-d & $0.3885{\pm} 0.0074$ & $ 1.297{\pm}  0.025$ & $1.90$ & $4.049219{\pm} 0.000026$ & $7257.06768{\pm} 0.00067$ & $-0.00496{\pm} 0.00186$ & $0.00267{\pm} 0.00112$ \cr 
-e & $0.6932{\pm} 0.0128$ & $ 2.313{\pm}  0.043$ & $1.84$ & $6.101013{\pm} 0.000035$ & $7257.82771{\pm} 0.00041$ & $0.00433{\pm} 0.00149$ & $-0.00461{\pm} 0.00087$ \cr 
-f & $1.0411{\pm} 0.0155$ & $ 3.475{\pm}  0.052$ & $1.49$ & $9.207540{\pm} 0.000032$ & $7257.07426{\pm} 0.00085$ & $-0.00840{\pm} 0.00130$ & $-0.00051{\pm} 0.00087$ \cr 
-g & $1.3238{\pm} 0.0171$ & $ 4.418{\pm}  0.057$ & $1.29$ & $12.352446{\pm} 0.000054$ & $7257.71462{\pm} 0.00103$ & $0.00380{\pm} 0.00112$ & $0.00128{\pm} 0.00070$ \cr 
-h & $0.3261{\pm} 0.0186$ & $ 1.088{\pm}  0.062$ & $5.69$ & $18.772866{\pm} 0.000214$ & $7249.60676{\pm} 0.00272$ & $-0.00365{\pm} 0.00077$ & $-0.00002{\pm} 0.00044$ \cr 
+b & $1.3771{\pm} 0.0593$ & $ 4.596{\pm}  0.198$ & $4.3$ & $1.510826{\pm} 0.000006$ & $7257.55044{\pm} 0.00015$ & $-0.00215{\pm} 0.00332$ & $0.00217{\pm} 0.00244$ \cr 
+c & $1.3105{\pm} 0.0453$ & $ 4.374{\pm}  0.151$ & $3.5$ & $2.421937{\pm} 0.000018$ & $7258.58728{\pm} 0.00027$ & $0.00055{\pm} 0.00232$ & $0.00001{\pm} 0.00171$ \cr 
+d & $0.3885{\pm} 0.0074$ & $ 1.297{\pm}  0.025$ & $1.9$ & $4.049219{\pm} 0.000026$ & $7257.06768{\pm} 0.00067$ & $-0.00496{\pm} 0.00186$ & $0.00267{\pm} 0.00112$ \cr 
+e & $0.6932{\pm} 0.0128$ & $ 2.313{\pm}  0.043$ & $1.8$ & $6.101013{\pm} 0.000035$ & $7257.82771{\pm} 0.00041$ & $0.00433{\pm} 0.00149$ & $-0.00461{\pm} 0.00087$ \cr 
+f & $1.0411{\pm} 0.0155$ & $ 3.475{\pm}  0.052$ & $1.5$ & $9.207540{\pm} 0.000032$ & $7257.07426{\pm} 0.00085$ & $-0.00840{\pm} 0.00130$ & $-0.00051{\pm} 0.00087$ \cr 
+g & $1.3238{\pm} 0.0171$ & $ 4.418{\pm}  0.057$ & $1.3$ & $12.352446{\pm} 0.000054$ & $7257.71462{\pm} 0.00103$ & $0.00380{\pm} 0.00112$ & $0.00128{\pm} 0.00070$ \cr 
+h & $0.3261{\pm} 0.0186$ & $ 1.088{\pm}  0.062$ & $5.7$ & $18.772866{\pm} 0.000214$ & $7249.60676{\pm} 0.00272$ & $-0.00365{\pm} 0.00077$ & $-0.00002{\pm} 0.00044$ \cr 
 		\hline
 	\end{tabular}
 \end{table*}
@@ -1009,6 +1009,7 @@ with the exception of planet e which has decreased and planet h which remains th
 
 \begin{table*}
     \centering
+    \scriptsize
     \caption{Mass-ratios of the planets to the star in units of
     $M_\oplus (0.09 M_\odot/M_*)$ from \citet{Grimm2018} compared with the results from this paper.}
     \begin{tabular}{l|c|c|c|c|c|c|c}
@@ -1306,6 +1307,8 @@ densities of the planets given the assumptions inherent in the inclination prior
 
 \begin{table*}
     \centering
+    \scriptsize
+    \setlength\tabcolsep{3pt} % default 6pt
     \begin{tabular}{l|c|c|c|c|c|c|c}
     \hline
 %        Stellar param: & $\rho_*/\rho_\odot$ & $q_{1,Ch 1}$  & $q_{2,Ch 1}$ &  $q_{1,Ch 2}$ & $q_{2,Ch 2}$ & \cr
@@ -1378,6 +1381,7 @@ from 57\% of Earth (planet h) to 110\% of Earth (planet b).
 
 \begin{table*}
     \centering
+    \setlength\tabcolsep{3pt} % default 6pt
     \begin{tabular}{l|c|c|c|c|c|c|c|}
      Planet: & b & c & d & e & f & g & h \cr
     \hline
@@ -1392,9 +1396,9 @@ from 57\% of Earth (planet h) to 110\% of Earth (planet b).
  $ R$ [$10^8$ cm] &  $  7.119_{- 0.077}^{+ 0.087} $  &  $  6.995_{- 0.077}^{+ 0.086} $  &  $  5.026_{- 0.066}^{+ 0.071} $  &  $  5.868_{- 0.075}^{+ 0.082} $  &  $  6.664_{- 0.077}^{+ 0.085} $  &  $  7.204_{- 0.085}^{+ 0.094} $  &  $  4.817_{- 0.088}^{+ 0.091} $  \cr 
  $ M$ [$10^{27}$ g] &  $  8.211{\pm}  0.412 $  &  $  7.814{\pm}  0.335 $  &  $  2.316{\pm}  0.074 $  &  $  4.132{\pm}  0.130 $  &  $  6.205{\pm}  0.184 $  &  $  7.890{\pm}  0.226 $  &  $  1.945{\pm}  0.122 $  \cr 
  $ \rho $ [ g cm$^{-3}$] &  $  5.425_{- 0.272}^{+ 0.265} $  &  $  5.447_{- 0.235}^{+ 0.222} $  &  $  4.354_{- 0.163}^{+ 0.156} $  &  $  4.885_{- 0.182}^{+ 0.168} $  &  $  5.009_{- 0.158}^{+ 0.138} $  &  $  5.042_{- 0.158}^{+ 0.136} $  &  $  4.147_{- 0.302}^{+ 0.322} $  \cr 
- $ g$ [$10^3$ cm s$^{-2}$] &  $  1.080{\pm}  0.051 $  &  $  1.065{\pm}  0.042 $  &  $  0.611{\pm}  0.019 $  &  $  0.801{\pm}  0.024 $  &  $  0.932{\pm}  0.024 $  &  $  1.015{\pm}  0.025 $  &  $  0.558{\pm}  0.037 $  \cr 
- $ v_\mathrm{esc}$ [km s$^{-1}$] &  $ 12.400 \pm  0.292 $  &  $ 12.205 \pm  0.241 $  &  $  7.839 \pm  0.110 $  &  $  9.694 \pm  0.133 $  &  $ 11.145 \pm  0.137 $  &  $ 12.087 \pm  0.142 $  &  $  7.335 \pm  0.227 $  \cr 
- $ S $ [$10^{6}\frac{\mathrm{erg}}{\mathrm{cm}\mathrm{s}}$] &  $  5.652_{- 0.216}^{+ 0.220} $  &  $  3.013_{- 0.115}^{+ 0.117} $  &  $  1.518_{- 0.058}^{+ 0.059} $  &  $  0.879_{- 0.034}^{+ 0.034} $  &  $  0.508_{- 0.019}^{+ 0.020} $  &  $  0.343_{- 0.013}^{+ 0.013} $  &  $  0.196_{- 0.008}^{+ 0.008} $  \cr 
+ $ g$ [$10$ m s$^{-2}$] &  $  1.080{\pm}  0.051 $  &  $  1.065{\pm}  0.042 $  &  $  0.611{\pm}  0.019 $  &  $  0.801{\pm}  0.024 $  &  $  0.932{\pm}  0.024 $  &  $  1.015{\pm}  0.025 $  &  $  0.558{\pm}  0.037 $  \cr 
+ $ v_\mathrm{esc}$ [$\frac{\mathrm{km}}{\mathrm{s}}$] &  $ 12.400 \pm  0.292 $  &  $ 12.205 \pm  0.241 $  &  $  7.839 \pm  0.110 $  &  $  9.694 \pm  0.133 $  &  $ 11.145 \pm  0.137 $  &  $ 12.087 \pm  0.142 $  &  $  7.335 \pm  0.227 $  \cr 
+ $ S $ [$10^6\frac{\mathrm{erg}}{\mathrm{cm}^2\mathrm{s}}$] &  $  5.652_{- 0.216}^{+ 0.220} $  &  $  3.013_{- 0.115}^{+ 0.117} $  &  $  1.518_{- 0.058}^{+ 0.059} $  &  $  0.879_{- 0.034}^{+ 0.034} $  &  $  0.508_{- 0.019}^{+ 0.020} $  &  $  0.343_{- 0.013}^{+ 0.013} $  &  $  0.196_{- 0.008}^{+ 0.008} $  \cr 
  $ a $ [$10^{11}$ cm] &  $  1.726{\pm}  0.015 $  &  $  2.364{\pm}  0.020 $  &  $  3.331{\pm}  0.028 $  &  $  4.376{\pm}  0.037 $  &  $  5.758{\pm}  0.049 $  &  $  7.006{\pm}  0.060 $  &  $  9.259{\pm}  0.079 $  \cr 
     \end{tabular}
     \caption{Planetary parameters from combining the transit-timing
@@ -1510,7 +1514,7 @@ induced on the inner seven planets.  Planet h should experience the strongest
 perturbations by an exterior eighth planet due to the fact that transit-timing
 variations are a very strong function of the proximity of planets to one another,
 and also to resonance.  Table \ref{tab:laplace_p_i} shows predictions for the
-period of planet "i", $P_i$, assuming a GLR configuration with planets g and
+period of planet ``i", $P_i$, assuming a GLR configuration with planets g and
 h given by
 \begin{equation}
   P_i = q/(-p P_g^{-1} + (p+q) P_h^{-1})
@@ -1618,7 +1622,7 @@ The comparison of measured masses and radii with theoretical mass-radius relatio
     \label{fig:norm_density_histo}
 \end{figure}
 
-We next searched for variations of density across the planets. For this, we normalized each planetary density calculated from $10^4$ samples from the TTV/photodynamic posterior distribution by the local density of a fully differentiated 20 wt\% iron, 80 wt\% silicate (MgSiO$_3$) interior planet \citep{Zeng2016}, which is less iron rich than Earth.  For each planetary density (i.e. each pair of mass and radius), the local density was taken to be that of the closest point on the theoretical mass-radius relationship of a 20$ wt\%$ iron, 80 wt\% silicate planet;  we normalized each density by this value. Fig.~\ref{fig:norm_density_histo} shows the resulting histograms of the posterior probability of the normalized TRAPPIST-1 planet densities. We then plotted in Fig.~\ref{fig:norm_density_vs_period} the normalized densities (along with their 1$\sigma$ uncertainty) as a function of the orbital periods of the planets.  The normalized planet density appears very uniform across the seven planets, with perhaps a slight decrease with the increase of the orbital period (or the distance to the host star).  We fit a line to the normalized density, $y$, versus orbital period, $P$, for $10^4$ posterior samples, and found a relation of $y=(1.02\pm 0.03) - (0.0045\pm 0.0035)P$ where the
+We next searched for variations of density across the planets. For this, we normalized each planetary density calculated from $10^4$ samples from the TTV/photodynamic posterior distribution by the local density of a fully differentiated 20 wt\% iron, 80 wt\% silicate (MgSiO$_3$) interior planet \citep{Zeng2016}, which is less iron rich than Earth.  For each planetary density (i.e. each pair of mass and radius), the local density was taken to be that of the closest point on the theoretical mass-radius relationship of a 20 wt\% iron, 80 wt\% silicate planet;  we normalized each density by this value. Fig.~\ref{fig:norm_density_histo} shows the resulting histograms of the posterior probability of the normalized TRAPPIST-1 planet densities. We then plotted in Fig.~\ref{fig:norm_density_vs_period} the normalized densities (along with their 1$\sigma$ uncertainty) as a function of the orbital periods of the planets.  The normalized planet density appears very uniform across the seven planets, with perhaps a slight decrease with the increase of the orbital period (or the distance to the host star).  We fit a line to the normalized density, $y$, versus orbital period, $P$, for $10^4$ posterior samples, and found a relation of $y=(1.02\pm 0.03) - (0.0045\pm 0.0035)P$ where the
 coefficients are the 68.3\% confidence interval. There is only weak evidence for a declining trend of normalized density with orbital period: 90\% of the fits to the $10^4$ posterior samples have slopes with a negative value, while 10\% of the slopes fit have a \emph{positive} value.  If in the future more precise data strengthen this trend, then
 this indicates that either (i) the outer planets are depleted in heavy elements (e.g. iron) compared to the inner ones, or (ii) the outer planets are enriched in volatiles (e.g. water) compared to the inner ones.  However, based on the current data we suggest that the planets compositions could be rather uniform in nature.
 
@@ -2343,7 +2347,7 @@ Carbonaceous chondrites may also be an appropriate analog for the compositions o
 Orbital migration was a key ingredient in the assembly of the TRAPPIST-1 system \citep{Tamayo2017,Ormel2017,Papaloizou2017,MacDonald2018,coleman19}.  Chains of orbital resonances are a signpost of migration~\citep[e.g.]{Cresswell2008}. Models which invoke long-range migration can match the orbital spacing of the population of super-Earth systems~\citep{izidoro17,izidoro19}. These models propose that resonant chains are ubiquitous but that most are destabilized during or after dissipation of the gaseous disk~\citep{terquem07,ogihara09,mcneil10,cossou14}. The first planetary embryos massive enough to migrate are likely to form just past the snow line because of the increased efficiency of planetesimal formation and pebble accretion~\citep{lambrechts14,Ormel2017}. A model based on this assumption can match the orbital structure of the TRAPPIST-1 system~\citep{Schoonenberg2019}. Given that these they are inferred to form at similar temperatures, one may expect that the building blocks of close-in planets have carbonaceous chondrite-like compositions. 
 
 The bulk densities of the outer four TRAPPIST-1 planets may be consistent with having formed from carbonaceous chondrite-like planetary embryos. Carbonaceous chondrites have 20-25\% iron by mass~\citep[see values compiled in][]{lodders98}, primarily due to an enhance volatile inventory relative to Earth.  Carbonaceous chondrites have ${\sim}$1-10\% water by mass~
-\citep[and are thought to represent the source population of planetesimals that delivered water to Earth; see][for a review]{meech20}. This is similar to water contents inferred for super-Earths assuming that they grew from planetesimals just past the snow line~\citep{Ormel2017,Schoonenberg2019,bitsch19,Liu2020}. In contrast, Earth is only ${\sim} 0.1\%$ water by mass~\citep[e.g., ][although uncertainties remain in the core's hydrogen content]{hirschmann06,marty12}. The higher water content and lower iron content of carbonaceous chondrite planets relative to Earth would lower the bulk density of a carbonaceous planet, which is consistent with the measurements for the outer TRAPPIST-1 planets. 
+\citep[and are thought to represent the source population of planetesimals that delivered water to Earth; see][for a review]{meech20}. This is similar to water contents inferred for super-Earths assuming that they grew from planetesimals just past the snow line~\citep{Ormel2017,Schoonenberg2019,bitsch19a,Liu2020}. In contrast, Earth is only ${\sim} 0.1\%$ water by mass~\citep[e.g., ][although uncertainties remain in the core's hydrogen content]{hirschmann06,marty12}. The higher water content and lower iron content of carbonaceous chondrite planets relative to Earth would lower the bulk density of a carbonaceous planet, which is consistent with the measurements for the outer TRAPPIST-1 planets. 
 
 Ceres may be a more relevant analog to the outer TRAPPIST-1 planets than Earth. While it is far less massive than Earth or the TRAPPIST-1 planets ($M_{Ceres} {\approx} 1.5 {\times} 10^{-4} M_\oplus$), Ceres is likely carbonaceous in composition \citep{bland16,mcsween18,marchi19} and is likely to have been implanted into the main belt during the giant planets' growth~\citep{raymond17}. While Ceres appears to have too much water (roughly 40\% by mass) and its bulk composition would be too low-density to match the TRAPPIST-1 planets, interior models of scaled-up Ceres-like planets might provide a useful comparison for super-Earth bulk density measurements. 
 
@@ -2375,7 +2379,7 @@ We conclude by pointing out directions for building upon the work described in t
     \item We need more transits measured for planets d and h, in order
     to better measure the amplitude and phase on the transit-timing variation
     timescale, as well as to better constrain the presence of planets beyond h.
-    \item The interpretation of the compositions of the planets is limited by the unknown composition of the host star. A measurement of the C/O ratio would validate the assumption we have made that composition is dominated by silicates rather than silicon carbide.  A measurement of the Mg/Fe and Fe/Si ratios would help to interpret the core and mantle compositions.  Both sets of constraints would help to limit the range and break degeneracies of possible interior compositions of the planets \citep{Dorn2015,Bitsch2019}.
+    \item The interpretation of the compositions of the planets is limited by the unknown composition of the host star. A measurement of the C/O ratio would validate the assumption we have made that composition is dominated by silicates rather than silicon carbide.  A measurement of the Mg/Fe and Fe/Si ratios would help to interpret the core and mantle compositions.  Both sets of constraints would help to limit the range and break degeneracies of possible interior compositions of the planets \citep{Dorn2015,Bitsch2019b}.
     \item Without a constraint on the detailed abundance ratios of the host star, a Bayesian interpretation of the bulk densities of the planets should be warranted \citep{Dorn2016} to better quantify the range of possible compositions.
     (vi) More detailed spectral analysis of the stellar photosphere to ascertain the impact of an inhomogeneous stellar atmosphere on the radius ratios would be warranted. 
 \end{enumerate}
@@ -2536,6 +2540,7 @@ are given in this appendix.
     \label{tab:transit_times_observed_and_calculated}
 \end{longtable}
 
+\pagebreak
 %\onecolumn
 \begin{longtable}{|c|c|c|c|}
  \hline
