@@ -24,6 +24,8 @@
 %% using aastex version 6.3
 \documentclass[twocolumn]{aastex63}
 
+\include{cortex}
+
 %% The default is a single spaced, 10 point font, single spaced article.
 %% There are 5 other style options available via an optional argument. They
 %% can be invoked like this:
@@ -170,8 +172,8 @@
 
 \begin{document}
 
-\title{Refining the transit timing and photometric 
-analysis of TRAPPIST-1: Masses, radii, densities, dynamics, and ephemerides.}
+\title{Refining the transit timing and photometric
+    analysis of TRAPPIST-1: Masses, radii, densities, dynamics, and ephemerides.}
 
 %% LaTeX will automatically break titles if they run longer than
 %% one line. However, you may use \\ to force a line break if
@@ -254,7 +256,7 @@ analysis of TRAPPIST-1: Masses, radii, densities, dynamics, and ephemerides.}
 \affiliation{Astrobiology Research Unit, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
 \author[0000-0003-3750-0183]{Daniel Fabrycky}
 \affiliation{Department of Astronomy \& Astrophysics, University of Chicago, 5640 S. Ellis Ave., Chicago, IL 60637 USA}
-\author[0000-0002-9328-5652]{D. Foreman-Mackey}
+\author[0000-0002-9328-5652]{Daniel Foreman-Mackey}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, Simons Foundation, 162 5th Ave., New York, NY 10010, USA}
 \author[0000-0003-1462-7739]{Micha\"el Gillon}
 \affiliation{Astrobiology Research Unit, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
@@ -299,31 +301,31 @@ analysis of TRAPPIST-1: Masses, radii, densities, dynamics, and ephemerides.}
 \affiliation{Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Universit\'e de Li\'ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\'ege, Belgium}
 
 \begin{abstract}
-We have collected transit times for the TRAPPIST-1 system with the Spitzer
-space telescope over three years.  We add to these ground-based, HST and K2 transit time
-measurements, and revisit a transit-timing N-body dynamical analysis of the seven-planet system
-using our complete set of times.  From the transit timing
-analysis, we refine the mass ratios of the planets to the star.  We next carry out a 
-photodynamical analysis of the Spitzer light curves to derive the density of the host star and the
-planet densities.  We find that all seven planets' densities may be described with a single rocky
-mass-radius relation which is depleted in iron relative to Earth, with Fe 17 wt\% versus
-32 wt\% for Earth, and otherwise Earth-like in composition.  Alternatively, the planets may 
-have an Earth-like composition, but with volatile enhancement, 
-such as an surface water layer or a core-free structure with oxidized iron in the mantle.  We measure 
-planet masses to a precision of 3-5\%, equivalent to 
-a radial-velocity (RV) precision of 2.5 cm/sec, 
-or two orders of magnitude more precise than current RV capabilities.  We find the eccentricities of 
-the planets are very small; the orbits are extremely coplanar; and the system is stable on 10 Myr timescales. 
-We find evidence of infrequent timing outliers; however, additional planets cannot
-explain these, which we attribute to systematic errors using a robust likelihood function.
-We forecast JWST timing observations, and speculate on possible implications of the planet densities for the formation, migration and evolution of the planet system. 
+    We have collected transit times for the TRAPPIST-1 system with the Spitzer
+    space telescope over three years.  We add to these ground-based, HST and K2 transit time
+    measurements, and revisit a transit-timing N-body dynamical analysis of the seven-planet system
+    using our complete set of times.  From the transit timing
+    analysis, we refine the mass ratios of the planets to the star.  We next carry out a
+    photodynamical analysis of the Spitzer light curves to derive the density of the host star and the
+    planet densities.  We find that all seven planets' densities may be described with a single rocky
+    mass-radius relation which is depleted in iron relative to Earth, with Fe 17 wt\% versus
+    32 wt\% for Earth, and otherwise Earth-like in composition.  Alternatively, the planets may
+    have an Earth-like composition, but with volatile enhancement,
+    such as an surface water layer or a core-free structure with oxidized iron in the mantle.  We measure
+    planet masses to a precision of 3-5\%, equivalent to
+    a radial-velocity (RV) precision of 2.5 cm/sec,
+    or two orders of magnitude more precise than current RV capabilities.  We find the eccentricities of
+    the planets are very small; the orbits are extremely coplanar; and the system is stable on 10 Myr timescales.
+    We find evidence of infrequent timing outliers; however, additional planets cannot
+    explain these, which we attribute to systematic errors using a robust likelihood function.
+    We forecast JWST timing observations, and speculate on possible implications of the planet densities for the formation, migration and evolution of the planet system.
 \end{abstract}
 
 %% Keywords should appear after the \end{abstract} command. 
 %% See the online documentation for the full list of available subject
 %% keywords and the rules for their use.
-\keywords{ infrared: planetary systems --- planets and satellites: terrestrial planets 
---- planets and satellites: compositions --- planets and satellites: fundamental parameters}
+\keywords{ infrared: planetary systems --- planets and satellites: terrestrial planets
+    --- planets and satellites: compositions --- planets and satellites: fundamental parameters}
 
 %% From the front matter, we move on to the body of the paper.
 %% Sections are demarcated by \section and \subsection, respectively.
@@ -379,9 +381,9 @@ We forecast JWST timing observations, and speculate on possible implications of 
 The TRAPPIST-1 planetary system took the exoplanet community by surprise
 thanks to the high multiplicity of small transiting planets orbiting a very-low-mass star ($\sim0.09 M_\odot$; \citealt{Gillon2016, Gillon2017, Luger2017a, vanGrootel2018}).
 The unexpected nature stems from the fact that this system was found through a survey
-of only 50 nearby ultracool dwarf stars \citep{Jehin2011, Gillon2013}, suggesting either a high-frequency of such systems around the latest of the M-dwarfs \citep{He2016}, or perhaps this discovery was fortuitous \citep{Sestovic2020, Sagear2020}.  
+of only 50 nearby ultracool dwarf stars \citep{Jehin2011, Gillon2013}, suggesting either a high-frequency of such systems around the latest of the M-dwarfs \citep{He2016}, or perhaps this discovery was fortuitous \citep{Sestovic2020, Sagear2020}.
 The proximity of the host star ($\sim$12pc) makes
-it brighter in the infrared ($K=10.3$) than most ultracool dwarfs. 
+it brighter in the infrared ($K=10.3$) than most ultracool dwarfs.
 Its small size ($\sim 0.12 R_\odot$)
 means that its planets' masses and radii are large relative to those of
 the star, which enables precise characterization of the planets' properties.
@@ -389,75 +391,75 @@ The system provides the first opportunity for a detailed study of potentially
 rocky, Earth-sized exoplanets with incident fluxes similar to the terrestrial
 planets in our Solar System.  As such, it has galvanized the exoplanet
 community to study this system in detail, both observationally and theoretically,
-and has fueled hopes that atmospheric signatures (or even biosignatures) might 
-be detected with the James Webb Space Telescope \citep{Barstow2016, Morley2017, 
-Batalha2018, Krissansen2018, Wunderlich2019, Fauchez2019a, Lustig-Yaeger2019}.  
+and has fueled hopes that atmospheric signatures (or even biosignatures) might
+be detected with the James Webb Space Telescope \citep{Barstow2016, Morley2017,
+    Batalha2018, Krissansen2018, Wunderlich2019, Fauchez2019a, Lustig-Yaeger2019}.
 
 More conservatively, the system provides a potential laboratory
 for comparative planetology of terrestrial planets, and may provide insight
 and constraints on the formation and evolution of terrestrial planets around
-the lowest-mass stars. In particular, transiting multi-planet systems afford 
-an opportunity to constrain the interior compositions of exoplanets.  Sizes 
-from transit depths combined  with masses from transit-timing variations yield 
-the densities of the planets \citep[e.g.][]{Agol2017}. In the case of rocky 
-planets with a thin atmosphere, the bulk density can constrain the core-mass 
-fraction and/or Mg/Fe mass-ratio \citep{Valencia2007}, although for any given 
-planet there is still a degeneracy between a larger core-mass fraction and a 
-volatile envelope \citep{Dorn2018}.  In a multi-planet system, the bulk density 
-as a function of planet orbital distance may be used to partly break the compositional 
+the lowest-mass stars. In particular, transiting multi-planet systems afford
+an opportunity to constrain the interior compositions of exoplanets.  Sizes
+from transit depths combined  with masses from transit-timing variations yield
+the densities of the planets \citep[e.g.][]{Agol2017}. In the case of rocky
+planets with a thin atmosphere, the bulk density can constrain the core-mass
+fraction and/or Mg/Fe mass-ratio \citep{Valencia2007}, although for any given
+planet there is still a degeneracy between a larger core-mass fraction and a
+volatile envelope \citep{Dorn2018}.  In a multi-planet system, the bulk density
+as a function of planet orbital distance may be used to partly break the compositional
 degeneracy by assuming a common refractory composition and a water composition
 which increases with orbital distance \citep{Unterborn2018a}.
 
 
-The TRAPPIST-1 system was found with a ground-based pilot survey using a 60-cm telescope, 
-revealing two short-period transiting planets, and two additional orphan transits 
-\citep{Gillon2016, Burdanov2018}.  Subsequent study of the system revealed several 
-additional orphan transits, leading to an incomplete picture of the number of planets 
-and the architecture of the system.  A 20-day observation run with Spitzer resolved the 
+The TRAPPIST-1 system was found with a ground-based pilot survey using a 60-cm telescope,
+revealing two short-period transiting planets, and two additional orphan transits
+\citep{Gillon2016, Burdanov2018}.  Subsequent study of the system revealed several
+additional orphan transits, leading to an incomplete picture of the number of planets
+and the architecture of the system.  A 20-day observation run with Spitzer resolved the
 confusion, revealing the periods of six of the seven transiting planets \citep{Gillon2017},
-but only a single transit observed of the outermost planet left its orbit in question.  
-A subsequent observation campaign of the system with the K2 spacecraft included four 
+but only a single transit observed of the outermost planet left its orbit in question.
+A subsequent observation campaign of the system with the K2 spacecraft included four
 additional transits of the outer planet, identifying its period, and reveals a series
-of generalized three-body Laplace relations (GLRs)\footnote{This refers to the condition 
-$pP_1^{-1}-(p+q)P_2^{-1}+qP_3^{-1} \approx 0$, which is a generalization of the Laplace 
-resonance with $p=1$ and $q=2$ \citep{Papaloizou2014}. } between adjacent triplets of 
-planets \citep{Luger2017a}.  Additional observations with Spitzer 
-continued to monitor the transit times of the seven planets at higher precision than 
-afforded by ground-based observations. An initial analysis of the Spitzer data to determine 
-planetary radii and masses was presented in \citet{Delrez2018a} and \citet{Grimm2018}. In total, 
-Spitzer observed TRAPPIST-1 for more than 1000hrs, and the resulting time-series photometry 
+of generalized three-body Laplace relations (GLRs)\footnote{This refers to the condition
+$pP_1^{-1}-(p+q)P_2^{-1}+qP_3^{-1} \approx 0$, which is a generalization of the Laplace
+resonance with $p=1$ and $q=2$ \citep{Papaloizou2014}. } between adjacent triplets of
+planets \citep{Luger2017a}.  Additional observations with Spitzer
+continued to monitor the transit times of the seven planets at higher precision than
+afforded by ground-based observations. An initial analysis of the Spitzer data to determine
+planetary radii and masses was presented in \citet{Delrez2018a} and \citet{Grimm2018}. In total,
+Spitzer observed TRAPPIST-1 for more than 1000hrs, and the resulting time-series photometry
 includes 188 transits \citep{Ducrot2020}.
 
 Although the planets in the TRAPPIST-1 system have short orbital periods, ranging from
-1.5 to 19 days, the dynamical interactions accumulate gradually with time, which requires 
+1.5 to 19 days, the dynamical interactions accumulate gradually with time, which requires
 longer-timescale monitoring to accurately constrain the orbital model.
-The GLRs also cause adjacent pairs of planets to reside near mean-motion resonances, 
-for which $j P_i^{-1} \approx (j+k) P_{i+1}^{-1}$ for integers $j$ and $k$ for the $i$th and $i+1$th planets.  This proximity causes a resonant timescale 
+The GLRs also cause adjacent pairs of planets to reside near mean-motion resonances,
+for which $j P_i^{-1} \approx (j+k) P_{i+1}^{-1}$ for integers $j$ and $k$ for the $i$th and $i+1$th planets.  This proximity causes a resonant timescale
 given by
 \begin{equation}
     P_{TTV} = \frac{k}{j P_i^{-1} - (j+k) P_{i+1}^{-1}}.
-\end{equation} 
-The period of the resonant terms for each of these pairs of planets is $P_{TTV} \approx 487\pm 24$ 
-days (ranging from 453 to 519 days for each pair).  This timescale has two consequences for 
-measuring the masses of the planets from transit-timing variations:  1)  the transit times 
-for each planet need to be sampled on this timescale, preferable covering two cycles so that 
-the amplitude and phase of the cycles may be distinguished from the planets' orbital periods; 
-2) this resonant period also sets the timescale for the amplitude variability of ``chopping" (short-timescale 
-transit-timing variations), which can help to break a degeneracy between mass and eccentricity for the resonant terms 
-\citep{Lithwick2012,Deck2015}.  As a consequence, we expect the measurements of the masses 
-of the system to require sampling on a timescale of $t_{min} \approx 2 P_{TTV} \approx 2.7$ years.  
+\end{equation}
+The period of the resonant terms for each of these pairs of planets is $P_{TTV} \approx 487\pm 24$
+days (ranging from 453 to 519 days for each pair).  This timescale has two consequences for
+measuring the masses of the planets from transit-timing variations:  1)  the transit times
+for each planet need to be sampled on this timescale, preferable covering two cycles so that
+the amplitude and phase of the cycles may be distinguished from the planets' orbital periods;
+2) this resonant period also sets the timescale for the amplitude variability of ``chopping" (short-timescale
+transit-timing variations), which can help to break a degeneracy between mass and eccentricity for the resonant terms
+\citep{Lithwick2012,Deck2015}.  As a consequence, we expect the measurements of the masses
+of the system to require sampling on a timescale of $t_{min} \approx 2 P_{TTV} \approx 2.7$ years.
 Consequently, the current paper is the first with a survey time, $t_{survey}$, such that $t_{survey} {>} t_{min}$ for the TRAPPIST-1 system.
 
-Prior studies used the data available at the time, with $t_{survey} {<} t_{min}$, causing ample 
-degeneracy in the dynamical model, and hence larger uncertainties in the masses of the planets 
-\citep{Gillon2017,Grimm2018}.  Even so, these papers were ground-breaking as they enable the 
-first density determinations of temperate, Earth-sized planets exterior to the Solar System.  
-Both papers indicated densities for the planets which are lower than the value expected for 
-an Earth-like composition (with the exception of planet e), indicating that these planets might 
-have a significant volatile content.  However, these conclusions were subject to significant 
-uncertainty in the planet masses, making the determination of the compositions less definitive as the uncertainties were still consistent with rocky bodies at the $1-2 \sigma$ level.  
-In addition, the masses of all of the planets are highly correlated due to the fact that the 
-dynamical state of all of the planets needs to be solved together, so model comparisons with individual planets 
+Prior studies used the data available at the time, with $t_{survey} {<} t_{min}$, causing ample
+degeneracy in the dynamical model, and hence larger uncertainties in the masses of the planets
+\citep{Gillon2017,Grimm2018}.  Even so, these papers were ground-breaking as they enable the
+first density determinations of temperate, Earth-sized planets exterior to the Solar System.
+Both papers indicated densities for the planets which are lower than the value expected for
+an Earth-like composition (with the exception of planet e), indicating that these planets might
+have a significant volatile content.  However, these conclusions were subject to significant
+uncertainty in the planet masses, making the determination of the compositions less definitive as the uncertainties were still consistent with rocky bodies at the $1-2 \sigma$ level.
+In addition, the masses of all of the planets are highly correlated due to the fact that the
+dynamical state of all of the planets needs to be solved together, so model comparisons with individual planets
 are not independent.
 
 %The primary goal of this paper is to revisit a transit timing analysis of the TRAPPIST-1 planetary system, taking into account the dynamical interactions between the planets to derive their masses (relative to the star), as well as their orbital eccentricities.  Along with this analysis, we revisit the photometric analysis of the transits, using our dynamical model as a constraint upon the transit times of the planets to sharpen the measurement of the radius-ratios, impact parameters, limb-darkening, and stellar density.
@@ -475,16 +477,16 @@ in this paper.  In \S \ref{sec:outliers} we discuss the nature of transit
 timing outliers, and the robust likelihood function we use for characterizing the
 system.  This is followed by a description of our N-body transit-timing analysis
 in \S \ref{sec:transit_timing}.  With the improved N-body model, we revisit the
-photometric fit to the Spitzer data, providing a photodynamical model in \S 
+photometric fit to the Spitzer data, providing a photodynamical model in \S
 \ref{sec:photodynamics}.  The results of these two analyses are combined to
 obtain the planet bulk properties in \S \ref{sec:mass_radius_relation}.  In \S \ref{sec:stellar_params} we derive revised parameters for the host star.  In \S \ref{sec:detection} we search for an eighth planet with transit-timing.  In \S \ref{sec:theoretical_interpretation} we interpret the mass-radius measurements for the planets in terms of interior and atmospheric structure models.  Discussion and conclusions
 are given in \S \ref{sec:discussion} and \ref{sec:conclusions}.
 
 \section{New TRAPPIST-1 observations} \label{sec:observations}
 
-Since the work described in \citet{Grimm2018} based on 284 transits, we 
+Since the work described in \citet{Grimm2018} based on 284 transits, we
 have added an additional 163 transit times from a combination of Spitzer
-(\S \ref{sec:spitzerobs}) and ground-based observations (\S 
+(\S \ref{sec:spitzerobs}) and ground-based observations (\S
 \ref{sec:groundbasedobs}).  Based on preliminary transit-timing
 fits, we find evidence for outliers amongst the measured times
 (\S \ref{sec:outliers}), which we account for with a robust likelihood
@@ -502,7 +504,7 @@ model.  Each transit time is measured as a Barycentric Julian Date (BJD), correc
 
 \subsection{Spitzer Observations} \label{sec:spitzerobs}
 
-The dataset used in this work includes the entire photometry database of TRAPPIST-1 observations by Spitzer/IRAC since the discovery of its planetary system. This represents all time series observations gathered within the DDT programs 12126 (PI: M. Gillon), 13175 (PI: L. Delrez) and 14223 (PI: E. Agol). This gives a total of 188 transits observed from Feb 2016 to Oct 2019 and includes 64, 47, 23, 18, 16, 13, and 7 transits of planets b, c, d, e, f, g, and h, respectively \citep{Ducrot2020}. All these data can be accessed through the online Spitzer Heritage Archive database\footnote{\url{http://sha.ipac.caltech.edu}}. 
+The dataset used in this work includes the entire photometry database of TRAPPIST-1 observations by Spitzer/IRAC since the discovery of its planetary system. This represents all time series observations gathered within the DDT programs 12126 (PI: M. Gillon), 13175 (PI: L. Delrez) and 14223 (PI: E. Agol). This gives a total of 188 transits observed from Feb 2016 to Oct 2019 and includes 64, 47, 23, 18, 16, 13, and 7 transits of planets b, c, d, e, f, g, and h, respectively \citep{Ducrot2020}. All these data can be accessed through the online Spitzer Heritage Archive database\footnote{\url{http://sha.ipac.caltech.edu}}.
 Observations were obtained with Spitzer Space telescope's Infrared Array Camera \citep[IRAC;][] {Carey2004} in subarray mode (32 $\times$ 32 pixels windowing of the detector) with an exposure time of 1.92 s and a cadence of 2.06 min. In order to minimize the pixel-phase effect \citep{Knutson2008} the peak-up mode was used \citep{Ingalls2016} to fine tune the positioning of the target on the detector following the IRAC Instrument Handbook.\footnote{\href{https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/iracinstrumenthandbook/}{IRAC Instrument Handbook}} Finally, calibration was performed using Spitzer pipeline S19.2.0 to output data as cubes of 64 subarray images of 32 $\times$ 32 pixels (the pixel scale being 1.2 arcsec). Each set of exposures was summed over the 2.06 minute cadence to allow for a tractable data volume for carrying out the photometric analysis, which is described in detail in \citet{Delrez2018a} and \citet{Ducrot2020}.
 
 \subsection{Ground-based observations} \label{sec:groundbasedobs}
@@ -511,31 +513,31 @@ Observations were obtained with Spitzer Space telescope's Infrared Array Camera 
 
 %{\color{red} Artem Burdanov, Amaury Triaud, Manu Jehin and Susan Lederer could you help to write this section?}
 
-In addition to the new Spitzer times, 125 transits were observed by the SPECULOOS-South Observatory \citetext{SSO, \citealt{Burdanov2018,Jehin2018}, \citealt{Gillon2018}, \citealt{Delrez2018b}} at Cerro Paranal, Chile, TRAPPIST-South at La Silla Chile, \citep[TS;][]{Jehin2011,Gillon2011}, and TRAPPIST-North at Oukaimeden Morocco, \citep[TN;][]{Barkaoui2019AJ}. These observations were carried out in an I+z filter with exposure times 23s, 50s and 50s, respectively; characteristics of this filter are described in \cite{Murray2020}. 
+In addition to the new Spitzer times, 125 transits were observed by the SPECULOOS-South Observatory \citetext{SSO, \citealt{Burdanov2018,Jehin2018}, \citealt{Gillon2018}, \citealt{Delrez2018b}} at Cerro Paranal, Chile, TRAPPIST-South at La Silla Chile, \citep[TS;][]{Jehin2011,Gillon2011}, and TRAPPIST-North at Oukaimeden Morocco, \citep[TN;][]{Barkaoui2019AJ}. These observations were carried out in an I+z filter with exposure times 23s, 50s and 50s, respectively; characteristics of this filter are described in \cite{Murray2020}.
 Observations were also performed with the Liverpool Telescope  \citep[LT,][]{Steele2004} and the William-Herschel Telescope (WHT), both installed at the Roque de los Muchachos observatory, La Palma. Only one transit of planet b and one of d were targeted with the WHT whereas 15 transits of several planets were targeted with LT. For LT observations, the IO:O optical wide field camera was used in Sloan z’ band with 20s exposure time. One transit of b was observed with the  Himalayan Chandra Telescope (HCT). Finally, a total of 26 transits were observed in the near-IR (1.2~-2.1~$\mu$m) with the WFCAM near-IR imager of the the United Kingdom Infra-Red Telescope (UKIRT) \citep{Casali2007}, the IRIS2IR-imager installed on the the Anglo-Australian Telescope (AAT) \citep{Tinney2004}, and the HAWK-I cryogenic wide-field imager installed on Unit Telescope 4 (Yepun) of the ESO Very Large Telescope (VLT) \citep{Siebenmorgen2011}.
-These observations are summarized in Table \ref{tab:transit_time_list}, and additional information may be found in \citet{Gillon2016} for WHT and TRAPPIST, in  \citet{Ducrot2018} for SSO and LT, and in \citet{Gillon2017} and \citet{Burdanov2019} for AAT, UKIRT and VLT. 
+These observations are summarized in Table \ref{tab:transit_time_list}, and additional information may be found in \citet{Gillon2016} for WHT and TRAPPIST, in  \citet{Ducrot2018} for SSO and LT, and in \citet{Gillon2017} and \citet{Burdanov2019} for AAT, UKIRT and VLT.
 
-For all ground-based observations, a standard calibration (bias, dark and flat-field corrections) was applied to each image, and fluxes were measured for the stars in the field with the DAOPHOT aperture photometry software \citep{Stetson1987}. Differential photometry was then performed after a careful selection of comparison stars, followed by an MCMC analysis to retrieve transit parameters. 
-  
+For all ground-based observations, a standard calibration (bias, dark and flat-field corrections) was applied to each image, and fluxes were measured for the stars in the field with the DAOPHOT aperture photometry software \citep{Stetson1987}. Differential photometry was then performed after a careful selection of comparison stars, followed by an MCMC analysis to retrieve transit parameters.
+
 \begin{table*}
-\centering                          
-\begin{tabular}{c c c c c c c c c c c}        
-\hline                
-Planet  & HCT & SSO/TS/TN & LT & WHT & VLT/AAT/UKIRT & HST & Spitzer & K2 & Duplicates & Total  \\   
-\hline                        
-   b  & 1 & 45 & 7 & 1 & 10 & 1 & 64 & 48  & 16 & 161  \\      
-   c  & 0 & 28 & 8 & 0 &  7 & 1 & 47 & 30  & 14 & 107  \\  
-   d  & 0 & 11 & 1 & 1 &  5 & 2 & 23 & 19  & 9 & 53 \\  
-   e  & 0 & 18 & 4 & 0 &  3 & 2 & 18 & 12  & 8 & 49 \\  
-   f  & 0 &  9 & 2 & 0 &  4 & 2 & 16 &  7 & 7 & 33  \\  
-   g  & 0 & 11 & 0 & 0 &  3 & 2 & 13 &  6 & 5 & 30  \\  
-   h  & 0 &  3 & 2 & 0 &  0 & 0 & 7 &  4  & 2 & 14  \\
-   \hline
-Total & 1 & 125 & 24 & 2 &  32 & 10 & 188 & 126 & 61 & 447 \\
-\hline 
-\end{tabular}
-\caption{Number of transits from ground-based and space-based observations. Duplicates stand for transits observed simultaneously with distinct observatories. Details on the corresponding observations can be found in \citet{Gillon2016,Gillon2017,Grimm2018,deWit2016,deWit2018,Delrez2018a,Ducrot2018,Burdanov2019,Ducrot2020}.}         
-\label{tab:transit_time_list}
+    \centering
+    \begin{tabular}{c c c c c c c c c c c}
+        \hline
+        Planet & HCT & SSO/TS/TN & LT & WHT & VLT/AAT/UKIRT & HST & Spitzer & K2  & Duplicates & Total \\
+        \hline
+        b      & 1   & 45        & 7  & 1   & 10            & 1   & 64      & 48  & 16         & 161   \\
+        c      & 0   & 28        & 8  & 0   & 7             & 1   & 47      & 30  & 14         & 107   \\
+        d      & 0   & 11        & 1  & 1   & 5             & 2   & 23      & 19  & 9          & 53    \\
+        e      & 0   & 18        & 4  & 0   & 3             & 2   & 18      & 12  & 8          & 49    \\
+        f      & 0   & 9         & 2  & 0   & 4             & 2   & 16      & 7   & 7          & 33    \\
+        g      & 0   & 11        & 0  & 0   & 3             & 2   & 13      & 6   & 5          & 30    \\
+        h      & 0   & 3         & 2  & 0   & 0             & 0   & 7       & 4   & 2          & 14    \\
+        \hline
+        Total  & 1   & 125       & 24 & 2   & 32            & 10  & 188     & 126 & 61         & 447   \\
+        \hline
+    \end{tabular}
+    \caption{Number of transits from ground-based and space-based observations. Duplicates stand for transits observed simultaneously with distinct observatories. Details on the corresponding observations can be found in \citet{Gillon2016,Gillon2017,Grimm2018,deWit2016,deWit2018,Delrez2018a,Ducrot2018,Burdanov2019,Ducrot2020}.}
+    \label{tab:transit_time_list}
 \end{table*}
 
 \subsection{K2 and HST observations}
@@ -551,7 +553,7 @@ Transit times for Hubble Space Telescope observations were utilized, as describe
 %The transit timing variations used for our analyses were obtained from several studies. Timings from Spitzer's observations were collected from \cite{Ducrot2020}, HST timings from \cite{deWit2016,deWit2018,Wakeford2018}, K2 timings from \cite{Luger2017a,Grimm2018}, ground based (SPECULOOS, TRAPPIST, Liverpool telescope, UKIRT, VLT) timings from \cite{Gillon2016,Ducrot2018,Burdanov2019}. 
 
 Assembling the heterogeneous sample of transits which were obtained from a variety of ground- and space-based telescopes,  these observations were analyzed together
-with a global photometric analysis of transits, as described in 
+with a global photometric analysis of transits, as described in
 \citet{Ducrot2020}, with a separate analysis of the overlapping transits once the single-transit analysis was completed.
 For each planet a fixed time of transit for epoch zero ($T_{0}$) and fixed period ($P$) were used, but with timing offset (``TTV") as a fitted parameter for each transit as described by \cite{Ducrot2020}.  The timing offsets are added back
 to the ephemeris to obtain the measured transit times and uncertainties.
@@ -578,7 +580,7 @@ a Gaussian distribution for the timing uncertainties.
 Figure \ref{fig:timing_residuals} shows the cumulative distribution
 function (CDF)
 and a histogram of the normalized residuals versus a single Gaussian
-probability distribution function (PDF) with unit variance (orange line).  
+probability distribution function (PDF) with unit variance (orange line).
 This CDF distribution function disagrees with the Gaussian CDF
 in the wings for $P({>}z) \la 0.1$ and $P({>}z) \ga 0.9$,
 where $z {=} (t_{\mathrm{obs},ij} {-} t_{ij}(\mathbf{x}_\mathrm{dyn}))/\sigma$ are the normalized residuals, with the model time, $t_{ij}(\mathbf{x}_\mathrm{dyn})$, as a function of the dynamical model parameters, $\mathbf{x}_\mathrm{dyn}$, described below.
@@ -588,22 +590,22 @@ relative to a Gaussian distribution.  The histogram in Figure
 \ref{fig:timing_residuals} also demonstrates this clearly:  there
 are 8 data points with $z {<} -3$ and 7 with $z {>} 3$.  With 447
 transit time measurements, we would only have $\approx 1.2$ data points
-with $\vert z\vert {>} 2$ if the distribution were Gaussian with accurately estimated 
-uncertainties.  This excess is even more apparent at 
+with $\vert z\vert {>} 2$ if the distribution were Gaussian with accurately estimated
+uncertainties.  This excess is even more apparent at
 $\vert z \vert {>} 4$. % {\color{red} Discuss the total chi-square, and the low probability of its value.}
 
 We have examined the individual transits that show these discrepancies,
-and there is nothing unusual about their light curves, such as flares, 
+and there is nothing unusual about their light curves, such as flares,
 overlapping transits, or other anomalies.  %{\color{red} Discuss the timing 
 %offset discrepancy which was corrected.}  
 The outliers
-appear for each of the planets, in both ground- and space-based data, 
+appear for each of the planets, in both ground- and space-based data,
 and for measurements with different sizes of uncertainties.  We do
 not think that our N-body model is in error (and we have tried to fit
 with an extra planet, without a significant improvement in the number
 of outliers; see below).  Consequently, we believe that these outliers
 are due to variations in the measured times of transits which are not
-associated with dynamics of the system.  
+associated with dynamics of the system.
 
 We suspect instead that these outliers
 are a consequence of some systematic error(s) present in the data.  There are a variety
@@ -632,21 +634,21 @@ allowed to vary, which we parameterize with
 an additional factor multiplying the variance, which we refer to below as $V_1$.  In the case of the mixture
 model, there are two additional parameters:
 the relative probability of the background, and
-the variance of the background.  In the Student's t-distribution case there is only one 
+the variance of the background.  In the Student's t-distribution case there is only one
 additional free parameter:  the number of
 degrees of freedom, $\nu$ (we treat this as a continuous parameter).
 
-Figure \ref{fig:timing_residuals} shows a histogram of the outliers of the best-fit transit-timing model (described below), 
+Figure \ref{fig:timing_residuals} shows a histogram of the outliers of the best-fit transit-timing model (described below),
 and shows that %both distributions, the mixture model and 
 the Student's t-distribution gives a much higher probability
 for outliers. %, while both distribution functions have a very similar shape.  
 Given that
-i) the Student's t-distribution has one fewer free-parameter than a mixture model, ii)  the 
-mixture-model can have a  bimodal probability (the background and foreground can interchange, 
+i) the Student's t-distribution has one fewer free-parameter than a mixture model, ii)  the
+mixture-model can have a  bimodal probability (the background and foreground can interchange,
 which causes the posterior probability distribution to be multiply-peaked),
 and iii)  the Student's t-distribution has been used in a prior transit-timing study \citep{JontofHutter2016},
 we settled on using this distribution to describe the increased probability
-of the outlier data points. 
+of the outlier data points.
 
 With the description of the dataset complete, we next describe our efforts to model the data.
 
@@ -666,14 +668,15 @@ With the description of the dataset complete, we next describe our efforts to mo
 \begin{figure*}
     \centering
     \includegraphics[width=\hsize]{figures/Students_t_optimized.pdf}
-    \caption{Probability distribution of outliers.  Left:  Cumulative distribution 
-    function of the normalized residuals, $z$.  Blue line is a sequence of normalized residuals. 
-    Orange line is the CDF of a Gaussian distribution. % Green line is the CDF of a  mixture-model (double-Gaussian). 
-    Dashed green line is the CDF of a Student's t- 
-    distribution.  Right: Histogram of the normalized residuals.  Blue data points 
-    are a histogram of the normalized residuals with Poisson uncertainties.  The other lines 
-    have the same meaning as the left panel for the probability distribution function 
-    (PDF),  scaled to match the histogram.}
+    \oscaption{}%
+    {Probability distribution of outliers.  Left:  Cumulative distribution
+        function of the normalized residuals, $z$.  Blue line is a sequence of normalized residuals.
+        Orange line is the CDF of a Gaussian distribution. % Green line is the CDF of a  mixture-model (double-Gaussian). 
+        Dashed green line is the CDF of a Student's t-
+        distribution.  Right: Histogram of the normalized residuals.  Blue data points
+        are a histogram of the normalized residuals with Poisson uncertainties.  The other lines
+        have the same meaning as the left panel for the probability distribution function
+        (PDF),  scaled to match the histogram.}
     \label{fig:timing_residuals}
 \end{figure*}
 
@@ -689,9 +692,9 @@ In this section we describe our transit-timing analysis in detail, starting firs
 
 \subsection{N-body integration}
 
-We integrate the N-body dynamics in Cartesian coordinates with a novel symplectic 
-integrator, \textsf{NbodyGradient}, which is based on the algorithm originally described in \cite{Hernandez2015}, derived from the non-symplectic operator of \cite{GoncalvesFerrari2014}.\footnote{The code may be found at 
-\texttt{https://github.com/ericagol/NbodyGradient}}  The time-evolution operator of the integrator is a succession of Kepler $2$-body problems and simple ``kick" and ``drift" operators.  %{\color{red} Eric, are we using Kepler solvers for all interactions?  I assumed this in my comments. -Yes} 
+We integrate the N-body dynamics in Cartesian coordinates with a novel symplectic
+integrator, \textsf{NbodyGradient}, which is based on the algorithm originally described in \cite{Hernandez2015}, derived from the non-symplectic operator of \cite{GoncalvesFerrari2014}.\footnote{The code may be found at
+    \texttt{https://github.com/ericagol/NbodyGradient}}  The time-evolution operator of the integrator is a succession of Kepler $2$-body problems and simple ``kick" and ``drift" operators.  %{\color{red} Eric, are we using Kepler solvers for all interactions?  I assumed this in my comments. -Yes} 
 The advantage over traditional symplectic methods \citep{Wisdom1991} is that the dominant error is due to three-body interactions, while in the standard methods, the dominant error is due to two-body interactions, meaning close encounters between non-stellar bodies are treated poorly \citep{Hernandez2017}.    The Kepler problem
 for each pair is solved with an efficient universal Kepler solver \citep{Wisdom2015}.
 The symplectic integrator is made to be time-symmetric to yield second-order
@@ -703,11 +706,11 @@ which converges for small time steps \citep{Agol2020}.
 
 The initial conditions are specified with Jacobi coordinates and
 we use a set of orbital elements for each planet given by
-$\mathbf{x}_{dyn} = (\{m_i,P_i,t_{0,i},e_i \cos{\omega_i},e_i\sin{\omega_i}\}; i = 1,...,N_p)$ 
+$\mathbf{x}_{dyn} = (\{m_i,P_i,t_{0,i},e_i \cos{\omega_i},e_i\sin{\omega_i}\}; i = 1,...,N_p)$
 where $N_p$ is the number of planets for a total of $5N_p$ dynamical parameters. In
 addition we take the star to have a mass, $m_0 = M_*/M_\odot$, which we fix to one.
 The units of time for the code are days, while the length scale of the code is taken to be $m_0^{1/3}$ AU. \footnote{Note that as we take $m_0=1$ in our simulations, we need to multiply
-the output of positions and velocities from the code by $(M_*/M_\odot)^{1/3}$ to scale to a stellar mass $M_*$.}
+    the output of positions and velocities from the code by $(M_*/M_\odot)^{1/3}$ to scale to a stellar mass $M_*$.}
 The initial orbital ephemeris, $(P_i,t_{0,i})$, consists of the period and initial time of
 transit which each planet {\it would} have if it orbited a single
 body with the mass of the star and the interior planets, and was
@@ -726,7 +729,7 @@ the inclination and longitude of nodes for each planet.
 
 A symplectic integration time step, $h$, is selected to be small,
 ${<} 5$\%, compared with the orbital period of the innermost planet
-\citep{Wisdom1991}. For most of our integrations we use a time step 
+\citep{Wisdom1991}. For most of our integrations we use a time step
 of $h=0.06$ days, or about 4\% of the orbital period of planet b.
 
 The transit times are found by tracking the positions of each
@@ -735,8 +738,8 @@ dot product of the relative velocity of the planet and star
 with their relative position goes from negative to positive,
 we flag a routine which iterates with Newton's method to find
 the transit time, which is taken to be when this dot product
-equals zero \citep{Fabrycky2010}, corresponding to the mid-point 
-of the transit if acceleration is negligible over the duration of the 
+equals zero \citep{Fabrycky2010}, corresponding to the mid-point
+of the transit if acceleration is negligible over the duration of the
 transit.  The resulting model we obtain
 is for the $j$th transit of the $i$th planet, giving each
 transit time as a function of the initial conditions, $t_{ij}(\mathbf{x}_\mathrm{dyn})$, which can then be compared to the observed times, $t_{\mathrm{obs},ij}$.
@@ -744,15 +747,15 @@ transit time as a function of the initial conditions, $t_{ij}(\mathbf{x}_\mathrm
 Once the transit times have been found for every planet over the
 duration of the time integration, these are then matched with the observed
 transit times to compute the likelihood using the Student's t
-probability distribution.  
+probability distribution.
 The log likelihood function which we
 optimize for each data point is given by
 \begin{equation}
-\begin{split}
-&\log{\mathcal{L}_{ij}}(\mathbf{x}_\mathrm{dyn},\nu,V_1) \\
-&= -\tfrac{\nu+1}{2}\log\left(1+\frac{(t_{\mathrm{obs},ij}-t_{ij}(\mathbf{x}_\mathrm{dyn}))^2}{\nu \sigma_{ij}^2 V_1}\right) \\
-&-\tfrac{1}{2} \log{\left(\pi \nu V_1\right)} + \log{\Gamma\left(\frac{\nu+1}{2}\right)} - \log{\Gamma\left(\frac{\nu}{2}\right)},\cr
-\end{split}
+    \begin{split}
+        &\log{\mathcal{L}_{ij}}(\mathbf{x}_\mathrm{dyn},\nu,V_1) \\
+        &= -\tfrac{\nu+1}{2}\log\left(1+\frac{(t_{\mathrm{obs},ij}-t_{ij}(\mathbf{x}_\mathrm{dyn}))^2}{\nu \sigma_{ij}^2 V_1}\right) \\
+        &-\tfrac{1}{2} \log{\left(\pi \nu V_1\right)} + \log{\Gamma\left(\frac{\nu+1}{2}\right)} - \log{\Gamma\left(\frac{\nu}{2}\right)},\cr
+    \end{split}
 \end{equation}
 where $\Gamma(x)$ is the Gamma function \citep{Fisher1925}.
 
@@ -798,11 +801,11 @@ a constraint which keeps the parameter pinned at the grid
 point.  This results in a profile of the maximum likelihood of
 each parameter, optimized with respect to all other parameters, which yields
 a second estimate for the uncertainties on the parameters.
-The likelihood profile approach does not assume a normal distribution and is useful for checking for 
+The likelihood profile approach does not assume a normal distribution and is useful for checking for
 a multi-modal probability distribution which can trip up Markov-chain analysis.
 
 However, both of these error estimates are incomplete as they
-do not account for non-linear correlations between parameters, for the non-Gaussian shape of the posterior probability, 
+do not account for non-linear correlations between parameters, for the non-Gaussian shape of the posterior probability,
 nor for the prior probability distribution.\footnote{In principle we could include a prior in the Laplace and likelihood profile analyses.}
 %We also show in this figure the posterior probability distributions from the Markov chain analysis, which is discussed below.
 Nevertheless, the agreement between the two estimates gives
@@ -823,21 +826,21 @@ Since we sample in the eccentricity vector of each planet, $\mathbf{e}_i = (e_i\
 of parameter space scales $\propto e_i$, and so an $1/e_i$ prior is needed to
 yield a posterior which has a uniform probability with eccentricity, $e_i$,
 for the $i$th planet
-\citep{Eastman2013}.  
+\citep{Eastman2013}.
 
 In addition to the eccentricity prior, we place broad, uniform priors on each parameter, and we require that
-the prior boundaries have an edge to the probability which varies smoothly from 1 to 0.  For each parameter 
+the prior boundaries have an edge to the probability which varies smoothly from 1 to 0.  For each parameter
 we choose two bounds for which the prior starts to transition from 1 to 0 with a cubic dependence at both
 the upper and lower bound.  For the  bound on a parameter of value $\xi$ we specify
 \begin{eqnarray}
-\Pi_\mathrm{bound}(\xi) = 
-\begin{cases}
-0 &  \xi {\le} \xi_1\\
-3y^2-2y^3; y = \frac{\xi-\xi_1}{\xi_2-\xi_1} & \xi_1 {<} \xi {<} \xi_2\\
-1 & \xi_2 {\le} \xi {\le} \xi_3 \\
-3y^2-2y^3; y = \frac{\xi_4-\xi}{\xi_4-\xi_3} & \xi_3{<} \xi {<} \xi_4\\
-0 &  \xi {\ge} \xi_4
-\end{cases},
+    \Pi_\mathrm{bound}(\xi) =
+    \begin{cases}
+        0                                            & \xi {\le} \xi_1             \\
+        3y^2-2y^3; y = \frac{\xi-\xi_1}{\xi_2-\xi_1} & \xi_1 {<} \xi {<} \xi_2     \\
+        1                                            & \xi_2 {\le} \xi {\le} \xi_3 \\
+        3y^2-2y^3; y = \frac{\xi_4-\xi}{\xi_4-\xi_3} & \xi_3{<} \xi {<} \xi_4      \\
+        0                                            & \xi {\ge} \xi_4
+    \end{cases},
 \end{eqnarray}
 so that the total prior is given by
 \begin{equation}
@@ -848,9 +851,9 @@ $\mathbf{x} {=} \{x_j; j{=} 1,...,N_\mathrm{param}\}$ are given in Table
 \ref{tab:prior_parameterization}, where $N_\mathrm{param} = 5 N_p + 2$.
 The prior probability, then, is given by $\Pi(\mathbf{x})$, which we
 multiply by the likelihood function before sampling.
-This completes the specification of the posterior probability distribution, 
+This completes the specification of the posterior probability distribution,
 \begin{equation}
-P(\mathbf{x}) \propto \Pi(\mathbf{x}) \times \mathcal{L}(\mathbf{x}),
+    P(\mathbf{x}) \propto \Pi(\mathbf{x}) \times \mathcal{L}(\mathbf{x}),
 \end{equation}
 so that we can proceed to discussing the Markov chain sampling of the posterior probability of the model parameters given the data.
 
@@ -861,10 +864,10 @@ with a Markov chain sampler.
 Given the high dimensionality of our model - 37 free parameters - we chose to use
 a Markov chain sampler which efficiently samples in high dimensions:  Hamiltonian
 Monte Carlo \citep[HMC; ][]{Duane1987,Neal2011,Betancourt2017,Monnahan2016}.\footnote{aka ``Hybrid Monte Carlo." Note
-that the ``Hamiltonian" referred to in HMC is not a physical Hamiltonian, but an
-artificial one used for treating the negative log probability as a potential
-energy function, and adding a kinetic energy term, with an artificial momentum conjugate
-to each model parameter (``coordinate").}  This
+    that the ``Hamiltonian" referred to in HMC is not a physical Hamiltonian, but an
+    artificial one used for treating the negative log probability as a potential
+    energy function, and adding a kinetic energy term, with an artificial momentum conjugate
+    to each model parameter (``coordinate").}  This
 sampler requires the {\it gradient} of the likelihood function with respect to
 the model parameters.  The gradient of the likelihood requires the gradient
 of each transit time with respect to the initial conditions of the N-body
@@ -873,13 +876,13 @@ integrator.
 We have written a module for our N-body integrator which computes the
 gradient of each transit time by propagating a Jacobian for the positions
 and velocities of all bodies across every time step throughout the N-body
-integration \citep{Agol2020}, which is multiplied by the Jacobian of the coordinates at the initial timestep computed with respect to the initial Keplerian elements and masses, which specify the initial conditions and comprise the N-body model parameters.  
+integration \citep{Agol2020}, which is multiplied by the Jacobian of the coordinates at the initial timestep computed with respect to the initial Keplerian elements and masses, which specify the initial conditions and comprise the N-body model parameters.
 
-When a transit time is found during the N-body integration with \textsf{NbodyGradient}, we compute the derivative of each transit time with respect to 
-the coordinates at the preceding time step, which we multiply times the Jacobian 
-at that step to obtain the derivatives of each transit time with respect to the 
-initial conditions. 
-The gradient of the prior with respect to the model parameters, and the gradient of the likelihood with respect to the model times and the Student's t-distribution parameters, are each computed with automatic 
+When a transit time is found during the N-body integration with \textsf{NbodyGradient}, we compute the derivative of each transit time with respect to
+the coordinates at the preceding time step, which we multiply times the Jacobian
+at that step to obtain the derivatives of each transit time with respect to the
+initial conditions.
+The gradient of the prior with respect to the model parameters, and the gradient of the likelihood with respect to the model times and the Student's t-distribution parameters, are each computed with automatic
 differentiation, using forward-mode derivatives  \citep{Revels2016}.  The gradient of the likelihood with
 respect to the dynamical model parameters is found by applying the chain rule to the automatic derivatives of the likelihood with respect to the model times with the derivatives computed in the N-body model (from \textsf{NbodyGradient}).
 
@@ -917,11 +920,11 @@ to determine whether to accept the proposed step and add it to the Markov chain,
 We carried out some trial integrations to tune two free parameters:  $\epsilon_0$ and $N_{\mathrm{leap},0}$.  We draw the ``time"-step, $\epsilon$, for each integration from the absolute value of a Normal distribution with width $\epsilon_0$, i.e. $\epsilon \sim \vert N(0,\epsilon_0) \vert$.
 The number of leapfrog steps for each integration we draw from a uniform probability,
 $N_\mathrm{leap} \sim \mathrm{round}(N_{\mathrm{leap},0} \mathcal{U}(0.8,1.0))$.  We found that a choice of $\epsilon_0 = 0.1$
-and $N_{\mathrm{leap},0} = 20$ results in a proposal for which the Metropolis rejection gives a high average acceptance rate of 70\%.  
+and $N_{\mathrm{leap},0} = 20$ results in a proposal for which the Metropolis rejection gives a high average acceptance rate of 70\%.
 
 We ran 112 HMC chains for 2000 steps each (i.e.\ 2000 leapfrog integrations).   Each leapfrog integration averaged about 7 minutes, and so the chains took nine
 days and four hours to complete on four Broadwell Xeon Processors with 28 cores and  128 GB of memory (each processor is a node in the Hyak Mox cluster at the University of Washington).
-We found a minimum mean effective sample size of 57 over all chains, for a 
+We found a minimum mean effective sample size of 57 over all chains, for a
 total number of independent samples of 6409.
 
 \subsection{Results}
@@ -932,26 +935,26 @@ although outliers are clearly visible by eye.  Given the large range of
 the sizes of the uncertainties on the data points, we have created a
 second figure in which a polynomial with an order between 5-30 is fit to
 the data (shown as a green line in Fig.\ \ref{fig:T1_TTVs}).  The polynomial
-has been subtracted from the model and data, and the resulting differences 
+has been subtracted from the model and data, and the resulting differences
 are shown in Fig.\ \ref{fig:chopping}.  The result shows high-frequency variations which are
 associated with the synodic periods of pairs of adjacent planets, typically
 referred to as ``chopping."  The chopping TTVs encode the mass-ratios of
 the companion planets to the star without the influence of the eccentricities,
 and thus provide a constraint on the planet-star mass ratios which is less
-influenced by degeneracies with the orbital elements \citep{Deck2015}.  The 
+influenced by degeneracies with the orbital elements \citep{Deck2015}.  The
 chopping variations are clearly detected for each planet
 (except planet d), which contributes to the higher
 precision of the measurements of the planet
 masses in this paper.
 
 \begin{figure*}
-	\includegraphics[width=0.95\hsize]{figures/T1_ttvs_4panel_stacked.pdf}
+    \includegraphics[width=0.95\hsize]{figures/T1_ttvs_4panel_stacked.pdf}
     \caption{Transit time variation measurements (orange/purple error bars) and best-fit
-    transit-time model (blue/red lines) for a subset of our
-    Spitzer/K2/ground-based data set.  The TTVs are the transit times for each planet 
-    with a best-fit linear ephemeris removed.  Brown error bars indicate $>3\sigma$ outliers.  The light green/brown curves are polynomial fits
-    to each transit timing model used to remove the resonant transit-timing varations;  the residuals
-    of the fit (``chopping") are shown in Fig.\ \ref{fig:chopping}.}
+        transit-time model (blue/red lines) for a subset of our
+        Spitzer/K2/ground-based data set.  The TTVs are the transit times for each planet
+        with a best-fit linear ephemeris removed.  Brown error bars indicate $>3\sigma$ outliers.  The light green/brown curves are polynomial fits
+        to each transit timing model used to remove the resonant transit-timing varations;  the residuals
+        of the fit (``chopping") are shown in Fig.\ \ref{fig:chopping}.}
     \label{fig:T1_TTVs}
 \end{figure*}
 
@@ -961,36 +964,36 @@ masses in this paper.
     \centering
     \includegraphics[width=\hsize]{figures/T1_chopping.pdf}
     \caption{Transit times with a polynomial subtracted (orange error bars) to reveal short-timescale chopping variations (blue model).  Green dots show the analytic chopping relation from \citet{Agol2005,Deck2015} due to adjacent planets, also with a low-order polynomial removed. For the inner four planets we have
-    only plotted data with
-    uncertainties smaller than the chopping semi-amplitude  (many observations have large uncertainties which would obscure the plot).}
+        only plotted data with
+        uncertainties smaller than the chopping semi-amplitude  (many observations have large uncertainties which would obscure the plot).}
     \label{fig:chopping}
 \end{figure*}
 
 \begin{table*}
-	\centering
-	\caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1-\sigma$ uncertainties.  Note that the mass ratios, $\mu$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimate of the planet mass).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
-	The parameters $P$, $t_0$, $e\cos{\omega}$, and
-	$e\sin{\omega}$ describe the osculating Jacobi elements at the start
-	of the simulation, on date BJD $-2,450,000 = 7257.93115525$.}
-	\label{tab:TTV_parameters}
-	\begin{tabular}{lccccccc} 
-		\hline
-& $\mu = \frac{M_p}{M_*}$ & $M_p$ & $\frac{\sigma_\mu}{\mu}$ & $P$& $t_0$  & $ e\cos{\omega}$ & $ e\sin{\omega}$  \cr
-& [$M_\oplus\left(\frac{0.09 M_\odot}{M_*}\right)$] & [$10^{-5} M_*$] & \% & [day] & [BJD-2,450,000] &  & \cr 
-\hline
-b & $1.3771{\pm} 0.0593$ & $ 4.596{\pm}  0.198$ & $4.3$ & $1.510826{\pm} 0.000006$ & $7257.55044{\pm} 0.00015$ & $-0.00215{\pm} 0.00332$ & $0.00217{\pm} 0.00244$ \cr 
-c & $1.3105{\pm} 0.0453$ & $ 4.374{\pm}  0.151$ & $3.5$ & $2.421937{\pm} 0.000018$ & $7258.58728{\pm} 0.00027$ & $0.00055{\pm} 0.00232$ & $0.00001{\pm} 0.00171$ \cr 
-d & $0.3885{\pm} 0.0074$ & $ 1.297{\pm}  0.025$ & $1.9$ & $4.049219{\pm} 0.000026$ & $7257.06768{\pm} 0.00067$ & $-0.00496{\pm} 0.00186$ & $0.00267{\pm} 0.00112$ \cr 
-e & $0.6932{\pm} 0.0128$ & $ 2.313{\pm}  0.043$ & $1.8$ & $6.101013{\pm} 0.000035$ & $7257.82771{\pm} 0.00041$ & $0.00433{\pm} 0.00149$ & $-0.00461{\pm} 0.00087$ \cr 
-f & $1.0411{\pm} 0.0155$ & $ 3.475{\pm}  0.052$ & $1.5$ & $9.207540{\pm} 0.000032$ & $7257.07426{\pm} 0.00085$ & $-0.00840{\pm} 0.00130$ & $-0.00051{\pm} 0.00087$ \cr 
-g & $1.3238{\pm} 0.0171$ & $ 4.418{\pm}  0.057$ & $1.3$ & $12.352446{\pm} 0.000054$ & $7257.71462{\pm} 0.00103$ & $0.00380{\pm} 0.00112$ & $0.00128{\pm} 0.00070$ \cr 
-h & $0.3261{\pm} 0.0186$ & $ 1.088{\pm}  0.062$ & $5.7$ & $18.772866{\pm} 0.000214$ & $7249.60676{\pm} 0.00272$ & $-0.00365{\pm} 0.00077$ & $-0.00002{\pm} 0.00044$ \cr 
-		\hline
-	\end{tabular}
+    \centering
+    \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1-\sigma$ uncertainties.  Note that the mass ratios, $\mu$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimate of the planet mass).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
+        The parameters $P$, $t_0$, $e\cos{\omega}$, and
+        $e\sin{\omega}$ describe the osculating Jacobi elements at the start
+        of the simulation, on date BJD $-2,450,000 = 7257.93115525$.}
+    \label{tab:TTV_parameters}
+    \begin{tabular}{lccccccc}
+        \hline
+          & $\mu = \frac{M_p}{M_*}$                           & $M_p$                & $\frac{\sigma_\mu}{\mu}$ & $P$                       & $t_0$                     & $ e\cos{\omega}$        & $ e\sin{\omega}$  \cr
+          & [$M_\oplus\left(\frac{0.09 M_\odot}{M_*}\right)$] & [$10^{-5} M_*$]      & \%                       & [day]                     & [BJD-2,450,000]           &                         & \cr
+        \hline
+        b & $1.3771{\pm} 0.0593$                              & $ 4.596{\pm}  0.198$ & $4.3$                    & $1.510826{\pm} 0.000006$  & $7257.55044{\pm} 0.00015$ & $-0.00215{\pm} 0.00332$ & $0.00217{\pm} 0.00244$ \cr
+        c & $1.3105{\pm} 0.0453$                              & $ 4.374{\pm}  0.151$ & $3.5$                    & $2.421937{\pm} 0.000018$  & $7258.58728{\pm} 0.00027$ & $0.00055{\pm} 0.00232$  & $0.00001{\pm} 0.00171$ \cr
+        d & $0.3885{\pm} 0.0074$                              & $ 1.297{\pm}  0.025$ & $1.9$                    & $4.049219{\pm} 0.000026$  & $7257.06768{\pm} 0.00067$ & $-0.00496{\pm} 0.00186$ & $0.00267{\pm} 0.00112$ \cr
+        e & $0.6932{\pm} 0.0128$                              & $ 2.313{\pm}  0.043$ & $1.8$                    & $6.101013{\pm} 0.000035$  & $7257.82771{\pm} 0.00041$ & $0.00433{\pm} 0.00149$  & $-0.00461{\pm} 0.00087$ \cr
+        f & $1.0411{\pm} 0.0155$                              & $ 3.475{\pm}  0.052$ & $1.5$                    & $9.207540{\pm} 0.000032$  & $7257.07426{\pm} 0.00085$ & $-0.00840{\pm} 0.00130$ & $-0.00051{\pm} 0.00087$ \cr
+        g & $1.3238{\pm} 0.0171$                              & $ 4.418{\pm}  0.057$ & $1.3$                    & $12.352446{\pm} 0.000054$ & $7257.71462{\pm} 0.00103$ & $0.00380{\pm} 0.00112$  & $0.00128{\pm} 0.00070$ \cr
+        h & $0.3261{\pm} 0.0186$                              & $ 1.088{\pm}  0.062$ & $5.7$                    & $18.772866{\pm} 0.000214$ & $7249.60676{\pm} 0.00272$ & $-0.00365{\pm} 0.00077$ & $-0.00002{\pm} 0.00044$ \cr
+        \hline
+    \end{tabular}
 \end{table*}
 
 The results of the posterior distribution of our transit-timing analysis are summarized
-in Table \ref{tab:TTV_parameters}.   
+in Table \ref{tab:TTV_parameters}.
 There are 35 parameters
 which describe the planets, in addition to two parameters
 for the Student's t-distribution, $ \log{\nu} = 1.3609 \pm 0.2337$
@@ -1003,41 +1006,41 @@ should not be used to extrapolate to higher-order significance
 without using the full distribution.
 
 The posterior distribution of the {\it ratio} of the planet masses to the star, scaled to a stellar mass of 0.09 $M_\odot$, are given in Table \ref{tab:TTV_parameters} and shown in Figure \ref{fig:mass_likelihood_profile}.  The likelihood profile of
-the mass-ratios of the planets is also plotted in 
+the mass-ratios of the planets is also plotted in
 Figure \ref{fig:mass_likelihood_profile} and appears to be well-behaved. These
 likelihood profiles are also approximately Gaussian in shape, and track the inverse Hessian evaluated at the maximum likelihood to estimate the covariance (also plotted), albeit with a stronger
 tail for planet e at lower mass.  Compared with the prior masses
 estimated by \citet{Grimm2018}, the masses of each planet have increased
-with the exception of planet e which has decreased and planet h which remains the same (Table \ref{tab:grimm_vs_agol}).   The mass ratios of the posterior distribution from the Markov chain  are slightly shifted to smaller values than the likelihood profile and Laplace approximation probabilities for all planets save b and g. 
+with the exception of planet e which has decreased and planet h which remains the same (Table \ref{tab:grimm_vs_agol}).   The mass ratios of the posterior distribution from the Markov chain  are slightly shifted to smaller values than the likelihood profile and Laplace approximation probabilities for all planets save b and g.
 
 \begin{table*}
     \centering
     \scriptsize
     \caption{Mass-ratios of the planets to the star in units of
-    $M_\oplus (0.09 M_\odot/M_*)$ from \citet{Grimm2018} compared with the results from this paper.}
+        $M_\oplus (0.09 M_\odot/M_*)$ from \citet{Grimm2018} compared with the results from this paper.}
     \begin{tabular}{l|c|c|c|c|c|c|c}
-       Planet  & b & c & d & e & f & g & h  \\
-       Grimm et al. (2018) & $1.017_{-0.143}^{+ 0.154}$ & $1.156_{- 0.131 }^{+0.142}$ & $0.297_{- 0.035}^{+ 0.039}$ & $0.772_{- 0.075}^{+ 0.079}$ & $0.934_{- 0.078 }^{+0.080}$ & $1.148_{- 0.095}^{+ 0.098}$ & $0.331_{- 0.049}^{+ 0.056}$\\
-       This paper & $1.3771{\pm} 0.0593$ & $1.3105{\pm}0.0453$ & $0.3885{\pm}0.0074$ & $0.6932{\pm}0.0128$ & $1.0411{\pm}0.0155$ & $1.3238{\pm}0.0171$ & $0.3261{\pm}0.0186$ \\
+        Planet              & b                          & c                           & d                           & e                           & f                           & g                           & h                           \\
+        Grimm et al. (2018) & $1.017_{-0.143}^{+ 0.154}$ & $1.156_{- 0.131 }^{+0.142}$ & $0.297_{- 0.035}^{+ 0.039}$ & $0.772_{- 0.075}^{+ 0.079}$ & $0.934_{- 0.078 }^{+0.080}$ & $1.148_{- 0.095}^{+ 0.098}$ & $0.331_{- 0.049}^{+ 0.056}$ \\
+        This paper          & $1.3771{\pm} 0.0593$       & $1.3105{\pm}0.0453$         & $0.3885{\pm}0.0074$         & $0.6932{\pm}0.0128$         & $1.0411{\pm}0.0155$         & $1.3238{\pm}0.0171$         & $0.3261{\pm}0.0186$         \\
     \end{tabular}
-    
+
     \label{tab:grimm_vs_agol}
 \end{table*}
 
 Figure \ref{fig:ecc_likelihood_profile} shows the probability distributions
 for the eccentricity vector components of each of the planets.
-Each of the eccentricity vector likelihood profile components 
+Each of the eccentricity vector likelihood profile components
 has a nearly Gaussian
 shape.  Likewise, the Laplace approximation covariance uncertainty estimates are overplotted as
 Gaussian distributions very closely match the likelihood profile
 for each parameter.  This agreement is reassuring:  it indicates
 that the likelihood distribution is closely approximated by
-a multi-dimensional normal distribution near the maximum likelihood.   
+a multi-dimensional normal distribution near the maximum likelihood.
 In the eccentricity-vector coordinates,
 the {\it prior} probability distribution is peaked
 at zero to ensure that the volume of phase-space at larger
 eccentricities does not dominate the probability distribution,
-as shown in the lower right panel of Figure \ref{fig:ecc_likelihood_profile}.  
+as shown in the lower right panel of Figure \ref{fig:ecc_likelihood_profile}.
 For the planets which have
 a likelihood distribution which overlaps strongly with zero,
 the prior distribution causes the Markov chain posterior to
@@ -1051,9 +1054,9 @@ higher eccentricities \citep{Ford2006}.
     \centering
     \includegraphics[width=\hsize]{figures/T1_masses_03312020.pdf}
     \caption{Probability distribution of the mass-ratios of each planet to the star, scaled to a stellar mass of $M_*  = 0.09 M_\odot$; panels range from small masses to large.   Thick
-    histograms show the posterior probability distribution of the Markov chain analysis.
-    Horizontal error bars show the $1-\sigma$ mass-ratios from \citet{Grimm2018}.
-    Dark solid curve is the likelihood profile; light, dotted curve is the Laplace approximation.}
+        histograms show the posterior probability distribution of the Markov chain analysis.
+        Horizontal error bars show the $1-\sigma$ mass-ratios from \citet{Grimm2018}.
+        Dark solid curve is the likelihood profile; light, dotted curve is the Laplace approximation.}
     \label{fig:mass_likelihood_profile}
 \end{figure*}
 
@@ -1061,8 +1064,8 @@ higher eccentricities \citep{Ford2006}.
     \centering
     \includegraphics[width=\hsize]{figures/T1_eccentricity_vectors_likelihood_profile_hmc.pdf}
     \caption{Eccentricity vector probability distribution for each planet (y-axes are relative probability).  Thick histogram is the posterior distribution from the Markov chain analysis.  Light, thin line is the Laplace approximation.  Thin dark line is the likelihood profile.  The lower right panel shows the distribution of
-    $e\cos{\omega}$ or $e\sin{\omega}$ for a uniform prior on
-    $e \in \mathcal{U}(0,0.1)$ and $\omega \in \mathcal{U}(0,2\pi)$.}
+        $e\cos{\omega}$ or $e\sin{\omega}$ for a uniform prior on
+        $e \in \mathcal{U}(0,0.1)$ and $\omega \in \mathcal{U}(0,2\pi)$.}
     \label{fig:ecc_likelihood_profile}
 \end{figure*}
 
@@ -1071,8 +1074,8 @@ higher eccentricities \citep{Ford2006}.
     \centering
     \includegraphics[width=\columnwidth]{figures/T1_students_params_transformed.pdf}
     \caption{Likelihood profile (dark line) and Gaussian distribution
-    with Laplace approximation uncertainty (light line) for $\log{\nu}$ (left) and
-    $V_1 e^{1/(2\nu)}$ (right).  The posterior probability distributions are shown with blue histograms.}
+        with Laplace approximation uncertainty (light line) for $\log{\nu}$ (left) and
+        $V_1 e^{1/(2\nu)}$ (right).  The posterior probability distributions are shown with blue histograms.}
     \label{fig:student_param_likelihood_profile}
 \end{figure}
 
@@ -1096,21 +1099,21 @@ With the transit-timing analysis completed, we now use the N-body model to impro
 \section{Photodynamical analysis}\label{sec:photodynamics}
 
 With the mass-ratios and orbital parameters derived from the transit-timing
-analysis, we wish to improve our derivation of the planet and stellar parameters 
-from the Spitzer photometry.   The transit depth, transit duration, and ingress/egress 
-duration combined with  orbital period constrain the impact parameters and density 
-of the star for each planet \citep{Seager2003}.  Combining these constraints for 
-each of the planets  enables a more precise constraint upon the density of the 
+analysis, we wish to improve our derivation of the planet and stellar parameters
+from the Spitzer photometry.   The transit depth, transit duration, and ingress/egress
+duration combined with  orbital period constrain the impact parameters and density
+of the star for each planet \citep{Seager2003}.  Combining these constraints for
+each of the planets  enables a more precise constraint upon the density of the
 star \citep{Kipping2012a}.
-The transit durations are affected by the (small) eccentricities, but to a lesser extent.  We account 
+The transit durations are affected by the (small) eccentricities, but to a lesser extent.  We account
 for the dynamical constraints on the transit-timing model to improve the
-photometric constraints upon these parameters, albeit with the dynamical parameters fixed 
+photometric constraints upon these parameters, albeit with the dynamical parameters fixed
 at the maximum likelihood.
 
 We fit a ``photo-dynamical" model \citep{Carter2012} to the data with the following procedure.
 From the best-fit plane-parallel, edge-on transit time model,
 we compute the sky velocity, $v_\mathrm{sky}$, at each of the mid-transit times, $t_0$,
-from the model (in N-body code units).  We then convert the code units to physical 
+from the model (in N-body code units).  We then convert the code units to physical
 units using the density of the star, obtaining the sky velocity in units
 of $R_*/\mathrm{day}$.
 We account for quadratic limb-darkening of the star with parameters ($q_\mathrm{1,Ch1}, q_\mathrm{2,Ch1},q_\mathrm{1,Ch2},q_\mathrm{2,Ch2}$) in the two Spitzer channels, and for each
@@ -1121,15 +1124,15 @@ of wavelength for the two Spitzer channels, while we treat the planet radius
 ratios as identical in both wavebands, giving a total of 19 free parameters
 for the photodynamical model.
 
-We ignore acceleration during the transits, treating the impact parameters as 
+We ignore acceleration during the transits, treating the impact parameters as
 a function of time as
 \begin{equation}
     b(t) = \sqrt{(v_\mathrm{sky} (t-t_0))^2 + b_0^2},
 \end{equation}
 in units of the stellar radius, $R_*$.
 Although this expression ignores the curvature and inclination of the orbits, as well
-as the acceleration of the planet, the star is so small compared with the orbital 
-radii that this approximation is extremely accurate.  The transit model is integrated 
+as the acceleration of the planet, the star is so small compared with the orbital
+radii that this approximation is extremely accurate.  The transit model is integrated
 with an adaptive Simpson rule over each Spitzer exposure time (which has a uniform
 duration binned to 2.15 minutes), as described in \citet{Agol2019}, yielding
 a light curve computed with a precision of better than $10^{-7}$ for all cadences.
@@ -1139,52 +1142,51 @@ planets for all of the Spitzer data in selected windows around each of the obser
 transits.  Starting with Spitzer photometric data which were already corrected for systematic
 variations based on the analysis by \citet{Ducrot2020}, we fit  each transit window
 with the transit model multiplied by a cubic polynomial, whose coefficients are solved
-for via regression at each step in the Markov chain.  
-We 
-transform the $q_1, q_2$ limb-darkening 
+for via regression at each step in the Markov chain.
+We
+transform the $q_1, q_2$ limb-darkening
 parameters to $u_1,u_2$ using the formalism of \citet{Kipping2013} for computing the transit model from \citet{Agol2019}.  After carrying out an initial
 optimization of the model, we take the photometric error to be the
-scatter in each observation window, $\sigma_i$ to yield a reduced chi-square of unity in 
+scatter in each observation window, $\sigma_i$ to yield a reduced chi-square of unity in
 that  window.  With this photometric
 scatter, we compute a $\chi^2$ of the model with respect to the Spitzer
 photometric data, and we optimize the model using a Nelder-Mead algorithm.
 
 To compute the uncertainties on the photodynamical model parameters, we
 use an affine-invariant Markov chain Monte Carlo algorithm \citep{Goodman2010}.\footnote{As
-implemented in the package \texttt{https://github.com/madsjulia/AffineInvariantMCMC.jl}}
+    implemented in the package \texttt{https://github.com/madsjulia/AffineInvariantMCMC.jl}}
 The posterior distribution of the results of the fit are given in Table \ref{tab:photodynamic_params}.
 We used a prior which places bounds on
-each parameter given in 
+each parameter given in
 Table \ref{tab:pd_bounds}.
-We utilized 100 walkers run for 50,000 generations, discarding the first 1500 generations 
+We utilized 100 walkers run for 50,000 generations, discarding the first 1500 generations
 for burn-in.  We computed the effective sample size using the integrated
-auto-correlation length, finding a minimum effective samples size of 6000 over all 
+auto-correlation length, finding a minimum effective samples size of 6000 over all
 19 parameters\footnote{Using \texttt{https://github.com/tpapp/MCMCDiagnostics.jl}}.
 
 \begin{table}
     \centering
     \begin{tabular}{l| c|l}
-    Parameter & Units & Prior \cr
-    \hline
-        $b_0$ & $R_*$ & $\mathcal{U}(0,1)$\cr
-         $R_p$ & $R_*$ & $\mathcal{U}(0,0.2)$\cr
-         $\rho_*$ & $\rho_\odot$ & $\mathcal{U}(0,100)$\cr
-         $(q_{1,\mathrm{Ch 1}},q_{2,\mathrm{Ch 1}})$
-         & --- & $\mathcal{U}(0,1)$\cr
-          $(q_{1,\mathrm{Ch 2}},q_{2,\mathrm{Ch 2}})$
-         & --- & $\mathcal{U}(0,1)$\cr
-         
+        Parameter & Units        & Prior \cr
+        \hline
+        $b_0$     & $R_*$        & $\mathcal{U}(0,1)$\cr
+        $R_p$     & $R_*$        & $\mathcal{U}(0,0.2)$\cr
+        $\rho_*$  & $\rho_\odot$ & $\mathcal{U}(0,100)$\cr
+        $(q_{1,\mathrm{Ch 1}},q_{2,\mathrm{Ch 1}})$
+                  & ---          & $\mathcal{U}(0,1)$\cr
+        $(q_{1,\mathrm{Ch 2}},q_{2,\mathrm{Ch 2}})$
+                  & ---          & $\mathcal{U}(0,1)$\cr
     \end{tabular}
     \caption{Prior bounds on photodynamic parameters.  Note that the same bounds on impact parameter, $b_0$, and radius ratio, $R_p/R_*$, are placed on all seven planets.}
     \label{tab:pd_bounds}
 \end{table}
-To help visualize the model, a photodynamical model with the best-fit parameters is 
-shown in Figure \ref{fig:riverplot} computed over 1600 days.  Planets b and c have 
-short periods, and are far from a $j{:}j{+}1$ period ratio, which is necessary for strong 
-TTVs (if the eccentricities are small).  Hence both of these planets show weak TTVs, 
-and straighter, but still slightly meandering, riverplots.  The outer five planets are pairwise 
-close to a series of $j{:}j{+}1$ resonances, showing strong transit-timing variations on 
-the timescale of the TTV period of $\approx 490$ days.  The other prominent feature 
+To help visualize the model, a photodynamical model with the best-fit parameters is
+shown in Figure \ref{fig:riverplot} computed over 1600 days.  Planets b and c have
+short periods, and are far from a $j{:}j{+}1$ period ratio, which is necessary for strong
+TTVs (if the eccentricities are small).  Hence both of these planets show weak TTVs,
+and straighter, but still slightly meandering, riverplots.  The outer five planets are pairwise
+close to a series of $j{:}j{+}1$ resonances, showing strong transit-timing variations on
+the timescale of the TTV period of $\approx 490$ days.  The other prominent feature
 for the outer 4 planets is the slight zig-zag of transits due to chopping (shown in Figure \ref{fig:chopping}).  %This occurs on the synodic timescale between pairs of planets, and 
 %is a good diagnostic of the nearest companion planets' masses \citep{Deck2015}. 
 
@@ -1192,25 +1194,25 @@ for the outer 4 planets is the slight zig-zag of transits due to chopping (shown
     \centering
     \includegraphics[width=\hsize]{figures/T1_riverplot.pdf}
     \caption{River plots showing every transit over 1600 days for one planet per panel
-    (left to right are b-h, as labelled; the
-    transits of companion planets are omitted from each panel).
-    The x-axis ranges over 200/400$\times$ 30-second exposures centered on the mean ephemeris for the $n$th transit
-    for b-d/e-h respectively (note the 30 sec exposures are higher resolution than the Spitzer time-resolution).
-    Each row contains a transit model, with green being the out-of-transit, and blue in
-    transit.  There are (1059,661,395,262,173,129,85) transits of planets b-h, respectively.  
-    Planets d and h have the smallest sizes, and hence shallowest depths, causing a lighter 
-    color during transit.}
+        (left to right are b-h, as labelled; the
+        transits of companion planets are omitted from each panel).
+        The x-axis ranges over 200/400$\times$ 30-second exposures centered on the mean ephemeris for the $n$th transit
+        for b-d/e-h respectively (note the 30 sec exposures are higher resolution than the Spitzer time-resolution).
+        Each row contains a transit model, with green being the out-of-transit, and blue in
+        transit.  There are (1059,661,395,262,173,129,85) transits of planets b-h, respectively.
+        Planets d and h have the smallest sizes, and hence shallowest depths, causing a lighter
+        color during transit.}
     \label{fig:riverplot}
 \end{figure*}
 
 Figure \ref{fig:impact_parameter} shows the posterior probability distribution of impact
-parameters in units of the stellar radius, $b_0$, derived from the photodynamical 
-model.  Figure \ref{fig:stellar_density} shows the probability distribution of stellar 
+parameters in units of the stellar radius, $b_0$, derived from the photodynamical
+model.  Figure \ref{fig:stellar_density} shows the probability distribution of stellar
 density.  The density correlates with the impact
 parameters of each planet, reaching a tail of lower values
 for higher impact parameters of each planet.  The tail of the density probability
 distribution has an approximately exponential scaling with the density below the
-peak, and cuts off as a normal distribution above.  In table \ref{tab:photodynamic_params} 
+peak, and cuts off as a normal distribution above.  In table \ref{tab:photodynamic_params}
 we report the median and 68.3\% confidence interval
 of the stellar density.  The inferred density is both slightly larger and more precise
 than prior analyses \citep{Delrez2018a}, which we discuss below.
@@ -1225,15 +1227,15 @@ With the measured impact parameters, we compute the inclinations of the planets
 from
 \begin{equation}
     I = \cos^{-1}\left[ \left(\frac{b}{R_*}\right)
-    \left(\frac{a}{R_*}\right)^{-1}\right],
+        \left(\frac{a}{R_*}\right)^{-1}\right],
 \end{equation}
 where we have neglected the eccentricity in this formula due to the extremely
 small values of the eccentricities of the planets from the transit-timing
 analysis (cf Table \ref{tab:TTV_parameters}).  The resulting inclination
-posterior distribution is displayed in Figure \ref{fig:inclination_distribution}.  
-Although the inclination is derived from the impact parameters, which we constrain 
-to be positive, in practice the photodynamical model cannot distinguish between 
-inclinations of $I$ and $180-I$ (Fig.\ \ref{fig:inclination_distribution}), and so we created a histogram of these two options 
+posterior distribution is displayed in Figure \ref{fig:inclination_distribution}.
+Although the inclination is derived from the impact parameters, which we constrain
+to be positive, in practice the photodynamical model cannot distinguish between
+inclinations of $I$ and $180-I$ (Fig.\ \ref{fig:inclination_distribution}), and so we created a histogram of these two options
 with equal probability.
 
 \subsection{Mutual inclinations and stellar density}
@@ -1254,29 +1256,29 @@ such a precise alignment.  We conclude that it is likely that all of the planets
 the same side of the star, and as shown in \citet{Luger2017b}: the planets
 3D orbital inclinations are likely precisely aligned.   This also implies
 that their longitudes of ascending node are likely aligned as well, and
-so in principle we can place a prior on the scatter of the mutual inclinations 
+so in principle we can place a prior on the scatter of the mutual inclinations
 of the planets.  We have re-run a photodynamic Markov chain with an inclination prior such
-that the planets' inclinations are drawn from a Gaussian about their mean value, 
-with a standard deviation of $\sigma_\theta$ which is allowed to freely vary in 
-the chain.  We find a very tightly aligned distribution of inclinations under 
-this assumption, shown in Figure \ref{fig:inclination_prior}.  We also find that 
+that the planets' inclinations are drawn from a Gaussian about their mean value,
+with a standard deviation of $\sigma_\theta$ which is allowed to freely vary in
+the chain.  We find a very tightly aligned distribution of inclinations under
+this assumption, shown in Figure \ref{fig:inclination_prior}.  We also find that
 very small values of $\sigma_\theta$ are preferred, with $ \sigma_\theta = {0.041^\circ}_{-0.016^\circ}^{+0.031^\circ} $.
-If the outer and inner planets are in fact derived from a common inclination 
-distribution, this implies that the TRAPPIST-1 planetary orbits are {\it extremely} 
-flat, even flatter than the Galilean moons which have a dispersion in inclination of 
-$0.25^\circ$.  
+If the outer and inner planets are in fact derived from a common inclination
+distribution, this implies that the TRAPPIST-1 planetary orbits are {\it extremely}
+flat, even flatter than the Galilean moons which have a dispersion in inclination of
+$0.25^\circ$.
 
-The inclination prior also enables a more precise and symmetric 
-estimate of the density of the star, $\rho_*/\rho_\odot {=} 53.22{\pm} 0.53$.  Why is this?  Well, the 
-inclination prior tightens the distribution of the impact parameters of planets b 
-and c (as can be seen by comparing Figures \ref{fig:inclination_distribution} and 
-\ref{fig:inclination_prior}).  These inner two planets have deep and frequent 
-transits and the sharpest ingress and egress, and hence they provide the tightest 
-constraint upon the density of the star of all seven planets \citep{Ducrot2020}.  
-Thus, given that the inclination prior tightens the distributions of inclinations 
-of these two planets, the stellar density posterior is correspondingly tighter, and 
-the low stellar density tail of the posterior is eliminated (see Figure \ref{fig:stellar_density}).  Despite this tighter 
-constraint upon the stellar density, we decide to forego its use in computing the 
+The inclination prior also enables a more precise and symmetric
+estimate of the density of the star, $\rho_*/\rho_\odot {=} 53.22{\pm} 0.53$.  Why is this?  Well, the
+inclination prior tightens the distribution of the impact parameters of planets b
+and c (as can be seen by comparing Figures \ref{fig:inclination_distribution} and
+\ref{fig:inclination_prior}).  These inner two planets have deep and frequent
+transits and the sharpest ingress and egress, and hence they provide the tightest
+constraint upon the density of the star of all seven planets \citep{Ducrot2020}.
+Thus, given that the inclination prior tightens the distributions of inclinations
+of these two planets, the stellar density posterior is correspondingly tighter, and
+the low stellar density tail of the posterior is eliminated (see Figure \ref{fig:stellar_density}).  Despite this tighter
+constraint upon the stellar density, we decide to forego its use in computing the
 densities of the planets given the assumptions inherent in the inclination prior.
 
 \begin{figure}
@@ -1297,7 +1299,7 @@ densities of the planets given the assumptions inherent in the inclination prior
     \centering
     \includegraphics[width=\hsize]{figures/inclination_noprior.pdf}
     \caption{Posterior distribution of inclination angles of the planets given
-    the photodynamical model.}
+        the photodynamical model.}
     \label{fig:inclination_distribution}
 \end{figure}
 
@@ -1305,7 +1307,7 @@ densities of the planets given the assumptions inherent in the inclination prior
     \centering
     \includegraphics[width=\hsize]{figures/inclination_nouprior_incprior.pdf}
     \caption{Posterior distribution of inclination angles of the planets from the photodynamical model assuming
-    a prior on the mutual inclinations of $\Pi_i (2\pi\sigma_\theta^2)^{-1/2} e^{(I_i-\langle I\rangle)^2(2\sigma_\theta^2)^{-1}}$.}
+        a prior on the mutual inclinations of $\Pi_i (2\pi\sigma_\theta^2)^{-1/2} e^{(I_i-\langle I\rangle)^2(2\sigma_\theta^2)^{-1}}$.}
     \label{fig:inclination_prior}
 \end{figure}
 
@@ -1315,27 +1317,27 @@ densities of the planets given the assumptions inherent in the inclination prior
     \scriptsize
     \setlength\tabcolsep{3pt} % default 6pt
     \begin{tabular}{l|c|c|c|c|c|c|c}
-    \hline
-%        Stellar param: & $\rho_*/\rho_\odot$ & $q_{1,Ch 1}$  & $q_{2,Ch 1}$ &  $q_{1,Ch 2}$ & $q_{2,Ch 2}$ & \cr
-%   Value: & $53.7192 \pm 0.8517$ & $0.0599 \pm 0.0265 $  & $0.4700 \pm 0.2092 $  & $0.4830 \pm 0.2904 $  & $0.5139 \pm 0.2879 $  &\cr
-Parameter: & $\rho_*/\rho_\odot$ & $q_{1,Ch 1}$ & $q_{2,Ch 1}$ & $ q_{1,Ch 2}$ & $q_{2,Ch 2}$ &  &\cr
-Value: & $53.1737_{- 1.1758}^{+0.7235}$ & $0.1329{\pm} 0.0524 $ & $0.2573{\pm} 0.1934 $ & $0.0593{\pm} 0.0243 $ & $0.4941{\pm} 0.2037 $ & &\cr
-Parameter: & $ \rho_*$ [g / cm$^3$] & $u_\mathrm{1,Ch 1}$ & $u_\mathrm{2,Ch 1}$ & $u_\mathrm{1,Ch 2}$ & $u_\mathrm{2,Ch 2}$ &  & \cr
-Value: & $75.0471_{- 1.6594}^{+1.0211}$ & $0.1614{\pm} 0.0933 $ & $0.1958{\pm} 0.1523 $ & $0.2183{\pm} 0.0563 $ & $0.0205{\pm} 0.0980 $ & & \cr
-\hline
- Planet: & b & c & d & e & f & g & h\cr
-$R_p/R_*$ &  $0.0859{\pm} 0.0004$ & $0.0844{\pm} 0.0004$ & $0.0606{\pm} 0.0005$ & $0.0708{\pm} 0.0006$ & $0.0804{\pm} 0.0005$ & $0.0869{\pm} 0.0005$ & $0.0581{\pm} 0.0009$ \cr
-Depth [\%] &  $0.7378{\pm} 0.0064$ & $0.7123{\pm} 0.0064$ & $0.3676{\pm} 0.0063$ & $0.5012{\pm} 0.0078$ & $0.6465{\pm} 0.0076$ & $0.7555{\pm} 0.0092$ & $0.3375{\pm} 0.0101$ \cr
-T [min] &  $36.0632{\pm} 0.1127$ & $42.0324{\pm} 0.1265$ & $48.8745{\pm} 0.2436$ & $55.7633{\pm} 0.2632$ & $62.8473{\pm} 0.2502$ & $68.2421{\pm} 0.2819$ & $76.1617{\pm} 0.5625$ \cr
-$\tau$ [min] &  $2.8890{\pm} 0.0463$ & $3.3200{\pm} 0.0544$ & $2.8161{\pm} 0.0438$ & $3.8253{\pm} 0.0708$ & $5.1576{\pm} 0.0894$ & $6.3098{\pm} 0.1093$ & $4.8459{\pm} 0.1129$ \cr
-$b/R_*$ &  $0.0947_{- 0.0607}^{+0.0649}$ & $0.1087_{- 0.0608}^{+0.0592}$ & $0.0630_{- 0.0435}^{+0.0627}$ & $0.1907_{- 0.0405}^{+0.0410}$ & $0.3123_{- 0.0185}^{+0.0231}$ & $0.3786_{- 0.0143}^{+0.0184}$ & $0.3784_{- 0.0229}^{+0.0235}$ \cr
-$a/R_*$ & $20.843_{- 0.155}^{+0.094}$ & $28.549_{- 0.212}^{+0.129}$ & $40.216_{- 0.299}^{+0.182}$ & $52.855_{- 0.392}^{+0.239}$ & $69.543_{- 0.516}^{+0.314}$ & $84.591_{- 0.628}^{+0.382}$ & $111.817_{- 0.830}^{+0.505}$ \cr
- $ I $[$^\circ$] &  $89.728{\pm}  0.165$ &  $89.778{\pm}  0.118$ &  $89.896{\pm}  0.077$ &  $89.793{\pm}  0.048$ &  $89.740{\pm}  0.019$ &  $89.742{\pm}  0.012$ &  $89.805{\pm}  0.013$ \cr
-\hline
+        \hline
+        %        Stellar param: & $\rho_*/\rho_\odot$ & $q_{1,Ch 1}$  & $q_{2,Ch 1}$ &  $q_{1,Ch 2}$ & $q_{2,Ch 2}$ & \cr
+        %   Value: & $53.7192 \pm 0.8517$ & $0.0599 \pm 0.0265 $  & $0.4700 \pm 0.2092 $  & $0.4830 \pm 0.2904 $  & $0.5139 \pm 0.2879 $  &\cr
+        Parameter:      & $\rho_*/\rho_\odot$            & $q_{1,Ch 1}$                  & $q_{2,Ch 1}$                  & $ q_{1,Ch 2}$                 & $q_{2,Ch 2}$                  &                               & \cr
+        Value:          & $53.1737_{- 1.1758}^{+0.7235}$ & $0.1329{\pm} 0.0524 $         & $0.2573{\pm} 0.1934 $         & $0.0593{\pm} 0.0243 $         & $0.4941{\pm} 0.2037 $         &                               & \cr
+        Parameter:      & $ \rho_*$ [g / cm$^3$]         & $u_\mathrm{1,Ch 1}$           & $u_\mathrm{2,Ch 1}$           & $u_\mathrm{1,Ch 2}$           & $u_\mathrm{2,Ch 2}$           &                               & \cr
+        Value:          & $75.0471_{- 1.6594}^{+1.0211}$ & $0.1614{\pm} 0.0933 $         & $0.1958{\pm} 0.1523 $         & $0.2183{\pm} 0.0563 $         & $0.0205{\pm} 0.0980 $         &                               & \cr
+        \hline
+        Planet:         & b                              & c                             & d                             & e                             & f                             & g                             & h\cr
+        $R_p/R_*$       & $0.0859{\pm} 0.0004$           & $0.0844{\pm} 0.0004$          & $0.0606{\pm} 0.0005$          & $0.0708{\pm} 0.0006$          & $0.0804{\pm} 0.0005$          & $0.0869{\pm} 0.0005$          & $0.0581{\pm} 0.0009$ \cr
+        Depth [\%]      & $0.7378{\pm} 0.0064$           & $0.7123{\pm} 0.0064$          & $0.3676{\pm} 0.0063$          & $0.5012{\pm} 0.0078$          & $0.6465{\pm} 0.0076$          & $0.7555{\pm} 0.0092$          & $0.3375{\pm} 0.0101$ \cr
+        T [min]         & $36.0632{\pm} 0.1127$          & $42.0324{\pm} 0.1265$         & $48.8745{\pm} 0.2436$         & $55.7633{\pm} 0.2632$         & $62.8473{\pm} 0.2502$         & $68.2421{\pm} 0.2819$         & $76.1617{\pm} 0.5625$ \cr
+        $\tau$ [min]    & $2.8890{\pm} 0.0463$           & $3.3200{\pm} 0.0544$          & $2.8161{\pm} 0.0438$          & $3.8253{\pm} 0.0708$          & $5.1576{\pm} 0.0894$          & $6.3098{\pm} 0.1093$          & $4.8459{\pm} 0.1129$ \cr
+        $b/R_*$         & $0.0947_{- 0.0607}^{+0.0649}$  & $0.1087_{- 0.0608}^{+0.0592}$ & $0.0630_{- 0.0435}^{+0.0627}$ & $0.1907_{- 0.0405}^{+0.0410}$ & $0.3123_{- 0.0185}^{+0.0231}$ & $0.3786_{- 0.0143}^{+0.0184}$ & $0.3784_{- 0.0229}^{+0.0235}$ \cr
+        $a/R_*$         & $20.843_{- 0.155}^{+0.094}$    & $28.549_{- 0.212}^{+0.129}$   & $40.216_{- 0.299}^{+0.182}$   & $52.855_{- 0.392}^{+0.239}$   & $69.543_{- 0.516}^{+0.314}$   & $84.591_{- 0.628}^{+0.382}$   & $111.817_{- 0.830}^{+0.505}$ \cr
+        $ I $[$^\circ$] & $89.728{\pm}  0.165$           & $89.778{\pm}  0.118$          & $89.896{\pm}  0.077$          & $89.793{\pm}  0.048$          & $89.740{\pm}  0.019$          & $89.742{\pm}  0.012$          & $89.805{\pm}  0.013$ \cr
+        \hline
     \end{tabular}
     \caption{Parameters derived from the photodynamic model.  Top: Stellar density (in units of solar density), limb-darkening parameters ($q_1/q_2$) in Spitzer Channel 1 and 2, and stellar density in cgs units and limb-darkening parameters $u_1$ and $u_2$. Bottom: Radius-ratio of planet to star, $R_p/R_*$; transit depth, $(R_p/R_*)^2$;  transit duration, $T$ (from first to fourth contact); ingress duration, $\tau$ (from first to second contact and third to fourth contact); impact parameter in units of stellar radius, $b/R_*$; and ratio of semi-major axis to stellar radius,
-    $a/R_*$. }
-% Add in: a/R_*, inclination angle for each planet.
+        $a/R_*$. }
+    % Add in: a/R_*, inclination angle for each planet.
     \label{tab:photodynamic_params}
 \end{table*}
 
@@ -1346,41 +1348,41 @@ analysis should be carried out, but we leave this to future work.
 
 \section{Planet densities and mass-radius relation} \label{sec:mass_radius_relation}
 
-With the completion of the transit-timing analysis and photodynamic analysis, we are now ready to revisit the mass-radius relation of the TRAPPIST-1 planets.  
+With the completion of the transit-timing analysis and photodynamic analysis, we are now ready to revisit the mass-radius relation of the TRAPPIST-1 planets.
 
 The only component missing is a constraint upon the mass of the host star.  We use the recent analysis by \citet{Mann2019}, who have constructed a sample of nearby M-dwarf binaries to calibrate the mass-luminosity ($M_*-M_{K_S}$) relation of M-dwarfs down to a mass of 0.075 $M_\odot$.\footnote{Note that ``M" is being used in three ways here: spectral category (M-dwarf), stellar mass ($M_*$), and
-absolute magnitude in the $K_S$ band, $M_{K_S}$.}   Given the precise parallax measurement available for TRAPPIST-1 thanks to GAIA, the relation yields an estimated mass of $M_* = (0.0898\pm 0.0023) M_\odot$.
+    absolute magnitude in the $K_S$ band, $M_{K_S}$.}   Given the precise parallax measurement available for TRAPPIST-1 thanks to GAIA, the relation yields an estimated mass of $M_* = (0.0898\pm 0.0023) M_\odot$.
 
 To derive the masses of the planets, we draw mass-ratios of the planets to the star from the posterior distribution of the transit-timing analysis (\S \ref{sec:transit_timing}), which we multiply by the mass of the star drawn from a normal distribution with $M_* = (0.0898\pm 0.0023) M_\odot$. We then draw the radius-ratios and stellar density from the posterior distribution from the photodynamic analysis (\S \ref{sec:photodynamics}).
 With the same mass draw, we compute the stellar radius as
 \begin{equation}
     R_* = \left(\frac{M_*}{M_\odot}\frac{\rho_\odot}{\rho_*}\right)^{-1/3} R_\odot,
-\end{equation} 
+\end{equation}
 which we multiply by each of the radius ratios drawn from the same sample to obtain the planet radii.   We carry this out for a large number of samples to derive the probability distribution of the masses and radii of the entire posterior probability sample of the planets.
 
 The probability distribution for the masses and radii of the seven planets are shown in Figure \ref{fig:mass_radius_relation}.  The maximum likelihood values and the posterior distributions (for 1- and 2-$\sigma$ confidence) are both plotted in this figure.  We postpone to \S\ref{sec:theoretical_interpretation} a detailed analysis of the densities and resulting constraints on the bulk compositions of the planets.
 
 In addition to masses and radii, we also derive other planetary properties,
 given in Table \ref{tab:uber_table}.  Each of the planets has a density
-intermediate between Mars ($\rho_{\mars}$ = 3.9335 g/cc = 0.713 $\rho_\oplus$) and 
+intermediate between Mars ($\rho_{\mars}$ = 3.9335 g/cc = 0.713 $\rho_\oplus$) and
 Earth ($\rho_\oplus = 5.514$ g/cc).  The surface gravities span a range
-from 57\% of Earth (planet h) to 110\% of Earth (planet b).  
+from 57\% of Earth (planet h) to 110\% of Earth (planet b).
 
 \begin{figure*}
     \centering
-   % \includegraphics[width=\hsize]{figures/T1_mass_radius_000.png}
-   \includegraphics[width=\hsize]{figures/Figure_MR_v8.png}
-    \caption{Mass-radius relation for the seven TRAPPIST-1 planets based on 
-    our transit-timing and photodynamic analysis.  
-    %The maximum likelihood value 
-    %for each planet is plotted with a solid dot, 
-    Each planet's posterior probability is colored by the equilibrium temperature
-    (see colorbar), with the intensity proportional to probability, while the 1- and 2-$\sigma$ 
-    confidence levels from the Markov chain posterior are plotted with solid lines.  
-    %Two mass-radius relations are plotted for reference from \citet{Zeng2019}. 
-    Theoretical mass-radius relations are overplotted using the model in \citet{Dorn2016} for an Earth-like Fe/Mg=0.83 ratio with a core (black dashed) and core-free (magenta), and a range of cored models with Fe/Mg = 0.75$\pm$0.2 (brown).  {\it U17} refers to \citet{Unterborn2018a} (see text).
-     The solid blue line was calculated for a 5$\%$ water composition, for irradiation low enough (i.e. for planets e, f, g and h) that water is condensed on the surface  (assuming a surface pressure of 1 bar and a surface temperature of 300 K). The orange dashed and solid lines were calculated for a 0.01$\%$ and a 5$\%$ water composition, respectively, for irradiation high enough (i.e. for planets b, c and d) that water has fully evaporated in the atmosphere, with the U17 interior model \citep{Turbet2020}.
-    The Earth, Venus and Mars are plotted as single points, also colored by their equilibrium temperatures.}
+    % \includegraphics[width=\hsize]{figures/T1_mass_radius_000.png}
+    \includegraphics[width=\hsize]{figures/Figure_MR_v8.png}
+    \caption{Mass-radius relation for the seven TRAPPIST-1 planets based on
+        our transit-timing and photodynamic analysis.
+        %The maximum likelihood value 
+        %for each planet is plotted with a solid dot, 
+        Each planet's posterior probability is colored by the equilibrium temperature
+        (see colorbar), with the intensity proportional to probability, while the 1- and 2-$\sigma$
+        confidence levels from the Markov chain posterior are plotted with solid lines.
+        %Two mass-radius relations are plotted for reference from \citet{Zeng2019}. 
+        Theoretical mass-radius relations are overplotted using the model in \citet{Dorn2016} for an Earth-like Fe/Mg=0.83 ratio with a core (black dashed) and core-free (magenta), and a range of cored models with Fe/Mg = 0.75$\pm$0.2 (brown).  {\it U17} refers to \citet{Unterborn2018a} (see text).
+        The solid blue line was calculated for a 5$\%$ water composition, for irradiation low enough (i.e. for planets e, f, g and h) that water is condensed on the surface  (assuming a surface pressure of 1 bar and a surface temperature of 300 K). The orange dashed and solid lines were calculated for a 0.01$\%$ and a 5$\%$ water composition, respectively, for irradiation high enough (i.e. for planets b, c and d) that water has fully evaporated in the atmosphere, with the U17 interior model \citep{Turbet2020}.
+        The Earth, Venus and Mars are plotted as single points, also colored by their equilibrium temperatures.}
     \label{fig:mass_radius_relation}
 \end{figure*}
 
@@ -1388,26 +1390,26 @@ from 57\% of Earth (planet h) to 110\% of Earth (planet b).
     \centering
     \setlength\tabcolsep{3pt} % default 6pt
     \begin{tabular}{l|c|c|c|c|c|c|c|}
-     Planet: & b & c & d & e & f & g & h \cr
-    \hline
- $ R$ [$R_\oplus$] &  $  1.116_{- 0.012}^{+ 0.014} $  &  $  1.097_{- 0.012}^{+ 0.014} $  &  $  0.788_{- 0.010}^{+ 0.011} $  &  $  0.920_{- 0.012}^{+ 0.013} $  &  $  1.045_{- 0.012}^{+ 0.013} $  &  $  1.129_{- 0.013}^{+ 0.015} $  &  $  0.755_{- 0.014}^{+ 0.014} $  \cr 
- $ M$ [$M_\oplus$] &  $  1.374{\pm}  0.069 $  &  $  1.308{\pm}  0.056 $  &  $  0.388{\pm}  0.012 $  &  $  0.692{\pm}  0.022 $  &  $  1.039{\pm}  0.031 $  &  $  1.321{\pm}  0.038 $  &  $  0.326{\pm}  0.020 $  \cr 
- $ \rho$ [$\rho_\oplus$] &  $  0.987_{- 0.050}^{+ 0.048} $  &  $  0.991_{- 0.043}^{+ 0.040} $  &  $  0.792_{- 0.030}^{+ 0.028} $  &  $  0.889_{- 0.033}^{+ 0.030} $  &  $  0.911_{- 0.029}^{+ 0.025} $  &  $  0.917_{- 0.029}^{+ 0.025} $  &  $  0.755_{- 0.055}^{+ 0.059} $  \cr 
- $ g $ [$g_\oplus$] &  $  1.102{\pm}  0.052 $  &  $  1.086{\pm}  0.043 $  &  $  0.624{\pm}  0.019 $  &  $  0.817{\pm}  0.024 $  &  $  0.951{\pm}  0.024 $  &  $  1.035{\pm}  0.026 $  &  $  0.570{\pm}  0.038 $  \cr 
-  $ v_\mathrm{esc} $ [$v_\mathrm{esc,\oplus}$] &  $  1.109 \pm  0.026 $  &  $  1.092 \pm  0.022 $  &  $  0.701 \pm  0.010 $  &  $  0.867 \pm  0.012 $  &  $  0.997 \pm  0.012 $  &  $  1.081 \pm  0.013 $  &  $  0.656 \pm  0.020 $  \cr 
- $ S $ [$ S_\oplus $] &  $  4.153_{- 0.159}^{+ 0.161} $  &  $  2.214_{- 0.085}^{+ 0.086} $  &  $  1.115_{- 0.043}^{+ 0.043} $  &  $  0.646_{- 0.025}^{+ 0.025} $  &  $  0.373_{- 0.014}^{+ 0.015} $  &  $  0.252_{- 0.010}^{+ 0.010} $  &  $  0.144_{- 0.006}^{+ 0.006} $  \cr 
- $ a $ [$ 10^{-2} \mathrm{AU} $] &  $  1.154{\pm}  0.010 $  &  $  1.580{\pm}  0.013 $  &  $  2.227{\pm}  0.019 $  &  $  2.925{\pm}  0.025 $  &  $  3.849{\pm}  0.033 $  &  $  4.683{\pm}  0.040 $  &  $  6.189{\pm}  0.053 $  \cr 
- \hline
- $ R$ [$10^8$ cm] &  $  7.119_{- 0.077}^{+ 0.087} $  &  $  6.995_{- 0.077}^{+ 0.086} $  &  $  5.026_{- 0.066}^{+ 0.071} $  &  $  5.868_{- 0.075}^{+ 0.082} $  &  $  6.664_{- 0.077}^{+ 0.085} $  &  $  7.204_{- 0.085}^{+ 0.094} $  &  $  4.817_{- 0.088}^{+ 0.091} $  \cr 
- $ M$ [$10^{27}$ g] &  $  8.211{\pm}  0.412 $  &  $  7.814{\pm}  0.335 $  &  $  2.316{\pm}  0.074 $  &  $  4.132{\pm}  0.130 $  &  $  6.205{\pm}  0.184 $  &  $  7.890{\pm}  0.226 $  &  $  1.945{\pm}  0.122 $  \cr 
- $ \rho $ [ g cm$^{-3}$] &  $  5.425_{- 0.272}^{+ 0.265} $  &  $  5.447_{- 0.235}^{+ 0.222} $  &  $  4.354_{- 0.163}^{+ 0.156} $  &  $  4.885_{- 0.182}^{+ 0.168} $  &  $  5.009_{- 0.158}^{+ 0.138} $  &  $  5.042_{- 0.158}^{+ 0.136} $  &  $  4.147_{- 0.302}^{+ 0.322} $  \cr 
- $ g$ [$10$ m s$^{-2}$] &  $  1.080{\pm}  0.051 $  &  $  1.065{\pm}  0.042 $  &  $  0.611{\pm}  0.019 $  &  $  0.801{\pm}  0.024 $  &  $  0.932{\pm}  0.024 $  &  $  1.015{\pm}  0.025 $  &  $  0.558{\pm}  0.037 $  \cr 
- $ v_\mathrm{esc}$ [$\frac{\mathrm{km}}{\mathrm{s}}$] &  $ 12.400 \pm  0.292 $  &  $ 12.205 \pm  0.241 $  &  $  7.839 \pm  0.110 $  &  $  9.694 \pm  0.133 $  &  $ 11.145 \pm  0.137 $  &  $ 12.087 \pm  0.142 $  &  $  7.335 \pm  0.227 $  \cr 
- $ S $ [$10^6\frac{\mathrm{erg}}{\mathrm{cm}^2\mathrm{s}}$] &  $  5.652_{- 0.216}^{+ 0.220} $  &  $  3.013_{- 0.115}^{+ 0.117} $  &  $  1.518_{- 0.058}^{+ 0.059} $  &  $  0.879_{- 0.034}^{+ 0.034} $  &  $  0.508_{- 0.019}^{+ 0.020} $  &  $  0.343_{- 0.013}^{+ 0.013} $  &  $  0.196_{- 0.008}^{+ 0.008} $  \cr 
- $ a $ [$10^{11}$ cm] &  $  1.726{\pm}  0.015 $  &  $  2.364{\pm}  0.020 $  &  $  3.331{\pm}  0.028 $  &  $  4.376{\pm}  0.037 $  &  $  5.758{\pm}  0.049 $  &  $  7.006{\pm}  0.060 $  &  $  9.259{\pm}  0.079 $  \cr 
+        Planet:                                                    & b                              & c                              & d                              & e                              & f                              & g                              & h \cr
+        \hline
+        $ R$ [$R_\oplus$]                                          & $  1.116_{- 0.012}^{+ 0.014} $ & $  1.097_{- 0.012}^{+ 0.014} $ & $  0.788_{- 0.010}^{+ 0.011} $ & $  0.920_{- 0.012}^{+ 0.013} $ & $  1.045_{- 0.012}^{+ 0.013} $ & $  1.129_{- 0.013}^{+ 0.015} $ & $  0.755_{- 0.014}^{+ 0.014} $  \cr
+        $ M$ [$M_\oplus$]                                          & $  1.374{\pm}  0.069 $         & $  1.308{\pm}  0.056 $         & $  0.388{\pm}  0.012 $         & $  0.692{\pm}  0.022 $         & $  1.039{\pm}  0.031 $         & $  1.321{\pm}  0.038 $         & $  0.326{\pm}  0.020 $  \cr
+        $ \rho$ [$\rho_\oplus$]                                    & $  0.987_{- 0.050}^{+ 0.048} $ & $  0.991_{- 0.043}^{+ 0.040} $ & $  0.792_{- 0.030}^{+ 0.028} $ & $  0.889_{- 0.033}^{+ 0.030} $ & $  0.911_{- 0.029}^{+ 0.025} $ & $  0.917_{- 0.029}^{+ 0.025} $ & $  0.755_{- 0.055}^{+ 0.059} $  \cr
+        $ g $ [$g_\oplus$]                                         & $  1.102{\pm}  0.052 $         & $  1.086{\pm}  0.043 $         & $  0.624{\pm}  0.019 $         & $  0.817{\pm}  0.024 $         & $  0.951{\pm}  0.024 $         & $  1.035{\pm}  0.026 $         & $  0.570{\pm}  0.038 $  \cr
+        $ v_\mathrm{esc} $ [$v_\mathrm{esc,\oplus}$]               & $  1.109 \pm  0.026 $          & $  1.092 \pm  0.022 $          & $  0.701 \pm  0.010 $          & $  0.867 \pm  0.012 $          & $  0.997 \pm  0.012 $          & $  1.081 \pm  0.013 $          & $  0.656 \pm  0.020 $  \cr
+        $ S $ [$ S_\oplus $]                                       & $  4.153_{- 0.159}^{+ 0.161} $ & $  2.214_{- 0.085}^{+ 0.086} $ & $  1.115_{- 0.043}^{+ 0.043} $ & $  0.646_{- 0.025}^{+ 0.025} $ & $  0.373_{- 0.014}^{+ 0.015} $ & $  0.252_{- 0.010}^{+ 0.010} $ & $  0.144_{- 0.006}^{+ 0.006} $  \cr
+        $ a $ [$ 10^{-2} \mathrm{AU} $]                            & $  1.154{\pm}  0.010 $         & $  1.580{\pm}  0.013 $         & $  2.227{\pm}  0.019 $         & $  2.925{\pm}  0.025 $         & $  3.849{\pm}  0.033 $         & $  4.683{\pm}  0.040 $         & $  6.189{\pm}  0.053 $  \cr
+        \hline
+        $ R$ [$10^8$ cm]                                           & $  7.119_{- 0.077}^{+ 0.087} $ & $  6.995_{- 0.077}^{+ 0.086} $ & $  5.026_{- 0.066}^{+ 0.071} $ & $  5.868_{- 0.075}^{+ 0.082} $ & $  6.664_{- 0.077}^{+ 0.085} $ & $  7.204_{- 0.085}^{+ 0.094} $ & $  4.817_{- 0.088}^{+ 0.091} $  \cr
+        $ M$ [$10^{27}$ g]                                         & $  8.211{\pm}  0.412 $         & $  7.814{\pm}  0.335 $         & $  2.316{\pm}  0.074 $         & $  4.132{\pm}  0.130 $         & $  6.205{\pm}  0.184 $         & $  7.890{\pm}  0.226 $         & $  1.945{\pm}  0.122 $  \cr
+        $ \rho $ [ g cm$^{-3}$]                                    & $  5.425_{- 0.272}^{+ 0.265} $ & $  5.447_{- 0.235}^{+ 0.222} $ & $  4.354_{- 0.163}^{+ 0.156} $ & $  4.885_{- 0.182}^{+ 0.168} $ & $  5.009_{- 0.158}^{+ 0.138} $ & $  5.042_{- 0.158}^{+ 0.136} $ & $  4.147_{- 0.302}^{+ 0.322} $  \cr
+        $ g$ [$10$ m s$^{-2}$]                                     & $  1.080{\pm}  0.051 $         & $  1.065{\pm}  0.042 $         & $  0.611{\pm}  0.019 $         & $  0.801{\pm}  0.024 $         & $  0.932{\pm}  0.024 $         & $  1.015{\pm}  0.025 $         & $  0.558{\pm}  0.037 $  \cr
+        $ v_\mathrm{esc}$ [$\frac{\mathrm{km}}{\mathrm{s}}$]       & $ 12.400 \pm  0.292 $          & $ 12.205 \pm  0.241 $          & $  7.839 \pm  0.110 $          & $  9.694 \pm  0.133 $          & $ 11.145 \pm  0.137 $          & $ 12.087 \pm  0.142 $          & $  7.335 \pm  0.227 $  \cr
+        $ S $ [$10^6\frac{\mathrm{erg}}{\mathrm{cm}^2\mathrm{s}}$] & $  5.652_{- 0.216}^{+ 0.220} $ & $  3.013_{- 0.115}^{+ 0.117} $ & $  1.518_{- 0.058}^{+ 0.059} $ & $  0.879_{- 0.034}^{+ 0.034} $ & $  0.508_{- 0.019}^{+ 0.020} $ & $  0.343_{- 0.013}^{+ 0.013} $ & $  0.196_{- 0.008}^{+ 0.008} $  \cr
+        $ a $ [$10^{11}$ cm]                                       & $  1.726{\pm}  0.015 $         & $  2.364{\pm}  0.020 $         & $  3.331{\pm}  0.028 $         & $  4.376{\pm}  0.037 $         & $  5.758{\pm}  0.049 $         & $  7.006{\pm}  0.060 $         & $  9.259{\pm}  0.079 $  \cr
     \end{tabular}
     \caption{Planetary parameters from combining the transit-timing
-    and photodynamic analysis.  The units are given with respect to Earth first, and cgs second.}
+        and photodynamic analysis.  The units are given with respect to Earth first, and cgs second.}
     \label{tab:uber_table}
 \end{table*}
 
@@ -1420,8 +1422,8 @@ by  \citet{vanGrootel2018}, who first proposed that the mass of the TRAPPIST-1 s
 is $\approx 0.09 M_\odot$ based upon stellar evolution models and
 a ground-based parallax measurement.  \citet{Ducrot2020} find a luminosity
 for the star of $L = (5.53\pm 0.19)\times 10^{-4} L_\odot$, which, when
-compared with stellar evolution models, yields a mass of $M=(0.09016\pm 0.0010) 
-M_\odot$, which is also consistent with the \citet{Mann2019} value.  
+compared with stellar evolution models, yields a mass of $M=(0.09016\pm 0.0010)
+    M_\odot$, which is also consistent with the \citet{Mann2019} value.
 \citet{Burgasser2017} found an older age for the host
 star, 7.6$\pm$ 2.2 Gyr, which implies an inflated radius for the star compared
 with evolutionary models.
@@ -1430,13 +1432,13 @@ with evolutionary models.
 \begin{table}
     \centering
     \begin{tabular}{l|c|l}
-    Parameter & Value & Ref \cr
-    \hline
-$ M $[$ M_\odot $] & $ 0.0898{\pm} 0.0023 $ & \citet{Mann2019}\cr
-$ R $[$ R_\odot $] & $ 0.1192{\pm} 0.0013$ & This paper \cr
-$ L $ [$ L_\odot $] & $ 0.000553{\pm} 0.000019 $ & \citet{Ducrot2020}\cr
-$ T_{eff} $ [K] & $2566{\pm}   26$ & This paper \cr
-$ \log_{10} (g \mathrm{[cm / s^2]}) $ & $5.2396_{-0.0073}^{+0.0056} $ & This paper \cr
+        Parameter                             & Value                         & Ref \cr
+        \hline
+        $ M $[$ M_\odot $]                    & $ 0.0898{\pm} 0.0023 $        & \citet{Mann2019}\cr
+        $ R $[$ R_\odot $]                    & $ 0.1192{\pm} 0.0013$         & This paper \cr
+        $ L $ [$ L_\odot $]                   & $ 0.000553{\pm} 0.000019 $    & \citet{Ducrot2020}\cr
+        $ T_{eff} $ [K]                       & $2566{\pm}   26$              & This paper \cr
+        $ \log_{10} (g \mathrm{[cm / s^2]}) $ & $5.2396_{-0.0073}^{+0.0056} $ & This paper \cr
     \end{tabular}
     \caption{Updated stellar parameters based on the combined analysis.}
     \label{tab:stellar_parameters}
@@ -1509,7 +1511,7 @@ relation was then used to predict candidate periods of planet h, based on differ
 integer pairs for its commensurability with planets f and g, and a search through
 the prior data eliminated all but one possibility at 18.766 days.  A subsequent
 observation of the TRAPPIST-1 system with the K2 spacecraft revealed four more
-transits of planet h occurring at precisely the period that was predicted 
+transits of planet h occurring at precisely the period that was predicted
 \citep{Luger2017a}.  The existence of the GLRs amongst the known seven planets has been used to forecast
 the possible existence of an eighth planet interior \citep{Pletser2017} and exterior
 \citep{Kipping2018} to the seven known transiting planets.  There is yet to be a definitive detection of an eighth transiting planet based upon the currently available data \citep{Ducrot2020}.
@@ -1522,32 +1524,32 @@ and also to resonance.  Table \ref{tab:laplace_p_i} shows predictions for the
 period of planet ``i", $P_\mathrm{i}$, assuming a GLR configuration with planets g and
 h given by
 \begin{equation}
-  P_\mathrm{i} = q/(-p P_\mathrm{g}^{-1} + (p+q) P_\mathrm{h}^{-1})
-\end{equation}  
+    P_\mathrm{i} = q/(-p P_\mathrm{g}^{-1} + (p+q) P_\mathrm{h}^{-1})
+\end{equation}
 for a range of $1 \le p,q \le 3$, which is the same range
 of integers for the GLRs amongst the inner seven planets.
 Interestingly these cases are all close to a $j{:}j{+}1$ period ratio with planet
 h, and thus should strongly perturb planet h due to forcing at this frequency.
- 
+
 \begin{table}
     \centering
     \begin{tabular}{c|c|c|c|c}
-        p & q  & $P_\mathrm{i}$ [day] & $P_\mathrm{i}/P_\mathrm{h}$ & j \\
+        p & q & $P_\mathrm{i}$ [day] & $P_\mathrm{i}/P_\mathrm{h}$ & j     \\
         \hline
-        1 & 1  & 39.029      & 2.08      & 1 \cr
-        1 & 2  & 25.347      & 1.35      & 3 \cr
-        1 & 3  & 22.695      & 1.21      & 4 \cr
-        2 & 3  & 28.701      & 1.53      & 2\cr
+        1 & 1 & 39.029               & 2.08                        & 1 \cr
+        1 & 2 & 25.347               & 1.35                        & 3 \cr
+        1 & 3 & 22.695               & 1.21                        & 4 \cr
+        2 & 3 & 28.701               & 1.53                        & 2\cr
     \end{tabular}
     \caption{Predictions for a GLR of planets g and h with
-    an eighth planet, planet i, with period $P_\mathrm{i}$.  The ratio with the 
-    period of planet h is given, as well
-    as the value of $j$ for which $P_\mathrm{i}/P_\mathrm{h} \approx (j+1)/j$.}
+        an eighth planet, planet i, with period $P_\mathrm{i}$.  The ratio with the
+        period of planet h is given, as well
+        as the value of $j$ for which $P_\mathrm{i}/P_\mathrm{h} \approx (j+1)/j$.}
     \label{tab:laplace_p_i}
 \end{table}
 
 We carried out a transit-timing search for an eighth planet by placing
-planets with mass ratios between $2\times 10^{-6}-5\times 10^{-5}$ at 
+planets with mass ratios between $2\times 10^{-6}-5\times 10^{-5}$ at
 these four trial orbital periods
 in a coplanar configuration with the other seven planets drawn from
 a random orbital phase at the initial time, and with eccentricity
@@ -1561,14 +1563,14 @@ We then carried out a search for evidence of perturbations by planet i by
 determining if the optimized likelihood of the transiting planets was improved
 by adding an eighth planet to the transit timing model, using
 the Bayesian Information Criterion (BIC) to penalize the additional degrees
-of freedom of the eight-planet model \citep{Wit2012}.  We searched for a change 
+of freedom of the eight-planet model \citep{Wit2012}.  We searched for a change
 to BIC for the eight-planet model over the seven-planet model with a difference
 of better than $5\log{N_\mathrm{trans}} = 30.5$.  Given that the inner seven
 planets show orbital eccentricities with values $\la 0.01$, we only considered
 an eighth planet candidate plausible if it shows an eccentricity less than
 this cutoff.
 
-In all 11,200 trial optimization cases we found that only two of the eight-planet models 
+In all 11,200 trial optimization cases we found that only two of the eight-planet models
 did exceed the BIC criterion, but both significantly exceed an eccentricity
 of 0.01.  Figure  \ref{fig:planet_i} shows the change in BIC versus
 orbital period and mass for planet ``i", assuming a mass of the star
@@ -1598,10 +1600,10 @@ We defer such analysis to future work.
     \centering
     \includegraphics[width=\hsize]{figures/Planet_i_properties.pdf}
     \caption{Limits on an eighth planet, ``i", for a search near
-    the periods in table \ref{tab:laplace_p_i}.  The 8-planet
-    models are only plotted if they led to an improvement in log likelihood.  
-    Only two of the optimized
-    likelihoods reach the difference in BIC ${>}0$ indicated on the plots; however, these two cases have an eighth planet with a relatively large eccentricity and are distant from a GLR with g and h.  Orange points have eccentricities smaller than 0.01;  light blue points have larger eccentricities.}
+        the periods in table \ref{tab:laplace_p_i}.  The 8-planet
+        models are only plotted if they led to an improvement in log likelihood.
+        Only two of the optimized
+        likelihoods reach the difference in BIC ${>}0$ indicated on the plots; however, these two cases have an eighth planet with a relatively large eccentricity and are distant from a GLR with g and h.  Orange points have eccentricities smaller than 0.01;  light blue points have larger eccentricities.}
     \label{fig:planet_i}
 \end{figure}
 
@@ -1614,7 +1616,7 @@ interior properties based upon the mass-radius relation we inferred in \S \ref{s
 
 \subsection{Initial analysis of planet densities across the system}
 
-The probability distribution for the masses and radii of the seven planets are shown in Figure \ref{fig:mass_radius_relation} alongside several theoretical mass-radius relationships added for comparison. 
+The probability distribution for the masses and radii of the seven planets are shown in Figure \ref{fig:mass_radius_relation} alongside several theoretical mass-radius relationships added for comparison.
 We have added three rocky mass-radius relationships with different bulk Fe/Mg compositions:  (1) Fe/Mg$ =0.75{\pm} 0.2$ as suggested by \citet{Unterborn2018a} to represent the rocky interior of all TRAPPIST-1 planets with a 1$-\sigma$ range of Fe/Mg ratios consistent with local stellar abundances;  (2) the Earth-like value of Fe/Mg$ = 0.83$ \citep{Lodders2009}; and (3) a core-free model with Earth-like refractory ratios, but in which all of the iron is oxidized in the mantle \citep{ElkinsTanton2008}. Rocky interiors are calculated using the models of \citet{Dorn2016}. We have also added the theoretical mass-radius relationships for planets endowed with a water layer, both for planets which are irradiated less (blue line; water) and more (orange lines; steam) than the runaway greenhouse irradiation threshold \citep{Turbet2020}.
 
 The comparison of measured masses and radii with theoretical mass-radius relationships reveals several striking results. First, all seven TRAPPIST-1 planets appear to be consistent with a line of interior isocomposition. There are multiple theoretical mass-radius curves that overlap with all seven planets' mass-radius probability distributions (Fig.\ \ref{fig:mass_radius_relation}), which may be a good indication that the composition varies little from planet to planet. Secondly, all of the TRAPPIST-1 planets have lower uncompressed densities than Solar System terrestrial planets. This likely means that the TRAPPIST-1 planets either have a lighter interior (e.g. lower iron content) or are enriched with volatiles (e.g. water).
@@ -1624,7 +1626,7 @@ The comparison of measured masses and radii with theoretical mass-radius relatio
     %\includegraphics[width=\hsize]{figures/figure_TTV_norm_density_histograms.png}
     \includegraphics[width=\hsize]{figures/plot_normalized_density_agol_et_al.pdf}
     \caption{Probability density function of the normalized density of all seven planets in the system.
-    The normalized densities were calculated by dividing the density of each pair of mass and radius of the TTV/photodynamic posterior distribution by the local density (i.e. of the closest pair of mass and radius) of a planet with an interior composition of 20 wt\% iron and 80 wt\% MgSiO$_3$. A planet with a normalized density of 1 has exactly the same density as a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet. A normalized density ${>}1$ (or ${<}1$, resp.) is denser (or lighter, resp.) than a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet.}
+        The normalized densities were calculated by dividing the density of each pair of mass and radius of the TTV/photodynamic posterior distribution by the local density (i.e. of the closest pair of mass and radius) of a planet with an interior composition of 20 wt\% iron and 80 wt\% MgSiO$_3$. A planet with a normalized density of 1 has exactly the same density as a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet. A normalized density ${>}1$ (or ${<}1$, resp.) is denser (or lighter, resp.) than a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet.}
     \label{fig:norm_density_histo}
 \end{figure}
 
@@ -1638,7 +1640,7 @@ The interpretation of these observations in terms of internal compositions is di
     \centering
     \includegraphics[width=\hsize]{figures/Norm_dens_vs_period.pdf}
     \caption{Normalized planet densities (with 1$\sigma$ error-bars) versus planet orbital periods. The light blue band is the 68\% confidence interval of the weighted mean normalized density of all seven planets.  The orange lines show the 68.3\% confidence intervals of linear fits to the normalized densities computed from $10^4$
-     draws from the posterior.  The mean fit to the normalized density versus period is $y = a P + b$ where $a= 1.02\pm 0.03$ and $b=-0.0045\pm0.0035$.}
+        draws from the posterior.  The mean fit to the normalized density versus period is $y = a P + b$ where $a= 1.02\pm 0.03$ and $b=-0.0045\pm0.0035$.}
     \label{fig:norm_density_vs_period}
 \end{figure}
 
@@ -1666,17 +1668,17 @@ There may be a slight trend of the inferred CMF, which decreases with increasing
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/Norm_cmf_vs_period.pdf}
-    \caption{Iron core mass fraction versus the planetary orbital periods.  The approximate values for Earth \citep{McDonough2014}, Mars \citep{Khan2018}, the Moon \citep{Barr2016}, and common chondrites \citep{Palme2014} are indicated, as well as the 1-$\sigma$ confidence intervals of the TRAPPIST-1 planets. 
-    The light blue box is the 68.3\% confidence region of the weighted mean of all seven planets. The orange lines show the median and 68.3\% confidence interval for linear fits to the $10^4$ posterior values for all seven planets.}
+    \caption{Iron core mass fraction versus the planetary orbital periods.  The approximate values for Earth \citep{McDonough2014}, Mars \citep{Khan2018}, the Moon \citep{Barr2016}, and common chondrites \citep{Palme2014} are indicated, as well as the 1-$\sigma$ confidence intervals of the TRAPPIST-1 planets.
+        The light blue box is the 68.3\% confidence region of the weighted mean of all seven planets. The orange lines show the median and 68.3\% confidence interval for linear fits to the $10^4$ posterior values for all seven planets.}
     \label{fig:cmf}
 \end{figure}
 
 \begin{table*}
     \centering
     \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
-      Planet: & b & c & d & e & f & g & h & Avg b-h & Avg b-e & Avg f-h \cr
-      \hline
- CMF [wt\%] & $22.3_{-6.85}^{+6.85}$ & $24.3_{-7.1}^{+5.1}$ & $14.2_{-6.8}^{+6.1}$ & $20.7_{-5.8}^{+5.8}$ & $16.2_{-5.0}^{+4.4}$ & $11.2_{-4.7}^{+4.7}$ & $9.3_{-9.3}^{+11.4}$ & $17.2_{-4.0}^{+3.4}$ & $20.6_{-4.0}^{+4.5}$ &$12.6_{-4.8}^{+4.8}$  \cr 
+        Planet:    & b                      & c                    & d                    & e                    & f                    & g                    & h                    & Avg b-h              & Avg b-e              & Avg f-h \cr
+        \hline
+        CMF [wt\%] & $22.3_{-6.85}^{+6.85}$ & $24.3_{-7.1}^{+5.1}$ & $14.2_{-6.8}^{+6.1}$ & $20.7_{-5.8}^{+5.8}$ & $16.2_{-5.0}^{+4.4}$ & $11.2_{-4.7}^{+4.7}$ & $9.3_{-9.3}^{+11.4}$ & $17.2_{-4.0}^{+3.4}$ & $20.6_{-4.0}^{+4.5}$ & $12.6_{-4.8}^{+4.8}$  \cr
     \end{tabular}
     \caption{Core mass fraction inferred for each TRAPPIST-1 planet, as well as the weighted means.}
     \label{tab:cmf}
@@ -1687,18 +1689,18 @@ There may be a slight trend of the inferred CMF, which decreases with increasing
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/figure_water_period_TTV_trim.png}
-%    \includegraphics[width=\hsize]{figures/figure_water_period_TTV_trim.pdf}
+    %    \includegraphics[width=\hsize]{figures/figure_water_period_TTV_trim.pdf}
     \caption{Theoretical water content (along with 1$\sigma$ error bar) versus planetary orbital periods, for four distinct interior compositions (18, 25, 32.5 and 50 wt\% iron content).}
     \label{fig:water_vs_period}
 \end{figure}
 
-The observed (weak) variation in the planet densities among all seven planets may instead be due to their differing volatile (e.g. water) inventories. 
+The observed (weak) variation in the planet densities among all seven planets may instead be due to their differing volatile (e.g. water) inventories.
 
-If we assume a rocky Earth-like interior and only allow an additional {\it condensed}\footnote{Note that it is likely unwarranted to assume condensed surface water for the inner three planets given their location within the runaway greenhouse zone \citep{Turbet2020}.} water layer to contribute to the total radius, we can estimate the water mass fractions of the seven planets 
-(b: 2.8$^{+2.0}_{-2.0}$ wt\%, c: 2.1$^{+1.7}_{-1.4}$ wt\%, d: 4.6$^{+2.1}_{-1.5}$ wt\%, e: 2.9$^{+1.4}_{-1.4}$ wt\%, f: 4.4$^{+1.8}_{-1.3}$ wt\%, g: 6.2$^{+2.1}_{-1.6}$  wt\%, h: 6.0$^{+4.4}_{-3.3}$ wt\%). 
-The lower densities of planets d, f, g, and h can allow for two to three times as much water than for planets b, c, and e. For this simple estimate we assumed a water layer with a surface temperature of 300 K at 1 bar. 
+If we assume a rocky Earth-like interior and only allow an additional {\it condensed}\footnote{Note that it is likely unwarranted to assume condensed surface water for the inner three planets given their location within the runaway greenhouse zone \citep{Turbet2020}.} water layer to contribute to the total radius, we can estimate the water mass fractions of the seven planets
+(b: 2.8$^{+2.0}_{-2.0}$ wt\%, c: 2.1$^{+1.7}_{-1.4}$ wt\%, d: 4.6$^{+2.1}_{-1.5}$ wt\%, e: 2.9$^{+1.4}_{-1.4}$ wt\%, f: 4.4$^{+1.8}_{-1.3}$ wt\%, g: 6.2$^{+2.1}_{-1.6}$  wt\%, h: 6.0$^{+4.4}_{-3.3}$ wt\%).
+The lower densities of planets d, f, g, and h can allow for two to three times as much water than for planets b, c, and e. For this simple estimate we assumed a water layer with a surface temperature of 300 K at 1 bar.
 
-Actual surface conditions can, however, lead to much larger differences in the estimated water budgets between the inner three and outer four planets. This stems from the fact that the inner three planets are more irradiated than the runaway greenhouse irradiation limit \citep{Kopparapu2013,Wolf2017,Turbet2018} for which all water is vaporized, forming a thick H$_2$O-dominated steam atmosphere. Taking into account the expectation that water should be vaporized for the three inner TRAPPIST-1 planets \citep{Turbet2019,Turbet2020}, their water mass fractions drop drastically to less than $0.01$ wt\%, i.e. more than several times lower than the water ocean mass fraction of the Earth. 
+Actual surface conditions can, however, lead to much larger differences in the estimated water budgets between the inner three and outer four planets. This stems from the fact that the inner three planets are more irradiated than the runaway greenhouse irradiation limit \citep{Kopparapu2013,Wolf2017,Turbet2018} for which all water is vaporized, forming a thick H$_2$O-dominated steam atmosphere. Taking into account the expectation that water should be vaporized for the three inner TRAPPIST-1 planets \citep{Turbet2019,Turbet2020}, their water mass fractions drop drastically to less than $0.01$ wt\%, i.e. more than several times lower than the water ocean mass fraction of the Earth.
 
 Figure~\ref{fig:water_vs_period} shows the expected water mass fractions for each of the TRAPPIST-1 planets, and for four distinct interior compositions (18, 25, 32.5 and 50 wt\% iron content). It shows that the same trend of water versus orbital period is relatively robust across a large range of assumptions on the interior composition thanks to the transition from runaway greenhouse for planets b-d to surface liquid water for planets e-h.  Note that the 18 wt\% interior only requires a non-zero water fraction for planet g;  as shown above, a 17 wt\% iron core is consistent with all of the planets to 1-$\sigma$ confidence.
 
@@ -1707,10 +1709,10 @@ Higher estimated water budgets for the outer three or four planets could be a cl
 \subsubsection{Core-free planets} \label{sec:core_free}
 
 Given that the data may be consistent with an iso-composition mass-radius relation, we next consider another intriguing possibility:
- that the volatiles are contained entirely in the interior of the planets.  For example, if, instead of forming a core, all of the iron is oxidised and remains in the mantle, the size of a planet may increase by a few percent \citep{ElkinsTanton2008}.  This turns out to be about the amount of radius inflation necessary to match the TRAPPIST-1 planets when compared with our Solar system planets.   
- 
- If we assume that the refractory ratios match a Solar composition, and that all seven planets lack an atmosphere, then it turns out that all seven planets are consistent with a core-free, oxidized composition (Fig.\ \ref{fig:mass_radius_relation}; magenta line).  For this model the bulk mass abundances ratios for Fe/Si/Mg/O are 29.2/17.3/15.3/38.2 wt\%, which is a significant increase in Oxygen compared to the bulk Earth with 29.7 wt\% \citep{McDonough2014}.
-  Such a scenario would likely require formation of the planets at large distances from the star in a highly oxidizing environment \citep{ElkinsTanton2008} and a lower  devolatization temperature intermediate between that of Earth and chondrites \citep{Wang2019}.  Hence, although this hypothesis efficiently explains the TRAPPIST-1 data, it remains to be seen whether a geochemical model can be constructed which results in high oxidation of iron throughout the processes of planet formation and evolution.
+that the volatiles are contained entirely in the interior of the planets.  For example, if, instead of forming a core, all of the iron is oxidised and remains in the mantle, the size of a planet may increase by a few percent \citep{ElkinsTanton2008}.  This turns out to be about the amount of radius inflation necessary to match the TRAPPIST-1 planets when compared with our Solar system planets.
+
+If we assume that the refractory ratios match a Solar composition, and that all seven planets lack an atmosphere, then it turns out that all seven planets are consistent with a core-free, oxidized composition (Fig.\ \ref{fig:mass_radius_relation}; magenta line).  For this model the bulk mass abundances ratios for Fe/Si/Mg/O are 29.2/17.3/15.3/38.2 wt\%, which is a significant increase in Oxygen compared to the bulk Earth with 29.7 wt\% \citep{McDonough2014}.
+Such a scenario would likely require formation of the planets at large distances from the star in a highly oxidizing environment \citep{ElkinsTanton2008} and a lower  devolatization temperature intermediate between that of Earth and chondrites \citep{Wang2019}.  Hence, although this hypothesis efficiently explains the TRAPPIST-1 data, it remains to be seen whether a geochemical model can be constructed which results in high oxidation of iron throughout the processes of planet formation and evolution.
 
 \section{Discussion} \label{sec:discussion}
 
@@ -1748,7 +1750,7 @@ Other possible causes of the timing outliers are correlated stellar variability,
 
 In this section we consider possible factors which might affect our
 inference of the densities of the planets.  Simulated planetary
-densities predict core-mass-fractions which are similar to 
+densities predict core-mass-fractions which are similar to
 Earth, with a very small scatter \citep{Scora2020}.  Hence, the
 fact that the TRAPPIST-1 planets have inferred planetary densities
 which are less than this could be due to systematic uncertainties
@@ -1761,16 +1763,16 @@ of the star.  Fortunately the multiple impact parameters of the
 planets yield a constraint upon the infrared limb-darkening, which
 is fairly weak compared with optical bands.  However, star-spots
 can also affect the inferred transit depths \citep{Rackham2018,
-Kipping2012b}.  If spots are present on an active latitude
+    Kipping2012b}.  If spots are present on an active latitude
 which is not on the same hemisphere as the planetary transit chords,
 this can cause all of the planet radii to be mis-inferred by a similar
 factor.
 
 TRAPPIST-1 may have complex surface inhomogeneities, including regions brighter or darker than the mean photosphere  \citep{Morris2018d,Wakeford2019}. It is possible that bright or dark regions could bias the apparent transit depths towards larger or smaller measurements, depending on which type of inhomogeneity dominates. We revisited the photodynamic simulations with a contamination parameter,
-$\varepsilon$, such that the effective transit depth (neglecting limb-darkening) is given by $(R_p/R_*)^2(1-\varepsilon)$ 
- \citep{Morris2018b,Morris2018c}.  Re-running the Markov chains 
+$\varepsilon$, such that the effective transit depth (neglecting limb-darkening) is given by $(R_p/R_*)^2(1-\varepsilon)$
+\citep{Morris2018b,Morris2018c}.  Re-running the Markov chains
 including $\varepsilon$ as a free parameter in our fits, we
-find that $\varepsilon = 2\pm 13$\% at 68.3\% confidence.  Note that $\varepsilon$ is assumed to be time-steady and to have the same value for all planets; in practice the value might vary between planets, say, if some traversed active latitudes.  
+find that $\varepsilon = 2\pm 13$\% at 68.3\% confidence.  Note that $\varepsilon$ is assumed to be time-steady and to have the same value for all planets; in practice the value might vary between planets, say, if some traversed active latitudes.
 This constraint is similar to the analysis of planet b from \citet{Morris2018c}, but our new constraint based on all seven planets does have a median value closer to zero.
 This indicates that from these data alone we cannot rule out a significant systematic error on the planets' radii caused by an inhomogeneous stellar photosphere.
 Improved constraints would likely require a wavelength-dependent analysis \citep[e.g.][]{Rackham2018,Wakeford2019}.
@@ -1792,9 +1794,9 @@ the more extensive dataset analyzed here, we provide
 a better constraint over the transit-timing timescale,
 and can also better account for outliers thanks to some
 redundancy in our measurements. Given the high precision of
-the Spitzer timing measurements, we expect that our current 
-analysis may remain the most reliable constraint upon the 
-masses of the planets until the transit times can be measured 
+the Spitzer timing measurements, we expect that our current
+analysis may remain the most reliable constraint upon the
+masses of the planets until the transit times can be measured
 with JWST.
 
 %- Place these in the context of the Solar System and other planetary systems.
@@ -1816,17 +1818,17 @@ rocky planets for which we currently have data look very similar in composition 
 Earth, strengthening the assertion that rocky planets tend to form with a very
 narrow range of properties \citep{Dressing2015}.
 This also appears consistent with the observation
-that the evaporation valley requires rocky planets and their gaseous brethren to have 
+that the evaporation valley requires rocky planets and their gaseous brethren to have
 a composition which is a mix of silicates and iron \citep{Owen2017}.
 
 \begin{figure*}
     \centering
     \includegraphics[width = \hsize]{figures/mass_radius_relation_comparison.pdf}
     \caption{Radius versus mass for Solar-System terrestrial planets (green dots),
-    TRAPPIST-1 (orange error bars), and other potentially rocky exoplanets from the NExSci database, \citet{Dressing2015},
-    and \citet{Dai2019}
-    (red error bars).  Planets with smaller mass uncertainty are shown in a darker red color.  Also
-    plotted is a mass-radius relation with a core-mass fraction compatible with Earth (blue), and a core-free model in which the refractory elements retain the Solar abundance ratios (purple).}
+        TRAPPIST-1 (orange error bars), and other potentially rocky exoplanets from the NExSci database, \citet{Dressing2015},
+        and \citet{Dai2019}
+        (red error bars).  Planets with smaller mass uncertainty are shown in a darker red color.  Also
+        plotted is a mass-radius relation with a core-mass fraction compatible with Earth (blue), and a core-free model in which the refractory elements retain the Solar abundance ratios (purple).}
     \label{fig:mass_radius_comparison}
 \end{figure*}
 
@@ -1834,7 +1836,7 @@ a composition which is a mix of silicates and iron \citep{Owen2017}.
 
 Given the measurements of the masses we have made with transit-timing,
 this brings up the question:  what radial-velocity precision would be
-required to make the same mass measurements?  
+required to make the same mass measurements?
 
 The precision of the mass measurements may be placed in
 context by comparing with current radial-velocity capabilities.
@@ -1842,7 +1844,7 @@ The predicted semi-amplitudes for the seven planets are given
 in Table \ref{tab:rv_equivalent}.
 The predicted radial-velocity variation of the star induced by the TRAPPIST-1
 planets is plotted in Figure \ref{fig:rv_forecast}, also based upon our
-mass measurements from transit timing.  The sums of the semi-amplitudes 
+mass measurements from transit timing.  The sums of the semi-amplitudes
 of the planets equals $\approx 12.7$ m/sec, which is close to the
 peak amplitude when the planets are all orbiting on the same side of
 the star (near 218 days in the plotted figure).  How does this compare
@@ -1878,16 +1880,16 @@ of magnitude to match our TTV precision for the TRAPPIST-1 system.
 \begin{table*}
     \centering
     \begin{tabular}{l|c|c|c|c|c|c|c}
-        Planet &  b & c & d & e & f & g & h \\
+        Planet                                                        & b     & c     & d    & e     & f     & g     & h        \\
         \hline
-        $K_p$ [cm/sec] & 382.0 & 310.7 & 77.6 & 120.7 & 158.1 & 182.2 & 39.1 \cr
-        RV equivalent precision for TRAPPIST-1 host [cm/sec] & 19 & 13 & 2.5 &  3.8 & 4.7 & 5.2 &  2.4\cr
-        RV equivalent precision for 1 $M_\odot$ host at 1~AU [cm/sec] &  0.62 & 0.50 & 0.11 & 0.20 & 0.28 & 0.34& 0.18\cr
+        $K_p$ [cm/sec]                                                & 382.0 & 310.7 & 77.6 & 120.7 & 158.1 & 182.2 & 39.1 \cr
+        RV equivalent precision for TRAPPIST-1 host [cm/sec]          & 19    & 13    & 2.5  & 3.8   & 4.7   & 5.2   & 2.4\cr
+        RV equivalent precision for 1 $M_\odot$ host at 1~AU [cm/sec] & 0.62  & 0.50  & 0.11 & 0.20  & 0.28  & 0.34  & 0.18\cr
     \end{tabular}
     \caption{RV semi-amplitudes, $K_p$, for the TRAPPIST-1 planets predicted from our
-    measured masses.  Equivalent RV precision required to measure the masses to the
-    same precision as measured with TTVs around TRAPPIST-1.  Also, equivalent RV precision required {\it if}
-    each planet were placed around a Solar twin at one astronomical unit.}
+        measured masses.  Equivalent RV precision required to measure the masses to the
+        same precision as measured with TTVs around TRAPPIST-1.  Also, equivalent RV precision required {\it if}
+        each planet were placed around a Solar twin at one astronomical unit.}
     \label{tab:rv_equivalent}
 \end{table*}
 
@@ -1896,11 +1898,11 @@ of magnitude to match our TTV precision for the TRAPPIST-1 system.
     \centering
     \includegraphics[width=\hsize]{figures/Equivalent_RV_precision.pdf}
     \caption{Predicted radial-velocity variation of the TRAPPIST-1 host star
-    induced by its seven known transiting planets, as well as the current
-    measurement error bar reported by \citet{Hirano2020}, which they interpret
-    as an upper limit, thanks to stellar variability.  Also plotted are
-    the equivalent semi-amplitudes for the seven planets which would be required
-    to achieve the same mass precision as measured with TTVs.}
+        induced by its seven known transiting planets, as well as the current
+        measurement error bar reported by \citet{Hirano2020}, which they interpret
+        as an upper limit, thanks to stellar variability.  Also plotted are
+        the equivalent semi-amplitudes for the seven planets which would be required
+        to achieve the same mass precision as measured with TTVs.}
     \label{fig:rv_forecast}
 \end{figure*}
 
@@ -1912,7 +1914,7 @@ of magnitude to match our TTV precision for the TRAPPIST-1 system.
 %- Disentangling influence of the planets on one anothers' times of transit
 %(like Lissauer et al. did for Kepler-11).
 
-In this section we discuss some of the dynamical aspects of the planetary system: the  eccentricities, the longitudes of periastron, and the GLR angles. 
+In this section we discuss some of the dynamical aspects of the planetary system: the  eccentricities, the longitudes of periastron, and the GLR angles.
 
 \subsubsection{Eccentricities}
 
@@ -1926,19 +1928,19 @@ This is consistent with N-body models which include tidal damping of
 the orbits, which predict that the planets should have low eccentricities,
 $\la 10^{-3}$ \citep{Luger2017a,Turbet2018}.  The other planets are
 all consistent with the predictions of the tidal evolution model
-\citep{Luger2017b}. 
+\citep{Luger2017b}.
 
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/eccentricity_posterior.pdf}
     \caption{Probability distribution of the eccentricities of the planets at the initial time
-    based upon the transit-timing model.}
+        based upon the transit-timing model.}
     \label{fig:eccentricity_posterior}
 \end{figure}
 
 
-Figure \ref{fig:eccentricity_vectors} shows the posterior probability distribution 
-for the eccentricity vectors of each planet.  The only two planets consistent with 
+Figure \ref{fig:eccentricity_vectors} shows the posterior probability distribution
+for the eccentricity vectors of each planet.  The only two planets consistent with
 zero eccentricity at 1-$\sigma$ confidence are planets b and
 c (blue and orange contours).  The other five planets have non-zero eccentricities.
 
@@ -1946,8 +1948,8 @@ c (blue and orange contours).  The other five planets have non-zero eccentriciti
     \centering
     \includegraphics[width=\hsize]{figures/esin_vs_ecos.pdf}
     \caption{Posterior probability distribution for the eccentricity vectors  at the
-    initial time for each of the planets.  Contours are 1- and 2-$\sigma$ confidence limits.  
-    The maximum likelihood parameters are shown as solid points.}
+        initial time for each of the planets.  Contours are 1- and 2-$\sigma$ confidence limits.
+        The maximum likelihood parameters are shown as solid points.}
     \label{fig:eccentricity_vectors}
 \end{figure}
 
@@ -1962,7 +1964,7 @@ vectors of each of these planets.  The inner two planets are close to second and
 order resonances with adjacent planets (b and c are close to 8:5, which is third order,
 while c and d are close to 5:3, which is second order).  Since the strength of these
 interactions scales as a higher power of eccentricity, these planets show much smaller variation
-in the time-variable components of their eccentricity vectors.  Since planets b and c are 
+in the time-variable components of their eccentricity vectors.  Since planets b and c are
 close to a third order resonance,
 their eccentricity vectors show a three-fold symmetry.  On longer timescales these patterns
 precess, filling a circular pattern over time.  The time-variable eccentricity vector patterns are
@@ -1979,7 +1981,7 @@ variations, and so there is a much wider range of eccentricity vectors which is 
     \centering
     \includegraphics[width=\hsize]{figures/T1_evector_forced.pdf}
     \caption{Variable component of the osculating eccentricity vectors plotted from a simulation over 12 days for planets b and c, and over $\approx 485$
-    days for planets d-h, with initial parameters drawn from the posterior distribution.}
+        days for planets d-h, with initial parameters drawn from the posterior distribution.}
     \label{fig:forced_eccentricity}
 \end{figure}
 
@@ -1987,33 +1989,33 @@ variations, and so there is a much wider range of eccentricity vectors which is 
     \centering
     \includegraphics[width=\hsize]{figures/T1_evector.pdf}
     \caption{Osculating eccentricity vectors computed from a simulation for all seven planets shown for three different draws from
-    the posterior:  the first with eccentricities nearest the median of the posterior distribution;
-    the second with eccentricties furthest from the median, and a third drawn randomly from
-    the posterior.  As with Figure \ref{fig:forced_eccentricity}, planets b and c are plotted
-    over 12 days, while planets d-h are plotted over $\approx 485$ days.}
+        the posterior:  the first with eccentricities nearest the median of the posterior distribution;
+        the second with eccentricties furthest from the median, and a third drawn randomly from
+        the posterior.  As with Figure \ref{fig:forced_eccentricity}, planets b and c are plotted
+        over 12 days, while planets d-h are plotted over $\approx 485$ days.}
     \label{fig:total_eccentricity}
 \end{figure}
 
 \subsubsection{Longitudes of periastron}
 
-The inner two planets, b and c, have an additional generic prediction from 
+The inner two planets, b and c, have an additional generic prediction from
 migration and damping:
 the longitudes of pericenter should be anti-aligned, or librate about
 anti-alignment. %This is the case for the inner two Galilean satellites, Io and Europa, which have a difference in longitude of pericenter of 179.97$^\circ$ \citep{Spohn2009}.  
 
 Planets b and c are close to an 8/5 mean motion resonance, and planets c and d are close to a 5/3 mean motion resonance. These being third order and second order resonances, respectively, the resonance widths are approximately given by~\citep{Murray1999}
 \begin{equation}
-\frac{\Delta P}{P} = (12\mu\alpha |f(\alpha)| e^k)^{1/2}
-\label{e:reswidth}\end{equation}
+    \frac{\Delta P}{P} = (12\mu\alpha |f(\alpha)| e^k)^{1/2}
+    \label{e:reswidth}\end{equation}
 where $\mu$ is the ratio of the perturbing planet's mass to the stellar mass, $\alpha{=}a_1/a_2{<}1$ is the ratio of planets' semi-major axes, $f(\alpha)$ is a coefficient of the resonant term in the interaction potential, $e$ is orbital eccentricity, and $k$ is the order of the resonance.  For the resonances of interest here, we find that $\Delta P/P\lesssim10^{-4}$. The observed period ratios are $\gtrsim3\times10^{-3}$ wide of the exact resonance, i.e., more than 30 times the resonance width(s).
 
 
 In these circumstances, the mean motion resonant perturbations are negligible, and the secular interactions of planets b and c provide a fair first approximation to their orbital dynamics. (We acknowledge that in the following analysis we have neglected secular perturbations from the other planets in the system which will introduce some quantitative differences, not germane to the qualitative question of aligned or anti-aligned periastrons of planets b and c.) Over most of the posterior samples, the eccentricities of planets b and c are large enough that the critical angles of the first-order resonances circulate and are small enough that the critical angles of higher-order resonances also circulate, so our analysis can neglect resonant terms.  To leading order in the eccentricities, the orbit-averaged (secular) interaction potential of a pair of planets is given by
 \begin{eqnarray}
-U^{(sec)} &=& -\langle\frac{Gm_1m_2}{|{\bf r}_1-{\bf r}_2|} \rangle \nonumber \\
- &\simeq&
--\frac{Gm_1m_2}{a_2}[\frac{1}{2}b_{1/2}^{(0)}(\alpha)+\frac{1}{8}b_{3/2}^{(1)}(\alpha)(e_1^2+e_2^2) \nonumber\\
-&& - \frac{1}{4}b_{3/2}^{(2)}(\alpha)e_1e_2\cos(\varpi_1-\varpi_2) ], \label{e:Usec}
+    U^{(sec)} &=& -\langle\frac{Gm_1m_2}{|{\bf r}_1-{\bf r}_2|} \rangle \nonumber \\
+    &\simeq&
+    -\frac{Gm_1m_2}{a_2}[\frac{1}{2}b_{1/2}^{(0)}(\alpha)+\frac{1}{8}b_{3/2}^{(1)}(\alpha)(e_1^2+e_2^2) \nonumber\\
+    && - \frac{1}{4}b_{3/2}^{(2)}(\alpha)e_1e_2\cos(\varpi_1-\varpi_2) ], \label{e:Usec}
 \end{eqnarray}
 where $b_s^{(j)}(\alpha)$ are positive-definite Laplace coefficients. (We neglect post-Newtonian corrections to the potential, stellar oblateness, and stellar and planetary tides, all of which are negligible compared to the point-mass Newtonian gravitational interactions in the TRAPPIST-1 system.) It is evident from Eq.~\ref{e:Usec} that, in the secular approximation, the interaction energy is minimized when $\varpi_1-\varpi_2=\pi$, that is, when the periastrons are anti-aligned. Consequently, orbital energy dissipation (e.g., due to tides) is likely to evolve the innermost pair of planets, b and c, into anti-aligned periastrons as energy dissipation would tend to minimize the total orbital energy.
 
@@ -2026,12 +2028,12 @@ In the case of TRAPPIST-1, \citet{Papaloizou2017} found that in a model
 in which the TRAPPIST-1 planets underwent migration with damping, the
 inner two planets had small eccentricities and librating resonant angles,
 even though departures from these first order commensurabilities are
-large.  The libration centers of those resonances enforce anti-aligned longitudes 
+large.  The libration centers of those resonances enforce anti-aligned longitudes
 of pericenter in the model.
 
 Figure \ref{fig:delta_omega} shows the posterior probability distribution
 for $\omega_c-\omega_b-\pi$.   The distribution has a similar probability
-at all angles due to the fact that both eccentricities are small, but 
+at all angles due to the fact that both eccentricities are small, but
 favors {\it aligned} longitudes of pericenter.  However,
 there is still a significant probability at anti-aligned angles (near
 zero in Fig.\ \ref{fig:delta_omega}).   %We expect that the eccentricity vectors
@@ -2042,7 +2044,7 @@ zero in Fig.\ \ref{fig:delta_omega}).   %We expect that the eccentricity vectors
 %these planets only weakly affect the transit timing variations.  
 The eccentricity vectors of these two planets are poorly constrained because
 their low eccentricities only weakly affect the transit timing variations \citep{Deck2016}.
-Thus, at the current precision of the transit timing data, we can only place poor 
+Thus, at the current precision of the transit timing data, we can only place poor
 constraints on these planets'eccentricity vectors, and thus only poorly constrain
 the difference in longitude.
 
@@ -2050,7 +2052,7 @@ the difference in longitude.
     \centering
     \includegraphics[width=\hsize]{figures/delta_omega_bc.pdf}
     \caption{Difference in the longitudes of pericenter of planets b and
-    c minus $\pi$.}
+        c minus $\pi$.}
     \label{fig:delta_omega}
 \end{figure}
 
@@ -2071,12 +2073,12 @@ commensurabilities, their mutual torques displace the stable configuration
 
 Long-term
 dynamical simulations show that these GLR angles can take on stable values
-for extended durations, and sometimes can quickly jump in value, flipping symmetrically about 
+for extended durations, and sometimes can quickly jump in value, flipping symmetrically about
 180 degrees \citep{Mah2018},
 resulting in two possible angles for each triplet of stars, $\phi$ and $360-\phi$.
 Based on the prior measured mass-ratios of the planets to the star, \citet{Mah2018}
 predicted the value of the three-body resonance angles resulting from the values at the
-end of the simulation.  
+end of the simulation.
 
 % There are other near-zero Laplace frequencies as well which skip a planet:
 % p 2 q 3 b c d 0.000199511346161918
@@ -2094,16 +2096,16 @@ end of the simulation.
 In Figure \ref{fig:laplace_angles} we show the GLR
 angles for the following triples:
 \begin{eqnarray}
-\phi_\mathrm{bcd} &=& 2 \lambda_\mathrm{b} -5\lambda_\mathrm{c} + 3\lambda_\mathrm{d},\cr
-\phi_\mathrm{cde} &=&  \lambda_\mathrm{c} -3\lambda_\mathrm{d} + 2\lambda_\mathrm{e},\cr
-\phi_\mathrm{def} &=& 2 \lambda_\mathrm{d} -5\lambda_\mathrm{e} + 3\lambda_\mathrm{f},\cr
-\phi_\mathrm{efg} &=&  \lambda_\mathrm{e} -3\lambda_\mathrm{f} + 2\lambda_\mathrm{g},\cr
-\phi_\mathrm{fgh} &=&  \lambda_\mathrm{f} -2\lambda_\mathrm{g} + \lambda_\mathrm{h}.
+    \phi_\mathrm{bcd} &=& 2 \lambda_\mathrm{b} -5\lambda_\mathrm{c} + 3\lambda_\mathrm{d},\cr
+    \phi_\mathrm{cde} &=&  \lambda_\mathrm{c} -3\lambda_\mathrm{d} + 2\lambda_\mathrm{e},\cr
+    \phi_\mathrm{def} &=& 2 \lambda_\mathrm{d} -5\lambda_\mathrm{e} + 3\lambda_\mathrm{f},\cr
+    \phi_\mathrm{efg} &=&  \lambda_\mathrm{e} -3\lambda_\mathrm{f} + 2\lambda_\mathrm{g},\cr
+    \phi_\mathrm{fgh} &=&  \lambda_\mathrm{f} -2\lambda_\mathrm{g} + \lambda_\mathrm{h}.
 \end{eqnarray}
 Differences between the predicted and observed angles
 agree within 0.5-10 degrees, where the predicted values for $\phi$ are
 taken from \citet{Mah2018} and \citet{Brasser2019},
-but allowing $\phi_\mathrm{bcd}$ and $\phi_\mathrm{cde}$ to be flipped about 180 degrees. 
+but allowing $\phi_\mathrm{bcd}$ and $\phi_\mathrm{cde}$ to be flipped about 180 degrees.
 It is possible with the updated mass-ratios from
 our analysis that the predictions will be more accurate, which awaits further
 simulation.
@@ -2112,18 +2114,18 @@ simulation.
     \centering
     \includegraphics[width =\hsize]{figures/Laplace_angle.pdf}
     \caption{GLR angles plotted over 100 years for
-    three draws from the posterior distribution:  one with low eccentricities,
-    one with high, and one randomly chosen.  These are
-    compared with the predictions from \citet{Mah2018}, shown by
-    dashed horizontal lines, with
-    the values for $\phi_\mathrm{bcd}$ and $\phi_\mathrm{cde}$ flipped about
-    180$^\circ$ (i.e. changed from $\phi$ to $360^\circ - \phi$).}
+        three draws from the posterior distribution:  one with low eccentricities,
+        one with high, and one randomly chosen.  These are
+        compared with the predictions from \citet{Mah2018}, shown by
+        dashed horizontal lines, with
+        the values for $\phi_\mathrm{bcd}$ and $\phi_\mathrm{cde}$ flipped about
+        180$^\circ$ (i.e. changed from $\phi$ to $360^\circ - \phi$).}
     \label{fig:laplace_angles}
 \end{figure}
 
 \subsubsection{Long-term stability}
 
-Prior studies of the TRAPPIST-1 system by 
+Prior studies of the TRAPPIST-1 system by
 \citet{Tamayo2017} found long-lived configurations for
 systems which had formed via migration.  \citet{Quarles2017} examined the stability
 of the TRAPPIST-1 system,  refining the large uncertainties from prior
@@ -2136,14 +2138,14 @@ We have used the GPU N-body integrator GENGA \citep{Grimm2014} to carry out long
 %as shown in Figures \ref{fig:taM} and \ref{fig:teM}. 
 To check the stability of the samples, we analyzed the evolution of the semi-major axis, $a$, and eccentricity, $e$, of all samples and planets. We compared the average values over the first Myr and the last Myr. Table \ref{tab:averageAE} gives the average over all samples, and the maximum differences between the first and the last Myr.  In all cases the variations are small, ${\le}0.002$.  These results suggest that the simulations could be stable even on a much longer time scale. In addition, we have carried out long-term (50 Myr) integrations with tidal damping for two posterior samples, one with low and one with high values of the eccentricity of planet b. Using a range of values of tidal damping (from 1/10 to 100 times Earth's), we find in all cases that the system remained stable \citep[using Posidonius;][]{Bolmont2020}.
 
-More interesting is the evolution of the five GLR resonant angles, shown in Figure \ref{fig:tlM}. In order to describe the evolution of the GLR angles, we define three categories: 
+More interesting is the evolution of the five GLR resonant angles, shown in Figure \ref{fig:tlM}. In order to describe the evolution of the GLR angles, we define three categories:
 \begin{itemize}
     \item Category I: remaining in GLR for 10 Myr, with a maximum difference to the initial value of less than $45^\circ$
-    \item Category II: remaining in GLR for 10 Myr, with a maximum difference to the initial value of more than $45^\circ$. In this category, the GLR angles can jump between different states. 
-    \item Category III: not remaining in GLR for 10Myr. 
+    \item Category II: remaining in GLR for 10 Myr, with a maximum difference to the initial value of more than $45^\circ$. In this category, the GLR angles can jump between different states.
+    \item Category III: not remaining in GLR for 10Myr.
 \end{itemize}
 The threshold of $45^\circ$ is chosen arbitrarily, but is found to be practical to distinguish simulations where the GLR angles jump between different states (Category II), or remain in the same state (Category I). Figure \ref{fig:tlM} shows the three different categories in different colors, as well as a histogram of all 10,000 simulations over 10~Myr for all five GLR angles.  The exact number of simulations in the three categories are given in Table \ref{tab:cat}. The GLR angles from Planets b,c and d as well as Planets d,e,f show a unique resonant state. Planets c,d,e and Planets e,f,g have a dominant state and a subdominant state, while Planets f,g,h have a dominant state and two symmetric subdominant states.
-Our new samples show a better conservation of the GLR angles than was found in \citep{Grimm2018}, where the longest resonance time was found to be 2 Myr. 
+Our new samples show a better conservation of the GLR angles than was found in \citep{Grimm2018}, where the longest resonance time was found to be 2 Myr.
 
 %\begin{figure}
 %    \centering
@@ -2167,34 +2169,32 @@ Our new samples show a better conservation of the GLR angles than was found in \
 \end{figure}
 
 \begin{table}
-\centering
-\begin{tabular}{|c|c c c c c}
-planet & $\Delta \bar{a}$ & $\Delta \bar{e}$ & $\max (\Delta a)$ & $\max(\Delta e)$ &\\ 
-b      & -6.52e-09  & 1.73e-04 & 7.12e-07  & 0.0020 \\
-c      & -1.44e-08  & 1.62e-04 & 2.51e-06  & 0.0018 \\
-d      & -1.06e-08  & 1.45e-05 & 4.07e-06  & 0.0009 \\
-e      &  2.05e-08  & 4.44e-05 & 8.53e-06  & 0.0008 \\
-f      &  2.45e-07  & 5.13e-05 & 3.00e-05  & 0.0012 \\
-g      &  8.24e-08  & 5.01e-05 & 2.19e-05  & 0.0011 \\
-h      & -1.23e-07  & 2.11e-04 & 3.00e-05  & 0.0035
-
-\end{tabular}
-\caption{Evolution of the semi-major axes, $a$, and eccentricities, $e$, from $10^4$ samples over 10Myr. For each sample and planet, the difference of the average of $a$ and $e$ over the first and last Myr are compute as $\Delta \bar{a}$ and  $\Delta \bar{e}$; we report the maximum over all samples. These numbers show that all samples remain stable over 10Myr.}
-\label{tab:averageAE}
+    \centering
+    \begin{tabular}{|c|c c c c c}
+        planet & $\Delta \bar{a}$ & $\Delta \bar{e}$ & $\max (\Delta a)$ & $\max(\Delta e)$ & \\
+        b      & -6.52e-09        & 1.73e-04         & 7.12e-07          & 0.0020             \\
+        c      & -1.44e-08        & 1.62e-04         & 2.51e-06          & 0.0018             \\
+        d      & -1.06e-08        & 1.45e-05         & 4.07e-06          & 0.0009             \\
+        e      & 2.05e-08         & 4.44e-05         & 8.53e-06          & 0.0008             \\
+        f      & 2.45e-07         & 5.13e-05         & 3.00e-05          & 0.0012             \\
+        g      & 8.24e-08         & 5.01e-05         & 2.19e-05          & 0.0011             \\
+        h      & -1.23e-07        & 2.11e-04         & 3.00e-05          & 0.0035
+    \end{tabular}
+    \caption{Evolution of the semi-major axes, $a$, and eccentricities, $e$, from $10^4$ samples over 10Myr. For each sample and planet, the difference of the average of $a$ and $e$ over the first and last Myr are compute as $\Delta \bar{a}$ and  $\Delta \bar{e}$; we report the maximum over all samples. These numbers show that all samples remain stable over 10Myr.}
+    \label{tab:averageAE}
 \end{table}
 
 
 \begin{table}
-\centering
-\begin{tabular}{|c|c c c c c} 
-  &                   bcd     & cde   & def   & efg   & fgh \\
- Category I         & 130     & 178   & 755   & 7943  & 6462 \\
- Category II        & 1571    & 874   & 7653  & 1855  & 1578 \\
- Category III       & 8299    & 8948  & 1592  & 202   & 1960
-
-\end{tabular}
-\caption{Number of posterior samples falling into the three resonant categories for the five GLR angles. The total number of posterior samples is 10000.}
-\label{tab:cat}
+    \centering
+    \begin{tabular}{|c|c c c c c}
+                     & bcd  & cde  & def  & efg  & fgh  \\
+        Category I   & 130  & 178  & 755  & 7943 & 6462 \\
+        Category II  & 1571 & 874  & 7653 & 1855 & 1578 \\
+        Category III & 8299 & 8948 & 1592 & 202  & 1960
+    \end{tabular}
+    \caption{Number of posterior samples falling into the three resonant categories for the five GLR angles. The total number of posterior samples is 10000.}
+    \label{tab:cat}
 \end{table}
 
 
@@ -2220,7 +2220,7 @@ and hence better help to plan transit observations with JWST.  This is
 important for both optimizing the efficient use of the telescope, and for
 determining when transits might overlap (i.e.\ two or more planets crossing the face
 of the star at the same time).  This is especially important for transit
-transmission spectroscopy as the signal will be small, and hence many 
+transmission spectroscopy as the signal will be small, and hence many
 transits may need to be observed.  With observation of initial transits
 with JWST the ephemerides can be refined/updated;  however, our current
 forecasts provide the starting point for planning JWST observations.
@@ -2244,7 +2244,7 @@ Next, we created a simulated set of transit-timing observations at the two windo
 
 Finally, we utilized our code for transit-timing analysis  to optimize a plane-parallel model with seven planets.  At the maximum likelihood of the fit, we computed the Hessian to estimate the uncertainties on the model parameters.  Figure \ref{fig:JWST_all_the_transits} shows the simulated transit-timing observations with JWST.   This includes about 600 transits observed with the telescope (again, the maximum possible over the nominal 5-year JWST mission).  Figure \ref{fig:JWST_all_mass} shows the results of the mass measurements in the simulations.  We find that the masses can be recovered to better than 0.02\% for planets d-h, and to 0.05\% for planets b and c.
 
-Of course, it will be impossible to arrange such a large number of transit observations of this system.  But, even if the number of observations is an order of magnitude smaller, we expect that the noise should scale with the square root of the number of measurements made, and thus most of the planets will still have mass measurements precise to the order of a part-per-thousand.  
+Of course, it will be impossible to arrange such a large number of transit observations of this system.  But, even if the number of observations is an order of magnitude smaller, we expect that the noise should scale with the square root of the number of measurements made, and thus most of the planets will still have mass measurements precise to the order of a part-per-thousand.
 
 
 \begin{figure*}
@@ -2252,11 +2252,11 @@ Of course, it will be impossible to arrange such a large number of transit obser
     %\includegraphics[width=\hsize]{figures/T1_JWST_all_transits.pdf}
     \includegraphics[width=\hsize]{figures/T1_JWST_all_transits_tight.png}
     \caption{Simulated observations of all of the transits of TRAPPIST-1
-    detectable with JWST.  Each transit has an
-    uncertainty of ${\approx} 0.6-1.7   $ seconds, assumed to be observed with
-    NIRSPEC (which maximizes the number of photons collected of any JWST
-    instrument).  From retrieval, we obtain
-    ${\la}$0.1\% mass precision.}
+        detectable with JWST.  Each transit has an
+        uncertainty of ${\approx} 0.6-1.7   $ seconds, assumed to be observed with
+        NIRSPEC (which maximizes the number of photons collected of any JWST
+        instrument).  From retrieval, we obtain
+        ${\la}$0.1\% mass precision.}
     \label{fig:JWST_all_the_transits}
 \end{figure*}
 
@@ -2264,9 +2264,9 @@ Of course, it will be impossible to arrange such a large number of transit obser
     \centering
     \includegraphics[width=\hsize]{figures/Recovered_masses_JWST_5yr_all_transits_NIRSPEC.pdf}
     \caption{Simulated planet massses based on 5 years of JWST observations
-    of \emph{every} TRAPPIST-1 transit with NIRSPEC.  The recovered minus
-    the input mass versus the input mass.  The masses can be recovered to
-    better than 0.1\% precision.}
+        of \emph{every} TRAPPIST-1 transit with NIRSPEC.  The recovered minus
+        the input mass versus the input mass.  The masses can be recovered to
+        better than 0.1\% precision.}
     \label{fig:JWST_all_mass}
 \end{figure}
 
@@ -2282,31 +2282,31 @@ Of course, it will be impossible to arrange such a large number of transit obser
 \subsection{Stellar parameters}
 
 The stellar density we derive using the photodynamic model, $\rho_* =
-53.17_{- 1.18}^{+0.72} \rho_\odot$, is moderately higher
+    53.17_{- 1.18}^{+0.72} \rho_\odot$, is moderately higher
 and more precise than prior analyses.  %\citet{Gillon2017} found a density of
 %$\rho_* = (50.7_{-2.2}^{+1.2}\rho_\odot$, while our derived density
 %is about twice as precise, and $3-\sigma$ larger.  
 Most recently, \citet{Delrez2018a}
 found a density of $\rho_* = (52.3\pm 2.2)\rho_\odot$,
-twice as uncertain as our analysis.   We feel that our approach yields a density of superior 
+twice as uncertain as our analysis.   We feel that our approach yields a density of superior
 precision due to several factors.
 The transit times in the Spitzer data are constrained by
-{\it all} of the measured transits in the photodynamic model 
+    {\it all} of the measured transits in the photodynamic model
 so that fewer degrees of freedom
 are needed to fit the times (37 free parameters in the N-body
 model versus 447 transit times fit to each transit).
 
-The stellar mass we take from the analysis by \citet{Mann2019}, 
+The stellar mass we take from the analysis by \citet{Mann2019},
 $M_* = 0.0898\pm 0.0023 M_\odot$.\footnote{\texttt{https://github.com/awmann/M\_-M\_K-}}
 This mass has a precision of 2.6\%, which limits the mass precision
-for several of the planets.  We are at the point that to improve the mass measurements 
+for several of the planets.  We are at the point that to improve the mass measurements
 of the planets we will need to improve the measurements of the star.
 
-We used the luminosity estimate from \citet{Ducrot2020}, which is slightly lower than 
-that estimated by  \citet{Gonzales2019} due to a difference in the measured bolometric 
+We used the luminosity estimate from \citet{Ducrot2020}, which is slightly lower than
+that estimated by  \citet{Gonzales2019} due to a difference in the measured bolometric
 flux.  We are consistent with \citet{Gonzales2019}
 for the reported value of $R^2T_{eff}^4$ at 1$\sigma$, while our $T_{eff}$ is more precise
-(28 K vs 42 K), $R$ is 2.5 times more precise, and our $\log{g}$ is more 
+(28 K vs 42 K), $R$ is 2.5 times more precise, and our $\log{g}$ is more
 precise by an order of magnitude.
 
 \section{Conclusions} \label{sec:conclusions}
@@ -2320,12 +2320,12 @@ are:
 \begin{enumerate}
     \item  We have measured the masses, radii and densities to high precision, 3-6\%, based on an N-body model with seven planets.  This improves upon RV current precision by two orders of magnitude.
     \item  The pattern of masses and radii is consistent with a uniform planetary composition for all seven planets
-    which have lower uncompressed densities than the Earth, Mars or Venus, with weaker evidence for a declining normalized density with orbital period (90\% confidence). The planet properties may either be consistent with 
-    a core mass fraction of $17{\pm}4$ wt\%, or an Earth-like core and mantle with a volatile
-    content which varies from ${<}0.01$\% for the inner three planets to ${\approx} 5$\%
-    for the outer four, or core-free planets with highly oxidized iron in the mantle which elevates the interior volatile content.  These are not unique explanations.
+          which have lower uncompressed densities than the Earth, Mars or Venus, with weaker evidence for a declining normalized density with orbital period (90\% confidence). The planet properties may either be consistent with
+          a core mass fraction of $17{\pm}4$ wt\%, or an Earth-like core and mantle with a volatile
+          content which varies from ${<}0.01$\% for the inner three planets to ${\approx} 5$\%
+          for the outer four, or core-free planets with highly oxidized iron in the mantle which elevates the interior volatile content.  These are not unique explanations.
     \item  The planets appear to be dynamically-cold, with eccentricities lower than
-    ${\approx }1$\%, and inclinations which are coplanar to a fraction of a degree.
+          ${\approx }1$\%, and inclinations which are coplanar to a fraction of a degree.
     \item The system is stable on long timescales, and shows a pattern of generalized Laplace resonances with angles which match predictions from migration simulations of \citet{Mah2018}.
     \item We provide a forecast of the future times of transit for the planets (Table \ref{tab:transit_times_forecast}) to help in planning observations with JWST, which may yield more precise constraints upon the planets' masses.
     \item We have yet to find strong evidence for an eighth planet.
@@ -2339,10 +2339,10 @@ system.
 As mentioned, our analysis suggests that the TRAPPIST-1 planets have somewhat lower uncompressed bulk densities than Earth (see Table \ref{tab:uber_table} and Fig. \ref{fig:mass_radius_relation}).  It is possible that these lower densities result from a deficit of high-density material (e.g., less iron) relative to Earth, or an excess of low-density material (e.g., having more water), or both;  in this section we speculate about formation scenarios which may be consistent with these planets' bulk densities.
 
 In general, planets which formed within the same proto-planetary disk have similar budgets in relative refractory elements \citep{bond2010making,elser2012origin} but can have
-very different volatile element budgets \citep{oberg2016excess}. Similar relative refractory elements (Fe, Mg, Si) implies 
+very different volatile element budgets \citep{oberg2016excess}. Similar relative refractory elements (Fe, Mg, Si) implies
 similar core mass fractions for all seven planets, assuming full differentiation. As suggested by \citet{Dorn2018}, the refractory composition may best be described by studying the densest planet of the system, planet c with 17-30\% CMF. Thus, with this assumption, all of the planets may likely have a 17-30\% CMF but different volatile mass fractions (that may increase slightly with orbital period, Fig. 19).
 
-Is an overall CMF of 17-30\% realistic for terrestrial planet interiors? This range of CMF implies lower Fe/Mg and Fe/Si values compared to Earth (and the Sun). Elemental abundances of rocky interiors are expected to be reflected in the photospheric abundance of the host star as argued by \citet{Unterborn2018a} and \citet{Dorn2018}. Unfortunately, measuring the photospheric abundances of this cool and active host star remains very challenging. However, \citet{Unterborn2018a} estimated the stellar Fe/Mg number ratio to be $0.75{\pm} 0.2$ by analysing Sun-like stars of similar metallicity to TRAPPIST-1, which may be slightly lower than the Solar value. The corresponding mass-radius curve for a rocky interior of this range of Fe/Mg value is plotted in Figure \ref{fig:mass_radius_relation} (brown curve and shaded region). It overlaps well with the densest planets c and b. This means that the expected range of stellar abundances supports a possible overall CMF value of 17-30\%, assuming full differentiation.    
+Is an overall CMF of 17-30\% realistic for terrestrial planet interiors? This range of CMF implies lower Fe/Mg and Fe/Si values compared to Earth (and the Sun). Elemental abundances of rocky interiors are expected to be reflected in the photospheric abundance of the host star as argued by \citet{Unterborn2018a} and \citet{Dorn2018}. Unfortunately, measuring the photospheric abundances of this cool and active host star remains very challenging. However, \citet{Unterborn2018a} estimated the stellar Fe/Mg number ratio to be $0.75{\pm} 0.2$ by analysing Sun-like stars of similar metallicity to TRAPPIST-1, which may be slightly lower than the Solar value. The corresponding mass-radius curve for a rocky interior of this range of Fe/Mg value is plotted in Figure \ref{fig:mass_radius_relation} (brown curve and shaded region). It overlaps well with the densest planets c and b. This means that the expected range of stellar abundances supports a possible overall CMF value of 17-30\%, assuming full differentiation.
 
 Could there be a variation of Fe/Mg ratios among the planets?
 Rocky planet accretion should preserve the integrated iron/rock ratio. Consider a population of planetary embryos and planetesimals that accrete into a system of rocky planets. Giant collisions between growing planetary embryos can change the iron/rock ratios of individual objects by preferentially stripping the outer, rock-dominated layers from differentiated embryos~\citep[e.g.][]{benz88,marcus10,asphaug14}. But from a system-wide perspective, it is a zero-sum game unless rock or iron is preferentially lost from all of the planets. Rock is the major component of loosely-bound impact debris and more likely to be lost either by differential aerodynamic drag~\citep{weidenschilling77} or solar wind drag~\citep{spalding20}, and so the integrated iron/rock ratio should only increase.
@@ -2352,16 +2352,16 @@ Now let us instead suppose that the TRAPPIST-1 star has similar refractory abund
 
 Carbonaceous chondrites may also be an appropriate analog for the compositions of the TRAPPIST-1 planets from a formation perspective. Planetesimals are thought to form preferentially just past the (evolving) snow line~\citep{armitage16,drazkowska17,schoonenberg17}.  Carbonaceous chondrites are spectrally associated with C-type asteroids~\citep{bus02,burbine02}, which are predominantly located in the outer main belt~\citep{gradie82,demeo13}.  Dynamical models suggest that carbonaceous chondrites were implanted from the Jupiter-Saturn region into the asteroid belt during the giants' growth and migration~\citep{walsh11,raymond17,ronnet18,raymond20}.  They are therefore likely to represent the compositions of the cores of the giant planets.
 
-Orbital migration was a key ingredient in the assembly of the TRAPPIST-1 system \citep{Tamayo2017,Ormel2017,Papaloizou2017,MacDonald2018,coleman19}.  Chains of orbital resonances are a signpost of migration~\citep[e.g.]{Cresswell2008}. Models which invoke long-range migration can match the orbital spacing of the population of super-Earth systems~\citep{izidoro17,izidoro19}. These models propose that resonant chains are ubiquitous but that most are destabilized during or after dissipation of the gaseous disk~\citep{terquem07,ogihara09,mcneil10,cossou14}. The first planetary embryos massive enough to migrate are likely to form just past the snow line because of the increased efficiency of planetesimal formation and pebble accretion~\citep{lambrechts14,Ormel2017}. A model based on this assumption can match the orbital structure of the TRAPPIST-1 system~\citep{Schoonenberg2019}. Given that these they are inferred to form at similar temperatures, one may expect that the building blocks of close-in planets have carbonaceous chondrite-like compositions. 
+Orbital migration was a key ingredient in the assembly of the TRAPPIST-1 system \citep{Tamayo2017,Ormel2017,Papaloizou2017,MacDonald2018,coleman19}.  Chains of orbital resonances are a signpost of migration~\citep[e.g.]{Cresswell2008}. Models which invoke long-range migration can match the orbital spacing of the population of super-Earth systems~\citep{izidoro17,izidoro19}. These models propose that resonant chains are ubiquitous but that most are destabilized during or after dissipation of the gaseous disk~\citep{terquem07,ogihara09,mcneil10,cossou14}. The first planetary embryos massive enough to migrate are likely to form just past the snow line because of the increased efficiency of planetesimal formation and pebble accretion~\citep{lambrechts14,Ormel2017}. A model based on this assumption can match the orbital structure of the TRAPPIST-1 system~\citep{Schoonenberg2019}. Given that these they are inferred to form at similar temperatures, one may expect that the building blocks of close-in planets have carbonaceous chondrite-like compositions.
 
 The bulk densities of the outer four TRAPPIST-1 planets may be consistent with having formed from carbonaceous chondrite-like planetary embryos. Carbonaceous chondrites have 20-25\% iron by mass~\citep[see values compiled in][]{lodders98}, primarily due to an enhance volatile inventory relative to Earth.  Carbonaceous chondrites have ${\sim}$1-10\% water by mass~
-\citep[and are thought to represent the source population of planetesimals that delivered water to Earth; see][for a review]{meech20}. This is similar to water contents inferred for super-Earths assuming that they grew from planetesimals just past the snow line~\citep{Ormel2017,Schoonenberg2019,bitsch19a,Liu2020}. In contrast, Earth is only ${\sim} 0.1\%$ water by mass~\citep[e.g., ][although uncertainties remain in the core's hydrogen content]{hirschmann06,marty12}. The higher water content and lower iron content of carbonaceous chondrite planets relative to Earth would lower the bulk density of a carbonaceous planet, which is qualitatively consistent with the measurements for the outer TRAPPIST-1 planets. 
+\citep[and are thought to represent the source population of planetesimals that delivered water to Earth; see][for a review]{meech20}. This is similar to water contents inferred for super-Earths assuming that they grew from planetesimals just past the snow line~\citep{Ormel2017,Schoonenberg2019,bitsch19a,Liu2020}. In contrast, Earth is only ${\sim} 0.1\%$ water by mass~\citep[e.g., ][although uncertainties remain in the core's hydrogen content]{hirschmann06,marty12}. The higher water content and lower iron content of carbonaceous chondrite planets relative to Earth would lower the bulk density of a carbonaceous planet, which is qualitatively consistent with the measurements for the outer TRAPPIST-1 planets.
 
 %Ceres may be a more relevant analog to the outer TRAPPIST-1 planets than Earth. While it is far less massive than Earth or the TRAPPIST-1 planets ($M_{Ceres} {\approx} 1.5 {\times} 10^{-4} M_\oplus$), Ceres is likely carbonaceous in composition \citep{bland16,mcsween18,marchi19} and is likely to have been implanted into the main belt during the giant planets' growth~\citep{raymond17}. While Ceres appears to have too much water (roughly 40\% by mass) and its bulk composition would be too low-density to match the TRAPPIST-1 planets, interior models of scaled-up Ceres-like planets might provide a useful comparison for super-Earth bulk density measurements. 
 
 Can the TRAPPIST-1 planets' densities and core mass fractions be used to differentiate between formation scenarios? At present, the other viable model for super-Earth formation -- sometimes called the {\em drift} model -- invokes accretion close-in from a disk of solids that has been enriched by the inward drift of pebbles~\citep{chatterjee14,chatterjee15,dawson15}.\footnote{We note that any ``in-situ" growth scenario that does not account for orbital migration is clearly ruled out using simple timescale arguments~\citep[i.e., because migration -- and even aerodynamic drift -- is far too fast to ignore; see][]{ogihara15,inamdar15,izidoro2018}.} After large embryos grow they are necessarily subject to migration and then follow the same general dynamical pathway as in the migration model~\citep[involving resonant capture and later breaking of resonant chains; see discussion in][]{raymond18d}. Given that the outer disk represents the main source of drifting pebbles~\citep{lambrechts14,ida16}, one may thus expect the planets that form in the drift model could also be carbonaceous in composition. The main difference with regards to the migration model is that inward-drifting pebbles would lose their water but inward-migrating embryos would not. %Both models would naively predict the lower iron core mass fractions seen in Fig. \ref{fig:cmf} due to an enhancement in volatile content.
 
-Alternatively, the lower measured bulk densities of the TRAPPIST-1 planets relative to Earth-like composition might be explained by core-free interiors \citep{ElkinsTanton2008} in which the Oxygen content is high enough such that all iron is oxidised. If the refractory elements (Mg,Fe,Si) follow Solar abundances, a fully oxidised interior would contain about 38.2 wt\% of Oxygen, which lies between the value for Earth (29.7 wt\%) and CI chondrites (45.9 wt\%). Such an interior scenario can easily describe the observed bulk densities (purple line in Fig. \ref{fig:mass_radius_relation}).  And this may bolster the long-range migration scenario in which the planets formed in a highly oxidizing environment which enabled the iron to remain in the mantle even after migration.  
+Alternatively, the lower measured bulk densities of the TRAPPIST-1 planets relative to Earth-like composition might be explained by core-free interiors \citep{ElkinsTanton2008} in which the Oxygen content is high enough such that all iron is oxidised. If the refractory elements (Mg,Fe,Si) follow Solar abundances, a fully oxidised interior would contain about 38.2 wt\% of Oxygen, which lies between the value for Earth (29.7 wt\%) and CI chondrites (45.9 wt\%). Such an interior scenario can easily describe the observed bulk densities (purple line in Fig. \ref{fig:mass_radius_relation}).  And this may bolster the long-range migration scenario in which the planets formed in a highly oxidizing environment which enabled the iron to remain in the mantle even after migration.
 
 However, the evidence for a core-free planet rests on knowing the refractory abundances of the TRAPPIST-1 host star, which have yet to be constrained.  Alas, our interpretation of the planets' compositions may be limited by our imprecise knowledge of the host star:  its radius, its mass, its photospheric inhomogeneity, and its refractory abundances all affect our measurement and interpretation of the masses, radii, and compositions of the TRAPPIST-1 planets.  In this paper our measurements of the relative planetary radii and masses have reached such a precision that the fault may now lie in the star.
 
@@ -2377,46 +2377,46 @@ However, the evidence for a core-free planet rests on knowing the refractory abu
 We conclude by pointing out directions for building upon the work described in this paper:
 \begin{enumerate}
     \item We have yet to identify the origin of timing outliers which
-    show an excess relative to a normal distribution.  This may be addressed
-    with higher precision measurements which may be able to identify a source
-    of noise responsible for these outliers.
+          show an excess relative to a normal distribution.  This may be addressed
+          with higher precision measurements which may be able to identify a source
+          of noise responsible for these outliers.
     \item Our analysis assumes a plane-parallel system with seven planets, and
-    does not yet couple the dynamical and photometric analysis (our photodynamics
-    held the dynamical model fixed).  Future analysis with a fully-coupled
-    photodynamical model with 3D orbits and more than seven planets may be warranted.
+          does not yet couple the dynamical and photometric analysis (our photodynamics
+          held the dynamical model fixed).  Future analysis with a fully-coupled
+          photodynamical model with 3D orbits and more than seven planets may be warranted.
     \item We need more transits measured for planets d and h, in order
-    to better measure the amplitude and phase on the transit-timing variation
-    timescale, as well as to better constrain the presence of planets beyond h.
+          to better measure the amplitude and phase on the transit-timing variation
+          timescale, as well as to better constrain the presence of planets beyond h.
     \item The interpretation of the compositions of the planets is limited by the unknown composition of the host star. A measurement of the C/O ratio would validate the assumption we have made that composition is dominated by silicates rather than silicon carbide.  A measurement of the Mg/Fe and Fe/Si ratios would help to interpret the core and mantle compositions.  Both sets of constraints would help to limit the range and break degeneracies of possible interior compositions of the planets \citep{Dorn2015,Bitsch2019b}.
     \item Without a constraint on the detailed abundance ratios of the host star, a Bayesian interpretation of the bulk densities of the planets should be warranted \citep{Dorn2016} to better quantify the range of possible compositions.
-    \item More detailed spectral analysis of the stellar photosphere to ascertain the impact of an inhomogeneous stellar atmosphere on the radius ratios would be warranted. 
+    \item More detailed spectral analysis of the stellar photosphere to ascertain the impact of an inhomogeneous stellar atmosphere on the radius ratios would be warranted.
 \end{enumerate}
 
 We anticipate that once JWST launches, we will obtain higher precision constraints upon the dynamics of the system, yielding much improved constraints upon the planets' bulk densities, which will further improve the interpretation of their interior compositions.
 
 \section*{Acknowledgements}
 
-This work is based in part on observations made with the Spitzer Space Telescope, which 
-is operated by the Jet Propulsion Laboratory, California Institute of Technology under 
-a contract with NASA. Support for this work was provided by NASA through an award issued 
-by JPL/Caltech.  EA was supported by a Guggenheim Fellowship.  Additional support for this 
-work was provided by the NASA Astrobiology Institute’s Virtual Planetary Laboratory, 
-supported by the National  Aeronautics and Space Administration through the NASA Astrobiology 
-Institute under solicitation NNH12ZDA002C and Cooperative Agreement Number NNA13AA93A.  
-This work was facilitated though the use of the advanced computational, storage, and 
-networking infrastructure provided by the Hyak supercomputer system at the University of 
-Washington. Calculations were performed on UBELIX (http://www.id.unibe.ch/hpc), the HPC 
-cluster at the University of Bern. This work has been carried out in the framework of the PlanetS National Centre 
-of Competence in Research (NCCR) supported by the Swiss National Science Foundation (SNSF). 
-This research has made use of NASA's Astrophysics Data System and of services produced by 
+This work is based in part on observations made with the Spitzer Space Telescope, which
+is operated by the Jet Propulsion Laboratory, California Institute of Technology under
+a contract with NASA. Support for this work was provided by NASA through an award issued
+by JPL/Caltech.  EA was supported by a Guggenheim Fellowship.  Additional support for this
+work was provided by the NASA Astrobiology Institute’s Virtual Planetary Laboratory,
+supported by the National  Aeronautics and Space Administration through the NASA Astrobiology
+Institute under solicitation NNH12ZDA002C and Cooperative Agreement Number NNA13AA93A.
+This work was facilitated though the use of the advanced computational, storage, and
+networking infrastructure provided by the Hyak supercomputer system at the University of
+Washington. Calculations were performed on UBELIX (http://www.id.unibe.ch/hpc), the HPC
+cluster at the University of Bern. This work has been carried out in the framework of the PlanetS National Centre
+of Competence in Research (NCCR) supported by the Swiss National Science Foundation (SNSF).
+This research has made use of NASA's Astrophysics Data System and of services produced by
 the NASA Exoplanet Science Institute at the California Institute of Technology.
-This project has received funding from the European Union’s Horizon 2020 research and 
-innovation program under the Marie Sklodowska-Curie Grant Agreement No. 832738/ESCAPE and European Research Council (ERC; grants agreement n$^\circ$ 679030/WHIPLASH and 803193/BEBOP). M.T. 
+This project has received funding from the European Union’s Horizon 2020 research and
+innovation program under the Marie Sklodowska-Curie Grant Agreement No. 832738/ESCAPE and European Research Council (ERC; grants agreement n$^\circ$ 679030/WHIPLASH and 803193/BEBOP). M.T.
 thanks the Gruber Foundation for its generous support to this research.
-The research leading to these results has received funding from the European Research Council 
-under the European Union's Seventh Framework Programme (FP/2007-2013) ERC Grant 
+The research leading to these results has received funding from the European Research Council
+under the European Union's Seventh Framework Programme (FP/2007-2013) ERC Grant
 Agreement n° 336480, and from the ARC grant for Concerted Research Actions, financed by the
-Wallonia-Brussels Federation. CD acknowledges the support of the Swiss National Foundation under grant PZ00P2\_174028. V.V.G. is a F.R.S.-FNRS Research Associate. M.G. and E.J. are F.R.S.-FNRS Senior Research Associates. R.M. acknowledges support for this research from NASA (grant 80NSSC18K0397). Z.L. acknowledges support from the Washington NASA Space Grant Consortium Summer Undergraduate Research Program. 
+Wallonia-Brussels Federation. CD acknowledges the support of the Swiss National Foundation under grant PZ00P2\_174028. V.V.G. is a F.R.S.-FNRS Research Associate. M.G. and E.J. are F.R.S.-FNRS Senior Research Associates. R.M. acknowledges support for this research from NASA (grant 80NSSC18K0397). Z.L. acknowledges support from the Washington NASA Space Grant Consortium Summer Undergraduate Research Program.
 
 
 We thank Trevor Branch for discussions about HMC and automatic differentiation.
@@ -2459,34 +2459,34 @@ as a Taylor series:
         &+ \frac{1}{2} \sum_{k,l} \left.\frac{\partial^2 \log\mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_l}\right\vert_{\mathbf{x}_0}(x_k - x_{0,k})(x_l - x_{0,l}),
     \end{split}
 \end{equation}
-where we have used the fact that the gradient of the log likelihood vanishes at the maximum likelihood value of the model parameters, $\mathbf{x}_0$, and the indices $k,l = 1,...,5N_p+2$ for $x_k$ and $x_l$, where the first $5N_p$ parameters are the dynamical parameters, $\mathbf{x}_{dyn}$, and the last two parameters are the Student's t-distribution likelihood parameters, $\log{\nu}$ and $V_1e^{1/2\nu}$. 
+where we have used the fact that the gradient of the log likelihood vanishes at the maximum likelihood value of the model parameters, $\mathbf{x}_0$, and the indices $k,l = 1,...,5N_p+2$ for $x_k$ and $x_l$, where the first $5N_p$ parameters are the dynamical parameters, $\mathbf{x}_{dyn}$, and the last two parameters are the Student's t-distribution likelihood parameters, $\log{\nu}$ and $V_1e^{1/2\nu}$.
 Now, the width of the Gaussian distribution at the maximum likelihood is governed by the Hessian matrix, with elements given by
 \begin{equation}
-   \mathcal{H}_{kl}(\mathbf{x}_0) =  -\sum_{i,j} \left.\frac{\partial^2 \log\mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_l}\right\vert_{\mathbf{x}_0},
+    \mathcal{H}_{kl}(\mathbf{x}_0) =  -\sum_{i,j} \left.\frac{\partial^2 \log\mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_l}\right\vert_{\mathbf{x}_0},
 \end{equation}
 which involves second derivatives of the log likelihood with respect to the model parameters.  The log likelihood for each data point with indices $i$ and $j$ may be written as a function of the observed transit times and uncertainties, the modeled transit times, and the Student's t-distribution model parameters, such that
 \begin{equation}
-     \mathcal{L}_{ij}(\mathbf{x}) = \mathcal{L}_{ij}(t_{ij}(\mathbf{x}_{dyn});\log{\nu},V_1e^{1/2\nu};t_{ij,obs},\sigma_{ij}),
+    \mathcal{L}_{ij}(\mathbf{x}) = \mathcal{L}_{ij}(t_{ij}(\mathbf{x}_{dyn});\log{\nu},V_1e^{1/2\nu};t_{ij,obs},\sigma_{ij}),
 \end{equation}
 where all of the dependence on the dynamical model parameters enters through $t_{ij}(\mathbf{x}_{dyn})$.  The derivatives of $t_{ij}$ with respect to $\mathbf{x}_{dyn}$ we compute with the \textsf{NbodyGradient} code;  however, the second derivatives of the transit times with respect to the dynamical model parameters are not computed with our N-body code.  We drop these transit time second derivative terms, which we justify as follows.
 
-For the Hessian matrix elements which involve second derivatives with respect to both dynamical model parameters, $1 \le k,l \le 5N_p$, we can write: 
+For the Hessian matrix elements which involve second derivatives with respect to both dynamical model parameters, $1 \le k,l \le 5N_p$, we can write:
 \begin{equation}
     \frac{\partial^2 \log\mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_l} = \frac{\partial^2 \log\mathcal{L}_{ij}(\mathbf{x})}{\partial^2 t_{ij}} \frac{\partial t_{ij}}{\partial x_k} \frac{\partial t_{ij}}{\partial x_l} + \frac{\partial \log\mathcal{L}_{ij}(\mathbf{x})}{\partial t_{ij}} \frac{\partial^2 t_{ij}}{\partial x_k \partial x_l},
 \end{equation}
-where $t_{ij} = t_{ij}(\mathbf{x}_{dyn})$ is implied in this and subsequent equations.  
+where $t_{ij} = t_{ij}(\mathbf{x}_{dyn})$ is implied in this and subsequent equations.
 
 Now, at the maximum likelihood there is a balance of residuals which are both positive and negative, such that the second component of this equation has terms with positive and negative signs for different values of $i$ and $j$. This causes the second term in this equation to average to a small value compared with the first term when the sum is carried out over $i$ and $j$ (the planet and transit indices).  So, we drop the second term in this equation.
 
 Adding in the cases of the Hessian matrix elements which involve the likelihood parameters, $(x_{5N_p+1},x_{5N_p+2}) = (\log \nu, V_1e^{1/2nu})$, we compute the Hessian as
 \begin{eqnarray}\label{eqn:hessian}
-\mathcal{H}_{k,l}(\mathbf{x})= -\sum_{i,j} 
-\begin{cases}
-\frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial^2 t_{ij}} \frac{\partial t_{ij}}{\partial x_k} \frac{\partial t_{ij}}{\partial x_l} & 1 \le k,l \le 5N_p \cr
- \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial t_{ij} \partial x_l} \frac{\partial t_{ij}}{\partial x_k} & 1 \le k \le 5N_p; l > 5N_p \cr
- \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial t_{ij} \partial x_k} \frac{\partial t_{ij}}{\partial x_l} & l > 5N_p; 1 \le k \le 5N_p \cr
-\frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_k} & k,l > 5N_p
-\end{cases},
+    \mathcal{H}_{k,l}(\mathbf{x})= -\sum_{i,j}
+    \begin{cases}
+        \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial^2 t_{ij}} \frac{\partial t_{ij}}{\partial x_k} \frac{\partial t_{ij}}{\partial x_l} & 1 \le k,l \le 5N_p \cr
+        \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial t_{ij} \partial x_l} \frac{\partial t_{ij}}{\partial x_k}                           & 1 \le k \le 5N_p; l > 5N_p \cr
+        \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial t_{ij} \partial x_k} \frac{\partial t_{ij}}{\partial x_l}                           & l > 5N_p; 1 \le k \le 5N_p \cr
+        \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_k}                                                                   & k,l > 5N_p
+    \end{cases},
 \end{eqnarray}
 where the partial derivatives with respect to $t_{ij}(\mathbf{x}_{dyn})$, $x_{5N_p+1}=\log \nu$, and $x_{5N_p+2} = V_1e^{1/2\nu}$
 are computed with automatic differentiation.
@@ -2498,68 +2498,68 @@ The inverse of the Hessian matrix is used in the Levenburg-Marquardt optimizatio
 \begin{table*}
     \centering
     \begin{tabular}{l|c|c|c|c|c}
-        Parameter &  Variable & Lower bound & Lower transition & Upper transition & Upper bound \\
+        Parameter                 & Variable                         & Lower bound & Lower transition & Upper transition & Upper bound \\
         \hline
-                  &           &   $\xi_1$  & $\xi_2$ & $\xi_3$ & $\xi_4$ \cr
-        Mass-ratio & $\log_{10}{\mu}$ & -8 & -7 & -3 & -2 \cr
-        Eccentricity & $e$ & - & - & 0.2 & 0.3 \cr
-        Period of b & $P_\mathrm{b}$ [d] & 1.49 & 1.50 & 1.52 & 1.53\cr
-        Period of c & $P_\mathrm{c}$ [d] & 2.40 & 2.41 & 2.43 & 2.44\cr
-        Period of d & $P_\mathrm{d}$ [d] & 4.03 & 4.04 & 4.06 & 4.07\cr
-        Period of e & $P_\mathrm{e}$ [d] & 6.08 & 6.09 & 6.11 & 6.12\cr
-        Period of f & $P_\mathrm{f}$ [d] & 9.18 & 9.19 & 9.22 & 9.23\cr
-        Period of g & $P_\mathrm{g}$ [d] & 12.33 & 12.34 & 12.36 & 12.37\cr
-        Period of h & $P_\mathrm{h}$ [d] & 18.75 & 18.76 & 18.78 & 18.79\cr
-        Initial transit time of b & $t_{0,\mathrm{b}}-2,457,257$ [d] & 0.53 & 0.54 & 0.56 & 0.57\cr
-        Initial transit time c & $t_{0,\mathrm{c}}-2,457,257$ [d] & 0.57 & 0.58 & 0.60 & 0.61\cr
-        Initial transit time d & $t_{0,\mathrm{d}}-2,457,257$ [d] & 0.05 & 0.06 & 0.08 & 0.09\cr
-        Initial transit time e & $t_{0,\mathrm{e}}-2,457,257$ [d] & 0.81 & 0.82 & 0.84 & 0.85\cr
-        Initial transit time f & $t_{0,\mathrm{f}}-2,457,257$ [d] & 0.05 & 0.06 & 0.08 & 0.09\cr
-        Initial transit time g & $t_{0,\mathrm{g}}-2,457,257$ [d] & 0.70 & 0.71 & 0.73 & 0.74\cr
-        Initial transit time h & $t_{0,\mathrm{h}}-2,457,249$ [d] & 0.58 & 0.59 & 0.61 & 0.62\cr
-        Degrees of freedom & $\nu$ & 0.5 & 1.0 & 50 & 100\cr
-        Log variance factor & $\log{V_1}$ & -2 & -1 & 5 & 10
+                                  &                                  & $\xi_1$     & $\xi_2$          & $\xi_3$          & $\xi_4$ \cr
+        Mass-ratio                & $\log_{10}{\mu}$                 & -8          & -7               & -3               & -2 \cr
+        Eccentricity              & $e$                              & -           & -                & 0.2              & 0.3 \cr
+        Period of b               & $P_\mathrm{b}$ [d]               & 1.49        & 1.50             & 1.52             & 1.53\cr
+        Period of c               & $P_\mathrm{c}$ [d]               & 2.40        & 2.41             & 2.43             & 2.44\cr
+        Period of d               & $P_\mathrm{d}$ [d]               & 4.03        & 4.04             & 4.06             & 4.07\cr
+        Period of e               & $P_\mathrm{e}$ [d]               & 6.08        & 6.09             & 6.11             & 6.12\cr
+        Period of f               & $P_\mathrm{f}$ [d]               & 9.18        & 9.19             & 9.22             & 9.23\cr
+        Period of g               & $P_\mathrm{g}$ [d]               & 12.33       & 12.34            & 12.36            & 12.37\cr
+        Period of h               & $P_\mathrm{h}$ [d]               & 18.75       & 18.76            & 18.78            & 18.79\cr
+        Initial transit time of b & $t_{0,\mathrm{b}}-2,457,257$ [d] & 0.53        & 0.54             & 0.56             & 0.57\cr
+        Initial transit time c    & $t_{0,\mathrm{c}}-2,457,257$ [d] & 0.57        & 0.58             & 0.60             & 0.61\cr
+        Initial transit time d    & $t_{0,\mathrm{d}}-2,457,257$ [d] & 0.05        & 0.06             & 0.08             & 0.09\cr
+        Initial transit time e    & $t_{0,\mathrm{e}}-2,457,257$ [d] & 0.81        & 0.82             & 0.84             & 0.85\cr
+        Initial transit time f    & $t_{0,\mathrm{f}}-2,457,257$ [d] & 0.05        & 0.06             & 0.08             & 0.09\cr
+        Initial transit time g    & $t_{0,\mathrm{g}}-2,457,257$ [d] & 0.70        & 0.71             & 0.73             & 0.74\cr
+        Initial transit time h    & $t_{0,\mathrm{h}}-2,457,249$ [d] & 0.58        & 0.59             & 0.61             & 0.62\cr
+        Degrees of freedom        & $\nu$                            & 0.5         & 1.0              & 50               & 100\cr
+        Log variance factor       & $\log{V_1}$                      & -2          & -1               & 5                & 10
     \end{tabular}
     \caption{Prior probability boundary limits for the TRAPPIST-1 planet parameters.  The bounds are chosen so as to not affect the parameters as much as possible.}
     \label{tab:prior_parameterization}
 \end{table*}
 
-Tables of the HMC prior (Table \ref{tab:prior_parameterization}), the 
+Tables of the HMC prior (Table \ref{tab:prior_parameterization}), the
 best-fit transit times (Table \ref{tab:transit_times_observed_and_calculated}), and
 the  forecast times (Table \ref{tab:transit_times_forecast})
 are given in this appendix.
 
 %\onecolumn
 \begin{longtable}{|c|c|c|c|c|c|c|}
-%\centering
- %   \begin{tabular}{c|c|c|c|c|c}
- %{|m{0.1\linewidth}|m{0.1\linewidth}|m{0.1\linewidth}|}
- \hline
-         Planet & Epoch & $t_\mathrm{obs}$ &
-         $\sigma_\mathrm{obs}$ & $t_\mathrm{post}$ & $\sigma_{post}$ & Source \endfirsthead
-         Planet & Epoch & $t_\mathrm{obs}$ &
-         $\sigma_\mathrm{obs}$ & $t_\mathrm{post}$ & $\sigma_{post}$ & Source \endhead
-         \hline
-         \input{timings_table_with_sources}
-         \hline
- %   \end{tabular}
-    \caption{Observed transit times with uncertainties, along with the mean, $t_\mathrm{post}$, and standard deviation, $\sigma_{post}$ of 
-    the times from the posterior sample.  Times are in $BJD - 2,450,000$ while uncertainties are in days.}
+    %\centering
+    %   \begin{tabular}{c|c|c|c|c|c}
+    %{|m{0.1\linewidth}|m{0.1\linewidth}|m{0.1\linewidth}|}
+    \hline
+    Planet                & Epoch             & $t_\mathrm{obs}$ &
+    $\sigma_\mathrm{obs}$ & $t_\mathrm{post}$ & $\sigma_{post}$  & Source \endfirsthead
+    Planet                & Epoch             & $t_\mathrm{obs}$ &
+    $\sigma_\mathrm{obs}$ & $t_\mathrm{post}$ & $\sigma_{post}$  & Source \endhead
+    \hline
+    \input{timings_table_with_sources}
+    \hline
+    %   \end{tabular}
+    \caption{Observed transit times with uncertainties, along with the mean, $t_\mathrm{post}$, and standard deviation, $\sigma_{post}$ of
+        the times from the posterior sample.  Times are in $BJD - 2,450,000$ while uncertainties are in days.}
     \label{tab:transit_times_observed_and_calculated}
 \end{longtable}
 
 \pagebreak
 %\onecolumn
 \begin{longtable}{|c|c|c|c|}
- \hline
-         Planet & Epoch & $t_\mathrm{post}$ & $\sigma_\mathrm{post}$ \endfirsthead
-         Planet & Epoch & $t_\mathrm{post}$ & $\sigma_\mathrm{post}$ \endhead
-         \hline
-         \input{timings_forecast}
-         \hline
- %   \end{tabular}
-    \caption{Mean, $t_\mathrm{post}$, and standard deviation, $\sigma_\mathrm{post}$ of 
-    forecast times from the posterior sample.  Times are in $JD - 2,450,000$ while uncertainties are in days.  Thirty lines are previewed; full table is available electronically.}
+    \hline
+    Planet & Epoch & $t_\mathrm{post}$ & $\sigma_\mathrm{post}$ \endfirsthead
+    Planet & Epoch & $t_\mathrm{post}$ & $\sigma_\mathrm{post}$ \endhead
+    \hline
+    \input{timings_forecast}
+    \hline
+    %   \end{tabular}
+    \caption{Mean, $t_\mathrm{post}$, and standard deviation, $\sigma_\mathrm{post}$ of
+        forecast times from the posterior sample.  Times are in $JD - 2,450,000$ while uncertainties are in days.  Thirty lines are previewed; full table is available electronically.}
     \label{tab:transit_times_forecast}
 \end{longtable}
 %\twocolumn
