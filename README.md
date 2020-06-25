@@ -6,6 +6,7 @@
 </h1>
 <p align="center">
 Code, data, figures, tables, and latex supporting material for TRAPPIST-1 transit timing paper.
+Look at GettingStarted.md for a guide to the repository.
   </p>
  <p align="center">
  
