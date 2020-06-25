@@ -12,9 +12,13 @@ then
     which pdftex
     which tlmgr
     
-    # Generate figure placeholders
+    # Generate figure placeholders, or use the static versions?
     cd $TRAVIS_BUILD_DIR/tex/figures
-    python figure_placeholders.py
+    if [[ $TRAVIS_COMMIT_MESSAGE == *"--use-static-figures"* ]]; then
+        cp static/* .
+    else
+        python figure_placeholders.py
+    fi
 
     # Generate the Julia figures
     # https://github.com/JuliaPy/PyPlot.jl/issues/317#issuecomment-337348563
