@@ -1,4 +1,4 @@
-
+https://travis-ci.org/ericagol/TRAPPIST1_Spitzer.svg?branch=maste2
 <h1>
   <p align="center">
   TRAPPIST-1 TTVs and Spitzer photodynamics
