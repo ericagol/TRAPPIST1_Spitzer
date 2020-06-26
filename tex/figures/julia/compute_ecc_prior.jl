@@ -2,7 +2,8 @@
 
 # Plots the eccentricity prior:
 
-include("/Users/ericagol/Observing/Spitzer/DDT2019/Campaign04/v09/Hyak/histogram_code.jl")
+#include("/Users/ericagol/Observing/Spitzer/DDT2019/Campaign04/v09/Hyak/histogram_code.jl")
+include("../../../src/histogram_code.jl")
 necc = 100000000
 ecc = 0.1 .*rand(necc)
 omega = 2pi .* rand(necc)

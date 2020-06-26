@@ -25,8 +25,13 @@ then
     echo "Generating julia figures..."
     cd $TRAVIS_BUILD_DIR/tex/figures/julia
     for f in *.jl; do
-        echo "Running $f..."
-        travis_wait 30 julia "$f" || echo "ERROR: failed to run $f."
+        # Skip a few files (these are `include`d in other ones)
+        if [[ $f != "mass_radius2.jl" ]]; then
+            if [[ $f != "compute_ecc_prior.jl" ]]; then
+                echo "Running $f..."
+                travis_wait 30 julia "$f" || echo "ERROR: failed to run $f."
+            fi
+        fi
     done
 
     # Generate the Python figures
