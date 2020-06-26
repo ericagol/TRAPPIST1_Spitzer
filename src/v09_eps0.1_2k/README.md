@@ -16,6 +16,7 @@ Here is some description of how to run an HMC chain, how to set up the slurm
   DelimitedFiles, Printf, SpecialFunctions, LinearAlgebra, IterativeSolvers
   & JLD2.  The code was run with the following versions:
     "ForwardDiff"         => v"0.10.9"
+    "DiffResults"         => v???
     "IterativeSolvers"    => v"0.8.1"
     "JLD2"                => v"0.1.11"
     "SpecialFunctions"    => v"0.8.0"

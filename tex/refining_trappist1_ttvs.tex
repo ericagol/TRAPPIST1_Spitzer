@@ -2471,7 +2471,7 @@ as a Taylor series:
 where we have used the fact that the gradient of the log likelihood vanishes at the maximum likelihood value of the model parameters, $\mathbf{x}_0$, and the indices $k,l = 1,...,5N_p+2$ for $x_k$ and $x_l$, where the first $5N_p$ parameters are the dynamical parameters, $\mathbf{x}_{dyn}$, and the last two parameters are the Student's t-distribution likelihood parameters, $\log{\nu}$ and $V_1e^{1/2\nu}$.
 Now, the width of the Gaussian distribution at the maximum likelihood is governed by the Hessian matrix, with elements given by
 \begin{equation}
-    \mathcal{H}_{kl}(\mathbf{x}_0) =  -\sum_{i,j} \left.\frac{\partial^2 \log\mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_l}\right\vert_{\mathbf{x}_0},
+    \mathcal{H}_{kl}(\mathbf{x}_0) =  \sum_{i,j} \left.\frac{\partial^2 \log\mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_l}\right\vert_{\mathbf{x}_0},
 \end{equation}
 which involves second derivatives of the log likelihood with respect to the model parameters.  The log likelihood for each data point with indices $i$ and $j$ may be written as a function of the observed transit times and uncertainties, the modeled transit times, and the Student's t-distribution model parameters, such that
 \begin{equation}
@@ -2489,7 +2489,7 @@ Now, at the maximum likelihood there is a balance of residuals which are both po
 
 Adding in the cases of the Hessian matrix elements which involve the likelihood parameters, $(x_{5N_p+1},x_{5N_p+2}) = (\log \nu, V_1e^{1/2nu})$, we compute the Hessian as
 \begin{eqnarray}\label{eqn:hessian}
-    \mathcal{H}_{k,l}(\mathbf{x})= -\sum_{i,j}
+    \mathcal{H}_{k,l}(\mathbf{x})= \sum_{i,j}
     \begin{cases}
         \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial^2 t_{ij}} \frac{\partial t_{ij}}{\partial x_k} \frac{\partial t_{ij}}{\partial x_l} & 1 \le k,l \le 5N_p \cr
         \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial t_{ij} \partial x_l} \frac{\partial t_{ij}}{\partial x_k}                           & 1 \le k \le 5N_p; l > 5N_p \cr
