@@ -71,7 +71,7 @@ nall = iall - 1
 pygui(false)
 
 if ~@isdefined(CGS)
-    include("/Users/ericagol/Computer/Julia/CGS.jl")
+    include("../../../src/CGS.jl")
     using Main.CGS
 end
 

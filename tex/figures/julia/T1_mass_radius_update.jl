@@ -85,8 +85,8 @@ plot(dmr2[1:23,1],dmr2[1:23,2],label="Earth-like (Zeng et al. 2019)",linestyle="
 
 # Read in Carbon-rich planet model (for kicks):
 
-dmr_carbon = readdlm("../../../data/M_R_carbon-rich_Eric.ddat")
-plot(dmr_carbon[:,1],dmr_carbon[:,2],label="Carbon-rich (Miozzi et al. 2018)")
+#dmr_carbon = readdlm("../../../data/M_R_carbon-rich_Eric.ddat")
+#plot(dmr_carbon[:,1],dmr_carbon[:,2],label="Carbon-rich (Miozzi et al. 2018)")
 
 # Interpolate between the two Zeng models:
 nm = 100
