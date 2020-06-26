@@ -2,7 +2,7 @@
 
 6/21/2020
 
-This directory contains the tex file, tables, and figures
+This directory contains the tex file, bibliography file, two tables, and figures
 for the TRAPPIST-1 Spitzer paper. 
 
 - figures/julia/ Contains the julia scripts used to make most of the

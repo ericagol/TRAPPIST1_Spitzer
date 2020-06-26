@@ -16,7 +16,6 @@ Here is a list of figures from the Overleaf draft:
 {figures/inclination_nouprior_incprior.pdf}
 {figures/Figure_MR_Dorn_v06.png}
 {figures/limb_darkening_nouprior.png}
-{figures/Mass_detect_vs_mass_all.png}
 {figures/Planet_i_properties.pdf}
 {figures/figure_TTV_norm_density_histograms.png}
 {figures/figure_density_period_TTV.png}
