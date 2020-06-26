@@ -21,3 +21,4 @@ To run a photodynamical analysis:
 To examine data and results:
 
 - Go to data/ directory.  
+
