@@ -1,4 +1,4 @@
-https://travis-ci.org/ericagol/TRAPPIST1_Spitzer.svg?branch=maste2
+
 <h1>
   <p align="center">
   TRAPPIST-1 TTVs and Spitzer photodynamics
@@ -16,4 +16,4 @@ Look at GettingStarted.md for a guide to the repository.
  </p>
  
  <p align="center">
-  <a href="https://travis-ci.org/github/ericagol/TRAPPIST1_Spitzer/"><img src ="https://travis-ci.org/ericagol/TRAPPIST1_Spitzer.svg?branch=master"></a></p>
+  <a href="<a href="https://docs.google.com/viewer?url=https://github.com/ericagol/TRAPPIST1_Spitzer/raw/master-pdf/tex/refining_trappit1_ttvs.pdf"><img src="https://img.shields.io/badge/read-the_paper-brightgreen.svg?style=flat"/></a> <a href="https://travis-ci.org/github/ericagol/TRAPPIST1_Spitzer/"><img src ="https://travis-ci.org/ericagol/TRAPPIST1_Spitzer.svg?branch=master"></a></p>
