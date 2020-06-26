@@ -13,7 +13,7 @@ include("../../../src/histogram_code.jl")
 @load "../../../data/T1_likelihood_profile_student_all_3.0sig_v02.jld2"
 
 # Load in the Markov chain dataset:
-@load "/Users/ericagol/Observing/Spitzer/DDT2019/Campaign04/v09/Hyak/T1_hmc_total_02212020.jld2"
+@load "../../../data/T1_hmc_total_02212020.jld2"
 #@load "/Users/ericagol/Observing/Spitzer/DDT2019/Campaign04/v15/Hyak/T1_hmc_total_02212020.jld2"
 
 ## Now, make plots of each parameter versus the others:
