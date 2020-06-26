@@ -5,7 +5,7 @@ function show_args(args)
 end
 
 include("run_pd_hyak.jl")
-datafile = "T1_Spitzer_data.jld2"
+datafile = "../../data/T1_Spitzer_data.jld2"
 #foutput = "T1_pd_MCMC_run_03.jld2"
 foutput = string("T1_pd_MCMC_run_010_",show_args(ARGS)[1],".jld2")
 numwalkers = 50

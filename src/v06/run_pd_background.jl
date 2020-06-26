@@ -1,7 +1,7 @@
 
 
 include("run_pd_hyak.jl")
-datafile = "T1_Spitzer_data.jld2"
+datafile = "../../data/T1_Spitzer_data.jld2"
 foutput = "T1_pd_MCMC_nw50_ns50_limbprior_001.jld2"
 numwalkers = 50
 burnin = 1

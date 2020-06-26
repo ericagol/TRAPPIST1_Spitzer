@@ -505,6 +505,6 @@ return
 end
 
 #= Example:
- datafile = "T1_Spitzer_data.jld2"; foutput = "T1_pd_MCMC_v01.jld2"; numwalkers = 50; burnin = 10; thinning = 1; astep = 2.0; nsteps = 50
+ datafile = "../../data/T1_Spitzer_data.jld2"; foutput = "T1_pd_MCMC_v01.jld2"; numwalkers = 50; burnin = 10; thinning = 1; astep = 2.0; nsteps = 50
  run_pd(datafile,foutput,numwalkers,burnin,thinning,astep,nsteps;nout=100)
 =#

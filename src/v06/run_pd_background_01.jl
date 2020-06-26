@@ -6,7 +6,7 @@ end
 
 
 include("run_pd_hyak.jl")
-datafile = "T1_Spitzer_data.jld2"
+datafile = "../../data/T1_Spitzer_data.jld2"
 #foutput = "T1_pd_MCMC_run_01.jld2"
 foutput = string("T1_pd_MCMC_run_000_",show_args(ARGS)[1],".jld2")
 
