@@ -23,32 +23,6 @@ if ! command -v conda > /dev/null; then
     conda install tectonic;
     conda install -c conda-forge numpy=$NUMPY_VERSION scipy matplotlib setuptools pytest pytest-cov pip
 
-    # Install exoplanet
-#    pip install astropy
-#    pip install exoplanet
-
-    # Install batman
-#    pip install batman-package
-
-    # Install a stable version of pytransit
-#    pushd $HOME
-#        git clone https://github.com/hpparvi/pytransit.git
-#        cd pytransit
-#        git checkout 7ce6eb238a64b29dc2001ff8b61311342820dfec # last stable commit for gimenez model
-#        python setup.py config_fc --fcompiler=gnu95 --opt="-Ofast" --f90flags="-cpp -fopenmp -march=native" build install
-#    popd
-
-    # Install the dev version of starry (29-04-2019)
-#    pip install pillow
-#    pip install ipython
-#    pip install pybind11
-#    pushd $HOME
-#        git clone https://github.com/rodluger/starry.git
-#        cd starry
-#        git checkout c38c984593dd9e02f2dadc8ee11119852781b36e
-#        STARRY_BITSUM=515 python setup.py develop
-#    popd
-
 fi
 
 # Display some info

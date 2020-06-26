@@ -8,7 +8,6 @@ os:
     - linux
 
 julia:
-    - nightly
     - 1.0.0
 
 matrix:
@@ -30,7 +29,7 @@ before_script:
 
 script:
 #    - julia test/runtests.jl
-#    - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then source .ci/build-docs.sh; fi
+    - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then source .ci/download-data.sh; fi
     - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then source .ci/build-paper.sh; fi
 
 cache:

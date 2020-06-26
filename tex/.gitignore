@@ -1,1 +1,5 @@
-limbdarkOverleaf_repository2
+*.pdf
+*.png
+*.aux
+__latexindent_temp.tex
+indent.log
