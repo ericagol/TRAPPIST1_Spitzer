@@ -26,7 +26,7 @@ then
     cd $TRAVIS_BUILD_DIR/tex/figures/julia
     for f in *.jl; do
         echo "Running $f..."
-        julia "$f" || echo "ERROR: failed to run $f."
+        travis_wait 30 julia "$f" || echo "ERROR: failed to run $f."
     done
 
     # Generate the Python figures
@@ -34,7 +34,7 @@ then
     cd $TRAVIS_BUILD_DIR/tex/figures/python
     for f in *.py; do
         echo "Running $f..."
-        python "$f" || echo "ERROR: failed to run $f."
+        travis_wait 30 python "$f" || echo "ERROR: failed to run $f."
     done
 
     # Build the paper with tectonic
