@@ -14,6 +14,4 @@ Look at GettingStarted.md for a guide to the repository.
  
  <img width = "450" src="https://github.com/ericagol/TRAPPIST1_Spitzer/blob/master/Google_Doodle_TRAPPIST1.jpg?raw=true"/>
  </p>
- <p align="center">
-  <a href="https://travis-ci.org/github/ericagol/TRAPPIST1_Spitzer/"><img src="https://travis-ci.org/ericagol/TRAPPIST1_Spitzer.svg?branch=master"/></a>
-</p>
+ 
