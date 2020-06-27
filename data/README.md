@@ -1,4 +1,5 @@
 
+
 6/21/2020
 
 This directory contains HDF files (in the *.jld2 format) which
@@ -14,9 +15,9 @@ References for some of these files:
 - apjab3a3bt2_ascii.txt: Dai et al. (2019), Dressing et al. (2014) for Kepler-93b
 - MR_trappist_corefree_Solar.ddat: Core-free model computed by Caroline Dorn
    based upon the models of Dorn et al. (2016).
--T1_masses_libration_min_max.txt: Masses from TTV analysis posterior with
+- T1_masses_libration_min_max.txt: Masses from TTV analysis posterior with
   the minimum and maximum eccentricities, and a random value.
--T1_timings_20191203.txt:  The 447 transit times and uncertainties used
+- T1_timings_20191203.txt:  The 447 transit times and uncertainties used
   in the dynamical analysis for this paper.
 - elements_noprior_students.txt:  The maximum-likelihood transit-timing model
   parameters consisting of mass, period, t0, e*cos(omega),e*sin(omega),inclination,
@@ -26,9 +27,9 @@ References for some of these files:
   to the transit-timing uncertainties.
 - sources.txt: Telescopes used for the 447 transit time observations.
 - times_obs_and_posterior.txt:  Observed times and model posterior in ascii format.
-- file_list.txt: List of HDF files (*jld2) contained in this directory (these
-  are not in the github version since they are too large - .gitignore masks these),
-  and a brief description of the files and where they are read.
+- file_list.txt: List of HDF files (*jld2) and large txt files contained in this 
+  directory (these are not in the github version since they are too large - .gitignore 
+  masks these), and a brief description of the files and where they are read.
 
 The following lists the directories and their contents:
 
@@ -43,4 +44,3 @@ The following lists the directories and their contents:
    model) computed for 10^4 draws from the posterior.
 - output_files/ This contains the results from the HMC transit-timing analysis
    based on code in v09_eps0.1_2k/
-

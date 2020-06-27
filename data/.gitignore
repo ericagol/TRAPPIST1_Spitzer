@@ -1,3 +1,6 @@
-*jld2
+
+*.png
 */*jld2
-*txt
+T1_positions_velocities0001.txt
+T1_xv_libration_max_2.txt
+T1_xv_libration_min_1.txt
