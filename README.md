@@ -7,8 +7,7 @@
 <p align="center">
 Code, data, figures, tables, and latex supporting material for TRAPPIST-1 transit timing paper.
 If you use the processed Spitzer photometry, please cite Ducrot et al. (2020).
-If you use the markov chains, please cite Agol et al. (2020), submitted if you use this in your 
-work.  If you use the source code in src/Limbdark, please cite Agol et al. 2019, AJ, 159:123, and 
+If you use the markov chains or code, please cite Agol et al. (2020). If you use the source code in src/Limbdark, please cite Agol et al. 2019, AJ, 159:123, and 
 if you use the source code in src/NbodyGradient, please cite Agol & Hernandez 2020, in prep.
   </p>
 <p align="center">
