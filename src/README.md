@@ -7,7 +7,7 @@ al. (2020).  The analyses were run with Julia 1.0.1.
 Here is a list of files and code used to carry out the
 analyses:
 
-1. N-body model:
+1.  N-body model:
    * NbodyGradient/  This directory contains julia
      source code used for the following dynamical analyses
      (Agol & Hernandez, 2020, in prep.)
