@@ -5,7 +5,7 @@ T1_CMFearth_run001.jld2: Results from search for eighth planet
 T1_CMFearth_run094.jld2: Results from search for eighth planet
 T1_JWST_all_transits_mass_error.jld2:  Results from simulated JWST transit times (used in tex/figures/julia/plot_mass_recovery.jl)
 T1_density_incprior.jld2:  Stellar density probability from photodynamic analysis with inclination prior (used in tex/figures/julia/photodynamic_table_noprior.jl)
-T1_hmc_total_02212020.jld2:  Summary HMC TTV results based on code in src/v09_eps0.1_2k/ (used in tex/figures/julia/T1_mass_radius_update.jl,
+T1_hmc_total_02212020.jld2:  Summary HMC TTV results based on code in src/v09_eps0.1_2k/ (used in tex/figures/julia/T1_mass_radius_update.jl, contains state_total which has 37 model parameters (mass-ratio, period, t0, e*cos(omega), e*sin(omega), log \nu, V_1 e^{1/(2nu)}), 37 momentum terms, H, and log posterior probabilities
  plot_chains.jl, plot_evectors.jl, plot_masses.jl, and plot_likelihood_profile.jl; tex/tables/ttv_posterior.jl, tex/tables/ttv_table.jl)
 T1_libration_laplace.jld2:  Computed GLR (Laplace) angles (used in tex/figures/julia/plot_eccentricities.jl)
 T1_likelihood_profile_student_all_3.0sig.jld2:  Results from likelihood profile (used in tex/figures/julia/plot_masses.jl)
