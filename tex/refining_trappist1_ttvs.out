@@ -1,0 +1,44 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{New TRAPPIST-1 observations}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Spitzer Observations}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Ground-based observations}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{K2 and HST observations}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Transit time measurements and analysis}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Excess of outliers and robust likelihood model}{}% 7
+\BOOKMARK [1][-]{section.4}{Transit-timing analysis}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{N-body integration}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Uncertainty analysis}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.3}{Prior}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.4}{Markov chain sampler}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.5}{Results}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.6}{Independent N-body TTV analysis}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Photodynamical analysis}{}% 15
+\BOOKMARK [2][-]{subsection.5.1}{Mutual inclinations and stellar density}{section.5}% 16
+\BOOKMARK [1][-]{section.6}{Planet densities and mass-radius relation}{}% 17
+\BOOKMARK [1][-]{section.7}{Stellar parameters}{}% 18
+\BOOKMARK [1][-]{section.8}{Search for an eighth planet}{}% 19
+\BOOKMARK [1][-]{section.9}{Interior compositions}{}% 20
+\BOOKMARK [2][-]{subsection.9.1}{Initial analysis of planet densities across the system}{section.9}% 21
+\BOOKMARK [2][-]{subsection.9.2}{Range of possible interior compositions and volatile contents}{section.9}% 22
+\BOOKMARK [3][-]{subsubsection.9.2.1}{Core Mass Fraction}{subsection.9.2}% 23
+\BOOKMARK [3][-]{subsubsection.9.2.2}{Surface water content}{subsection.9.2}% 24
+\BOOKMARK [3][-]{subsubsection.9.2.3}{Core-free planets}{subsection.9.2}% 25
+\BOOKMARK [1][-]{section.10}{Discussion}{}% 26
+\BOOKMARK [2][-]{subsection.10.1}{Timing uncertainties}{section.10}% 27
+\BOOKMARK [2][-]{subsection.10.2}{Possible systematic errors}{section.10}% 28
+\BOOKMARK [2][-]{subsection.10.3}{Planet masses and radii in context}{section.10}% 29
+\BOOKMARK [2][-]{subsection.10.4}{Comparison with radial velocities}{section.10}% 30
+\BOOKMARK [2][-]{subsection.10.5}{Planetary dynamics}{section.10}% 31
+\BOOKMARK [3][-]{subsubsection.10.5.1}{Eccentricities}{subsection.10.5}% 32
+\BOOKMARK [3][-]{subsubsection.10.5.2}{Longitudes of periastron}{subsection.10.5}% 33
+\BOOKMARK [3][-]{subsubsection.10.5.3}{Laplace angles}{subsection.10.5}% 34
+\BOOKMARK [3][-]{subsubsection.10.5.4}{Long-term stability}{subsection.10.5}% 35
+\BOOKMARK [2][-]{subsection.10.6}{Forecasts for JWST}{section.10}% 36
+\BOOKMARK [3][-]{subsubsection.10.6.1}{Forecast transit times}{subsection.10.6}% 37
+\BOOKMARK [3][-]{subsubsection.10.6.2}{Simulated JWST TTV analysis}{subsection.10.6}% 38
+\BOOKMARK [2][-]{subsection.10.7}{Stellar parameters}{section.10}% 39
+\BOOKMARK [1][-]{section.11}{Conclusions}{}% 40
+\BOOKMARK [2][-]{subsection.11.1}{Expectations for the compositions of the TRAPPIST-1 planets from formation scenarios}{section.11}% 41
+\BOOKMARK [2][-]{subsection.11.2}{Future work}{section.11}% 42
+\BOOKMARK [1][-]{appendix.A}{Approximate Hessian matrix}{}% 43
+\BOOKMARK [1][-]{appendix.B}{Tables}{}% 44

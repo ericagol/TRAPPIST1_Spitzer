@@ -277,7 +277,7 @@
 \author[0000-0001-7574-4440]{Zachary Langford}
 \affiliation{Astronomy Department and Virtual Planetary Laboratory, University of Washington, Seattle, WA 98195 USA}
 \author[0000-0002-3555-480X]{J\'er\'emy Leconte}
-\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, AllÃ©e Geoffroy Saint-Hilaire, F-33615 Pessac, France}
+\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France}
 \author[0000-0003-2805-8653]{Susan M. Lederer}
 \affiliation{NASA Johnson Space Center, 2101 NASA Pkwy., Houston TX, 77058, USA}
 \author[0000-0002-0296-3826]{Rodrigo Luger}
@@ -294,9 +294,9 @@
 \author[0000-0002-3012-0316]{Didier Queloz}
 \affiliation{Cavendish Laboratory, JJ Thomson Avenue, Cambridge, CB3 0H3, UK}
 \author[0000-0001-8974-0758]{Sean N. Raymond}
-\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, AllÃ©e Geoffroy Saint-Hilaire, F-33615 Pessac, France}
+\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France}
 \author[0000-0001-9619-5356]{Franck Selsis}
-\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, AllÃ©e Geoffroy Saint-Hilaire, F-33615 Pessac, France}
+\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France}
 \author[0000-0002-8124-8360]{Marko Sestovic}
 \affiliation{Center for Space and Habitability, University of Bern, Gesellschaftsstrasse 6, CH-3012, Bern, Switzerland}
 \author[0000-0002-5510-8751]{Amaury H.M.J. Triaud}
@@ -487,7 +487,7 @@ have added an additional 163 transit times from a combination of Spitzer
 \ref{sec:groundbasedobs}).  Based on preliminary transit-timing
 fits, we find evidence for outliers amongst the measured times
 (\S \ref{sec:outliers}), which we account for with a robust likelihood
-model.  Each transit time is measured as a Barycentric Julian Date (BJD), correcting for the location of the Earth/spacecraft relative to the Solar System barycenter \citep{Eastman2010}.
+model.  Each transit time is measured as a Barycentric Julian Date (BJD_{TDB}), correcting for the location of the Earth/spacecraft relative to the Solar System barycenter \citep{Eastman2010}.
 
 %- Since some of the transit-times haven't been published yet, we should
 %start with a description of the observations, the analysis, and list the
@@ -511,7 +511,7 @@ Observations were obtained with Spitzer Space telescope's Infrared Array Camera 
 %{\color{red} Artem Burdanov, Amaury Triaud, Manu Jehin and Susan Lederer could you help to write this section?}
 
 In addition to the new Spitzer times, 125 transits were observed by the SPECULOOS-South Observatory \citetext{SSO, \citealt{Burdanov2018,Jehin2018}, \citealt{Gillon2018}, \citealt{Delrez2018b}} at Cerro Paranal, Chile, TRAPPIST-South at La Silla Chile, \citep[TS;][]{Jehin2011,Gillon2011}, and TRAPPIST-North at Oukaimeden Morocco, \citep[TN;][]{Barkaoui2019AJ}. These observations were carried out in an I+z filter with exposure times 23s, 50s and 50s, respectively; characteristics of this filter are described in \cite{Murray2020}.
-Observations were also performed with the Liverpool Telescope  \citep[LT,][]{Steele2004} and the William-Herschel Telescope (WHT), both installed at the Roque de los Muchachos observatory, La Palma. Only one transit of planet b and one of d were targeted with the WHT whereas 15 transits of several planets were targeted with LT. For LT observations, the IO:O optical wide field camera was used in Sloan zâ€™ band with 20s exposure time. One transit of b was observed with the  Himalayan Chandra Telescope (HCT). Finally, a total of 26 transits were observed in the near-IR (1.2~-2.1~$\mu$m) with the WFCAM near-IR imager of the the United Kingdom Infra-Red Telescope (UKIRT) \citep{Casali2007}, the IRIS2IR-imager installed on the the Anglo-Australian Telescope (AAT) \citep{Tinney2004}, and the HAWK-I cryogenic wide-field imager installed on Unit Telescope 4 (Yepun) of the ESO Very Large Telescope (VLT) \citep{Siebenmorgen2011}.
+Observations were also performed with the Liverpool Telescope  \citep[LT,][]{Steele2004} and the William-Herschel Telescope (WHT), both installed at the Roque de los Muchachos observatory, La Palma. Only one transit of planet b and one of d were targeted with the WHT whereas 15 transits of several planets were targeted with LT. For LT observations, the IO:O optical wide field camera was used in Sloan z? band with 20s exposure time. One transit of b was observed with the  Himalayan Chandra Telescope (HCT). Finally, a total of 26 transits were observed in the near-IR (1.2~-2.1~$\mu$m) with the WFCAM near-IR imager of the the United Kingdom Infra-Red Telescope (UKIRT) \citep{Casali2007}, the IRIS2IR-imager installed on the the Anglo-Australian Telescope (AAT) \citep{Tinney2004}, and the HAWK-I cryogenic wide-field imager installed on Unit Telescope 4 (Yepun) of the ESO Very Large Telescope (VLT) \citep{Siebenmorgen2011}.
 These observations are summarized in Table \ref{tab:transit_time_list}, and additional information may be found in \citet{Gillon2016} for WHT and TRAPPIST, in  \citet{Ducrot2018} for SSO and LT, and in \citet{Gillon2017} and \citet{Burdanov2019} for AAT, UKIRT and VLT.
 
 For all ground-based observations, a standard calibration (bias, dark and flat-field corrections) was applied to each image, and fluxes were measured for the stars in the field with the DAOPHOT aperture photometry software \citep{Stetson1987}. Differential photometry was then performed after a careful selection of comparison stars, followed by an MCMC analysis to retrieve transit parameters.
@@ -549,8 +549,7 @@ Transit times for Hubble Space Telescope observations were utilized, as describe
 
 %The transit timing variations used for our analyses were obtained from several studies. Timings from Spitzer's observations were collected from \cite{Ducrot2020}, HST timings from \cite{deWit2016,deWit2018,Wakeford2019}, K2 timings from \cite{Luger2017a,Grimm2018}, ground based (SPECULOOS, TRAPPIST, Liverpool telescope, UKIRT, VLT) timings from \cite{Gillon2016,Ducrot2018,Burdanov2019}. 
 
-Assembling the heterogeneous sample of transits which were obtained from a variety of ground- and space-based telescopes,  these observations were analyzed together
-with a global photometric analysis of transits, as described in
+Assembling the heterogeneous sample of transits which were obtained from a variety of ground- and space-based telescopes,  these observations were unified to $BJD_{TDB}$ time standard prior to the analysis and analyzed together with a global photometric analysis of transits, as described in
 \citet{Ducrot2020}, with a separate analysis of the overlapping transits once the single-transit analysis was completed.
 For each planet a fixed time of transit for epoch zero ($T_{0}$) and fixed period ($P$) were used, but with timing offset (``TTV") as a fitted parameter for each transit as described by \cite{Ducrot2020}.  The timing offsets are added back
 to the ephemeris to obtain the measured transit times and uncertainties.
@@ -973,12 +972,12 @@ masses in this paper.
     \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1-\sigma$ uncertainties.  Note that the mass ratios, $\mu$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimate of the planet mass).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
         The parameters $P$, $t_0$, $e\cos{\omega}$, and
         $e\sin{\omega}$ describe the osculating Jacobi elements at the start
-        of the simulation, on date BJD $-2,450,000 = 7257.93115525$.}
+        of the simulation, on date BJD_{TDB} $-2,450,000 = 7257.93115525$.}
     \label{tab:TTV_parameters}
     \begin{tabular}{lccccccc}
         \hline
           & $\mu = \frac{M_p}{M_*}$                           & $M_p$                & $\frac{\sigma_\mu}{\mu}$ & $P$                       & $t_0$                     & $ e\cos{\omega}$        & $ e\sin{\omega}$  \cr
-          & [$M_\oplus\left(\frac{0.09 M_\odot}{M_*}\right)$] & [$10^{-5} M_*$]      & \%                       & [day]                     & [BJD-2,450,000]           &                         & \cr
+          & [$M_\oplus\left(\frac{0.09 M_\odot}{M_*}\right)$] & [$10^{-5} M_*$]      & \%                       & [day]                     & [BJD_{TDB}-2,450,000]           &                         & \cr
         \hline
         b & $1.3771{\pm} 0.0593$                              & $ 4.596{\pm}  0.198$ & $4.3$                    & $1.510826{\pm} 0.000006$  & $7257.55044{\pm} 0.00015$ & $-0.00215{\pm} 0.00332$ & $0.00217{\pm} 0.00244$ \cr
         c & $1.3105{\pm} 0.0453$                              & $ 4.374{\pm}  0.151$ & $3.5$                    & $2.421937{\pm} 0.000018$  & $7258.58728{\pm} 0.00027$ & $0.00055{\pm} 0.00232$  & $0.00001{\pm} 0.00171$ \cr
@@ -2436,7 +2435,7 @@ innovation program under the Marie Sklodowska-Curie Grant Agreement No. 832738/E
 thanks the Gruber Foundation for its generous support to this research.
 The research leading to these results has received funding from the European Research Council
 under the European Union's Seventh Framework Programme (FP/2007-2013) ERC Grant
-Agreement nÂ° 336480, and from the ARC grant for Concerted Research Actions, financed by the
+Agreement n° 336480, and from the ARC grant for Concerted Research Actions, financed by the
 Wallonia-Brussels Federation. CD acknowledges the support of the Swiss National Foundation under grant PZ00P2\_174028. V.V.G. is a F.R.S.-FNRS Research Associate. M.G. and E.J. are F.R.S.-FNRS Senior Research Associates. R.M. acknowledges support for this research from NASA (grant 80NSSC18K0397). Z.L. acknowledges support from the Washington NASA Space Grant Consortium Summer Undergraduate Research Program.
 
 
@@ -2566,7 +2565,7 @@ are given in this appendix.
     \hline
     %   \end{tabular}
     \caption{Observed transit times with uncertainties, along with the mean, $t_\mathrm{post}$, and standard deviation, $\sigma_{post}$ of
-        the times from the posterior sample.  Times are in $BJD - 2,450,000$ while uncertainties are in days.}
+        the times from the posterior sample.  Times are in $BJD_{TDB} - 2,450,000$ while uncertainties are in days.}
     \label{tab:transit_times_observed_and_calculated}
 \end{longtable}
 
