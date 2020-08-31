@@ -2,3 +2,6 @@
 *.aux
 __latexindent_temp.tex
 indent.log
+*.log
+*.out
+*synctex.gz
