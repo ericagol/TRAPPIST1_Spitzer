@@ -24,7 +24,7 @@ for j=1:ntrans
   chi_planet[iplanet[j]-1] += dev[j]^2
   nobs_planet[iplanet[j]-1] += 1
   if abs(dev[j]) > 3
-    println("|",@sprintf("%4i",j),"| ",@sprintf("%2i",iplanet[j]),"| ",@sprintf("%4i",indx[j]),"| ",
+    println("|",@sprintf("%4i",j),"| ",@sprintf("%2i",iplanet[j]-1),"| ",@sprintf("%4i",indx[j]),"| ",
         @sprintf("%12.5f",tt1[iplanet[j],indx[j]]),"| ",@sprintf("%12.5f",tobs_tot[j]),"| ",
         @sprintf("%8.5f",tobs_tot[j]-tt1[iplanet[j],indx[j]]),"| ",
         @sprintf("%8.5f",sobs_tot[j]),"| ",@sprintf("%5.1f",dev[j]),"| ",@sprintf("%5.1f",dev[j]^2),"|")

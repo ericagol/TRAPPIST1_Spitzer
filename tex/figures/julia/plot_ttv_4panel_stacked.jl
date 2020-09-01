@@ -58,21 +58,11 @@ for ip=1:nplanet
   i1 = i2 + 1
   iout = abs.(resid) .> 3.0
   ax.errorbar(tobs[iout], ttv_obs[iout], sobs[iout]*(24*60),fmt=".",linewidth=1.5,markersize=4.0,color="C5")
-#  ax.plot(tobs[iout], ttv_obs[iout], ".",markersize=6.0,color="C5")
   if ip == 7
-    ax.set_xlabel("JD-2,450,000")
+    ax.set_xlabel(L"BJD$_\mathrm{TDB}$-2,450,000")
   end
-#  if ip == 1 || ip == 4
-#    ax.set_xlabel("JD-2,450,000")
-#    ax.tick_params(top="true")
-#  end
-  #ax.tick_params(axis="both",which="major")
-  #ax.minorticks_on()
   ax.grid(linestyle=":")
   ax.set_ylabel("TTV [min]")
-#  if ip != 4 && ip != 5
-#    ax.legend(loc="upper right")
-#  else
   ax.legend()
   # Now, fit a high-order polynomial to TTVs, and overplot it:
   fn = zeros(ord[ip]+1,count1[ip+1])
