@@ -1458,7 +1458,12 @@ with evolutionary models.
     \label{tab:stellar_parameters}
 \end{table}
 
-Our analysis differs slightly from our prior Spitzer analyses \citep{Delrez2018a,Ducrot2020} in that we do not place a prior upon the limb-darkening coefficients of the TRAPPIST-1 host star.  This is motivated by the fact that late M dwarf atmospheres are very complex to model and have yet to match observed spectra precisely \citep{Allard2011,Allard2012,Juncher2017}, and thus it is possible that limb-darkening predictions may not be reliable.
+Our analysis differs slightly from our prior Spitzer analyses \citep{Delrez2018a,Ducrot2020} in that we do not place a prior upon the limb-darkening coefficients of the TRAPPIST-1 host star.  This is motivated by the fact that late M dwarf atmospheres are very complex to model and have yet to match observed spectra precisely \citep{Allard2011,Allard2012,Juncher2017}, and thus it is possible that limb-darkening predictions may not be reliable.  \textbf{We investigated using a higher-order
+quartic limb-darkening law, and found that this was disfavored by the Bayesian Information Criterion,
+and that the best-fit model differed negligibly in the model parameters.  We also simulated
+more realistic limb-darkening models \citep{Claret2018} and found that a quadratic law
+was sufficient to recover the correct model parameters with negligible systematic errors.}
+
 
 The TRAPPIST-1 system has the advantage that the planets sample different chords of the stellar disk (Figure \ref{fig:impact_parameter}), and given the large number of transiting planets, we are afforded multiple constraints upon the stellar limb-darkening parameters.  Figure \ref{fig:limb_darkening} shows our posterior constraints upon the limb-darkening parameters of the star based on our photodynamical model, which are reported in Table \ref{tab:photodynamic_params}.
 
