@@ -91,7 +91,11 @@ dev = readdlm("../../../data/residuals_nomixture_rescale.txt")
 # Plot the cumulative distribution function of the residuals:
 ax = axes[1]
 nobs = 447
-ax.plot(sort(dev[:,1]),linearspace(0,1,nobs),linewidth=3,label="CDF")
+devsort = sort(dev[:,1])
+iobs = linearspace(0,1,nobs)
+ax.plot(devsort,iobs,linewidth=3,label="CDF")
+ax.plot(devsort[devsort .< -3],iobs[devsort .< -3],linewidth=3,color="C5")
+ax.plot(devsort[devsort .>  3],iobs[devsort .>  3],linewidth=3,color="C5")
 # Create an array for plotting normalized residuals:
 nx = 10000
 x = linearspace(-7.5,7.5,nx)
@@ -147,6 +151,9 @@ ax.semilogy(res,hbin,linestyle="None")
 errs = sqrt.(dev_hist)
 #errs[errs .== 0.0] .= 1.0
 ax.errorbar(resc,dev_hist,yerr=errs,fmt=".",color="#1f77b4")
+# Plot in a diffent color the bins with outliers:
+indx = (resc .< -3.0) .| (resc .> 3.0)
+ax.errorbar(resc[indx],dev_hist[indx],yerr=errs[indx],fmt=".",color="C5")
 
 # Optimize Student's-t distribution:
 ndof = 2.8
