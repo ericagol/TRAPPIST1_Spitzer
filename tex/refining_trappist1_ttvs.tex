@@ -574,7 +574,7 @@ dynamical analysis, starting with the likelihood function and evidence for outli
 
 \section{Excess of outliers and robust likelihood model} \label{sec:outliers}
 
-We first carried out a preliminary 7-planet, plane-parallel N-body model fit to the transit times using a $\chi^2$ log likelihood function, i.e.\ assuming a Gaussian uncertainty for each transit time given by the derived timing uncertainty, which was optimized using the Levenburg-Marquardt algorithm.
+We first carried out a preliminary 7-planet, plane-parallel N-body model fit to the transit times using a $\chi^2$ log likelihood function, i.e.\ assuming a Gaussian uncertainty for each transit time given by the derived timing uncertainty, which was optimized using the Levenberg-Marquardt algorithm.
 We found that the residuals of the fit have many more outliers than is probable assuming
 a Gaussian distribution for the timing uncertainties.
 
@@ -678,7 +678,8 @@ With the description of the dataset complete, we next describe our efforts to mo
         distribution.  Right: Histogram of the normalized residuals.  Blue data points
         are a histogram of the normalized residuals with Poisson uncertainties.  The other lines
         have the same meaning as the left panel for the probability distribution function
-        (PDF),  scaled to match the histogram.}
+        (PDF),  scaled to match the histogram. \textbf{In both panels the $>3\sigma$ outliers are indicated
+        in brown.}}
     \label{fig:timing_residuals}
 \end{figure*}
 
@@ -2519,7 +2520,7 @@ Adding in the cases of the Hessian matrix elements which involve the likelihood 
 where the partial derivatives with respect to $t_{ij}(\mathbf{x}_{dyn})$, $x_{5N_p+1}=\log \nu$, and $x_{5N_p+2} = V_1e^{1/2\nu}$
 are computed with automatic differentiation.
 
-The inverse of the Hessian matrix is used in the Levenburg-Marquardt optimization, and when evaluated at the maximum likelihood, is used to estimate the covariance matrix, from which the square root of the diagonal components are used to estimate the widths of the posterior distribution for each model parameter, $\mathbf{x} = (\mathbf{x}_{dyn},\log \nu, V_1 e^{1/2\nu})$, which are plotted in Figures \ref{fig:mass_likelihood_profile}, \ref{fig:ecc_likelihood_profile}, and \ref{fig:student_param_likelihood_profile}.  This approximated Hessian is also used to define the mass matrix for the HMC simulations.
+The inverse of the Hessian matrix is used in the Levenberg-Marquardt optimization, and when evaluated at the maximum likelihood, is used to estimate the covariance matrix, from which the square root of the diagonal components are used to estimate the widths of the posterior distribution for each model parameter, $\mathbf{x} = (\mathbf{x}_{dyn},\log \nu, V_1 e^{1/2\nu})$, which are plotted in Figures \ref{fig:mass_likelihood_profile}, \ref{fig:ecc_likelihood_profile}, and \ref{fig:student_param_likelihood_profile}.  This approximated Hessian is also used to define the mass matrix for the HMC simulations.
 
 \section{Tables}
 
