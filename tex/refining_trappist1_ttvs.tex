@@ -449,7 +449,7 @@ first density determinations of temperate, Earth-sized planets exterior to the S
 Both papers indicated densities for the planets which are lower than the value expected for
 an Earth-like composition (with the exception of planet e), indicating that these planets might
 have a significant volatile content.  However, these conclusions were subject to significant
-uncertainty in the planet masses, making the determination of the compositions less definitive as the uncertainties were still consistent with rocky bodies at the $1-2 \sigma$ level.
+uncertainty in the planet masses, making the determination of the compositions less definitive as the uncertainties were still consistent with rocky bodies at the $1-2\sigma$ level.
 In addition, the masses of all of the planets are highly correlated due to the fact that the
 dynamical state of all of the planets needs to be solved together, so model comparisons with individual planets
 are not independent.
@@ -565,7 +565,7 @@ is given by: $\mathbf{y} = \{t_{\mathrm{obs},i,j},\sigma_{i,j}; i=1,...,7; j = 1
 the number of transits for the $i$th planet (Table \ref{tab:transit_time_list}),
 and $j$ labels each transit for the $i$th planet, so that
 $t_{\mathrm{obs},ij}$ is the $j$th observation of the $i$th planet, and
-$\sigma_{ij}$ is the corresponding measurement error.  The total number of transits is $N_\mathrm{trans} = \sum_{i=1}^{N_p} N_i$ = 447.
+$\sigma_{ij}$ is the corresponding measurement error.  The total number of transits is $N_\mathrm{trans} = \sum_{i=1}^{N_p} N_i$ = 447 \textbf{where $N_p$ is the number of transiting planets}.
 
 Table \ref{tab:transit_times_observed_and_calculated} lists the complete set
 of transit times and uncertainties which were utilized in the present analysis.
@@ -719,7 +719,7 @@ The initial orbital ephemeris, $(P_i,t_{0,i})$, consists of the period and initi
 transit which each planet {\it would} have if it orbited a single
 body with the mass of the star and the interior planets, and was
 not perturbed by the exterior planets.  We use these variables (in lieu of initial semi-major axis and mean longitude) as
-they are well constrained by the times of transits.  We convert
+they are well constrained by the \textbf{observed} times of transits.  We convert
 these analytically to the time of periastron passage, once the
 Kepler equation is solved to yield the initial eccentric anomaly
 for each initial Keplerian.  Finally, the eccentricity, $e_i$, and
@@ -736,19 +736,19 @@ ${<} 5$\%, compared with the orbital period of the innermost planet
 \citep{Wisdom1991}. For most of our integrations we use a time step
 of $h=0.06$ days, or about 4\% of the orbital period of planet b.
 
-The transit times are found by tracking the positions of each
+The \textbf{model} transit times are found by tracking the positions of each
 planet relative to the star across a time step.  Then, when the
 dot product of the relative velocity of the planet and star
 with their relative position goes from negative to positive,
 we flag a routine which iterates with Newton's method to find
-the transit time, which is taken to be when this dot product
+the \textbf{model} transit time, which is taken to be when this dot product
 equals zero \citep{Fabrycky2010}, corresponding to the mid-point
 of the transit if acceleration is negligible over the duration of the
 transit.  The resulting model we obtain
-is for the $j$th transit of the $i$th planet, giving each
+is for the $j$th transit of the $i$th planet, giving each \textbf{model}
 transit time as a function of the initial conditions, $t_{ij}(\mathbf{x}_\mathrm{dyn})$, which can then be compared to the observed times, $t_{\mathrm{obs},ij}$.
 
-Once the transit times have been found for every planet over the
+Once the \textbf{model} transit times have been found for every planet over the
 duration of the time integration, these are then matched with the observed
 transit times to compute the likelihood using the Student's t
 probability distribution.
@@ -863,9 +863,10 @@ so that we can proceed to discussing the Markov chain sampling of the posterior 
 
 \subsection{Markov chain sampler}
 
-We sample our posterior probability, $P(\mathbf{x})$ ,
-with a Markov chain sampler.
-Given the high dimensionality of our model - 37 free parameters - we chose to use
+We sample our posterior probability, $P(\mathbf{x})$, with a Markov chain sampler.
+\textbf{There are 37 free parameters - four orbital elements and one mass-ratio for
+each planet, and two parameters for the Student's t-distribution.}
+Given the high dimensionality of our model we chose to use
 a Markov chain sampler which efficiently samples in high dimensions:  Hamiltonian
 Monte Carlo \citep[HMC; ][]{Duane1987,Neal2011,Betancourt2017,Monnahan2016}.\footnote{aka ``Hybrid Monte Carlo." Note
     that the ``Hamiltonian" referred to in HMC is not a physical Hamiltonian, but an
@@ -874,11 +875,11 @@ Monte Carlo \citep[HMC; ][]{Duane1987,Neal2011,Betancourt2017,Monnahan2016}.\foo
     to each model parameter (``coordinate").}  This
 sampler requires the {\it gradient} of the likelihood function with respect to
 the model parameters.  The gradient of the likelihood requires the gradient
-of each transit time with respect to the initial conditions of the N-body
+of each \textbf{model} transit time with respect to the initial conditions of the N-body
 integrator.
 
 We have written a module for our N-body integrator which computes the
-gradient of each transit time by propagating a Jacobian for the positions
+gradient of each \textbf{model} transit time by propagating a Jacobian for the positions
 and velocities of all bodies across every time step throughout the N-body
 integration \citep{Agol2020}, which is multiplied by the Jacobian of the coordinates at the initial timestep computed with respect to the initial Keplerian elements and masses, which specify the initial conditions and comprise the N-body model parameters.
 
@@ -954,12 +955,13 @@ masses in this paper.
 \begin{figure*}
     \includegraphics[width=0.95\hsize]{figures/T1_ttvs_4panel_stacked.pdf}
     \oscaption{julia/plot_ttv_4panel_stacked.jl}%
-    {Transit time variation measurements (orange/purple error bars) and best-fit
-        transit-time model (blue/red lines) for a subset of our
+    {Transit time variation measurements (\textbf{orange/red} error bars) and best-fit
+        transit-time model (\textbf{blue/green} lines) for a subset of our
         Spitzer/K2/ground-based data set.  The TTVs are the transit times for each planet
-        with a best-fit linear ephemeris removed.  Brown error bars indicate $>3\sigma$ outliers.  The light green/brown curves are polynomial fits
-        to each transit timing model used to remove the resonant transit-timing varations;  the residuals
-        of the fit (``chopping") are shown in Fig.\ \ref{fig:chopping}.}
+        with a best-fit linear ephemeris removed.  Brown error bars indicate $>3\sigma$ outliers.  %The light green/brown curves are polynomial fits
+%        to each transit timing model used to remove the resonant transit-timing varations;  the residuals
+%        of the fit (``chopping") are shown in Fig.\ \ref{fig:chopping}.
+}
     \label{fig:T1_TTVs}
 \end{figure*}
 
@@ -977,7 +979,7 @@ masses in this paper.
 
 \begin{table*}
     \centering
-    \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1-\sigma$ uncertainties.  Note that the mass ratios, $\mu$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimate of the planet mass).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
+    \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1\sigma$ uncertainties.  Note that the mass ratios, $\mu$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimate of the planet mass).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
         The parameters $P$, $t_0$, $e\cos{\omega}$, and
         $e\sin{\omega}$ describe the osculating Jacobi elements at the start
         of the simulation, on date BJD$_\mathrm{TDB}$ $-2,450,000 = 7257.93115525$.}
@@ -999,14 +1001,14 @@ masses in this paper.
 \end{table*}
 
 The results of the posterior distribution of our transit-timing analysis are summarized
-in Table \ref{tab:TTV_parameters}.
-There are 35 parameters
+in Table \ref{tab:TTV_parameters} \textbf{with the mean and $\pm$ 34.1\% confidence intervals (1$\sigma)$
+computed from the standard deviation of the Markov chains.} There are 35 parameters
 which describe the planets, in addition to two parameters
 for the Student's t-distribution, $ \log{\nu} = 1.3609 \pm 0.2337$
 and $ V_1 e^{1/(2\nu)} = 0.9688 \pm 0.1166$ (Figure \ref{fig:student_param_likelihood_profile}).  The posterior mass-ratios
 and ephemerides are consistent with nearly Gaussian distributions, while the
 eccentricity vectors show deviations from a Gaussian distribution for the inner
-two planets b and c, as shown in Figure \ref{fig:ecc_likelihood_profile}.  Hence, the $1-\sigma$ uncertainties
+two planets b and c, as shown in Figure \ref{fig:ecc_likelihood_profile}.  Hence, the $1\sigma$ uncertainties
 on the eccentricity vector components for these inner two planets
 should not be used to extrapolate to higher-order significance
 without using the full distribution.
@@ -1056,16 +1058,15 @@ a correction for the bias which results by using $e_i\cos{\omega_i}$
 and $e_i\sin{\omega_i}$ as Markov chain parameters which favors
 higher eccentricities \citep{Ford2006}.
 
-\begin{figure*}
+\begin{figure}
     \centering
-    \includegraphics[width=\hsize]{figures/T1_masses_03312020.pdf}
-    \oscaption{julia/plot_masses.jl}%
-    {Probability distribution of the mass-ratios of each planet to the star, scaled to a stellar mass of $M_*  = 0.09 M_\odot$; panels range from small masses to large.   Thick
-        histograms show the posterior probability distribution of the Markov chain analysis.
-        Horizontal error bars show the $1-\sigma$ mass-ratios from \citet{Grimm2018}.
-        Dark solid curve is the likelihood profile; light, dotted curve is the Laplace approximation.}
-    \label{fig:mass_likelihood_profile}
-\end{figure*}
+    \includegraphics[width=\columnwidth]{figures/T1_students_params_transformed.pdf}
+    \oscaption{julia/plot_likelihood_profile.jl}%
+    {Likelihood profile (dark line) and Gaussian distribution
+        with Laplace approximation uncertainty (light line) for $\log{\nu}$ (left) and
+        $V_1 e^{1/(2\nu)}$ (right).  The posterior probability distributions are shown with blue histograms.}
+    \label{fig:student_param_likelihood_profile}
+\end{figure}
 
 \begin{figure*}
     \centering
@@ -1077,16 +1078,16 @@ higher eccentricities \citep{Ford2006}.
     \label{fig:ecc_likelihood_profile}
 \end{figure*}
 
-
-\begin{figure}
+\begin{figure*}
     \centering
-    \includegraphics[width=\columnwidth]{figures/T1_students_params_transformed.pdf}
-    \oscaption{julia/plot_likelihood_profile.jl}%
-    {Likelihood profile (dark line) and Gaussian distribution
-        with Laplace approximation uncertainty (light line) for $\log{\nu}$ (left) and
-        $V_1 e^{1/(2\nu)}$ (right).  The posterior probability distributions are shown with blue histograms.}
-    \label{fig:student_param_likelihood_profile}
-\end{figure}
+    \includegraphics[width=\hsize]{figures/T1_masses_03312020.pdf}
+    \oscaption{julia/plot_masses.jl}%
+    {Probability distribution of the mass-ratios of each planet to the star, scaled to a stellar mass of $M_*  = 0.09 M_\odot$; panels range from small masses to large.   Thick
+        histograms show the posterior probability distribution of the Markov chain analysis.
+        Horizontal error bars show the $1\sigma$ mass-ratios from \citet{Grimm2018}.
+        Dark solid curve is the likelihood profile; light, dotted curve is the Laplace approximation.}
+    \label{fig:mass_likelihood_profile}
+\end{figure*}
 
 The Student's t-distribution parameters show a posterior distribution which is shifted from the likelihood profile/Laplace probability distribution (Fig.\ \ref{fig:student_param_likelihood_profile}).  This bias is due to the fact that the likelihood distribution of these parameters shifts upwards whenever the transit-timing model parameters deviate from their maximum-likelihood values.  The peak of  the  posterior distribution of these parameters corresponds to
 $\nu = 3.9$ and $V_1 = 0.85$, which indicates that the core of the distribution is narrower than the transit-timing uncertainties indicate, while the wings of the distribution are close to $\nu = 4$, which was the value used by
@@ -1639,7 +1640,7 @@ interior properties based upon the mass-radius relation we inferred in \S \ref{s
 \subsection{Initial analysis of planet densities across the system}
 
 The probability distribution for the masses and radii of the seven planets are shown in Figure \ref{fig:mass_radius_relation} alongside several theoretical mass-radius relationships added for comparison.
-We have added three rocky mass-radius relationships with different \textbf{molar} bulk Fe/Mg compositions:  (1) Fe/Mg$ =0.75{\pm} 0.2$ as suggested by \citet{Unterborn2018a} to represent the rocky interior of all TRAPPIST-1 planets with a 1$-\sigma$ range of Fe/Mg ratios consistent with local stellar abundances;  (2) the \textbf{Sun}-like value of Fe/Mg$ = 0.83$ \citep{Lodders2009}; and (3) a core-free model with Earth-like refractory ratios, but in which all of the iron is oxidized in the mantle \citep{ElkinsTanton2008}. Rocky interiors are calculated \textbf{similar to the models of Dorn et al. (2016) with some adaptions, i.e., we are using the equation of state of \citet{Hakim2018} for pure iron and \citet{Sotin2007} for silicates.} We have also added the theoretical mass-radius relationships for planets endowed with a water layer, both for planets which are irradiated less (blue line; water) and more (orange lines; steam) than the runaway greenhouse irradiation threshold \citep{Turbet2020}.
+We have added three rocky mass-radius relationships with different \textbf{molar} bulk Fe/Mg compositions:  (1) Fe/Mg$ =0.75{\pm} 0.2$ as suggested by \citet{Unterborn2018a} to represent the rocky interior of all TRAPPIST-1 planets with a 1$\sigma$ range of Fe/Mg ratios consistent with local stellar abundances;  (2) the \textbf{Sun}-like value of Fe/Mg$ = 0.83$ \citep{Lodders2009}; and (3) a core-free model with Earth-like refractory ratios, but in which all of the iron is oxidized in the mantle \citep{ElkinsTanton2008}. Rocky interiors are calculated \textbf{similar to the models of Dorn et al. (2016) with some adaptions, i.e., we are using the equation of state of \citet{Hakim2018} for pure iron and \citet{Sotin2007} for silicates.} We have also added the theoretical mass-radius relationships for planets endowed with a water layer, both for planets which are irradiated less (blue line; water) and more (orange lines; steam) than the runaway greenhouse irradiation threshold \citep{Turbet2020}.
 
 The comparison of measured masses and radii with theoretical mass-radius relationships reveals several striking results. First, all seven TRAPPIST-1 planets appear to be consistent with a line of interior isocomposition. There are multiple theoretical mass-radius curves that overlap with all seven planets' mass-radius probability distributions (Fig.\ \ref{fig:mass_radius_relation}), which may be a good indication that the composition varies little from planet to planet. Secondly, all of the TRAPPIST-1 planets have lower uncompressed densities than Solar System terrestrial planets. This likely means that the TRAPPIST-1 planets either have a lighter interior (e.g. lower iron content) or are enriched with volatiles (e.g. water).
 
@@ -1751,7 +1752,7 @@ Here we discuss some of the implications of the results in the foregoing section
 As reported in \S \ref{sec:outliers}, the transit timing measurements we have made show an excess of outliers with respect to the measurement uncertainties of each transit.  We were unable to identify a culprit (or culprits) for these discrepancies, but wish to speculate on what may be the origin of these outliers.  The cumulative distribution of these outliers (Fig.\ \ref{fig:timing_residuals}) indicates that about 10\% of transits
 are affected at some level.  It is also interesting to note that the core of the distribution has a slightly smaller width of about 80\% of the measurement errors, indicating that for about 90\% of the transits, the uncertainties may be overestimated.  This may be a consequence of inflating the uncertainties to account for correlated noise rather than modeling the data with, for example, a Gaussian process;  further re-analysis of the data will be needed to check this hypothesis.
 
-Could the timing outliers be due to stellar flares?  In \citet{Vida_2017} and \citet{Ducrot2020}, the frequency distribution of stellar flares is shown to be rising towards smaller flare energies.  This could mean that the more frequent, but lower energy flares, occur at a level that is swamped by the photon noise, and thus not visible to an observer.  We used the spectrum and energy calibration of Spitzer flares measured by \citet{Ducrot2020} to extrapolate the frequency of lower energy flares (which are not detected in Spitzer due to photon noise).  As an example, for planet h the transit time can be affected by a flare which occurs at ingress or egress (duration $2\tau \approx 10$ min).  %The uncertainty on a typical Spitzer timing measurement is about 0.9 minutes, indicating that the uncertainty on ingress or egress is $\sqrt{2} \times 0.9 \approx 1.3$ min, while the depth of transit is 0.3375\%, and so three times the product of these two determines the fluence of a flare, which must occur during ingress, to affect the transit time at the $\approx 1.5-\sigma$ level. 
+Could the timing outliers be due to stellar flares?  In \citet{Vida_2017} and \citet{Ducrot2020}, the frequency distribution of stellar flares is shown to be rising towards smaller flare energies.  This could mean that the more frequent, but lower energy flares, occur at a level that is swamped by the photon noise, and thus not visible to an observer.  We used the spectrum and energy calibration of Spitzer flares measured by \citet{Ducrot2020} to extrapolate the frequency of lower energy flares (which are not detected in Spitzer due to photon noise).  As an example, for planet h the transit time can be affected by a flare which occurs at ingress or egress (duration $2\tau \approx 10$ min).  %The uncertainty on a typical Spitzer timing measurement is about 0.9 minutes, indicating that the uncertainty on ingress or egress is $\sqrt{2} \times 0.9 \approx 1.3$ min, while the depth of transit is 0.3375\%, and so three times the product of these two determines the fluence of a flare, which must occur during ingress, to affect the transit time at the $\approx 1.5\sigma$ level. 
 We estimate that a flare of energy $10^{31}$ erg could cause a 1.5-$\sigma$
 timing outlier if it occurs during ingress or egress.  This has a probability of only $\approx 0.3$\% to occur during the 10 minutes of ingress or egress,
 and thus cannot be responsible for 10\% of outliers for planet h.  We carried out a similar estimate for
@@ -1836,13 +1837,13 @@ with JWST.
 
 In Figure \ref{fig:mass_radius_comparison} we compare our measurements for
 the seven TRAPPIST-1 planets with our Solar System planets and with exoplanets
-with radii ${<}1.7 R_\oplus$ and masses measured to ${>}5-\sigma$ retrieved from
+with radii ${<}1.7 R_\oplus$ and masses measured to ${>}5\sigma$ retrieved from
 the NexSci database on 26 Feb 2020 \citep{Akeson2013,Christiansen2018}, as well
 as planet parameters reported in \citet{Dai2019} and Kepler-93b from \citet{Dressing2015}.\footnote{Note: Kepler-105b has been corrected for a GAIA DR2 revised radius of
     the host star \citep{Berger2018,Fulton2018}.}   The uncertainties
 on the other planets' masses are the best available to date from radial-velocity measurements, and yet they are much larger than the uncertainties for the TRAPPIST-1 planets, whether considered in
 a relative or absolute sense.  The larger uncertainties of the RV planets makes the core-mass fractions difficult to constrain
-for these more massive planets - core-free and cored models are consistent with most of these planets' parameters at the 1$-\sigma$ level (Fig.\ \ref{fig:mass_radius_comparison}).   Nevertheless, it is notable that the
+for these more massive planets - core-free and cored models are consistent with most of these planets' parameters at the 1$\sigma$ level (Fig.\ \ref{fig:mass_radius_comparison}).   Nevertheless, it is notable that the
 rocky planets for which we currently have data \textbf{seem to be similar in composition to the
 Earth \citep{Dressing2015}; however, the actual range of bulk rock compositions of rocky exoplanets relative to their host stars is currently debated.}
 This also appears consistent with the observation
@@ -2314,7 +2315,7 @@ The stellar density we derive using the photodynamic model, $\rho_* =
     53.17_{- 1.18}^{+0.72} \rho_\odot$, is \textbf{in $1\sigma$
 agreement with} prior analyses.  %\citet{Gillon2017} found a density of
 %$\rho_* = (50.7_{-2.2}^{+1.2}\rho_\odot$, while our derived density
-%is about twice as precise, and $3-\sigma$ larger.  
+%is about twice as precise, and $3\sigma$ larger.  
 Most recently, \citet{Delrez2018a}
 found a density of $\rho_* = (52.3\pm 2.2)\rho_\odot$,
 twice as uncertain as our analysis.   We feel that our approach yields a density of superior

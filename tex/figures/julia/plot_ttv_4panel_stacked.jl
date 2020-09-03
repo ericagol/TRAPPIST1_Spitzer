@@ -75,7 +75,7 @@ for ip=1:nplanet
   for j=1:ord[ip]
      mod_poly .+= fn[j+1,:] .*coeff[j+1]
   end
-  ax.plot(tti1,(mod_poly .-tt_ref1) .*(24*60),linewidth=1.5,alpha=0.5)
+#  ax.plot(tti1,(mod_poly .-tt_ref1) .*(24*60),linewidth=1.5,alpha=0.5)
 end
 #ax = axes[8]
 #ax.axis("off")
