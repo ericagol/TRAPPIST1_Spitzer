@@ -1084,8 +1084,8 @@ higher eccentricities \citep{Ford2006}.
     \oscaption{julia/plot_masses.jl}%
     {Probability distribution of the mass-ratios of each planet to the star, scaled to a stellar mass of $M_*  = 0.09 M_\odot$; panels range from small masses to large.   Thick
         histograms show the posterior probability distribution of the Markov chain analysis.
-        Horizontal error bars show the $1\sigma$ mass-ratios from \citet{Grimm2018}.
-        Dark solid curve is the likelihood profile; light, dotted curve is the Laplace approximation.}
+        \textbf{Dots connecting with vertical lines show the mean and $1\sigma$ intervals for the} mass-ratios from \citet{Grimm2018}.
+        Dark solid \textbf{bell} curve is the likelihood profile; light, dotted \textbf{bell} curve is the Laplace approximation.}
     \label{fig:mass_likelihood_profile}
 \end{figure*}
 
@@ -1180,7 +1180,7 @@ auto-correlation length, finding a minimum effective samples size of 6000 over a
         Parameter & Units        & Prior \cr
         \hline
         $b_0$     & $R_*$        & $\mathcal{U}(0,1)$\cr
-        $R_p$     & $R_*$        & $\mathcal{U}(0,0.2)$\cr
+        $R_p/R_*$     & -        & $\mathcal{U}(0,0.2)$\cr
         $\rho_*$  & $\rho_\odot$ & $\mathcal{U}(0,100)$\cr
         $(q_{1,\mathrm{Ch 1}},q_{2,\mathrm{Ch 1}})$
                   & ---          & $\mathcal{U}(0,1)$\cr
