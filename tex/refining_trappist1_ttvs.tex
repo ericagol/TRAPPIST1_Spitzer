@@ -454,8 +454,6 @@ In addition, the masses of all of the planets are highly correlated due to the f
 dynamical state of all of the planets needs to be solved together, so model comparisons with individual planets
 are not independent.
 
-%The primary goal of this paper is to revisit a transit timing analysis of the TRAPPIST-1 planetary system, taking into account the dynamical interactions between the planets to derive their masses (relative to the star), as well as their orbital eccentricities.  Along with this analysis, we revisit the photometric analysis of the transits, using our dynamical model as a constraint upon the transit times of the planets to sharpen the measurement of the radius-ratios, impact parameters, limb-darkening, and stellar density.
-
 In this paper we revisit a transit-timing and photometric analysis with the completed
 Spitzer program using the more extensive transit dataset we now have in hand.  The goal of
 this program is to provide a more precise understanding of the masses, radii, and
@@ -1014,7 +1012,7 @@ should not be used to extrapolate to higher-order significance
 without using the full distribution.
 
 The posterior distribution of the {\it ratio} of the planet masses to the star, scaled to a stellar mass of 0.09 $M_\odot$, are given in Table \ref{tab:TTV_parameters} and shown in Figure \ref{fig:mass_likelihood_profile}.  The likelihood profile of
-the mass-ratios of the planets is also plotted in
+the \textbf{planet-to-star mass ratios} is also plotted in
 Figure \ref{fig:mass_likelihood_profile} and appears to be well-behaved. These
 likelihood profiles are also approximately Gaussian in shape, and track the inverse Hessian evaluated at the maximum likelihood to estimate the covariance (also plotted), albeit with a stronger
 tail for planet e at lower mass.  Compared with the prior masses
@@ -1024,7 +1022,7 @@ with the exception of planet e which has decreased and planet h which remains th
 \begin{table*}
     \centering
     \scriptsize
-    \caption{Mass-ratios of the planets to the star in units of
+    \caption{\textbf{Planet-to-star mass ratios} in units of
         $M_\oplus/(0.09 M_\odot)$ from \citet{Grimm2018} compared with the results from this paper.}
     \begin{tabular}{l|c|c|c|c|c|c|c}
         Planet              & b                          & c                           & d                           & e                           & f                           & g                           & h                           \\
@@ -1082,7 +1080,7 @@ higher eccentricities \citep{Ford2006}.
     \centering
     \includegraphics[width=\hsize]{figures/T1_masses_03312020.pdf}
     \oscaption{julia/plot_masses.jl}%
-    {Probability distribution of the mass-ratios of each planet to the star, scaled to a stellar mass of $M_*  = 0.09 M_\odot$; panels range from small masses to large.   Thick
+    {Probability distribution of the \textbf{planet-to-star mass ratios}, scaled to a stellar mass of $M_*  = 0.09 M_\odot$; panels range from small masses to large.   Thick
         histograms show the posterior probability distribution of the Markov chain analysis.
         \textbf{Dots connecting with vertical lines show the mean and $1\sigma$ intervals for the} mass-ratios from \citet{Grimm2018}.
         Dark solid \textbf{bell} curve is the likelihood profile; light, dotted \textbf{bell} curve is the Laplace approximation.}
@@ -1104,7 +1102,7 @@ the timing analyses.  For comparison, we have re-run the likelihood-profile
 computation described above using a normal distribution in place of a Student's t-distribution.
 The derived masses from the two different analyses agree well with a maximal deviation of the median masses of better than 0.4\%, and in all cases less than 13\% of the mass-ratio uncertainty.  The eccentricities and longitudes of periastron at the initial time agree as well.  We interpret this as a validation of the numerical techniques being employed in this paper.
 
-With the transit-timing analysis completed, we now use the N-body model to improve the estimate of the stellar density and the radius-ratios of the planets.  To do so we create a photodynamic model, described next.
+With the transit-timing analysis completed, we now use the N-body model to improve the estimate of the stellar density and the \textbf{planet-to-star radius ratios}.  To do so we create a photodynamic model, described next.
 
 \section{Photodynamical analysis}\label{sec:photodynamics}
 
@@ -1127,7 +1125,7 @@ from the model (in N-body code units).  We then convert the code units to physic
 units using the density of the star, obtaining the sky velocity in units
 of $R_*/\mathrm{day}$.
 We account for quadratic limb-darkening of the star with parameters ($q_\mathrm{1,Ch1}, q_\mathrm{2,Ch1},q_\mathrm{1,Ch2},q_\mathrm{2,Ch2}$) in the two Spitzer channels, and for each
-planet we specify a planet-star radius ratio ($R_p/R_*$) and we assume
+planet we specify a \textbf{planet-to-star} radius ratio ($R_p/R_*$) and we assume
 mid-transit impact parameter ($b_0$), which is constant for all transits of
 a given planet.  We assume that the limb-darkening parameters are a function
 of wavelength for the two Spitzer channels, while we treat the planet radius
@@ -1348,7 +1346,7 @@ densities of the planets given the assumptions inherent in the inclination prior
         $ I $[$^\circ$] & $89.728{\pm}  0.165$           & $89.778{\pm}  0.118$          & $89.896{\pm}  0.077$          & $89.793{\pm}  0.048$          & $89.740{\pm}  0.019$          & $89.742{\pm}  0.012$          & $89.805{\pm}  0.013$ \cr
         \hline
     \end{tabular}
-    \caption{Parameters derived from the photodynamic model.  Top: Stellar density (in units of solar density), limb-darkening parameters ($q_1/q_2$) in Spitzer Channel 1 and 2, and stellar density in cgs units and limb-darkening parameters $u_1$ and $u_2$. Bottom: Radius-ratio of planet to star, $R_p/R_*$; transit depth, $(R_p/R_*)^2$;  transit duration, $T$ (from first to fourth contact); ingress duration, $\tau$ (from first to second contact and third to fourth contact); impact parameter in units of stellar radius, $b/R_*$; and ratio of semi-major axis to stellar radius,
+    \caption{Parameters derived from the photodynamic model.  Top: Stellar density (in units of solar density), limb-darkening parameters ($q_1/q_2$) in Spitzer Channel 1 and 2, and stellar density in cgs units and limb-darkening parameters $u_1$ and $u_2$. Bottom: \textbf{Planet-to-star radius ratio}, $R_p/R_*$; transit depth, $(R_p/R_*)^2$;  transit duration, $T$ (from first to fourth contact); ingress duration, $\tau$ (from first to second contact and third to fourth contact); impact parameter in units of stellar radius, $b/R_*$; and ratio of semi-major axis to stellar radius,
         $a/R_*$. }
     % Add in: a/R_*, inclination angle for each planet.
     \label{tab:photodynamic_params}
@@ -1366,7 +1364,7 @@ With the completion of the transit-timing analysis and photodynamic analysis, we
 The only component missing is a constraint upon the mass of the host star.  We use the recent analysis by \citet{Mann2019}, who have constructed a sample of nearby M-dwarf binaries to calibrate the mass-luminosity ($M_*-M_{K_S}$) relation of M-dwarfs down to a mass of 0.075 $M_\odot$.\footnote{Note that ``M" is being used in three ways here: spectral category (M-dwarf), stellar mass ($M_*$), and
     absolute magnitude in the $K_S$ band, $M_{K_S}$.}   Given the precise parallax measurement available for TRAPPIST-1 thanks to GAIA, the relation yields an estimated mass of $M_* = 0.0898\pm 0.0023 M_\odot$.
 
-To derive the masses of the planets, we draw mass-ratios of the planets to the star from the posterior distribution of the transit-timing analysis (\S \ref{sec:transit_timing}), which we multiply by the mass of the star drawn from a normal distribution with $M_* = 0.0898\pm 0.0023 M_\odot$. We then draw the radius-ratios and stellar density from the posterior distribution from the photodynamic analysis (\S \ref{sec:photodynamics}).
+To derive the masses of the planets, we draw \textbf{planet-to-star mass ratios} from the posterior distribution of the transit-timing analysis (\S \ref{sec:transit_timing}), which we multiply by the mass of the star drawn from a normal distribution with $M_* = 0.0898\pm 0.0023 M_\odot$. We then draw the \textbf{planet-to-star radius ratios} and stellar density from the posterior distribution from the photodynamic analysis (\S \ref{sec:photodynamics}).
 With the same mass draw, we compute the stellar radius as
 \begin{equation}
     R_* = \left(\frac{M_*}{M_\odot}\frac{\rho_\odot}{\rho_*}\right)^{-1/3} R_\odot,
@@ -1784,7 +1782,7 @@ which are less than this could be due to systematic uncertainties
 which are not captured by our modeling.
 
 The transit depths
-determine the radius-ratios of the planets to the star, but these
+determine the \textbf{planet-to-star radius ratios}, but these
 measurements are affected by the lack of uniform surface brightness
 of the star.  Fortunately the multiple impact parameters of the
 planets yield a constraint upon the infrared limb-darkening, which
@@ -2103,7 +2101,7 @@ dynamical simulations show that these GLR angles can take on stable values
 for extended durations, and sometimes can quickly jump in value, flipping symmetrically about
 180 degrees \citep{Mah2018},
 resulting in two possible angles for each triplet of stars, $\phi$ and $360-\phi$.
-Based on the prior measured mass-ratios of the planets to the star, \citet{Mah2018}
+Based on the prior measured \textbf{planet-to-star mass ratios}, \citet{Mah2018}
 predicted the value of the three-body resonance angles resulting from the values at the
 end of the simulation.
 
