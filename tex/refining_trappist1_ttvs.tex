@@ -1,4 +1,4 @@
-
+2
 %% Beginning of file 'sample63.tex'
 %%
 %% Modified 2019 June
@@ -979,15 +979,15 @@ masses in this paper.
 
 \begin{table*}
     \centering
-    \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1\sigma$ uncertainties.  Note that the mass ratios, $\mu$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimate of the planet mass).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
+    \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1\sigma$ uncertainties.  Note that the mass ratios, $\mu \mathbf{=M_p/M_*}$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimate of the planet mass).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
         The parameters $P$, $t_0$, $e\cos{\omega}$, and
         $e\sin{\omega}$ describe the osculating Jacobi elements at the start
         of the simulation, on date BJD$_\mathrm{TDB}$ $-2,450,000 = 7257.93115525$.}
     \label{tab:TTV_parameters}
     \begin{tabular}{lccccccc}
         \hline
-          & $\mu = \frac{M_p}{M_*}$                           & $M_p$                & $\frac{\sigma_\mu}{\mu}$ & $P$                       & $t_0$                     & $ e\cos{\omega}$        & $ e\sin{\omega}$  \cr
-          & [$M_\oplus\left(\frac{0.09 M_\odot}{M_*}\right)$] & [$10^{-5} M_*$]      & \%                       & [day]                     & [BJD$_\mathrm{TDB}$-2,450,000]           &                         & \cr
+          & $\mu \mathbf{\left[\frac{M_\oplus}{0.09 M_\odot}\right]}$                           & $M_p$                & $\frac{\sigma_\mu}{\mu}$ & $P$                       & $t_0$                     & $ e\cos{\omega}$        & $ e\sin{\omega}$  \cr
+          & $\mathbf{=\frac{M_p}{M_\oplus}\left(\frac{0.09 M_\odot}{M_*}\right)}$ & [$10^{-5} M_*$]      & \%                       & [day]                     & [BJD$_\mathrm{TDB}$-2,450,000]           &                         & \cr
         \hline
         b & $1.3771{\pm} 0.0593$                              & $ 4.596{\pm}  0.198$ & $4.3$                    & $1.510826{\pm} 0.000006$  & $7257.55044{\pm} 0.00015$ & $-0.00215{\pm} 0.00332$ & $0.00217{\pm} 0.00244$ \cr
         c & $1.3105{\pm} 0.0453$                              & $ 4.374{\pm}  0.151$ & $3.5$                    & $2.421937{\pm} 0.000018$  & $7258.58728{\pm} 0.00027$ & $0.00055{\pm} 0.00232$  & $0.00001{\pm} 0.00171$ \cr
@@ -1025,7 +1025,7 @@ with the exception of planet e which has decreased and planet h which remains th
     \centering
     \scriptsize
     \caption{Mass-ratios of the planets to the star in units of
-        $M_\oplus (0.09 M_\odot/M_*)$ from \citet{Grimm2018} compared with the results from this paper.}
+        $M_\oplus/(0.09 M_\odot)$ from \citet{Grimm2018} compared with the results from this paper.}
     \begin{tabular}{l|c|c|c|c|c|c|c}
         Planet              & b                          & c                           & d                           & e                           & f                           & g                           & h                           \\
         Grimm et al. (2018) & $1.017_{-0.143}^{+ 0.154}$ & $1.156_{- 0.131 }^{+0.142}$ & $0.297_{- 0.035}^{+ 0.039}$ & $0.772_{- 0.075}^{+ 0.079}$ & $0.934_{- 0.078 }^{+0.080}$ & $1.148_{- 0.095}^{+ 0.098}$ & $0.331_{- 0.049}^{+ 0.056}$ \\
@@ -1165,10 +1165,8 @@ photometric data, and we optimize the model using a Nelder-Mead algorithm.
 To compute the uncertainties on the photodynamical model parameters, we
 use an affine-invariant Markov chain Monte Carlo algorithm \citep{Goodman2010}.\footnote{As
     implemented in the package \texttt{https://github.com/madsjulia/AffineInvariantMCMC.jl}}
+We used a prior which places bounds on each parameter given in Table \ref{tab:pd_bounds}.
 The posterior distribution of the results of the fit are given in Table \ref{tab:photodynamic_params}.
-We used a prior which places bounds on
-each parameter given in
-Table \ref{tab:pd_bounds}.
 We utilized 100 walkers run for 50,000 generations, discarding the first 1500 generations
 for burn-in.  We computed the effective sample size using the integrated
 auto-correlation length, finding a minimum effective samples size of 6000 over all
