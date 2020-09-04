@@ -1,0 +1,32 @@
+
+9/4/2020
+
+Referee asked us where the difference between Grimm's
+analysis and the new analysis originates.
+
+There are some possibilites:
+1). A difference in the size of the dataset (this is definitely part of the cause). [ ]
+2). A difference in the prior. [ ]
+3). A difference in the likelihood (chi-square vs. Student's t). [ ]
+4). A difference in the MCMC method. [ ]
+5). A difference in the integrator. [x] No - we compared, and
+  get equivalent results.
+
+So, in this directory I am going to rerun the optimization analysis with
+the original amount of data and compare the best-fit parameters and
+Hessian uncertainties with the new dataset.
+
+I'm going to take the times from:
+/Users/ericagol/Observing/Spitzer/Cycle13/TRAPPIST1/campaign02/December2017/
+  timing_simon.txt
+where contains the 284 times used in Simon's analysis (I believe).
+
+(This directory contains a later analysis, but the transit times match
+the original analysis which was used in the Grimm et al. (2018) paper:
+/Users/ericagol/Observing/Spitzer/Cycle13/TRAPPIST1/campaign02/September2017/
+  trappist1_timing_all.txt)
+
+Some differences:
+1). We don't have to integrate for as long.
+2). Our starting orbital elements could be different.
+
