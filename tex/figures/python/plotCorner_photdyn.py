@@ -20,7 +20,7 @@ pl.figure(figsize=(30, 30))
 #file = 'state_total.txt'
 file = '../../../data/state_total.txt'
 
-n = 35
+n = 19
 
 for i in range(0, n, 1):
 	for j in range(0, i + 1, 1):
@@ -157,5 +157,5 @@ for i in range(0, n, 1):
 		pl.yticks([])
 
 
-name = '../corner_ttv.png'
-pl.savefig(name, format='png', dpi=150)
+name = '../corner_photdyn.png'
+pl.savefig(name, format='png', dpi=150,bbox_inches='tight',pad_inches=0)
