@@ -1,4 +1,4 @@
-
+2
 T1_Spitzer_data.jld2: Compiled Spitzer photometry, detrended, from Ducrot et al. (2020) (used in src/v06/run_pd*jl)
 T1_8planet_noprior_efree.jld2:  Results from search for eighth planet (used in tex/figures/julia/TTV_search_8planet_noprior_rand.jl)
 T1_CMFearth_run001.jld2: Results from search for eighth planet
@@ -11,7 +11,8 @@ T1_libration_laplace.jld2:  Computed GLR (Laplace) angles (used in tex/figures/j
 T1_likelihood_profile_student_all_3.0sig.jld2:  Results from likelihood profile (used in tex/figures/julia/plot_masses.jl)
 T1_likelihood_profile_student_all_3.0sig_v02.jld2: Results from likelihood profile with transformed Student's t parameters (used in tex/figures/julia/plot_likelihood_profile.jl)
 T1_likelihood_profile_student_planetc_3.0sig.jld2: Results from likelihood profile for only one planet (used in tex/figures/julia/ttv_plot_noprior.jl)
-T1_mass_radius_cmf_000.jld2: Saves results from histogramming posterior distribution from combined TTV and photodynamic analysis (used in tex/tables/uber_table.jl)
+T1_mass_radius_cmf_000.jld2: Saves results from histogramming posterior distribution from combined TTV and photodynamic analysis (used in tex/tables/uber_table.jl). Contains 10 million mass/radius samples.
+T1_mass_radius_posterior_10k.zip: Contains the file T1_mass_radius_posterior_10k.txt, which lists 10,000 posterior samples of the masses and radii.  The header lists the variables in each column.
 T1_pd_MCMC_run_000_001.jld2: This and following two files contain results from photodynamic analysis in src/v06/ (used in tex/figures/julia/T1_mass_radius_update.jl and photodynamic_table_noprior.jl)
 T1_pd_MCMC_run_000_002.jld2
 T1_pd_MCMC_run_000_003.jld2

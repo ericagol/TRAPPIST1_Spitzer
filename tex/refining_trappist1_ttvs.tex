@@ -1000,7 +1000,8 @@ masses in this paper.
 
 The results of the posterior distribution of our transit-timing analysis are summarized
 in Table \ref{tab:TTV_parameters} \textbf{with the mean and $\pm$ 34.1\% confidence intervals (1$\sigma)$
-computed from the standard deviation of the Markov chains.} There are 35 parameters
+computed from the standard deviation of the Markov chains.  The correlations between
+parameters are depicted in Figure \ref{fig:corner_ttv}.} There are 35 parameters
 which describe the planets, in addition to two parameters
 for the Student's t-distribution, $ \log{\nu} = 1.3609 \pm 0.2337$
 and $ V_1 e^{1/(2\nu)} = 0.9688 \pm 0.1166$ (Figure \ref{fig:student_param_likelihood_profile}).  The posterior mass-ratios
@@ -2525,6 +2526,23 @@ where the partial derivatives with respect to $t_{ij}(\mathbf{x}_{dyn})$, $x_{5N
 are computed with automatic differentiation.
 
 The inverse of the Hessian matrix is used in the Levenberg-Marquardt optimization, and when evaluated at the maximum likelihood, is used to estimate the covariance matrix, from which the square root of the diagonal components are used to estimate the widths of the posterior distribution for each model parameter, $\mathbf{x} = (\mathbf{x}_{dyn},\log \nu, V_1 e^{1/2\nu})$, which are plotted in Figures \ref{fig:mass_likelihood_profile}, \ref{fig:ecc_likelihood_profile}, and \ref{fig:student_param_likelihood_profile}.  This approximated Hessian is also used to define the mass matrix for the HMC simulations.
+
+\section{Corner plots}
+
+Figures \ref{fig:corner_ttv} %and \ref{fig:corner_photdyn} 
+show corner plots of the variables
+from the transit-timing and photodynamical analyses, respectively.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\hsize]{figures/corner_ttv.png}
+    \oscaption{python/plotCorner_ttv.py}{Corner plot of variables in the transit-timing analysis with $1\sigma$
+       and $2\sigma$ confidence contours.
+       Lagrangian orbital elements are defined as $k_b = e_b \cos{\omega_b}$ and $h_b = e_b \sin{\omega_b}$,
+       and similarly for the other planets.}
+    \label{fig:corner_ttv}
+\end{figure}
+
 
 \section{Tables}
 
