@@ -137,7 +137,7 @@ for i in range(0, n, 1):
 			print("x", i, xl, j0, j1)
 			print("y", j, yl, i0, i1)
 		else:
-			pl.hist(pi, 21, normed=1, edgecolor = 'none', facecolor='green', alpha=0.75)
+			pl.hist(pi, 21, density=1, edgecolor = 'none', facecolor='green', alpha=0.75)
 			
 			pm = np.median(pi)
 			pn = np.percentile(pi, 100.0 - 84.1345);
