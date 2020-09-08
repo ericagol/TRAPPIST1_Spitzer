@@ -426,11 +426,11 @@ The GLRs also cause adjacent pairs of planets to reside near mean-motion resonan
 for which $j P_i^{-1} \approx (j+k) P_{i+1}^{-1}$ for integers $j$ and $k$ for the $i$th and $i+1$th planets.  This proximity causes a resonant timescale
 given by
 \begin{equation}
-    P_{TTV} = \frac{k}{j P_i^{-1} - (j+k) P_{i+1}^{-1}},
+    P_{TTV} = \frac{1}{j P_i^{-1} - (j+k) P_{i+1}^{-1}},
 \end{equation}
 \citep{Lithwick2012} which is the characteristic timescale of the transit timing variations (TTVs) \textbf{of
-the outer five planets for $k=1$, and the inner two planets have the same timescale with $k=3,2$
-thanks to the generalized Laplace resonant conditions.}
+the outer five planets. The inner two pairs of planets vary on a timescale smaller by a factor of 3 (b/c) and 
+2 (c/d) thanks to the generalized Laplace resonant conditions.}
 The period of the resonant terms for each of these pairs of planets is $P_{TTV} \approx 491\pm 5$
 days (ranging from \textbf{485 to 500} days for each pair).  This timescale has two consequences for
 measuring the masses of the planets from transit-timing variations:  1)  the transit times
@@ -1482,6 +1482,8 @@ parameters of the star.  We adopt the luminosity from \citet{Ducrot2020}
 and the mass from \citet{Mann2019} given the complete and careful analysis
 from both of those papers.  With our updated constraint upon the density
 of the star, we re-derive the other parameters of the star, which are summarized in Table \ref{tab:stellar_parameters}.
+\textbf{In this table the stellar effective temperature was computed from
+the stellar luminosity and radius, with errors computed via Monte Carlo.}
 
 %\section{Planet detection}
 %
@@ -1579,7 +1581,8 @@ vector elements drawn from a random normal of width 0.005.   We
 placed a Gaussian prior on the eccentricity vector elements of the eighth planet
 with a standard deviation of $0.14$ to avoid unstable configurations.
 We then optimized the likelihood with the eight-planet model, carrying
-out 11,200 optimizations.  This analysis was carried out on four Hyak nodes of 28 processors each with 100 optimizations per node, lasting seven days each for about 20,000 CPU hours.
+out 11,200 optimizations \textbf{on 112 CPUs}
+with 100 optimizations per \textbf{CPU}, lasting seven days each for about 20,000 CPU hours.
 
 We then carried out a search for evidence of perturbations by planet i by
 determining if the optimized likelihood of the transiting planets was improved
