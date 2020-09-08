@@ -1,1 +1,4 @@
 *.gz
+inclination_ecc.jl
+corner.jl
+corner2.jl
