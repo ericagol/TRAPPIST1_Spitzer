@@ -59,7 +59,7 @@ sgrimm = [0.082,0.073,0.022,0.027,0.026,0.027,0.034]*MEARTH/(0.09*MSUN)
 
 t0 = 7257.93115525
 h  = 0.06
-tmax = 1600.0
+tmax = 800.0
 
 # Read in initial conditions from the first optimization:
 #elements_minimum = readdlm("elements_dompi.txt",',')
@@ -97,13 +97,22 @@ count2 = zeros(Int64,n)
 
 #ndof = 3.27; lnV1 =  -0.36
 
-ndof = 3.36016234786184600
-lnV1 = -0.34445676197382336
+#ndof = 3.36016234786184600
+#lnV1 = -0.34445676197382336
 
 # Convert to new parameterization:
-lgndof = log(ndof)
-V1exp2nuinv = exp(lnV1+0.5/ndof)
+#lgndof = log(ndof)
+#V1exp2nuinv = exp(lnV1+0.5/ndof)
 
+#lgndof = 0.962757625597931 
+#V1exp2nuinv = 0.6089636752275194
+
+# Set to a (nearly) Chi-square distribution:
+lgndof_prior = 12.0
+V1exp2nuinv_prior = 1.0
+lgndof = copy(lgndof_prior)
+V1exp2nuinv = copy(V1exp2nuinv_prior)
+weightprior = 1e16
 
 # Now, try to improve the fit to the data:
 # First, find the indices that match for each planet:
@@ -210,6 +219,7 @@ for igrid in jgrid
   # Add in prior:
   prior_ttv = (elements[1+imass,1]-mass_grid[igrid])^2/sigm2
   lgndof_best = lgndof; V1exp2nuinv_best = V1exp2nuinv
+  prior_ttv += (lgndof-lgndof_prior)^2*weightprior + (V1exp2nuinv - V1exp2nuinv_prior)^2*weightprior
   chi_ttv = prior_ttv
   for j=1:ntrans
     chi_ttv += lnprob([tobs_tot[j],tt2[iplanet[j],indx[j]],sobs_tot[j],lgndof_best,V1exp2nuinv_best])
@@ -283,12 +293,15 @@ for igrid in jgrid
     end
     # Add in grid constraint upon mass:
     chi_ttv += (elements[imass+1,1]-mass_grid[igrid])^2/sigm2
+    chi_ttv += (lgndof-lgndof_prior)^2*weightprior + (V1exp2nuinv - V1exp2nuinv_prior)^2*weightprior
     # Add in normalization:
     chi_ttv += ntrans*log_norm_students_t([lgndof,V1exp2nuinv])
     # Add in prior gradient:
     gradf[(imass-1)*5+1] += 2.0*(elements[imass+1,1]-mass_grid[igrid])/sigm2
     # Add in gradient with respect to (lgndof,V1exp2nuinv):
     gradf[nparam-1:nparam] .+= ntrans*grad_norm([lgndof,V1exp2nuinv])
+    gradf[nparam-1] += 2*(lgndof-lgndof_prior)*weightprior 
+    gradf[nparam] += 2*(V1exp2nuinv - V1exp2nuinv_prior)*weightprior
     # Compare with numerical gradient:
     if compute_grad_num_q && iter == 0 && test_gradient == true
        gradf_num = convert(Array{Float64,1},
@@ -299,6 +312,8 @@ for igrid in jgrid
     hessian[(imass-1)*5+1,(imass-1)*5+1] += 2.0/sigm2
     # Add in hessian of normalization:
     hessian[nparam-1:nparam,nparam-1:nparam] .+= ntrans*hess_norm([lgndof,V1exp2nuinv])
+    hessian[nparam-1,nparam-1] += 2*weightprior 
+    hessian[nparam,nparam] += 2*weightprior
     # Now, carry out Newton step (can no longer use Levenberg-Marquardt!):
     chi_best = chi_ttv; elements_best = copy(elements); lgndof_best = copy(lgndof); V1exp2nuinv_best=copy(V1exp2nuinv);  prior_best = copy(prior_ttv)
     elements_trial = copy(elements); lgndof_trial = copy(lgndof); V1exp2nuinv_trial = copy(V1exp2nuinv); prior_trial = copy(prior_ttv)
@@ -329,7 +344,7 @@ for igrid in jgrid
           lgndof_trial+= factor*deltax[nparam-1]
           V1exp2nuinv_trial += factor*deltax[nparam]
         end
-        if maximum(ecc2_trial) < 0.2 && log(V1exp2nuinv_trial) > -10.0 && exp(lgndof_trial) > 0.5 && exp(lgndof_trial) < 100.0
+        if maximum(ecc2_trial) < 0.2 && log(abs(V1exp2nuinv_trial)) > -10.0 && exp(lgndof_trial) > 0.5 && exp(lgndof_trial) < 1e8 && V1exp2nuinv_trial > 0.0
           out_of_bounds = false
         else
           # Since we're out of bounds, shrink deltax:
@@ -337,7 +352,7 @@ for igrid in jgrid
         end
       end
     # Compute chi-square
-      if maximum(ecc2_trial) < 0.2 && log(V1exp2nuinv_trial) > -10.0 && exp(lgndof_trial) > 1.0 && exp(lgndof_trial) < 100.0
+      if maximum(ecc2_trial) < 0.2 && log(abs(V1exp2nuinv_trial)) > -10.0 && exp(lgndof_trial) > 1.0 && exp(lgndof_trial) < 1e8 && V1exp2nuinv_trial > 0.0
         chi_trial = Inf
         while chi_trial > chi_ttv && factor > 1e-2
           # Now, do a line search:
@@ -350,6 +365,7 @@ for igrid in jgrid
           chi_trial += ntrans*log_norm_students_t([lgndof_trial,V1exp2nuinv_trial])
           # Add in prior:
           prior_trial = (elements_trial[imass+1,1]-mass_grid[igrid])^2/sigm2
+          prior_trial += (lgndof_trial-lgndof_prior)^2*weightprior + (V1exp2nuinv_trial - V1exp2nuinv_prior)^2*weightprior
           chi_trial += prior_trial
           if chi_trial > chi_ttv
             factor *= 0.5
@@ -440,6 +456,8 @@ cov_save = inv(0.5*hessian)
 
 hess_save = 0.5*hessian
 
+@save "T1_grimm_students.jld2" elements hess_save cov_save
+
 planet = ["b","c","d","e","f","g","h"]
 sigm = zeros(nplanet)
 mass = zeros(nplanet)
@@ -447,12 +465,12 @@ ecc = zeros(nplanet)
 pomega = zeros(nplanet)
 for i=1:nplanet
   mass[i] = elements[i+1,1]*.09*MSUN/MEARTH
-  sigm[i] = sqrt(cov_save[5*(i-1)+1,5*(i-1)+1])*.09*MSUN/MEARTH
+  sigm[i] = sqrt(abs(cov_save[5*(i-1)+1,5*(i-1)+1]))*.09*MSUN/MEARTH
   ecc[i] = sqrt(elements[i+1,4]^2+elements[i+1,5]^2)
   pomega[i] = atan(elements[i+1,5],elements[i+1,4])*180/pi
   println(planet[i]," ",@sprintf("%6.4f",mass[i]),"+-",@sprintf("%6.4f",sigm[i])," ",
-   @sprintf("%6.4f",elements[i+1,4]),"+-",@sprintf("%6.4f",sqrt(cov_save[5*(i-1)+4,5*(i-1)+4])),
-   " ",@sprintf("%6.4f",elements[i+1,5]),"+-",@sprintf("%6.4f",sqrt(cov_save[5*(i-1)+5,5*(i-1)+5])),
+   @sprintf("%6.4f",elements[i+1,4]),"+-",@sprintf("%6.4f",sqrt(abs(cov_save[5*(i-1)+4,5*(i-1)+4]))),
+   " ",@sprintf("%6.4f",elements[i+1,5]),"+-",@sprintf("%6.4f",sqrt(abs(cov_save[5*(i-1)+5,5*(i-1)+5]))),
    " ",@sprintf("%6.4f",ecc[i])," ",@sprintf("%7.2f",pomega[i]))
 end
 

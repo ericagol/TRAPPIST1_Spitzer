@@ -30,3 +30,28 @@ Some differences:
 1). We don't have to integrate for as long.
 2). Our starting orbital elements could be different.
 
+9/6/2020
+
+000:  This one used element from Sept2017, and got stuck and did not
+optimize.  The covariance is not positive definite.
+
+001:  This one used elements from December2017, and seemed to optimize
+and used the Student's t distribution.  Here are the results:
+
+Planet 1 Finished grid point: 1 [1.0 0.0 0.0 0.0 0.0 0.0 0.0; 3.09304e-5 1.51082 7257.55 -0.00450904 0.05046 1.5708 3.14159; 3.87531e-5 2.4219 7258.59 0.00174262 0.043576 1.5708 3.14159; 1.38218e-5 4.04894 7257.08 -0.00663589 0.0314569 1.5708 3.14159; 3.11008e-5 6.1009 7257.83 0.00369057 0.0186552 1.5708 3.14159; 3.2832e-5 9.20783 7257.07 -0.0131347 0.019349 1.5708 3.14159; 3.82307e-5 12.3519 7257.72 0.00213306 0.0194899 1.5708 3.14159; 8.75106e-6 18.7723 7249.63 -0.00488581 0.0133628 1.5708 3.14159] 1.2382216699336661 0.7101412893646025 841.704019791049 0.0 Elapsed time: 1733.5931169986725
+b 0.9268+-0.1805 -0.0045+-0.0292 0.0505+-0.0240 0.0507   95.11
+c 1.1611+-0.1211 0.0017+-0.0226 0.0436+-0.0192 0.0436   87.71
+d 0.4141+-0.0639 -0.0066+-0.0169 0.0315+-0.0147 0.0321  101.91
+e 0.9319+-0.0636 0.0037+-0.0140 0.0187+-0.0118 0.0190   78.81
+f 0.9837+-0.0347 -0.0131+-0.0126 0.0193+-0.0104 0.0234  124.17
+g 1.1455+-0.0571 0.0021+-0.0110 0.0195+-0.0097 0.0196   83.75
+h 0.2622+-0.0691 -0.0049+-0.0063 0.0134+-0.0055 0.0142  110.08
+
+
+002:  This one will use a chi-square distribution instead.  I'll continue
+to use the Student's t-distribution, but set V_1 = 1.0 and set n_dof = 10^5
+(this gives a distribution which is equivalent to a Gaussian out to ~4-sigma).
+
+(I just lost the results - but this only took about 20 minutes to run).
+
+

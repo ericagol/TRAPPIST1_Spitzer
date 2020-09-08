@@ -33,8 +33,8 @@ Here is some description of how to run an HMC chain, how to set up the slurm
    
   To run the trappist1_run_hmc.jl script requires two input files:
   
-  - ../T1_timings_20191203.txt        # Transit times and uncertainties
-  - ../elements_noprior_students.txt  # Initial orbital elements
+  - ../../data/T1_timings_20191203.txt        # Transit times and uncertainties
+  - ../../data/elements_noprior_students.txt  # Initial orbital elements
   
   Also required is source code:
   

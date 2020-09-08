@@ -1,0 +1,34 @@
+ERROR: LoadError: DomainError with -1.7171065579797322:
+log will only return a complex result if called with a complex argument. Try log(Complex(x)).
+Stacktrace:
+ [1] throw_complex_domainerror(::Symbol, ::Float64) at ./math.jl:31
+ [2] log(::Float64) at ./special/log.jl:285
+ [3] run_hmc(::String, ::String, ::String, ::Int64, ::Float64, ::Int64, ::Bool) at /Users/ericagol/Software/TRAPPIST1_Spitzer/src/compare_grimm/run_hmc_background_student_rescale.jl:316
+ [4] top-level scope at none:0
+ [5] include at ./boot.jl:317 [inlined]
+ [6] include_relative(::Module, ::String) at ./loading.jl:1041
+ [7] include(::Module, ::String) at ./sysimg.jl:29
+ [8] exec_options(::Base.JLOptions) at ./client.jl:229
+ [9] _start() at ./client.jl:421
+in expression starting at /Users/ericagol/Software/TRAPPIST1_Spitzer/src/compare_grimm/trappist1_run_hmc.jl:25
+args = ["000"]
+  9.760838 seconds (159.72 M allocations: 4.120 GiB, 7.82% gc time)
+ 11.430448 seconds (33.68 M allocations: 4.148 GiB, 5.55% gc time)
+Total number of transits: 284 Chi-square: 435.18598543215296 error: 0.0
+New chi2: 900.9634271000344 900.9634271000344 prior_trial: 0.0 target_mass: 0.0 elapsed time: 0.35198891957600914 min
+New chi2: 900.5947517552112 900.5947517552112 prior_trial: 0.0 target_mass: 0.0 elapsed time: 0.43490851720174156 min
+New chi2: 898.3899104231389 898.3899104231389 prior_trial: 0.0 target_mass: 0.0 elapsed time: 0.5144291679064433 min
+New chi2: 894.8966389369971 894.8966389369971 prior_trial: 0.0 target_mass: 0.0 elapsed time: 0.5940600673357646 min
+New chi2: 889.2569875417231 889.2569875417231 prior_trial: 0.0 target_mass: 0.0 elapsed time: 0.6746900836626689 min
+New chi2: 889.0226139626916 889.0226139626916 prior_trial: 0.0 target_mass: 0.0 elapsed time: 0.755587351322174 min
+Chi-square worse. 902.1920649660633 best: 889.0226139626916 chi_ttv: 901.0072047665067
+Chi-square worse. 889.7848488999362 best: 889.0226139626916 chi_ttv: 901.0072047665067
+Chi-square worse. 895.0356593363641 best: 889.0226139626916 chi_ttv: 901.0072047665067
+New chi2: 889.0226139626916 prior: 0.0 target m: 0.0 elapsed time: 1.8804939150810243 min
+New chi2: 889.0035374628901 889.0035374628901 prior_trial: 0.0 target_mass: 0.0 elapsed time: 2.1960912346839905 min
+New chi2: 888.8454764437963 888.8454764437963 prior_trial: 0.0 target_mass: 0.0 elapsed time: 2.276015583674113 min
+New chi2: 887.9272779083501 887.9272779083501 prior_trial: 0.0 target_mass: 0.0 elapsed time: 2.3560429851214093 min
+New chi2: 885.691702459738 885.691702459738 prior_trial: 0.0 target_mass: 0.0 elapsed time: 2.43554386695226 min
+New chi2: 885.0554482338218 885.0554482338218 prior_trial: 0.0 target_mass: 0.0 elapsed time: 2.514839216073354 min
+New chi2: 875.7214300316715 875.7214300316715 prior_trial: 0.0 target_mass: 0.0 elapsed time: 2.673900886376699 min
+Chi-square worse. 884.6910715738304 best: 875.7214300316715 chi_ttv: 889.0226140392737
