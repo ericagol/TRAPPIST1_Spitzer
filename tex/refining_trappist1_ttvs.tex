@@ -1161,11 +1161,14 @@ that  window.  With this photometric
 scatter, we compute a $\chi^2$ of the model with respect to the Spitzer
 photometric data, and we optimize the model using a Nelder-Mead algorithm.
 
+\subsection{\textbf{Results}}
+
 To compute the uncertainties on the photodynamical model parameters, we
 use an affine-invariant Markov chain Monte Carlo algorithm \citep{Goodman2010}.\footnote{As
     implemented in the package \texttt{https://github.com/madsjulia/AffineInvariantMCMC.jl}}
 We used a prior which places bounds on each parameter given in Table \ref{tab:pd_bounds}.
-The posterior distribution of the results of the fit are given in Table \ref{tab:photodynamic_params}.
+The posterior distribution of the results of the fit are given in Table \ref{tab:photodynamic_params},
+\textbf{while the correlations between parameters are shown in Figure \ref{fig:corner_photdyn}.}
 We utilized 100 walkers run for 50,000 generations, discarding the first 1500 generations
 for burn-in.  We computed the effective sample size using the integrated
 auto-correlation length, finding a minimum effective samples size of 6000 over all
@@ -2531,7 +2534,7 @@ The inverse of the Hessian matrix is used in the Levenberg-Marquardt optimizatio
 
 \section{Corner plots}
 
-Figures \ref{fig:corner_ttv} %and \ref{fig:corner_photdyn} 
+Figures \ref{fig:corner_ttv} and \ref{fig:corner_photdyn} 
 show corner plots of the variables
 from the transit-timing and photodynamical analyses, respectively.
 
@@ -2543,6 +2546,14 @@ from the transit-timing and photodynamical analyses, respectively.
        Lagrangian orbital elements are defined as $k_b = e_b \cos{\omega_b}$ and $h_b = e_b \sin{\omega_b}$,
        and similarly for the other planets.}
     \label{fig:corner_ttv}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\hsize]{figures/corner_photdyn.png}
+    \oscaption{python/plotCorner_ttv.py}{Corner plot of variables in the photodynamical analysis with $1\sigma$
+       and $2\sigma$ confidence contours. Planet radii are relative to star.}
+    \label{fig:corner_photdyn}
 \end{figure}
 
 

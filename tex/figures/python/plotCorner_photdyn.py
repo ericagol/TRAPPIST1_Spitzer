@@ -18,7 +18,7 @@ pl.figure(figsize=(30, 30))
 
 #file = 'MCMCaS.dat'
 #file = 'state_total.txt'
-file = '../../../data/state_total.txt'
+file = '../../../data/T1_photdyn_chain_noprior.txt'
 
 n = 19
 
@@ -26,7 +26,6 @@ for i in range(0, n, 1):
 	for j in range(0, i + 1, 1):
 	#for j in range(i, i + 1, 1):
 
-#		pi, pj, chi =  np.loadtxt(file, unpack=True, usecols = (i, j, 35))
 		pi, pj =  np.loadtxt(file, unpack=True, usecols = (i, j))
 
 
@@ -40,30 +39,37 @@ for i in range(0, n, 1):
 		t.append("h")
 
 
-		if(j % 5 == 0):
-			xl = r"$m_%s$" % t[j // 5]
-		if(j % 5 == 1):
-			xl = r"$P_%s$" % t[j // 5]
-		if(j % 5 == 2):
-			xl = r"$t0_%s$" % t[j // 5]
-		if(j % 5 == 3):
-			xl = r"$k_%s$" % t[j // 5]
-		if(j % 5 == 4):
-			xl = r"$h_%s$" % t[j // 5]
+		if(j < 7):
+			xl = r"$R_%s$" % t[j]
+		if((j >= 7) & (j < 14)):
+			xl = r"$b_%s$" % t[j-7]
+		if(j == 14):
+			xl = r"$\rho_*$"
+		if(j == 15):
+			xl = r"$q_{1,Ch1}$"
+		if(j == 16):
+			xl = r"$q_{2,Ch1}$"
+		if(j == 17):
+			xl = r"$q_{1,Ch2}$"
+		if(j == 18):
+			xl = r"$q_{2,Ch2}$"
+
+		if(i < 7):
+			yl = r"$R_%s$" % t[i]
+		if((i >= 7) & (i < 14)):
+			yl = r"$b_%s$" % t[i-7]
+		if(i == 14):
+			yl = r"$\rho_*$"
+		if(i == 15):
+			yl = r"$q_{1,Ch1}$"
+		if(i == 16):
+			yl = r"$q_{2,Ch1}$"
+		if(i == 17):
+			yl = r"$q_{1,Ch2}$"
+		if(i == 18):
+			yl = r"$q_{2,Ch2}$"
 
 
-		if(i % 5 == 0):
-			yl = r"$m_%s$" % t[i // 5]
-		if(i % 5 == 1):
-			yl = r"$P_%s$" % t[i // 5]
-		if(i % 5 == 2):
-			yl = r"$t0_%s$" % t[i // 5]
-		if(i % 5 == 3):
-			yl = r"$k_%s$" % t[i // 5]
-		if(i % 5 == 4):
-			yl = r"$h_%s$" % t[i // 5]
-		
-		
 
 		i1 = np.max(pi)
 		i0 = np.min(pi)
@@ -158,4 +164,4 @@ for i in range(0, n, 1):
 
 
 name = '../corner_photdyn.png'
-pl.savefig(name, format='png', dpi=150,bbox_inches='tight',pad_inches=0)
+pl.savefig(name, format='png', dpi=150,bbox_inches='tight')

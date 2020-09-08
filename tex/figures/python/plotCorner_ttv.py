@@ -158,4 +158,4 @@ for i in range(0, n, 1):
 
 
 name = '../corner_ttv.png'
-pl.savefig(name, format='png', dpi=150,bbox_inches='tight',pad_inches=0)
+pl.savefig(name, format='png', dpi=150,bbox_inches='tight')
