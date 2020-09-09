@@ -11,11 +11,7 @@ Pkg.add("PyPlot")
 Pkg.add("SpecialFunctions")
 Pkg.add("ForwardDiff")
 Pkg.add("DiffResults")
-if VERSION <= v"1.0.1"
-  Pkg.add(PackageSpec(name="Optim",version="0.22.0"))
-else
-  Pkg.add("Optim")
-end
+Pkg.add(PackageSpec(name="Optim",version="0.22.0"))
 Pkg.add("Documenter")
 Pkg.add("GSL")
 Pkg.add("DelimitedFiles")
