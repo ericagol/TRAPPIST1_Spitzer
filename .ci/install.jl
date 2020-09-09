@@ -12,7 +12,7 @@ Pkg.add("SpecialFunctions")
 Pkg.add("ForwardDiff")
 Pkg.add("DiffResults")
 if VERSION <= v"1.0.1"
-  Pkg.add(name="Optim",version="0.22.0")
+  Pkg.add(PackageSpec(name="Optim",version="0.22.0"))
 else
   Pkg.add("Optim")
 end
@@ -22,4 +22,8 @@ Pkg.add("DelimitedFiles")
 Pkg.add("IterativeSolvers")
 Pkg.add("JLD2")
 Pkg.add("MCMCDiagnostics")
-Pkg.clone("https://github.com/rodluger/Limbdark.jl.git")
+if VERSION <= v"1.0.1"
+  Pkg.clone("https://github.com/rodluger/Limbdark.jl.git")
+else
+  Pkg.add(PackageSpec(url="https://github.com/rodluger/Limbdark.jl.git"))
+end
