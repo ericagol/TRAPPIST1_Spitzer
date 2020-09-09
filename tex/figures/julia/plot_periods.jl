@@ -1,6 +1,7 @@
 
 # Make a plot of the periods of the planets versus integer values:
 using PyPlot; using DelimitedFiles
+using Statistics
 
 include("../../../src/regress.jl")
 

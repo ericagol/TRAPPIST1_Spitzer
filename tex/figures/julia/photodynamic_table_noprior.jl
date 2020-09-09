@@ -141,7 +141,7 @@ for i=1:nplanet
   end
 end
 legend()
-axis([0.0,0.5,0,1.1],fontsize=15)
+axis([0.0,0.5,0,1.1])
 #xlabel("Radius ratio"); ylabel("Probability")
 xlabel("Impact parameter",fontsize=15); ylabel("Probability",fontsize=15)
 savefig("../impact_parameter_noprior.pdf",bbox_inches="tight")

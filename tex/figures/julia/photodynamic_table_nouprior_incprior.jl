@@ -239,7 +239,7 @@ for i=1:nplanet
   end
 end
 legend(fontsize=15)
-axis([89.5,90.1,0,1.1],fontsize=15)
+axis([89.5,90.1,0,1.1])
 #xlabel("Radius ratio"); ylabel("Probability")
 xlabel("Inclination [deg] ",fontsize=15); ylabel("Probability",fontsize=15)
 tight_layout()
