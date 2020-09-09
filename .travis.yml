@@ -8,6 +8,7 @@ os:
     - linux
 
 julia:
+    - nightly
     - 1.0.0
 
 matrix:
