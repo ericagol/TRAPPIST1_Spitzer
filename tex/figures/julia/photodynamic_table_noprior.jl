@@ -179,7 +179,7 @@ plot(rho_bin_incprior[1:end-2],rho_hist_incprior[1:end-2]./maximum(rho_hist_incp
 xlabel(L"$\rho_*/\rho_\odot$",fontsize=15)
 ylabel("Probability",fontsize=15)
 legend(fontsize=15)
-axis([47,56,0,1.2],fontsize=15)
+axis([47,56,0,1.2])
 savefig("../stellar_density_noprior.pdf",bbox_inches="tight")
 
 
@@ -257,7 +257,7 @@ for i=1:nplanet
   end
 end
 legend(fontsize=15)
-axis([89.25,90.75,0,1.1],fontsize=15)
+axis([89.25,90.75,0,1.1])
 #xlabel("Radius ratio"); ylabel("Probability")
 xlabel("Inclination [deg]",fontsize=15); ylabel("Probability",fontsize=15)
 tight_layout()
