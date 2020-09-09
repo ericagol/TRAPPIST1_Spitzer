@@ -1,4 +1,4 @@
-,fontsize=12
+
 %% Beginning of file 'sample63.tex'
 %%
 %% Modified 2019 June
@@ -1024,13 +1024,16 @@ with the exception of planet e which has decreased and planet h which remains th
     \centering
     \scriptsize
     \caption{\textbf{Planet-to-star mass ratios} in units of
-        $M_\oplus/(0.09 M_\odot)$ from \citet{Grimm2018} compared with the results from this paper.}
-    \begin{tabular}{l|c|c|c|c|c|c|c}
-        Planet              & b                          & c                           & d                           & e                           & f                           & g                           & h                           \\
-        Grimm et al. (2018) & $1.017_{-0.143}^{+ 0.154}$ & $1.156_{- 0.131 }^{+0.142}$ & $0.297_{- 0.035}^{+ 0.039}$ & $0.772_{- 0.075}^{+ 0.079}$ & $0.934_{- 0.078 }^{+0.080}$ & $1.148_{- 0.095}^{+ 0.098}$ & $0.331_{- 0.049}^{+ 0.056}$ \\
-        This paper          & $1.3771{\pm} 0.0593$       & $1.3105{\pm}0.0453$         & $0.3885{\pm}0.0074$         & $0.6932{\pm}0.0128$         & $1.0411{\pm}0.0155$         & $1.3238{\pm}0.0171$         & $0.3261{\pm}0.0186$         \\
+        $M_\oplus/(0.09 M_\odot)$ from \citet{Grimm2018} 
+       \textbf{and planet-to-star radius ratios $R_p/R_*$ from \citet{Delrez2018a}} compared with the results from this paper.}
+    \begin{tabular}{l|c|c|c|c|c|c|c|c}
+        Source & Quantity      & b                          & c                           & d                           & e                           & f                           & g                           & h                           \\
+        Grimm & $\frac{M_p}{M_\oplus}\frac{0.09M_\odot}{M_*}$& $1.017_{-0.143}^{+ 0.154}$ & $1.156_{- 0.131 }^{+0.142}$ & $0.297_{- 0.035}^{+ 0.039}$ & $0.772_{- 0.075}^{+ 0.079}$ & $0.934_{- 0.078 }^{+0.080}$ & $1.148_{- 0.095}^{+ 0.098}$ & $0.331_{- 0.049}^{+ 0.056}$ \\
+        This paper          &$\frac{M_p}{M_\oplus}\frac{0.09M_\odot}{M_*}$ & $1.3771{\pm} 0.0593$       & $1.3105{\pm}0.0453$         & $0.3885{\pm}0.0074$         & $0.6932{\pm}0.0128$         & $1.0411{\pm}0.0155$         & $1.3238{\pm}0.0171$         & $0.3261{\pm}0.0186$         \\
+        \hline
+        Delrez & $R_p/R_*$       & $0.0853{\pm} 0.0004$           & $0.0833{\pm} 0.0004$          & $0.0597{\pm} 0.0006$          & $0.0693{\pm} 0.0007$          & $0.0796{\pm} 0.0006$          & $0.0874{\pm} 0.0006$          & $0.0588{\pm} 0.0012$ \cr
+        This paper & $R_p/R_*$       & $0.0859{\pm} 0.0004$           & $0.0844{\pm} 0.0004$          & $0.0606{\pm} 0.0005$          & $0.0708{\pm} 0.0006$          & $0.0804{\pm} 0.0005$          & $0.0869{\pm} 0.0005$          & $0.0581{\pm} 0.0009$ \cr
     \end{tabular}
-
     \label{tab:grimm_vs_agol}
 \end{table*}
 
@@ -1216,6 +1219,9 @@ for the outer 4 planets is the slight zig-zag of transits due to chopping (shown
     \label{fig:riverplot}
 \end{figure*}
 
+\textbf{Table \ref{tab:grimm_vs_agol} shows the radius-ratios from \citet{Delrez2018a}
+alongside those from the present analysis.  The precision of the measurements did
+not improve significantly, while the radius-ratios shifted by 1-2$\sigma$.}
 Figure \ref{fig:impact_parameter} shows the posterior probability distribution of impact
 parameters in units of the stellar radius, $b_0$, derived from the photodynamical
 model.  Figure \ref{fig:stellar_density} shows the probability distribution of stellar
