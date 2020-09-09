@@ -1,1 +1,2 @@
-plotCorner*.py
+./plotCorner_ttv.py
+./plotCorner_photdyn.py
