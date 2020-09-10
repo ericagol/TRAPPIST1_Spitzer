@@ -12,7 +12,6 @@ Pkg.add("SpecialFunctions")
 Pkg.add("ForwardDiff")  # 6/30/2020
 Pkg.add("DiffResults")  #
 Pkg.add(PackageSpec(name="Optim",version="0.22.0"))
-Pkg.free("Optim")
 Pkg.pin(PackageSpec(name="Optim",version="0.22.0"))
 Pkg.add("Documenter")
 Pkg.add("GSL")
