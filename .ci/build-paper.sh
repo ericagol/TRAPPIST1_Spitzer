@@ -4,7 +4,7 @@
 #set -e
 
 # Only build the paper with Julia 1.0
-if [ $TRAVIS_JULIA_VERSION == "1.0.0" ]
+if [ $TRAVIS_JULIA_VERSION == "1.2.0" ]
 then
 
     # Display some info
