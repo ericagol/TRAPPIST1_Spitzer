@@ -9,7 +9,7 @@ os:
 
 julia:
     - nightly
-    - 1.0.0
+    - 1.2.0
 
 matrix:
     - PYTHON=Conda-python
