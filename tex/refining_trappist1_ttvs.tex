@@ -1436,9 +1436,9 @@ from 57\% of Earth (planet h) to 110\% of Earth (planet b).
 \section{Stellar parameters} \label{sec:stellar_params}
 
 A byproduct of our analysis is a revision of the properties of the host
-star.  We adopted the empirically-based mass estimated of the star
-based on \citet{Mann2019}, which is consistent with the mass derived
-by  \citet{vanGrootel2018}, who first proposed that the mass of the TRAPPIST-1 star
+star.  \textbf{The} empirically-based mass estimate \textbf{for} the star
+based on \citet{Mann2019} is consistent with the mass derived
+by \citet{vanGrootel2018}, who first proposed that the mass of the TRAPPIST-1 star
 is $\approx 0.09 M_\odot$ based upon stellar evolution models and
 a ground-based parallax measurement.  \citet{Ducrot2020} find a luminosity
 for the star of $L = (5.53\pm 0.19)\times 10^{-4} L_\odot$, which, when
@@ -1464,7 +1464,7 @@ with evolutionary models.
     \label{tab:stellar_parameters}
 \end{table}
 
-Our analysis differs slightly from our prior Spitzer analyses \citep{Delrez2018a,Ducrot2020} in that we do not place a prior upon the limb-darkening coefficients of the TRAPPIST-1 host star.  This is motivated by the fact that late M dwarf atmospheres are very complex to model and have yet to match observed spectra precisely \citep{Allard2011,Allard2012,Juncher2017}, and thus it is possible that limb-darkening predictions may not be reliable.  \textbf{We investigated using a higher-order
+Our analysis differs slightly from our prior Spitzer analyses \citep{Delrez2018a,Ducrot2020} in that we do not place a prior upon the \textbf{quadratic} limb-darkening coefficients of the TRAPPIST-1 host star.  This is motivated by the fact that late M dwarf atmospheres are very complex to model and have yet to match observed spectra precisely \citep{Allard2011,Allard2012,Juncher2017}, and thus it is possible that limb-darkening predictions may not be reliable.  \textbf{We investigated using a higher-order
 quartic limb-darkening law, and found that this was disfavored by the Bayesian Information Criterion,
 and that the best-fit model differed negligibly in the model parameters.  We also simulated
 more realistic limb-darkening models based on 3D stellar atmospheres \citep{Claret2018} and 
@@ -1472,7 +1472,7 @@ found that a quadratic law was sufficient to recover the correct model parameter
 systematic errors.}
 
 
-The TRAPPIST-1 system has the advantage that the planets sample different chords of the stellar disk (Figure \ref{fig:impact_parameter}), and given the large number of transiting planets, we are afforded multiple constraints upon the stellar limb-darkening parameters.  Figure \ref{fig:limb_darkening} shows our posterior constraints upon the limb-darkening parameters of the star based on our photodynamical model, which are reported in Table \ref{tab:photodynamic_params}.
+The TRAPPIST-1 system has the advantage that the planets sample different chords of the stellar disk (Figure \ref{fig:impact_parameter}\textbf{; also see \citealt{Delrez2018a}}), and given the large number of transiting planets, we are afforded multiple constraints upon the stellar limb-darkening parameters.  Figure \ref{fig:limb_darkening} shows our posterior constraints upon the limb-darkening parameters of the star based on our photodynamical model, which are reported in Table \ref{tab:photodynamic_params}.
 
 \begin{figure}
     \centering
@@ -1648,7 +1648,7 @@ interior properties based upon the mass-radius relation we inferred in \S \ref{s
 \subsection{Initial analysis of planet densities across the system}
 
 The probability distribution for the masses and radii of the seven planets are shown in Figure \ref{fig:mass_radius_relation} alongside several theoretical mass-radius relationships added for comparison.
-We have added three rocky mass-radius relationships with different \textbf{molar} bulk Fe/Mg compositions:  (1) Fe/Mg$ =0.75{\pm} 0.2$ as suggested by \citet{Unterborn2018a} to represent the rocky interior of all TRAPPIST-1 planets with a 1$\sigma$ range of Fe/Mg ratios consistent with local stellar abundances;  (2) the \textbf{Sun}-like value of Fe/Mg$ = 0.83$ \citep{Lodders2009}; and (3) a core-free model with Earth-like refractory ratios, but in which all of the iron is oxidized in the mantle \citep{ElkinsTanton2008}. Rocky interiors are calculated \textbf{similar to the models of Dorn et al. (2016) with some adaptions, i.e., we are using the equation of state of \citet{Hakim2018} for pure iron and \citet{Sotin2007} for silicates.} We have also added the theoretical mass-radius relationships for planets endowed with a water layer, both for planets which are irradiated less (blue line; water) and more (orange lines; steam) than the runaway greenhouse irradiation threshold \citep{Turbet2020}.
+We have added three rocky mass-radius relationships with different \textbf{molar} bulk Fe/Mg compositions:  (1) Fe/Mg$ =0.75{\pm} 0.2$ as suggested by \citet{Unterborn2018a} to represent the rocky interior of all TRAPPIST-1 planets with a 1$\sigma$ range of Fe/Mg ratios consistent with local stellar abundances;  (2) the \textbf{Sun}-like value of Fe/Mg$ = 0.83$ \citep{Lodders2009}; and (3) a core-free model with Earth-like refractory ratios, but in which all of the iron is oxidized in the mantle \citep{ElkinsTanton2008}. Rocky interiors are calculated \textbf{similar to the models of Dorn et al. (2016) with two adaptations: we are using the equation of state of \citet{Hakim2018} for pure iron and \citet{Sotin2007} for silicates.} We have also added the theoretical mass-radius relationships for planets endowed with a water layer, both for planets which are irradiated less (blue line; water) and more (orange lines; steam) than the runaway greenhouse irradiation threshold \citep{Turbet2020}.
 
 The comparison of measured masses and radii with theoretical mass-radius relationships reveals several striking results. First, all seven TRAPPIST-1 planets appear to be consistent with a line of interior isocomposition \textbf{at the $1\sigma$ level}. There are multiple theoretical mass-radius curves that overlap with all seven planets' mass-radius probability distributions (Fig.\ \ref{fig:mass_radius_relation}), which may be a good indication that the composition varies little from planet to planet. Secondly, all of the TRAPPIST-1 planets have lower uncompressed densities than Solar System terrestrial planets. This likely means that the TRAPPIST-1 planets either have a lighter interior (e.g. lower iron content) or are enriched with volatiles (e.g. water).
 
@@ -1663,7 +1663,7 @@ The comparison of measured masses and radii with theoretical mass-radius relatio
 \end{figure}
 
 We next searched for variations of density across the planets. For this, we normalized each planetary density calculated from $10^4$ samples from the \textbf{planets' mass and radius} posterior distribution by the local density of a fully differentiated 20 wt\% iron, 80 wt\% silicate (MgSiO$_3$) interior planet, which is less iron rich than Earth.  \textbf{The normalized densities were calculated by dividing the density of each pair of mass and radius of the TTV/photodynamic posterior distribution by the local density (i.e. of the closest pair of mass and radius) of a planet with an interior composition of 20 wt\% iron and 80 wt\% MgSiO$_3$. A planet with a normalized density of 1 has exactly the same density as a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet. A normalized density ${>}1$ (or ${<}1$, resp.) is denser (or lighter, resp.) than a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet.}
-Fig.~\ref{fig:norm_density_histo} shows the resulting histograms of the posterior probability of the normalized TRAPPIST-1 planet densities. We then plotted in Fig.~\ref{fig:norm_density_vs_period} the normalized densities (along with their 1$\sigma$ uncertainty) as a function of the orbital periods of the planets.  The normalized planet density appears very uniform across the seven planets, with perhaps a slight decrease with the increase of the orbital period (or the distance to the host star).  We fit a line to the normalized density, $y$, versus orbital period, $P$, for $10^4$ posterior samples, and found a relation of $y=(1.02\pm 0.03) - (0.0045\pm 0.0035)P$ where the
+Fig.~\ref{fig:norm_density_histo} shows the resulting histograms of the posterior probability of the normalized TRAPPIST-1 planet densities. We then \textbf{plot} in Fig.~\ref{fig:norm_density_vs_period} the normalized densities (along with their 1$\sigma$ uncertainty) as a function of the orbital periods of the planets.  The normalized planet density appears very uniform across the seven planets, with perhaps a slight decrease with the increase of the orbital period (or the distance to the host star).  We fit a line to the normalized density, $y$, versus orbital period, $P$, for $10^4$ posterior samples, and found a relation of $y=(1.02\pm 0.03) - (0.0045\pm 0.0035)P$ where the
 coefficients are the 68.3\% confidence interval. There is only weak evidence for a declining trend of normalized density with orbital period: 90\% of the fits to the $10^4$ posterior samples have slopes with a negative value, while 10\% of the slopes fit have a \emph{positive} value.  If in the future more precise data strengthen this trend, then
 this indicates that either (i) the outer planets are depleted in heavy elements (e.g. iron) compared to the inner ones, or (ii) the outer planets are enriched in volatiles (e.g. water) compared to the inner ones.  However, based on the current data we suggest that the planets' compositions could be rather uniform in nature.
 
@@ -1681,7 +1681,7 @@ The interpretation of these observations in terms of internal compositions is di
 
 \subsection{Range of possible interior compositions and volatile contents}  \label{sec:interior_compositions}
 
-In this subsection, we discuss the range of possible compositions of the planets based on their measured densities,
+In this subsection, we discuss \textbf{a} range of possible compositions of the planets based on their measured densities,
 starting with a volatile-poor model in which the densities are fit by varying the core-mass fraction (\S \ref{sec:subsection_CMF}),
 and followed by an analysis in which the solid planets are taken to have an Earth-like composition, to which is added a water fraction needed to create the observed densities (\S \ref{sec:volatiles}). %The latter may be the more likely scenario since planet formation processes easily lead to variable water mass fractions but similar bulk rock compositions with direct implications for core-mass fractions (\S \ref{sec:formation}).   
 Alternatively, the planets might be explained with an interior volatile content in which all of the iron is oxidized making the planets core-free (\S \ref{sec:core_free}).
@@ -2553,7 +2553,7 @@ from the transit-timing and photodynamical analyses, respectively.
     \oscaption{python/plotCorner_ttv.py}{Corner plot of variables in the transit-timing analysis with $1\sigma$
        and $2\sigma$ confidence contours.
        Lagrangian orbital elements are defined as $k_b = e_b \cos{\omega_b}$ and $h_b = e_b \sin{\omega_b}$,
-       and similarly for the other planets.}
+       and similarly for the other planets.  Planet masses are defined relative to the star.}
     \label{fig:corner_ttv}
 \end{figure}
 
