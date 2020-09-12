@@ -405,7 +405,7 @@ revealing two short-period transiting planets, and two additional orphan transit
 \citep{Gillon2016, Burdanov2018}.  Subsequent \textbf{ground-based} study of the system revealed several
 additional orphan transits, leading to an incomplete picture of the number of planets
 and the architecture of the system.  A 20-day observation run with the Spitzer Space
-Telescope \citep{Werner2004} resolved the
+Telescope \textbf{\citep{Werner2004}} resolved the
 confusion, revealing the periods of six of the seven transiting planets \citep{Gillon2017},
 but only a single transit observed of the outermost planet left its orbit in question.
 A subsequent observation campaign of the system with the K2 \textbf{mission} included four
@@ -506,7 +506,7 @@ transit observation.  We next describe our data.}
 \subsection{Spitzer Observations} \label{sec:spitzerobs}
 
 The dataset used in this work includes the entire photometry database of TRAPPIST-1 observations by Spitzer/IRAC since the discovery of its planetary system. This represents all time series observations gathered within the DDT programs 12126 (PI: M. Gillon), 13175 (PI: L. Delrez) and 14223 (PI: E. Agol). \textbf{These cover} a total of 188 transits observed from Feb 2016 to Oct 2019 and \textbf{include} 64, 47, 23, 18, 16, 13, and 7 transits of planets b, c, d, e, f, g, and h, respectively \citep{Ducrot2020}. All \textbf{of} these data can be accessed through the online Spitzer Heritage Archive database\footnote{\url{http://sha.ipac.caltech.edu}}.  \textbf{Spitzer IRAC Channels 1 (3.6 $\mu$m, 0.75 $\mu$m wide) and
-2 (4.5 $\mu$m, 1.015 $\mu$m wide) were used during the Spitzer Warm Mission \citep{Fazio2004,StorrieLombardi2010} with 61 and 127 transits observed in each band, respectively.}
+2 (4.5 $\mu$m, 1.015 $\mu$m wide) were used during the Spitzer Warm Mission \textbf{\citep{Fazio2004,StorrieLombardi2010}} with 61 and 127 transits observed in each band, respectively.}
 Observations were obtained with Spitzer Space \textbf{Telescope}'s Infrared Array Camera \citep[IRAC;][] {Carey2004} in subarray mode (32 $\times$ 32 pixels windowing of the detector) with an exposure time of 1.92 s and a cadence of 2.06 min. In order to minimize the pixel-phase effect \citep{Knutson2008} the peak-up mode was used \citep{Ingalls2016} to \textbf{fine-tune} the positioning of the target on the detector following the IRAC Instrument Handbook.\footnote{\href{https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/iracinstrumenthandbook/}{IRAC Instrument Handbook}} Finally, calibration was performed using Spitzer pipeline S19.2.0 to output data as cubes of 64 subarray images of 32 $\times$ 32 pixels (the pixel scale being 1.2 arcsec). Each set of exposures was summed over the 2.06 minute cadence to allow for a tractable data volume for carrying out the photometric analysis, which is described in detail in \citet{Delrez2018a} and \citet{Ducrot2020}.
 
 \subsection{Ground-based observations} \label{sec:groundbasedobs}
@@ -574,7 +574,7 @@ dynamical analysis, starting with the likelihood function and evidence for outli
 
 \section{Excess of outliers and robust likelihood model} \label{sec:outliers}
 
-We first carried out a preliminary 7-planet, plane-parallel N-body model fit to the transit times using a $\chi^2$ log likelihood function, i.e.\ assuming a Gaussian uncertainty for each transit time given by the derived timing uncertainty, which was optimized using the Levenberg-Marquardt algorithm.
+We first carried out a preliminary 7-planet, plane-parallel N-body model fit to the transit times using a $\chi^2$ log likelihood function, i.e.\ assuming a Gaussian uncertainty for each transit time given by the derived timing uncertainty, which \textbf{we} optimized using the Levenberg-Marquardt algorithm.
 We found that the residuals of the fit have many more outliers than is probable assuming
 a Gaussian distribution for the timing uncertainties.
 
@@ -590,8 +590,8 @@ large values of $\vert z\vert$
 relative to a Gaussian distribution.  The histogram in Figure
 \ref{fig:timing_residuals} also demonstrates this clearly:  there
 are 8 data points with $z {<} -3$ and 7 with $z {>} 3$.  With 447
-transit time measurements, we would only have $\approx 1.2$ data points
-with $\vert z\vert {>} 2$ if the distribution were Gaussian with accurately estimated
+transit time measurements, we would only \textbf{expect} $\approx 1.2$ data points
+with $\vert z\vert {>} \mathbf{3}$ if the distribution were Gaussian with accurately estimated
 uncertainties.  This excess is even more apparent at
 $\vert z \vert {>} 4$. % {\color{red} Discuss the total chi-square, and the low probability of its value.}
 
@@ -613,7 +613,7 @@ are a consequence of some systematic error(s) present in the data.  There are a 
 of possibilities:  uncorrected instrumental/observational systematics;
 time-correlated noise due to stellar variability;  stellar flares (which
 may be too weak to be visible by eye, but might still affect the
-times of transit); or stellar spots \citep{Oshagh2013,Ioannidis2015}.  
+times of transit); or stellar spots \textbf{\citep{Oshagh2013,Ioannidis2015}}.
 Again, our examination of
 the light curves did not point to a single culprit, so we are unable
 to model and/or correct for any of these effects.  Our data are not unique in this respect:  similar outliers
@@ -720,7 +720,7 @@ body with the mass of the star and the interior planets, and was
 not perturbed by the exterior planets.  We use these variables (in lieu of initial semi-major axis and mean longitude) as
 they are well constrained by the \textbf{observed} times of transits.  We convert
 these analytically to the time of periastron passage, once the
-Kepler equation is solved to yield the initial eccentric anomaly
+Kepler equation is solved\textbf{,} to yield the initial eccentric anomaly
 for each initial Keplerian.  Finally, the eccentricity, $e_i$, and
 longitude of periastron, $\omega_i$, for each Keplerian we
 parameterize in terms of $e_i\cos{\omega_i}$ and $e_i\sin{\omega_i}$
@@ -908,7 +908,7 @@ Similarly, the Hamiltonian can be used to compute the evolution of the parameter
 \begin{equation}
     \dot{\mathbf{x}} = +\frac{\partial H}{\partial \mathbf{p}}.
 \end{equation}
-The dot represents the derivative with respect to an artificial ``time" coordinate which can be used to find a trajectory through the $(\mathbf{x},\mathbf{p})$ phase space which conserves the ``energy" defined by this Hamiltonian.x
+The dot represents the derivative with respect to an artificial ``time" coordinate which can be used to find a trajectory through the $(\mathbf{x},\mathbf{p})$ phase space which conserves the ``energy" defined by this Hamiltonian.
 
 We carry out a Markov chain using the standard approach for HMC. First, we draw the initial momentum from the multi-variate Gaussian distribution defined by the kinetic energy term in the Hamiltonian,
 \begin{equation}
@@ -927,7 +927,7 @@ $N_\mathrm{leap} \sim \mathrm{round}(N_{\mathrm{leap},0} \mathcal{U}(0.8,1.0))$.
 and $N_{\mathrm{leap},0} = 20$ results in a proposal for which the Metropolis rejection gives a high average acceptance rate of 70\%.
 
 We ran 112 HMC chains for 2000 steps each (i.e.\ 2000 leapfrog integrations).   Each leapfrog integration averaged about 7 minutes, and so the chains took nine
-days and four hours to complete on four Broadwell Xeon Processors with 28 cores and  128 GB of memory (each processor is a node in the Hyak Mox cluster at the University of Washington).
+days and four hours to complete\footnote{These were run on four Broadwell Xeon Processors with 28 cores and  128 GB of memory, where each processor is a node in the Hyak Mox cluster at the University of Washington.}.
 We found a minimum mean effective sample size of 57 over all chains, for a
 total number of independent samples of 6409.
 
@@ -935,11 +935,9 @@ total number of independent samples of 6409.
 
 The transit-timing variations are shown in Figure \ref{fig:T1_TTVs}, along
 with our best-fit model.  The model is a very good description of the data,
-although outliers are clearly visible by eye.  Given the large range of
-the sizes of the uncertainties on the data points, we have created a
-second figure in which a polynomial with an order between 5-30 is fit to
-the data (shown as a green line in Fig.\ \ref{fig:T1_TTVs}).  The polynomial
-has been subtracted from the model and data, and the resulting differences
+although \textbf{a few} outliers are clearly visible by eye.  \textbf{We} 
+have created a second figure in which a polynomial with an order between 5-30 
+is fit \textbf{and removed from} the data, \textbf{and} the resulting differences
 are shown in Fig.\ \ref{fig:chopping}.  The result shows high-frequency variations which are
 associated with the synodic periods of pairs of adjacent planets, typically
 referred to as ``chopping."  The chopping TTVs encode the mass-ratios of
@@ -970,7 +968,7 @@ masses in this paper.
     \centering
     \includegraphics[width=\hsize]{figures/T1_chopping.pdf}
     \oscaption{julia/plot_ttv_diff.jl}%
-    {Transit times with a polynomial subtracted (orange error bars) to reveal short-timescale chopping variations (blue model).  Green dots show the analytic chopping relation from \citet{Agol2005,Deck2015} due to adjacent planets, also with a low-order polynomial removed. For the inner four planets we have
+    {Transit times with a polynomial subtracted (orange error bars) to reveal short-timescale chopping variations (blue model).  Green dots show the analytic chopping relation from \citet{Deck2015} due to adjacent planets, also with a low-order polynomial removed. For the inner four planets we have
         only plotted data with
         uncertainties smaller than the chopping semi-amplitude  (many observations have large uncertainties which would obscure the plot).}
     \label{fig:chopping}
@@ -1160,7 +1158,7 @@ We
 transform the $q_1, q_2$ limb-darkening
 parameters to $u_1,u_2$ using the formalism of \citet{Kipping2013} for computing the transit model from \citet{Agol2019}.  After carrying out an initial
 optimization of the model, we take the photometric error to be the
-scatter in each observation window, $\sigma_i$ to yield a reduced chi-square of unity in
+scatter in each observation window, $\sigma_i$\textbf{,} to yield a reduced chi-square of unity in
 that  window.  With this photometric
 scatter, we compute a $\chi^2$ of the model with respect to the Spitzer
 photometric data, and we optimize the model using a Nelder-Mead algorithm.
@@ -1242,7 +1240,7 @@ we derive the semi-major axis of each planet in units of the stellar radius,
 \end{equation}
 
 With the measured impact parameters, we compute the inclinations of the planets
-from
+from \textbf{\citep{Winn2010}}
 \begin{equation}
     I = \cos^{-1}\left[ \left(\frac{b}{R_*}\right)
         \left(\frac{a}{R_*}\right)^{-1}\right],
@@ -1752,7 +1750,7 @@ Given that the data may be consistent with an iso-composition mass-radius relati
 that the \textbf{interior of the planets are fully oxidized.} For example, if, instead of forming a core, all of the iron is oxidized and remains in the mantle, the size of a planet may increase by a few percent \citep{ElkinsTanton2008}.  This turns out to be about the amount of radius inflation necessary to match the TRAPPIST-1 planets when compared with our Solar system planets.
 
 If we assume that the refractory ratios match a Solar composition, and that all seven planets lack an atmosphere, then it turns out that all seven planets are consistent with a core-free, oxidized composition (Fig.\ \ref{fig:mass_radius_relation}; magenta line).  For this model the bulk mass abundances ratios for Fe/Si/Mg/O are 29.2/17.3/15.3/38.2 wt\% \textbf{with magnesium number of 0.55 (Mg/(Mg+Fe)); this model has } a significant increase in oxygen compared to the bulk Earth with 29.7 wt\% \citep{McDonough2014}.
-Such a scenario would likely require formation of the planets at large distances from the star in a highly oxidizing environment \citep{ElkinsTanton2008} and a lower  devolatization temperature intermediate between that of Earth and chondrites \citep{Wang2019}.  Hence, although this hypothesis efficiently explains the TRAPPIST-1 data, it remains to be seen whether a geochemical model can be constructed which results in high oxidation of iron throughout the processes of planet formation and evolution \citep{Kite2020}.
+Such a scenario would likely require formation of the planets at large distances from the star in a highly oxidizing environment \citep{ElkinsTanton2008} and a lower  devolatization temperature intermediate between that of Earth and chondrites \citep{Wang2019}.  Hence, although this hypothesis efficiently explains the TRAPPIST-1 data, it remains to be seen whether a geochemical model can be constructed which results in high oxidation of iron throughout the processes of planet formation and evolution \textbf{\citep{Kite2020}}.
 
 \section{Discussion} \label{sec:discussion}
 
@@ -1802,8 +1800,8 @@ measurements are affected by the lack of uniform surface brightness
 of the star.  Fortunately the multiple impact parameters of the
 planets yield a constraint upon the infrared limb-darkening, which
 is fairly weak compared with optical bands.  However, star-spots
-can also affect the inferred transit depths \citep{Czesla2009,Oshagh2013, 
-Oshagh2014,McCullough2014, Rackham2018, Kipping2012b}.  If spots are present 
+can also affect the inferred transit depths \textbf{\citep{Czesla2009,Oshagh2013, 
+Oshagh2014,McCullough2014, Rackham2018, Kipping2012b}}.  If spots are present 
 on an active latitude
 which is not on the same hemisphere as the planetary transit chords,
 this can cause all of the planet radii to be mis-inferred by a similar
