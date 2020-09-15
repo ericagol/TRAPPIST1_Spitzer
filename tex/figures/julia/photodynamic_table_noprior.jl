@@ -117,10 +117,10 @@ for i=1:nplanet
           sqrt.((1 .-flatchain[i,:]).^2 .- flatchain[i+nplanet,:].^2))./(vnorm[i]*fac)*(24*60)
   tau_mean[i] = mean(tau)
   tau_sig[i] = std(tau)
-  global rpstring = string(rpstring," \$",@sprintf("%6.4f",rp_mean[i])," \\pm ",@sprintf("%6.4f",rp_sig[i]),"\$")
+  global rpstring = string(rpstring," \$",@sprintf("%6.5f",rp_mean[i])," \\pm ",@sprintf("%6.5f",rp_sig[i]),"\$")
   global depthstring = string(depthstring," \$",@sprintf("%6.4f",depth_mean[i]*100)," \\pm ",@sprintf("%6.4f",depth_sig[i]*100),"\$")
-  global durstring = string(durstring," \$",@sprintf("%6.4f",dur_mean[i])," \\pm ",@sprintf("%6.4f",dur_sig[i]),"\$")
-  global taustring = string(taustring," \$",@sprintf("%6.4f",tau_mean[i])," \\pm ",@sprintf("%6.4f",tau_sig[i]),"\$")
+  global durstring = string(durstring," \$",@sprintf("%6.2f",dur_mean[i])," \\pm ",@sprintf("%6.2f",dur_sig[i]),"\$")
+  global taustring = string(taustring," \$",@sprintf("%6.3f",tau_mean[i])," \\pm ",@sprintf("%6.3f",tau_sig[i]),"\$")
   if i < nplanet
     global rpstring = string(rpstring," &")
     global depthstring = string(depthstring," &")
@@ -133,7 +133,7 @@ for i=1:nplanet
     global taustring = string(taustring," \\cr")
   end
 #  global bstring = string(bstring," \$",@sprintf("%6.4f",b_mean[i])," \\pm ",@sprintf("%6.4f",b_sig[i]),"\$")
-  global bstring = string(bstring," \$",@sprintf("%6.4f",med_b[i]),"_{- ",@sprintf("%6.4f",sig_b_low),"}^{+",@sprintf("%6.4f",sig_b_high),"}\$")
+  global bstring = string(bstring," \$",@sprintf("%6.3f",med_b[i]),"_{- ",@sprintf("%6.3f",sig_b_low),"}^{+",@sprintf("%6.3f",sig_b_high),"}\$")
   if i < nplanet
     global bstring = string(bstring," &")
   else
