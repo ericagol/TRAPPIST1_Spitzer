@@ -3,13 +3,20 @@ using JLD2; using DelimitedFiles; using Printf; using PyPlot
 using Statistics
 
 include("../../src/regress.jl")
-include("../../src/NbodyGradient/ttv.jl")
+include("../../src/NbodyGradient/src/ttv.jl")
 
 
+# Load in the posterior from the transit-timing analysis:
 @load "../../data/T1_hmc_total_02212020.jld2"
 
-# Make a larger tmax to forecast to first year of JWST:
-tmax = 2600.0
+# Make a larger tmax to forecast to first ~2 years of JWST
+# (given the current launch date of October 31, 2021):
+tmax = 3000.0
+
+# Boolean that determines if the recompute the posterior transit
+# times:
+recompute = true
+
 # Set up parameters needed for time-integration:
 n = 8; nplanet=7; t0 = 7257.93115525; h = 0.06; rstar =1e12
 
@@ -33,24 +40,26 @@ elements_grid = zeros(n,7,ngrid)
 
 
 nsamples = size(state_total)[2]
+if recompute
 # The following code computes the posterior samples.
 # However, this takes some time, so these have been saved to a file,
 # and can be restored instead.
-#for igrid=1:ngrid
-#  # Select a state from the transit-timing analysis:
-#  x = state_total[1:35,ceil(Int64,rand()*nsamples)]
-#  # Insert into the orbital element array:
-#  for i=2:n, j=1:5
-#    elements[i,j] = x[(i-2)*5+j]
-#  end
-#  @time dq0 = ttv_elements!(n,t0,h,tmax,elements,tt1,count1,0.0,0,0,rstar)
-#  elements_grid[:,:,igrid] = elements
-#  tt_grid[:,:,igrid] = tt1
-#end
-#@save "../../data/T1_timing_posterior.jld2" n nplanet t0 h rstar tt1 count1 ngrid elements_grid tt_grid
-
-# Here is where the timing results are restored:
-@load "../../data/T1_timing_posterior.jld2"
+  for igrid=1:ngrid
+    # Select a state from the transit-timing analysis:
+    x = state_total[1:35,ceil(Int64,rand()*nsamples)]
+    # Insert into the orbital element array:
+    for i=2:n, j=1:5
+      elements[i,j] = x[(i-2)*5+j]
+    end
+    @time dq0 = ttv_elements!(n,t0,h,tmax,elements,tt1,count1,0.0,0,0,rstar)
+    elements_grid[:,:,igrid] = elements
+    tt_grid[:,:,igrid] = tt1
+  end
+  @save "../../data/T1_timing_posterior.jld2" n nplanet t0 h rstar tt1 count1 ngrid elements_grid tt_grid
+else
+  # Here is where the timing results are restored:
+  @load "../../data/T1_timing_posterior.jld2"
+end
 
 # Now, create two tables to save these, one with the measured times
 # and posterior, and one with the forecast times:
