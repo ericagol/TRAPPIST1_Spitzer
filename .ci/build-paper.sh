@@ -41,7 +41,7 @@ then
     cd $TRAVIS_BUILD_DIR/tex/figures/python
     for f in *.py; do
         echo "Running $f..."
-        travis_wait 30 python "$f" || echo "ERROR: failed to run $f."
+        travis_wait 120 python "$f" || echo "ERROR: failed to run $f."
     done
 
     # Build the paper with tectonic
