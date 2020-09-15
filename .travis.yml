@@ -20,7 +20,7 @@ addons:
 
 install:
     - source .ci/travis.sh
-    - if [ "$TRAVIS_JULIA_VERSION" = "1.2.0" ]; then sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended; fi
+    - if [ "$TRAVIS_JULIA_VERSION" = "1.2.0" ]; then sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended dvipng cm-super; fi
     - julia .ci/install.jl
 
 before_script:
