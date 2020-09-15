@@ -2037,65 +2037,65 @@ planets (Figure \ref{fig:corner_ttv}).}
     \label{fig:total_eccentricity}
 \end{figure}
 
-\subsubsection{Longitudes of periastron}
-
-The inner two planets, b and c, have an additional generic prediction from
-migration and damping:
-the longitudes of pericenter should be anti-aligned, or librate about
-anti-alignment. %This is the case for the inner two Galilean satellites, Io and Europa, which have a difference in longitude of pericenter of 179.97$^\circ$ \citep{Spohn2009}.  
-
-Planets b and c are close to an 8/5 mean motion resonance, and planets c and d are close to a 5/3 mean motion resonance. These being third order and second order resonances, respectively, the resonance widths are approximately given by~\citep{Murray1999}
-\begin{equation}
-    \frac{\Delta P}{P} = (12\mu\alpha |f(\alpha)| e^k)^{1/2}
-    \label{e:reswidth}\end{equation}
-where $\mu$ is the ratio of the perturbing planet's mass to the stellar mass, $\alpha{=}a_1/a_2{<}1$ is the ratio of planets' semi-major axes, $f(\alpha)$ is a coefficient of the resonant term in the interaction potential, $e$ is orbital eccentricity, and $k$ is the order of the resonance.  For the resonances of interest here, we find that $\Delta P/P\lesssim10^{-4}$. The observed period ratios are $\gtrsim3\times10^{-3}$ wide of the exact resonance, i.e., more than 30 times the resonance width(s).
-
-
-In these circumstances, the mean motion resonant perturbations are negligible, and the secular interactions of planets b and c provide a fair first approximation to their orbital dynamics. (We acknowledge that in the following analysis we have neglected secular perturbations from the other planets in the system which will introduce some quantitative differences, not germane to the qualitative question of aligned or anti-aligned periastrons of planets b and c.) Over most of the posterior samples, the eccentricities of planets b and c are large enough that the critical angles of the first-order resonances circulate and are small enough that the critical angles of higher-order resonances also circulate, so our analysis can neglect resonant terms.  To leading order in the eccentricities, the orbit-averaged (secular) interaction potential of a pair of planets is given by
-\begin{eqnarray}
-    U^{(sec)} &=& -\langle\frac{Gm_1m_2}{|{\bf r}_1-{\bf r}_2|} \rangle \nonumber \\
-    &\simeq&
-    -\frac{Gm_1m_2}{a_2}[\frac{1}{2}b_{1/2}^{(0)}(\alpha)+\frac{1}{8}b_{3/2}^{(1)}(\alpha)(e_1^2+e_2^2) \nonumber\\
-    && - \frac{1}{4}b_{3/2}^{(2)}(\alpha)e_1e_2\cos(\varpi_1-\varpi_2) ], \label{e:Usec}
-\end{eqnarray}
-where $b_s^{(j)}(\alpha)$ are positive-definite Laplace coefficients. (We neglect post-Newtonian corrections to the potential, stellar oblateness, and stellar and planetary tides, all of which are negligible compared to the point-mass Newtonian gravitational interactions in the TRAPPIST-1 system.) It is evident from Eq.~\ref{e:Usec} that, in the secular approximation, the interaction energy is minimized when $\varpi_1-\varpi_2=\pi$, that is, when the periastrons are anti-aligned. Consequently, orbital energy dissipation (e.g., due to tides) is likely to evolve the innermost pair of planets, b and c, into anti-aligned periastrons as energy dissipation would tend to minimize the total orbital energy.
-
-In more detail, we look to the secular variations for the eccentricity vectors, $(h_i,k_i)=e_i(\sin\varpi_i,\cos\varpi_i)$. With the leading order secular interaction potential, Eq.~\ref{e:Usec}, the equations of motion for $h_i$ and $k_i$ are first order coupled differential equations with constant coefficients, which can be solved for $h_i(t),k_i(t)$ as a superposition of two linear modes~\citep{Murray1999}. It can be shown that the faster mode corresponds to anti-aligned periastrons, while the slower mode corresponds to aligned periastrons. For general initial conditions, the solution is a linear superposition of the two secular modes. For a particular proposed exoplanet system, where extra effects induce precession at rates comparable to the planetary perturbations, the analysis of \citet{Wu2002} found that the anti-aligned mode would damp more quickly, contrary to the energy argument above.  They noted that damping rates of the two modes can be comparable when planetary perturbations are the dominant cause of precession.
-
-%Libration of the periastrons about the aligned state has been observed for a pair of non-resonant planets in the $\upsilon$ Andromedae planetary system. Planets c and d in that system have substantial orbital eccentricities, $\sim0.2$--0.3. It has been suggested that eccentricity excitation of the outer planet of the pair would select the aligned mode~\citep[e.g.][]{Chiang2002,Malhotra2002} as would a perturbing acceleration on the host star~\citep{Namouni2005}. In the case of the TRAPPIST-1 planets b and c, such mechanisms are not applicable as their eccentricities are very small. 
-
-
-In the case of TRAPPIST-1, \citet{Papaloizou2017} found that in a model
-in which the TRAPPIST-1 planets underwent migration with damping, the
-inner two planets had small eccentricities and librating resonant angles,
-even though departures from these first order commensurabilities are
-large.  The libration centers of those resonances enforce anti-aligned longitudes
-of pericenter in the model.
-
-Figure \ref{fig:delta_omega} shows the posterior probability distribution
-for $\omega_c-\omega_b-\pi$.   The distribution has a similar probability
-at all angles due to the fact that both eccentricities are small, but
-favors {\it aligned} longitudes of pericenter.  However,
-there is still a significant probability at anti-aligned angles (near
-zero in Fig.\ \ref{fig:delta_omega}).   %We expect that the eccentricity vectors
-%of these two planets are poorly constrained as they are in proximity
-%to higher order resonances: $P_\mathrm{c}/P_\mathrm{b} {\approx} 8/5$ and $P_\mathrm{d}/P_\mathrm{c} \approx
-%5/3$.  The disturbing potential of a $j{+}k{:}j$ resonance has a dependence on 
-%eccentricity which scales as $e^k$ \citep{Deck2016}, and thus the low eccentricities of 
-%these planets only weakly affect the transit timing variations.  
-The eccentricity vectors of these two planets are poorly constrained because
-their low eccentricities only weakly affect the transit timing variations \citep{Deck2016}.
-Thus, at the current precision of the transit timing data, we can only place poor
-constraints on these planets'eccentricity vectors, and thus only poorly constrain
-the difference in longitude.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\hsize]{figures/delta_omega_bc.pdf}
-    \oscaption{julia/plot_chains.jl}{Difference in the longitudes of pericenter of planets b and
-        c minus $\pi$.}
-    \label{fig:delta_omega}
-\end{figure}
+%\subsubsection{Longitudes of periastron}
+%
+%The inner two planets, b and c, have an additional generic prediction from
+%migration and damping:
+%the longitudes of pericenter should be anti-aligned, or librate about
+%anti-alignment. %This is the case for the inner two Galilean satellites, Io and Europa, which have a difference in longitude of pericenter of 179.97$^\circ$ \citep{Spohn2009}.  
+%
+%Planets b and c are close to an 8/5 mean motion resonance, and planets c and d are close to a 5/3 mean motion resonance. These being third order and second order resonances, respectively, the resonance widths are approximately given by~\citep{Murray1999}
+%\begin{equation}
+%    \frac{\Delta P}{P} = (12\mu\alpha |f(\alpha)| e^k)^{1/2}
+%    \label{e:reswidth}\end{equation}
+%where $\mu$ is the ratio of the perturbing planet's mass to the stellar mass, $\alpha{=}a_1/a_2{<}1$ is the ratio of planets' semi-major axes, $f(\alpha)$ is a coefficient of the resonant term in the interaction potential, $e$ is orbital eccentricity, and $k$ is the order of the resonance.  For the resonances of interest here, we find that $\Delta P/P\lesssim10^{-4}$. The observed period ratios are $\gtrsim3\times10^{-3}$ wide of the exact resonance, i.e., more than 30 times the resonance width(s).
+%
+%
+%In these circumstances, the mean motion resonant perturbations are negligible, and the secular interactions of planets b and c provide a fair first approximation to their orbital dynamics. (We acknowledge that in the following analysis we have neglected secular perturbations from the other planets in the system which will introduce some quantitative differences, not germane to the qualitative question of aligned or anti-aligned periastrons of planets b and c.) Over most of the posterior samples, the eccentricities of planets b and c are large enough that the critical angles of the first-order resonances circulate and are small enough that the critical angles of higher-order resonances also circulate, so our analysis can neglect resonant terms.  To leading order in the eccentricities, the orbit-averaged (secular) interaction potential of a pair of planets is given by
+%\begin{eqnarray}
+%    U^{(sec)} &=& -\langle\frac{Gm_1m_2}{|{\bf r}_1-{\bf r}_2|} \rangle \nonumber \\
+%    &\simeq&
+%    -\frac{Gm_1m_2}{a_2}[\frac{1}{2}b_{1/2}^{(0)}(\alpha)+\frac{1}{8}b_{3/2}^{(1)}(\alpha)(e_1^2+e_2^2) \nonumber\\
+%    && - \frac{1}{4}b_{3/2}^{(2)}(\alpha)e_1e_2\cos(\varpi_1-\varpi_2) ], \label{e:Usec}
+%\end{eqnarray}
+%where $b_s^{(j)}(\alpha)$ are positive-definite Laplace coefficients. (We neglect post-Newtonian corrections to the potential, stellar oblateness, and stellar and planetary tides, all of which are negligible compared to the point-mass Newtonian gravitational interactions in the TRAPPIST-1 system.) It is evident from Eq.~\ref{e:Usec} that, in the secular approximation, the interaction energy is minimized when $\varpi_1-\varpi_2=\pi$, that is, when the periastrons are anti-aligned. Consequently, orbital energy dissipation (e.g., due to tides) is likely to evolve the innermost pair of planets, b and c, into anti-aligned periastrons as energy dissipation would tend to minimize the total orbital energy.
+%
+%In more detail, we look to the secular variations for the eccentricity vectors, $(h_i,k_i)=e_i(\sin\varpi_i,\cos\varpi_i)$. With the leading order secular interaction potential, Eq.~\ref{e:Usec}, the equations of motion for $h_i$ and $k_i$ are first order coupled differential equations with constant coefficients, which can be solved for $h_i(t),k_i(t)$ as a superposition of two linear modes~\citep{Murray1999}. It can be shown that the faster mode corresponds to anti-aligned periastrons, while the slower mode corresponds to aligned periastrons. For general initial conditions, the solution is a linear superposition of the two secular modes. For a particular proposed exoplanet system, where extra effects induce precession at rates comparable to the planetary perturbations, the analysis of \citet{Wu2002} found that the anti-aligned mode would damp more quickly, contrary to the energy argument above.  They noted that damping rates of the two modes can be comparable when planetary perturbations are the dominant cause of precession.
+%
+%%Libration of the periastrons about the aligned state has been observed for a pair of non-resonant planets in the $\upsilon$ Andromedae planetary system. Planets c and d in that system have substantial orbital eccentricities, $\sim0.2$--0.3. It has been suggested that eccentricity excitation of the outer planet of the pair would select the aligned mode~\citep[e.g.][]{Chiang2002,Malhotra2002} as would a perturbing acceleration on the host star~\citep{Namouni2005}. In the case of the TRAPPIST-1 planets b and c, such mechanisms are not applicable as their eccentricities are very small. 
+%
+%
+%In the case of TRAPPIST-1, \citet{Papaloizou2017} found that in a model
+%in which the TRAPPIST-1 planets underwent migration with damping, the
+%inner two planets had small eccentricities and librating resonant angles,
+%even though departures from these first order commensurabilities are
+%large.  The libration centers of those resonances enforce anti-aligned longitudes
+%of pericenter in the model.
+%
+%Figure \ref{fig:delta_omega} shows the posterior probability distribution
+%for $\omega_c-\omega_b-\pi$.   The distribution has a similar probability
+%at all angles due to the fact that both eccentricities are small, but
+%favors {\it aligned} longitudes of pericenter.  However,
+%there is still a significant probability at anti-aligned angles (near
+%zero in Fig.\ \ref{fig:delta_omega}).   %We expect that the eccentricity vectors
+%%of these two planets are poorly constrained as they are in proximity
+%%to higher order resonances: $P_\mathrm{c}/P_\mathrm{b} {\approx} 8/5$ and $P_\mathrm{d}/P_\mathrm{c} \approx
+%%5/3$.  The disturbing potential of a $j{+}k{:}j$ resonance has a dependence on 
+%%eccentricity which scales as $e^k$ \citep{Deck2016}, and thus the low eccentricities of 
+%%these planets only weakly affect the transit timing variations.  
+%The eccentricity vectors of these two planets are poorly constrained because
+%their low eccentricities only weakly affect the transit timing variations \citep{Deck2016}.
+%Thus, at the current precision of the transit timing data, we can only place poor
+%constraints on these planets'eccentricity vectors, and thus only poorly constrain
+%the difference in longitude.
+%
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=\hsize]{figures/delta_omega_bc.pdf}
+%    \oscaption{julia/plot_chains.jl}{Difference in the longitudes of pericenter of planets b and
+%        c minus $\pi$.}
+%    \label{fig:delta_omega}
+%\end{figure}
 
 \subsubsection{Laplace angles}
 
