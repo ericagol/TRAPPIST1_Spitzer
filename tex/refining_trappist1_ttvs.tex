@@ -278,7 +278,7 @@
 \author[0000-0001-7574-4440]{Zachary Langford}
 \affiliation{Astronomy Department and Virtual Planetary Laboratory, University of Washington, Seattle, WA 98195 USA}
 \author[0000-0002-3555-480X]{J\'er\'emy Leconte}
-\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France}
+\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, AllÃ©e Geoffroy Saint-Hilaire, F-33615 Pessac, France}
 \author[0000-0003-2805-8653]{Susan M. Lederer}
 \affiliation{NASA Johnson Space Center, 2101 NASA Pkwy., Houston TX, 77058, USA}
 \author[0000-0002-0296-3826]{Rodrigo Luger}
@@ -295,9 +295,9 @@
 \author[0000-0002-3012-0316]{Didier Queloz}
 \affiliation{Cavendish Laboratory, JJ Thomson Avenue, Cambridge, CB3 0H3, UK}
 \author[0000-0001-8974-0758]{Sean N. Raymond}
-\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France}
+\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, AllÃ©e Geoffroy Saint-Hilaire, F-33615 Pessac, France}
 \author[0000-0001-9619-5356]{Franck Selsis}
-\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, Allée Geoffroy Saint-Hilaire, F-33615 Pessac, France}
+\affiliation{Laboratoire d'astrophysique de Bordeaux, Univ. Bordeaux, CNRS, B18N, AllÃ©e Geoffroy Saint-Hilaire, F-33615 Pessac, France}
 \author[0000-0002-8124-8360]{Marko Sestovic}
 \affiliation{Center for Space and Habitability, University of Bern, Gesellschaftsstrasse 6, CH-3012, Bern, Switzerland}
 \author[0000-0002-5510-8751]{Amaury H.M.J. Triaud}
@@ -520,7 +520,8 @@ In addition to the new Spitzer times, 125 transits were observed by the SPECULOO
 Observations were also performed with the Liverpool Telescope  \citep[LT,][]{Steele2004} and the William-Herschel Telescope (WHT), both installed at the Roque de los Muchachos \textbf{Observatory}, La Palma. Only one transit of planet b and one of d were targeted with the WHT whereas 15 transits of several planets were targeted with LT. For LT observations, the IO:O optical wide field camera was used in Sloan z? band with 20s exposure time. One transit of b was observed with the  Himalayan Chandra Telescope (HCT). Finally, a total of 26 transits were observed in the near-IR (1.2~-2.1~$\mu$m) with the WFCAM near-IR imager of the the United Kingdom Infra-Red Telescope (UKIRT) \citep{Casali2007}, the IRIS2IR-imager installed on the the Anglo-Australian Telescope (AAT) \citep{Tinney2004}, and the HAWK-I cryogenic wide-field imager installed on Unit Telescope 4 (Yepun) of the ESO Very Large Telescope (VLT) \citep{Siebenmorgen2011}.
 These observations are summarized in Table \ref{tab:transit_time_list} \textbf{: 504 transit observations were collected with 57 duplicate (or triplicate) transits which were observed by a second (or third) observatory simultaneously, for a total of 447 unique planetary transit times which are used in our analysis.  Additional} information may be found in \citet{Gillon2016} for WHT and TRAPPIST, in  \citet{Ducrot2018} for SSO and LT, and in \citet{Gillon2017} and \citet{Burdanov2019} for AAT, UKIRT and VLT.
 
-For all ground-based observations, a standard calibration (bias, dark and flat-field corrections) was applied to each image, and fluxes were measured for the stars in the field with the DAOPHOT aperture photometry software \citep{Stetson1987}. Differential photometry was then performed after a careful selection of comparison stars, followed by an MCMC analysis to retrieve transit parameters.
+For all ground-based observations, a standard calibration (bias, dark and flat-field corrections) was applied to each image, and fluxes were measured for the stars in the field with the DAOPHOT aperture photometry software \citep{Stetson1987}. Differential photometry was then performed using an algorithm developed by \cite{Murray2020} to automatically choose and combine multiple comparison stars, it is optimized to use as many stars as possible, weighted appropriately (accounting for variability, color and distance to target star), to reduce the noise levels in the final differential lightcurves. This reduction and photometry was followed by an MCMC analysis to retrieve transit parameters. 
+
 
 \begin{table*}
     \centering
@@ -557,8 +558,9 @@ Transit times for Hubble Space Telescope observations were utilized, as describe
 
 \textbf{Gathering together} the heterogeneous sample of transits obtained from a variety of ground- and space-based telescopes,  \textbf{we transformed the time stamps} to \textbf{the} $BJD_\mathrm{TDB}$ time standard prior to \textbf{photometric} analysis. \textbf{We} analyzed \textbf{the datasets} together with a global photometric analysis of \textbf{all single-planet} transits, as described in
 \citet{Ducrot2020}, with a separate analysis of the overlapping transits once the single-transit analysis was completed.
-For each planet a fixed time of transit for epoch zero ($T_{0}$) and fixed period ($P$) were used \textbf{\citep[given in][]{Ducrot2020}}, but with timing offset (``TTV") as a fitted parameter for each transit as described by \cite{Ducrot2020}.  The timing offsets are added back
-to the ephemeris to obtain the measured transit times and uncertainties.
+
+For each planet a fixed time of transit for epoch zero ($T_{0}$) and fixed period ($P$) were used, but with timing offset (``TTV") as a fitted parameter for each transit as described by \cite{Ducrot2020}.  \textbf{To derive $T_{0}$ and $P$, a linear regression of the timings as a function of their epochs was performed for each planet to derive an updated mean transit ephemeris, their exact values can be found in Table 4 of \cite{Ducrot2020}.} The timing offsets are then added back to the ephemeris to obtain the measured transit times and uncertainties.
+
 
 The final observed dataset for the transit-timing analysis
 is given by: $\mathbf{y} = \{t_{\mathrm{obs},i,j},\sigma_{i,j}; i=1,...,7; j = 1,...,N_i\}$, where $i$ labels each of the seven planets, $N_i$ is
@@ -2463,7 +2465,7 @@ innovation program under the Marie Sklodowska-Curie Grant Agreement No. 832738/E
 thanks the Gruber Foundation for its generous support to this research.
 The research leading to these results has received funding from the European Research Council
 under the European Union's Seventh Framework Programme (FP/2007-2013) ERC Grant
-Agreement n° 336480, and from the ARC grant for Concerted Research Actions, financed by the
+Agreement nÂ° 336480, and from the ARC grant for Concerted Research Actions, financed by the
 Wallonia-Brussels Federation. CD acknowledges the support of the Swiss National Foundation under grant PZ00P2\_174028. V.V.G. is a F.R.S.-FNRS Research Associate. M.G. and E.J. are F.R.S.-FNRS Senior Research Associates. R.M. acknowledges support for this research from NASA (grant 80NSSC18K0397). Z.L. acknowledges support from the Washington NASA Space Grant Consortium Summer Undergraduate Research Program.
 
 
