@@ -6,6 +6,8 @@ import pylab as pl
 import numpy as np
 import math
 
+from fast_histogram import histogram2d
+
 pl.rc('font', size=30)
 params = {'legend.fontsize': 30}
 pl.rcParams.update(params)
@@ -86,7 +88,8 @@ for i in range(0, n, 1):
 			xedges = np.arange(j0, j1, (j1 - j0) / 21.0)
 			yedges = np.arange(i0, i1, (i1 - i0) / 21.0)
 
-			H, xedges, yedges = np.histogram2d(pj, pi, bins=(xedges, yedges))
+			#H, xedges, yedges = np.histogram2d(pj, pi, bins=(xedges, yedges))
+			H = histogram2d(pj, pi, range=[[j0,j1],[i0,i1]],bins=[21,21])
 
 			extent=[xedges[0], xedges[-1], yedges[0], yedges[-1]]
 			

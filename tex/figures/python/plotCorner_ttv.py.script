@@ -1,6 +1,8 @@
+
 import matplotlib
 #matplotlib.use('PS')
 #matplotlib.use('agg')
+from fast_histogram import histogram2d
 
 import pylab as pl
 import numpy as np
@@ -76,11 +78,12 @@ for i in range(0, n, 1):
 		col = 'b'
 
 		if(i != j):
-						
+			
 			xedges = np.arange(j0, j1, (j1 - j0) / 21.0)
 			yedges = np.arange(i0, i1, (i1 - i0) / 21.0)
 
-			H, xedges, yedges = np.histogram2d(pj, pi, bins=(xedges, yedges))
+			#H, xedges, yedges = np.histogram2d(pj, pi, bins=(xedges, yedges))
+			H = histogram2d(pj, pi, range=[[j0,j1],[i0,i1]],bins=[21,21])
 
 			extent=[xedges[0], xedges[-1], yedges[0], yedges[-1]]
 			
@@ -125,8 +128,6 @@ for i in range(0, n, 1):
 			#HHL.append(HL[2]*1.01)
 			#cs = pl.contour(H.T, colors = 'b', linewidths = 0.6, extent=extent, levels = HHL)
 
-			
-			
 			#pl.scatter(pj, pi, s = 0.05, c = col, edgecolors='none')
 			print("x", i, xl, j0, j1)
 			print("y", j, yl, i0, i1)

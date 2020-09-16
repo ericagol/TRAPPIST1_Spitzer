@@ -21,7 +21,8 @@ if ! command -v conda > /dev/null; then
     conda create --yes -n test python=$PYTHON_VERSION
     source activate test
     conda install tectonic;
-    conda install -c conda-forge numpy=$NUMPY_VERSION scipy matplotlib setuptools pytest pytest-cov pip
+    conda install -c conda-forge numpy=$NUMPY_VERSION scipy matplotlib setuptools pytest pytest-cov pip;
+    conda install -c conda-forge fast-histogram
 
 fi
 

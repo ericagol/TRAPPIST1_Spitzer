@@ -4,7 +4,7 @@
 #set -e
 
 # Only build the paper with Julia 1.0
-if [ $TRAVIS_JULIA_VERSION == "1.0.0" ]
+if [ $TRAVIS_JULIA_VERSION == "1.2.0" ]
 then
 
     # Display some info
@@ -41,7 +41,7 @@ then
     cd $TRAVIS_BUILD_DIR/tex/figures/python
     for f in *.py; do
         echo "Running $f..."
-        travis_wait 30 python "$f" || echo "ERROR: failed to run $f."
+        travis_wait 120 python "$f" || echo "ERROR: failed to run $f."
     done
 
     # Build the paper with tectonic
