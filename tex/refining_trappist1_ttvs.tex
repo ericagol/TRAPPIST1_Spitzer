@@ -306,7 +306,7 @@
 \affiliation{Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Universit\'e de Li\`ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\`ege, Belgium}
 
 \begin{abstract}
-    We have collected transit times for the TRAPPIST-1 system with the Spitzer \textbf{Space Telescope} over \textbf{four} years. We add to these ground-based, HST and K2 transit time measurements, and revisit an N-body dynamical analysis of the seven-planet system using our complete set of times from which we refine the mass ratios of the planets to the star. We next carry out a photodynamical analysis of the Spitzer light curves to derive the density of the host star and the planet densities. We find that all seven planets' densities may be described with a single rocky mass-radius relation which is depleted in iron relative to Earth, with Fe 17 wt\% versus 32 wt\% for Earth, and otherwise Earth-like in composition. Alternatively, the planets may have an Earth-like composition, but \textbf{enhanced in light elements}, such as an surface water layer or a core-free structure with oxidized iron in the mantle. We measure planet masses to a precision of 3-5\%, equivalent to a radial-velocity (RV) precision of 2.5 cm/sec, or two orders of magnitude more precise than current RV capabilities. We find the eccentricities of the planets are very small; the orbits are extremely coplanar; and the system is stable on 10 Myr timescales. We find evidence of infrequent timing outliers \textbf{which we cannot explain with an eighth planet;} we \textbf{instead account for the outliers} using a robust likelihood function. We forecast JWST timing observations, and speculate on possible implications of the planet densities for the formation, migration and evolution of the planet system.
+    We have collected transit times for the TRAPPIST-1 system with the Spitzer \textbf{Space Telescope} over \textbf{four} years. We add to these ground-based, HST and K2 transit time measurements, and revisit an N-body dynamical analysis of the seven-planet system using our complete set of times from which we refine the mass ratios of the planets to the star. We next carry out a photodynamical analysis of the Spitzer light curves to derive the density of the host star and the planet densities. We find that all seven planets' densities may be described with a single rocky mass-radius relation which is depleted in iron relative to Earth, with Fe \textbf{17 (TBD)} wt\% versus 32 wt\% for Earth, and otherwise Earth-like in composition. Alternatively, the planets may have an Earth-like composition, but \textbf{enhanced in light elements}, such as an surface water layer or a core-free structure with oxidized iron in the mantle. We measure planet masses to a precision of 3-5\%, equivalent to a radial-velocity (RV) precision of 2.5 cm/sec, or two orders of magnitude more precise than current RV capabilities. We find the eccentricities of the planets are very small; the orbits are extremely coplanar; and the system is stable on 10 Myr timescales. We find evidence of infrequent timing outliers \textbf{which we cannot explain with an eighth planet;} we \textbf{instead account for the outliers} using a robust likelihood function. We forecast JWST timing observations, and speculate on possible implications of the planet densities for the formation, migration and evolution of the planet system.
 \end{abstract}
 
 %% Keywords should appear after the \end{abstract} command. 
@@ -1667,8 +1667,8 @@ The comparison of measured masses and radii with theoretical mass-radius relatio
 \end{figure}
 
 We next searched for variations of density across the planets. For this, we normalized each planetary density calculated from $10^4$ samples from the \textbf{planets' mass and radius} posterior distribution by the local density of a fully differentiated 20 wt\% iron, 80 wt\% silicate (MgSiO$_3$) interior planet, which is less iron rich than Earth.  \textbf{The normalized densities were calculated by dividing the density of each pair of mass and radius of the TTV/photodynamic posterior distribution by the local density (i.e. of the closest pair of mass and radius) of a planet with an interior composition of 20 wt\% iron and 80 wt\% MgSiO$_3$. A planet with a normalized density of 1 has exactly the same density as a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet. A normalized density ${>}1$ (or ${<}1$, resp.) is denser (or lighter, resp.) than a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet.}
-Fig.~\ref{fig:norm_density_histo} shows the resulting histograms of the posterior probability of the normalized TRAPPIST-1 planet densities. We then \textbf{plot} in Fig.~\ref{fig:norm_density_vs_period} the normalized densities (along with their 1$\sigma$ uncertainty) as a function of the orbital periods of the planets.  The normalized planet density appears very uniform across the seven planets, with perhaps a slight decrease with the increase of the orbital period (or the distance to the host star).  We fit a line to the normalized density, $y$, versus orbital period, $P$, for $10^4$ posterior samples, and found a relation of $y=(1.02\pm 0.03) - (0.0045\pm 0.0035)P$ where the
-coefficients are the 68.3\% confidence interval. There is only weak evidence for a declining trend of normalized density with orbital period: 90\% of the fits to the $10^4$ posterior samples have slopes with a negative value, while 10\% of the slopes fit have a \emph{positive} value.  If in the future more precise data strengthen this trend, then
+Fig.~\ref{fig:norm_density_histo} shows the resulting histograms of the posterior probability of the normalized TRAPPIST-1 planet densities. We then \textbf{plot} in Fig.~\ref{fig:norm_density_vs_period} the normalized densities (along with their 1$\sigma$ uncertainty) as a function of the orbital periods of the planets.  The normalized planet density appears very uniform across the seven planets, with perhaps a slight decrease with the increase of the orbital period (or the distance to the host star).  We fit a line to the normalized density, $y$, versus orbital period, $P$, for $10^4$ posterior samples, and found a relation of $y=(1.042\pm 0.034) - (0.0043\pm 0.0036)P$ where the
+coefficients are the 68.3\% confidence interval. There is only weak evidence for a declining trend of normalized density with orbital period: 88\% of the fits to the $10^4$ posterior samples have slopes with a negative value, while 12\% of the slopes fit have a \emph{positive} value.  If in the future more precise data strengthen this trend, then
 this indicates that either (i) the outer planets are depleted in heavy elements (e.g. iron) compared to the inner ones, or (ii) the outer planets are enriched in volatiles (e.g. water) compared to the inner ones.  However, based on the current data we suggest that the planets' compositions could be rather uniform in nature.
 
 The interpretation of these observations in terms of internal compositions is discussed in more detail next.
@@ -1678,7 +1678,7 @@ The interpretation of these observations in terms of internal compositions is di
     \includegraphics[width=\hsize]{figures/Norm_dens_vs_period.pdf}
     \oscaption{julia/plot_norm_density.jl}%
     {Normalized planet densities (with 1$\sigma$ error-bars) versus planet orbital periods. The light blue band is the 68\% confidence interval of the weighted mean normalized density of all seven planets.  The orange lines show the 68.3\% confidence intervals of linear fits to the normalized densities computed from $10^4$
-        draws from the posterior.  The mean fit to the normalized density versus period is $y = a P + b$ where $a= 1.02\pm 0.03$ and $b=-0.0045\pm0.0035$.}
+        draws from the posterior.  The mean fit to the normalized density versus period is $y = a P + b$ where $a= 1.042\pm 0.034$ and $b=-0.0043\pm 0.0036$.}
     \label{fig:norm_density_vs_period}
 \end{figure}
 
@@ -1698,10 +1698,10 @@ amount to their total radius, and that the planets are fully differentiated, com
 
 We evaluated the core mass fractions \textbf{(CMF)} of the TRAPPIST-1 planets as follows. For each mass/radius pair in our posterior distribution we have estimated the core-mass fraction by linearly interpolating \textbf{between pre-calculated mass-radius relationships with our employed interior model.} We arbitrarily set each mass/radius pair lighter than a pure silicate (MgSiO$_3$) planet to a CMF of 0. Alternatively, we repeated the same procedure but discarding all CMF values lower or equal to 0. However, we found that the estimate of the core mass fraction is only marginally changed (and only for planets g and h).
 
-Our core mass fraction estimates are provided in Fig~\ref{fig:cmf} and Table~\ref{tab:cmf}.  Estimates range from $9_{-9}^{+11}$ wt\% for planet h up to $22_{-7}^{+5}$ wt\% for planet c, which,  despite the different central values, have considerable overlapping probability distributions.
-Fig~\ref{fig:cmf} shows that within the uncertainties, the CMF/Iron fraction of the planets are very consistent with one another, with the mean of all planets of $17_{-4}^{+3}$ wt\% (taking into account the correlations between the planets' core-mass fractions).
+Our core mass fraction estimates are provided in Fig~\ref{fig:cmf} and Table~\ref{tab:cmf}.  Estimates range from \textbf{$9_{-9}^{+11}$ wt\% for planet h up to $22_{-7}^{+5}$ (TBD)} wt\% for planet c, which,  despite the different central values, have considerable overlapping probability distributions.
+Fig~\ref{fig:cmf} shows that within the uncertainties, the CMF/Iron fraction of the planets are very consistent with one another, with the mean of all planets of \textbf{$17_{-4}^{+3}$ (TBD)} wt\% (taking into account the correlations between the planets' core-mass fractions).
 
-There may be a slight trend of the inferred CMF, which decreases with increasing orbital period. The trend is qualitatively similar to that reported on the normalized density (see Fig.~\ref{fig:norm_density_vs_period}), with similarly weak support: only 90\% of the linear fits to the $10^4$ posterior CMF values have a slope with orbital period which is negative, whilst 10\% are positive.
+There may be a slight trend of the inferred CMF, which decreases with increasing orbital period. The trend is qualitatively similar to that reported on the normalized density (see Fig.~\ref{fig:norm_density_vs_period}), with similarly weak support: only 88\% of the linear fits to the $10^4$ posterior CMF values have a slope with orbital period which is negative, whilst 12\% are positive.
 
 \begin{figure}
     \centering
@@ -1712,16 +1712,16 @@ There may be a slight trend of the inferred CMF, which decreases with increasing
     \label{fig:cmf}
 \end{figure}
 
-\begin{table*}
+\textbf{\begin{table*}
     \centering
     \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
         Planet:    & b                      & c                    & d                    & e                    & f                    & g                    & h                    & Avg b-h              & Avg b-e              & Avg f-h \cr
         \hline
         CMF [wt\%] & $22.3_{-6.85}^{+6.85}$ & $24.3_{-7.1}^{+5.1}$ & $14.2_{-6.8}^{+6.1}$ & $20.7_{-5.8}^{+5.8}$ & $16.2_{-5.0}^{+4.4}$ & $11.2_{-4.7}^{+4.7}$ & $9.3_{-9.3}^{+11.4}$ & $17.2_{-4.0}^{+3.4}$ & $20.6_{-4.0}^{+4.5}$ & $12.6_{-4.8}^{+4.8}$  \cr
     \end{tabular}
-    \caption{Core mass fraction inferred for each TRAPPIST-1 planet, as well as the weighted means.}
+    \caption{Core mass fraction inferred for each TRAPPIST-1 planet, as well as the weighted means. (TBD)}
     \label{tab:cmf}
-\end{table*}
+\end{table*}}
 
 \subsubsection{Surface water content} \label{sec:volatiles}
 
@@ -2365,7 +2365,7 @@ are:
 \begin{enumerate}
     \item  We have measured the masses, radii and densities to high \textbf{fractional} precision, \textbf{1-8\%}, based on an N-body model \textbf{and a photodynamical model} with seven planets.  This improves upon RV current precision by \textbf{up to} two orders of magnitude.
     \item  The pattern of masses and radii \textbf{may be} consistent with a uniform planetary composition for all seven planets
-          which have lower uncompressed densities than the Earth, Mars or Venus, with weaker evidence for a declining normalized density with orbital period (90\% confidence). The planet properties may either be consistent with
+          which have lower uncompressed densities than the Earth, Mars or Venus, with weaker evidence for a declining normalized density with orbital period (88\% confidence). The planet properties may either be consistent with
           a core mass fraction of $17{\pm}4$ wt\%, or an Earth-like core and mantle with a \textbf{surface water}
           content which varies from ${<}0.01$\% for the inner three planets to ${\approx} 5$\%
           for the outer four, or core-free planets with highly oxidized iron in the mantle which elevates the interior \textbf{light element} content.  These are not unique explanations.
