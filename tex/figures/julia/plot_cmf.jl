@@ -7,6 +7,7 @@ include("../../../src/regress.jl")
 using Statistics
 using PyPlot
 using DelimitedFiles
+using Printf
 
 period = [1.510826, 2.421937,4.049219, 6.101013, 9.207540,12.352446,18.772866]
 
@@ -104,3 +105,12 @@ tight_layout()
 savefig("../Norm_cmf_vs_period.pdf",bbox_inches = "tight")
 
 println("Coefficients of fit: ",mean(coeff_samp[1,:]),"+-",std(coeff_samp[1,:])," ",mean(coeff_samp[2,:]),"+-",std(coeff_samp[2,:]))
+
+# Now, print out first line of Table 9:
+tab09 = "CMF [wt\\%] & "
+for i=1:7
+  global tab09 = string(tab09," \$",@sprintf("%4.1f",cmf_median[i]),"_{-",@sprintf("%4.1f",cmf_sig1[i]),"}^{+",@sprintf("%4.1f",cmf_sig2[i]),"}\$ &")
+end
+
+tab09 = string(tab09," \$",@sprintf("%4.1f",cmf_avg),"\\pm",@sprintf("%4.1f",cmf_rms),"\$ \\cr")
+println(tab09)
