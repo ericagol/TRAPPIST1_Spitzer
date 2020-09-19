@@ -1,4 +1,4 @@
-
+2
 
 
 # Read in NexSci planets with non-zero lower limits
@@ -69,8 +69,9 @@ end
 m = collect(0.05:0.01:10.0)
 #semilogx(m,m.^(1/3.7)./m.^(1/3.7))
 #semilogx(m,m.^(1/3.7),label="CMF=0.33")
-mrearth = readdlm("../../../data/massradiusEarthlikeRocky.txt")
-semilogx(mrearth[9:31,1],mrearth[9:31,2],label="Earth-like (Zeng et al. 2019)")
+#mrearth = readdlm("../../../data/massradiusEarthlikeRocky.txt")
+mrearth = readdlm("../../../data/MR_trappist_Solar.ddat")
+semilogx(mrearth[:,1],mrearth[:,2],label="Solar")
 #mrearth_case5 = readdlm("zeng2013_tab02_case2.txt")
 #plot(mrearth_case5[10:29,1],mrearth_case5[10:29,2],label="Case 2 CMF=0.1787 (Zeng & Sasselov 2013)")
 # Read in the ternary diagram (Table 3) from Zeng & Sasselov (2013), but 
@@ -107,7 +108,7 @@ rss = [6371.00e5,2439.7e5,6051.8e5,3389.5e5]./6371.0e5
 plot(mss,rss,"o",label="Solar System")
 
 #dmr_carbon = readdlm("../Figures/Dorn/M_R_carbon-rich_Eric.ddat")
-dmr_nocore_solar = readdlm("../../../data/MR_trappist_corefree_Solar.ddat",skipstart=1)
+dmr_nocore_solar = readdlm("../../../data/MR_trappist_corefree_Solar_v02.ddat",skipstart=1)
 #dmr_nocore_unter = readdlm("../Figures/Dorn/MR_trappist_corefree_Unterborn.ddat",skipstart=1)
 
 #plot(dmr_carbon[:,1],dmr_carbon[:,2],label="Carbon-rich (Miozzi et al. 2018)")
