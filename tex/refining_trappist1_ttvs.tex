@@ -306,7 +306,7 @@
 \affiliation{Space Sciences, Technologies and Astrophysics Research (STAR) Institute, Universit\'e de Li\`ege, All\'ee du 6 Ao\^ut 19C, B-4000 Li\`ege, Belgium}
 
 \begin{abstract}
-    We have collected transit times for the TRAPPIST-1 system with the Spitzer \textbf{Space Telescope} over \textbf{four} years. We add to these ground-based, HST and K2 transit time measurements, and revisit an N-body dynamical analysis of the seven-planet system using our complete set of times from which we refine the mass ratios of the planets to the star. We next carry out a photodynamical analysis of the Spitzer light curves to derive the density of the host star and the planet densities. We find that all seven planets' densities may be described with a single rocky mass-radius relation which is depleted in iron relative to Earth, with Fe \textbf{21} wt\% versus 32 wt\% for Earth, and otherwise Earth-like in composition. Alternatively, the planets may have an Earth-like composition, but \textbf{enhanced in light elements}, such as an surface water layer or a core-free structure with oxidized iron in the mantle. We measure planet masses to a precision of 3-5\%, equivalent to a radial-velocity (RV) precision of 2.5 cm/sec, or two orders of magnitude more precise than current RV capabilities. We find the eccentricities of the planets are very small; the orbits are extremely coplanar; and the system is stable on 10 Myr timescales. We find evidence of infrequent timing outliers \textbf{which we cannot explain with an eighth planet;} we \textbf{instead account for the outliers} using a robust likelihood function. We forecast JWST timing observations, and speculate on possible implications of the planet densities for the formation, migration and evolution of the planet system.
+    We have collected transit times for the TRAPPIST-1 system with the Spitzer \textbf{Space Telescope} over \textbf{four} years. We add to these ground-based, HST and K2 transit time measurements, and revisit an N-body dynamical analysis of the seven-planet system using our complete set of times from which we refine the mass ratios of the planets to the star. We next carry out a photodynamical analysis of the Spitzer light curves to derive the density of the host star and the planet densities. We find that all seven planets' densities may be described with a single rocky mass-radius relation which is depleted in iron relative to Earth, with Fe \textbf{21} wt\% versus 32 wt\% for Earth, and otherwise Earth-like in composition. Alternatively, the planets may have an Earth-like composition, but \textbf{enhanced in light elements}, such as \textbf{a} surface water layer or a core-free structure with oxidized iron in the mantle. We measure planet masses to a precision of 3-5\%, equivalent to a radial-velocity (RV) precision of 2.5 cm/sec, or two orders of magnitude more precise than current RV capabilities. We find the eccentricities of the planets are very small; the orbits are extremely coplanar; and the system is stable on 10 Myr timescales. We find evidence of infrequent timing outliers \textbf{which we cannot explain with an eighth planet;} we \textbf{instead account for the outliers} using a robust likelihood function. We forecast JWST timing observations, and speculate on possible implications of the planet densities for the formation, migration and evolution of the planet system.
 \end{abstract}
 
 %% Keywords should appear after the \end{abstract} command. 
@@ -446,7 +446,7 @@ Prior studies used the data available at the time \citep{Delrez2018a}, with $t_{
 degeneracy in the dynamical model, and hence larger uncertainties in the masses of the planets
 \citep{Gillon2017,Grimm2018}.  Even so, these papers were ground-breaking as they enable the
 first density determinations of temperate, Earth-sized planets exterior to the Solar System.
-Both papers indicated densities for the planets which are lower than the value expected for
+Both papers indicated densities for the planets which \textbf{were} lower than the value expected for
 an Earth-like composition (with the exception of planet e), indicating that these planets might
 have a significant volatile content.  However, these conclusions were subject to significant
 uncertainty in the planet masses, making the determination of the compositions less definitive as the uncertainties were still consistent with rocky bodies at the $1-2\sigma$ level.
@@ -506,9 +506,9 @@ transit observation.  We next describe our data.}
 
 \subsection{Spitzer Observations} \label{sec:spitzerobs}
 
-The dataset used in this work includes the entire photometry database of TRAPPIST-1 observations by Spitzer/IRAC since the discovery of its planetary system. This represents all time series observations gathered within the DDT programs 12126 (PI: M. Gillon), 13175 (PI: L. Delrez) and 14223 (PI: E. Agol). \textbf{These cover} a total of 188 transits observed from Feb 2016 to Oct 2019 and \textbf{include} 64, 47, 23, 18, 16, 13, and 7 transits of planets b, c, d, e, f, g, and h, respectively \citep{Ducrot2020}. All \textbf{of} these data can be accessed through the online Spitzer Heritage Archive database\footnote{\url{http://sha.ipac.caltech.edu}}.  \textbf{Spitzer IRAC Channels 1 (3.6 $\mu$m, 0.75 $\mu$m wide) and
+The dataset used in this work includes the entire photometry database of TRAPPIST-1 observations \textbf{with Spitzer Space \textbf{Telescope}'s Infrared Array Camera \citep[IRAC;][] {Carey2004}} since the discovery of its planetary system. This represents all time series observations gathered within the DDT programs 12126 (PI: M. Gillon), 13175 (PI: L. Delrez) and 14223 (PI: E. Agol). \textbf{These cover} a total of 188 transits observed from Feb 2016 to Oct 2019 and \textbf{include} 64, 47, 23, 18, 16, 13, and 7 transits of planets b, c, d, e, f, g, and h, respectively \citep{Ducrot2020}. All \textbf{of} these data can be accessed through the online Spitzer Heritage Archive database\footnote{\url{http://sha.ipac.caltech.edu}}.  \textbf{Spitzer IRAC Channels 1 (3.6 $\mu$m, 0.75 $\mu$m wide) and
 2 (4.5 $\mu$m, 1.015 $\mu$m wide) were used during the Spitzer Warm Mission \textbf{\citep{Fazio2004,StorrieLombardi2010}} with 61 and 127 transits observed in each band, respectively.}
-Observations were obtained with Spitzer Space \textbf{Telescope}'s Infrared Array Camera \citep[IRAC;][] {Carey2004} in subarray mode (32 $\times$ 32 pixels windowing of the detector) with an exposure time of 1.92 s and a cadence of 2.06 min. In order to minimize the pixel-phase effect \citep{Knutson2008} the peak-up mode was used \citep{Ingalls2016} to \textbf{fine-tune} the positioning of the target on the detector following the IRAC Instrument Handbook.\footnote{\href{https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/iracinstrumenthandbook/}{IRAC Instrument Handbook}} Finally, calibration was performed using Spitzer pipeline S19.2.0 to output data as cubes of 64 subarray images of 32 $\times$ 32 pixels (the pixel scale being 1.2 arcsec). Each set of exposures was summed over the 2.06 minute cadence to allow for a tractable data volume for carrying out the photometric analysis, which is described in detail in \citet{Delrez2018a} and \citet{Ducrot2020}.
+Observations were obtained with \textbf{IRAC} in subarray mode (32 $\times$ 32 pixels windowing of the detector) with an exposure time of 1.92 s and a cadence of \textbf{2.15} min. In order to minimize the pixel-phase effect \citep{Knutson2008} the peak-up mode was used \citep{Ingalls2016} to \textbf{fine-tune} the positioning of the target on the detector following the IRAC Instrument Handbook.\footnote{\url{https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/iracinstrumenthandbook/}} Finally, calibration was performed using Spitzer pipeline S19.2.0 to output data as cubes of 64 subarray images of 32 $\times$ 32 pixels (the pixel scale being 1.2 arcsec). Each set of exposures was summed over the \textbf{2.15} minute cadence to allow for a tractable data volume for carrying out the photometric analysis, which is described in detail in \citet{Delrez2018a} and \citet{Ducrot2020}.
 
 \subsection{Ground-based observations} \label{sec:groundbasedobs}
 
@@ -587,7 +587,7 @@ and a histogram of the normalized residuals versus a single Gaussian
 probability distribution function (PDF) with unit variance (orange line).
 This CDF distribution function disagrees with the Gaussian CDF
 in the wings for $P({>}z) \la 0.1$ and $P({>}z) \ga 0.9$,
-where $z {=} (t_{\mathrm{obs},ij} {-} t_{ij}(\mathbf{x}_\mathrm{dyn}))/\sigma$ are the normalized residuals, with the model time, $t_{ij}(\mathbf{x}_\mathrm{dyn})$, as a function of the dynamical model parameters, $\mathbf{x}_\mathrm{dyn}$, described below.
+where $z {=} (t_{\mathrm{obs},ij} {-} t_{ij}(\mathbf{x}_\mathrm{dyn}))/\sigma_{ij}$ are the normalized residuals, with the model time, $t_{ij}(\mathbf{x}_\mathrm{dyn})$, as a function of the dynamical model parameters, $\mathbf{x}_\mathrm{dyn}$, described below.
 This indicates that there is a significant excess of outliers with
 large values of $\vert z\vert$
 relative to a Gaussian distribution.  The histogram in Figure
@@ -603,7 +603,7 @@ and there is nothing unusual about their light curves, such as flares,
 overlapping transits, or other anomalies.  %{\color{red} Discuss the timing 
 %offset discrepancy which was corrected.}  
 The outliers
-appear for each of the planets, in both ground- and space-based data,
+appear for each of the planets \textbf{(save h)}, in both ground- and space-based data,
 and for measurements with different sizes of uncertainties.  We do
 not think that our N-body model is in error (and we have tried to fit
 with an extra planet, without a significant improvement in the number
@@ -612,7 +612,7 @@ are due to variations in the measured times of transits which are not
 associated with dynamics of the system.
 
 We suspect instead that these outliers
-are a consequence of some systematic error(s) present in the data.  There are a variety
+are a \textbf{result} of some systematic error(s) present in the data.  There are a variety
 of possibilities:  uncorrected instrumental/observational systematics;
 time-correlated noise due to stellar variability;  stellar flares (which
 may be too weak to be visible by eye, but might still affect the
@@ -623,37 +623,38 @@ to model and/or correct for any of these effects.  Our data are not unique in th
 have been seen in other transit-timing analyses, as described
 in \citet{JontofHutter2016}.
 
-Consequently, our transit-timing model will be affected by these
+\textbf{Our} transit-timing model will be affected by these
 timing outliers, which make an excessive contribution to the
 $\chi^2$ of the model, and thus can affect the inference of
 the model parameters.   This can cause both the parameters {\it and}
 the uncertainties to be mis-estimated.  To make progress, we have
 modified the likelihood model to account for outliers.
 
-We examined two approaches to creating a heavy-tailed likelihood function, which
-better describes the data:  a mixture model \citep{Hogg2010,ForemanMackey2014} and
-a Student's t-distribution \citep{JontofHutter2016}.   In both cases
-we fit the normalized residuals to a model
+We \textbf{used} a heavy-tailed likelihood function which
+better describes the \textbf{residual distribution}:  %a mixture model \citep{Hogg2010,ForemanMackey2014} and
+a Student's t-distribution \citep{JontofHutter2016}.   %In both cases
+\textbf{We} fit the normalized residuals to a model
 in which the width of the distribution was
 allowed to vary, which we parameterize with
-an additional factor multiplying the variance, which we refer to below as $V_1$.  In the case of the mixture
-model, there are two additional parameters:
-the relative probability of the background, and
-the variance of the background.  In the Student's t-distribution case there is only one
+an additional factor multiplying the variance, which we refer to below as $V_1$.  %In the case of the mixture
+%model, there are two additional parameters:
+%the relative probability of the background, and
+%the variance of the background.  
+\textbf{For the} Student's t-distribution there is only one
 additional free parameter:  the number of
-degrees of freedom, $\nu$ (we treat this as a continuous parameter).
+degrees of freedom, $\nu$, \textbf{which} we treat as a continuous parameter.
 
 Figure \ref{fig:timing_residuals} shows a histogram of the outliers of the best-fit transit-timing model (described below),
 and shows that %both distributions, the mixture model and 
 the Student's t-distribution gives a much higher probability
 for outliers. %, while both distribution functions have a very similar shape.  
-Given that
-i) the Student's t-distribution has one fewer free-parameter than a mixture model, ii)  the
-mixture-model can have a  bimodal probability (the background and foreground can interchange,
-which causes the posterior probability distribution to be multiply-peaked),
-and iii)  the Student's t-distribution has been used in a prior transit-timing study \citep{JontofHutter2016},
-we settled on using this distribution to describe the increased probability
-of the outlier data points.
+%Given that
+%i) the Student's t-distribution has one fewer free-parameter than a mixture model, ii)  the
+%mixture-model can have a  bimodal probability (the background and foreground can interchange,
+%which causes the posterior probability distribution to be multiply-peaked),
+%and iii)  the Student's t-distribution has been used in a prior transit-timing study \citep{JontofHutter2016},
+%we settled on using this distribution to describe the increased probability
+%of the outlier data points.
 
 With the description of the dataset complete, we next describe our efforts to model the data.
 
@@ -674,7 +675,7 @@ With the description of the dataset complete, we next describe our efforts to mo
     \centering
     \includegraphics[width=\hsize]{figures/Students_t_optimized.pdf}
     \oscaption{julia/plot_residuals_rescale.jl}%
-    {Probability distribution of outliers.  Left:  Cumulative distribution
+    {Probability distribution of \textbf{normalized residuals}.  Left:  Cumulative distribution
         function of the normalized residuals, $z$.  Blue line is a sequence of normalized residuals.
         Orange line is the CDF of a Gaussian distribution. % Green line is the CDF of a  mixture-model (double-Gaussian). 
         Dashed green line is the CDF of a Student's t-
@@ -710,7 +711,7 @@ and negative drift operators, and so we have introduced an analytic cancellation
 of these terms to yield an algorithm which is numerically stable,
 which converges for small time steps \citep{Agol2020}.
 
-The initial conditions are specified with Jacobi coordinates and
+The initial conditions are specified with Jacobi coordinates \textbf{\citep{Hamers2016}} and
 we use a set of orbital elements for each planet given by
 $\mathbf{x}_{dyn} = (\{m_i,P_i,t_{0,i},e_i \cos{\omega_i},e_i\sin{\omega_i}\}; i = 1,...,N_p)$
 where $N_p$ is the number of planets for a total of $5N_p$ dynamical parameters. In
@@ -719,8 +720,8 @@ The units of time for the code are days, while the length scale of the code is t
     the output of positions and velocities from the code by $(M_*/M_\odot)^{1/3}$ to scale to a stellar mass $M_*$.}
 The initial orbital ephemeris, $(P_i,t_{0,i})$, consists of the period and initial time of
 transit which each planet {\it would} have if it orbited a single
-body with the mass of the star and the interior planets, and was
-not perturbed by the exterior planets.  We use these variables (in lieu of initial semi-major axis and mean longitude) as
+body with \textbf{a} mass of the \textbf{sum of the} star and the interior planets, 
+\textbf{unperturbed} by the exterior planets.  We use these variables (in lieu of initial semi-major axis and mean longitude) as
 they are well constrained by the \textbf{observed} times of transits.  We convert
 these analytically to the time of periastron passage, once the
 Kepler equation is solved\textbf{,} to yield the initial eccentric anomaly
@@ -741,7 +742,8 @@ of $h=0.06$ days, or about 4\% of the orbital period of planet b.
 The \textbf{model} transit times are found by tracking the positions of each
 planet relative to the star across a time step.  Then, when the
 dot product of the relative velocity of the planet and star
-with their relative position goes from negative to positive,
+with their relative position goes from negative to positive, \textbf{and
+the planet is between the star and observer},
 we flag a routine which iterates with Newton's method to find
 the \textbf{model} transit time, which is taken to be when this dot product
 equals zero \citep{Fabrycky2010}, corresponding to the mid-point
@@ -754,8 +756,7 @@ Once the \textbf{model} transit times have been found for every planet over the
 duration of the time integration, these are then matched with the observed
 transit times to compute the likelihood using the Student's t
 probability distribution.
-The log likelihood function which we
-optimize for each data point is given by
+The log likelihood function for each data point is given by
 \begin{equation}
     \begin{split}
         &\log{\mathcal{L}_{ij}}(\mathbf{x}_\mathrm{dyn},\nu,V_1) \\
@@ -765,7 +766,8 @@ optimize for each data point is given by
 \end{equation}
 where $\Gamma(x)$ is the Gamma function \citep{Fisher1925}.
 
-The total log likelihood function is given by
+The total log likelihood function \textbf{which we
+optimize} is given by
 \begin{equation}
     \log{\mathcal{L}}(\mathbf{x}_\mathrm{dyn},\nu,V_1) = \sum_{i=1}^{N_p} \sum_{j=1}^{N_i} \log{\mathcal{L}_{ij}}(\mathbf{x}_\mathrm{dyn},\nu,V_1),
 \end{equation}
@@ -939,7 +941,9 @@ total number of independent samples of 6409.
 
 The transit-timing variations are shown in Figure \ref{fig:T1_TTVs}, along
 with our best-fit model.  The model is a very good description of the data,
-although \textbf{a few} outliers are clearly visible by eye.  \textbf{We} 
+although \textbf{a few} outliers are clearly visible by eye.  \textbf{As
+advertised, the outer five planets show large-amplitude oscillations with
+the timescale $P_{TTV}$.  We} 
 have created a second figure in which a polynomial with an order between 5-30 
 is fit \textbf{and removed from} the data, \textbf{and} the resulting differences
 are shown in Fig.\ \ref{fig:chopping}.  The result shows high-frequency variations which are
@@ -1008,19 +1012,43 @@ parameters are depicted in Figure \ref{fig:corner_ttv}.} There are 35 parameters
 which describe the planets, in addition to two parameters
 for the Student's t-distribution, $ \log{\nu} = 1.3609 \pm 0.2337$
 and $ V_1 e^{1/(2\nu)} = 0.9688 \pm 0.1166$ (Figure \ref{fig:student_param_likelihood_profile}).  The posterior mass-ratios
-and ephemerides are consistent with nearly Gaussian distributions, while the
+and ephemerides are consistent with nearly Gaussian distributions. \textbf{The}
 eccentricity vectors show deviations from a Gaussian distribution for the inner
-two planets b and c, as shown in Figure \ref{fig:ecc_likelihood_profile}.  Hence, the $1\sigma$ uncertainties
-on the eccentricity vector components for these inner two planets
-should not be used to extrapolate to higher-order significance
-without using the full distribution.
+two planets b and c, as shown in Figure \ref{fig:ecc_likelihood_profile}.  %Hence, the $1\sigma$ uncertainties
+%on the eccentricity vector components for these inner two planets
+%should not be used to extrapolate to higher-order significance
+%without using the full distribution.
+%Figure \ref{fig:ecc_likelihood_profile} shows the probability distributions
+%for the eccentricity vector components of each of the planets.
+%Each of the eccentricity vector likelihood profile components
+%has a nearly Gaussian
+%shape.  
+\textbf{The} Laplace approximation covariance uncertainty estimates are overplotted as
+Gaussian distributions very closely match the likelihood profile
+for each parameter.  This agreement is reassuring:  it indicates
+that the likelihood distribution is closely approximated by
+a multi-dimensional normal distribution near the maximum likelihood.
+In the eccentricity-vector coordinates,
+the {\it prior} probability distribution is peaked
+at zero to ensure that the volume of phase-space at larger
+eccentricities does not dominate the probability distribution,
+as shown in the lower right panel of Figure \ref{fig:ecc_likelihood_profile}.
+For the planets which have
+a likelihood distribution which overlaps strongly with zero,
+the prior distribution causes the Markov chain posterior to
+have a significantly different distribution from the likelihood profile.  This is not
+due to the prior favoring small eccentricities;  rather it is simply
+a correction for the bias which results by using $e_i\cos{\omega_i}$
+and $e_i\sin{\omega_i}$ as Markov chain parameters which favors
+higher eccentricities \citep{Ford2006}.
+
 
 The posterior distribution of the {\it ratio} of the planet masses to the star, scaled to a stellar mass of 0.09 $M_\odot$, are given in Table \ref{tab:TTV_parameters} and shown in Figure \ref{fig:mass_likelihood_profile}.  The likelihood profile of
 the \textbf{planet-to-star mass ratios} is also plotted in
 Figure \ref{fig:mass_likelihood_profile} and appears to be well-behaved. These
 likelihood profiles are also approximately Gaussian in shape, and track the inverse Hessian evaluated at the maximum likelihood to estimate the covariance (also plotted), albeit with a stronger
-tail for planet e at lower mass.  Compared with the prior masses
-estimated by \citet{Grimm2018}, the masses of each planet have increased
+tail for planet e at lower mass.  Compared with the \textbf{mass
+estimates from} \citet{Grimm2018}, the masses of each planet have increased
 with the exception of planet e which has decreased and planet h which remains the same (Table \ref{tab:grimm_vs_agol}).   The mass ratios of the posterior distribution from the Markov chain  are slightly shifted to smaller values than the likelihood profile and Laplace approximation probabilities for all planets save b and g.
 
 \begin{table*}
@@ -1039,29 +1067,6 @@ with the exception of planet e which has decreased and planet h which remains th
     \end{tabular}
     \label{tab:grimm_vs_agol}
 \end{table*}
-
-Figure \ref{fig:ecc_likelihood_profile} shows the probability distributions
-for the eccentricity vector components of each of the planets.
-Each of the eccentricity vector likelihood profile components
-has a nearly Gaussian
-shape.  Likewise, the Laplace approximation covariance uncertainty estimates are overplotted as
-Gaussian distributions very closely match the likelihood profile
-for each parameter.  This agreement is reassuring:  it indicates
-that the likelihood distribution is closely approximated by
-a multi-dimensional normal distribution near the maximum likelihood.
-In the eccentricity-vector coordinates,
-the {\it prior} probability distribution is peaked
-at zero to ensure that the volume of phase-space at larger
-eccentricities does not dominate the probability distribution,
-as shown in the lower right panel of Figure \ref{fig:ecc_likelihood_profile}.
-For the planets which have
-a likelihood distribution which overlaps strongly with zero,
-the prior distribution causes the Markov chain posterior to
-have a significantly different distribution from the likelihood profile.  This is not
-due to the prior favoring small eccentricities;  rather it is simply
-a correction for the bias which results by using $e_i\cos{\omega_i}$
-and $e_i\sin{\omega_i}$ as Markov chain parameters which favors
-higher eccentricities \citep{Ford2006}.
 
 \begin{figure}
     \centering
@@ -1136,7 +1141,8 @@ planet we specify a \textbf{planet-to-star} radius ratio ($R_p/R_*$) and we assu
 mid-transit impact parameter ($b_0$), which is constant for all transits of
 a given planet.  We assume that the limb-darkening parameters are a function
 of wavelength for the two Spitzer channels, while we treat the planet radius
-ratios as identical in both wavebands, giving a total of 19 free parameters
+ratios as identical in both wavebands \textbf{based on their consistency across
+all planets in \citep{Ducrot2020}}, giving a total of 19 free parameters
 for the photodynamical model.
 
 We ignore acceleration during the transits, treating the impact parameters as
@@ -1154,7 +1160,7 @@ a light curve computed with a precision of better than $10^{-7}$ for all cadence
 
 We compute a photometric model for all seven
 planets for all of the Spitzer data in selected windows around each of the observed
-transits.  Starting with Spitzer photometric data which were already corrected for systematic
+transits.  Starting with Spitzer photometric data, which were already corrected for systematic
 variations based on the analysis by \citet{Ducrot2020}, we fit  each transit window
 with the transit model multiplied by a cubic polynomial, whose coefficients are solved
 for via regression at each step in the Markov chain.
@@ -1214,7 +1220,7 @@ for the outer 4 planets is the slight zig-zag of transits due to chopping (shown
         (left to right are b-h, as labelled; the
         transits of companion planets are omitted from each panel).
         The x-axis ranges over 200/400$\times$ 30-second exposures centered on the mean ephemeris for the $n$th transit
-        for b-d/e-h respectively (note the 30 sec exposures are higher resolution than the Spitzer time-resolution).
+        for b-d/e-h respectively (note the 30 sec exposures are higher resolution than the \textbf{binned} Spitzer time-resolution).
         Each row contains a transit model, with green being the out-of-transit, and blue in
         transit.  There are (1059,661,395,262,173,129,85) transits of planets b-h, respectively.
         Planets d and h have the smallest sizes, and hence shallowest depths, causing a lighter
