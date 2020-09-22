@@ -43,7 +43,7 @@ dens_var = 0.0
 for isamp=1:nsamp
   global dens_var += (mean(dens_norm[:,isamp]) - dens_avg)^2
 end
-dens_sig = sqrt(dens_var/nsamp)
+dens_sig_avg = sqrt(dens_var/nsamp)
 
 
 # Now, draw 1-sigma and 2-sigma confidence intervals:
@@ -66,7 +66,7 @@ plot(period_trial,conf[3,:],color="C1",linewidth=2)
 plot(period_trial,conf[2,:],color="C1",linewidth=2,linestyle=":")
 plot(period_trial,conf[4,:],color="C1",linewidth=2,linestyle=":")
 #plot(period_trial,dens_avg  .+ 0.0 .* period_trial,color="C0",linewidth=2)
-fill_between([0,20],[dens_avg-dens_sig,dens_avg-dens_sig],[dens_avg+dens_sig,dens_avg+dens_sig],alpha=0.2,color="C0")
+fill_between([0,20],[dens_avg-dens_sig_avg,dens_avg-dens_sig_avg],[dens_avg+dens_sig_avg,dens_avg+dens_sig_avg],alpha=0.2,color="C0")
 axis([0,20,0.8,1.2])
 xlabel("Orbital Period [d]")
 ylabel("Normalized density")
