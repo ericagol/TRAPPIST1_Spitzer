@@ -1748,7 +1748,7 @@ to fit the total mass and radius.}}
 
 The observed (weak) variation in the planet densities among all seven planets may instead be due to their differing volatile (e.g. water) inventories.
 
-If we assume a rocky Earth-like interior \textbf{(CMF=32.5\%, fully-differentiated)} and only allow an additional {\it condensed}\footnote{Note that it is likely unwarranted to assume condensed surface water for the inner three planets given their location within the runaway greenhouse zone \citep{Turbet2020}.} water layer to contribute to the total radius, we can estimate the water mass fractions of the seven planets (b: $\mathbf{2.8^{+2.1}_{-1.9}}$ wt\%, c: $\mathbf{2.3^{+1.8}_{-1.7}}$ wt\%, d: $\mathbf{4.4^{+2.0}_{-1.5}}$ wt\%, e: $\mathbf{2.9^{+1.7}_{-1.5}}$ wt\%, f: $\mathbf{4.5^{+1.8}_{-1.2}}$ wt\%, g: \mathbf{$6.4^{+2.0}_{-1.6}}$  wt\%, h: $\mathbf{5.5^{+4.5}_{-3.1}}$ wt\%).
+If we assume a rocky Earth-like interior \textbf{(CMF=32.5\%, fully-differentiated)} and only allow an additional {\it condensed}\footnote{Note that it is likely unwarranted to assume condensed surface water for the inner three planets given their location within the runaway greenhouse zone \citep{Turbet2020}.} water layer to contribute to the total radius, we can estimate the water mass fractions of the seven planets (b: $\mathbf{2.8^{+2.1}_{-1.9}}$ wt\%, c: $\mathbf{2.3^{+1.8}_{-1.7}}$ wt\%, d: $\mathbf{4.4^{+2.0}_{-1.5}}$ wt\%, e: $\mathbf{2.9^{+1.7}_{-1.5}}$ wt\%, f: $\mathbf{4.5^{+1.8}_{-1.2}}$ wt\%, g: $\mathbf{6.4^{+2.0}_{-1.6}}$  wt\%, h: $\mathbf{5.5^{+4.5}_{-3.1}}$ wt\%).
 The lower densities of planets d, f, g, and h can allow for two to three times as much water than for planets b, c, and e. For this simple estimate we assumed a water layer with a surface temperature of 300 K at 1 bar.
 
 Actual surface conditions \textbf{and assumed iron content} can, however, lead to much larger differences in the estimated water budgets between the inner three and outer four planets. This stems from the fact that the inner three planets are more irradiated than the runaway greenhouse irradiation limit \citep{Kopparapu2013,Wolf2017,Turbet2018} for which all water is vaporized, forming a thick H$_2$O-dominated steam atmosphere. Taking into account the expectation that water should be vaporized for the three inner TRAPPIST-1 planets \citep{Turbet2019,Turbet2020}, their water mass fractions drop drastically to less than $0.01$ wt\%, i.e. more than several times lower than the water ocean mass fraction of the Earth.
@@ -1820,14 +1820,29 @@ which is not on the same hemisphere as the planetary transit chords,
 this can cause all of the planet radii to be mis-inferred by a similar
 factor.
 
-TRAPPIST-1 may have complex surface inhomogeneities, including regions brighter or darker than the mean photosphere  \textbf{\citep{Morris2018d,Zhang2018,Wakeford2019}}. It is possible that bright or dark regions could bias the apparent transit depths towards larger or smaller measurements, depending on which type of inhomogeneity dominates. We revisited the photodynamic simulations with a contamination parameter,
+TRAPPIST-1 may have complex surface inhomogeneities, including regions brighter or darker than the mean photosphere  \textbf{\citep{Morris2018d,Zhang2018,Wakeford2019}}. It is possible that bright or dark regions could bias the apparent transit depths towards larger or smaller measurements, depending on which type of inhomogeneity dominates. 
+\comment{We revisited the photodynamic simulations with a contamination parameter,
 $\varepsilon$, such that the effective transit depth (neglecting limb-darkening) is given by $(R_p/R_*)^2(1-\varepsilon)$
 \citep{Morris2018b,Morris2018c}.  Re-running the Markov chains
 including $\varepsilon$ as a free parameter in our fits, we
-find that $\varepsilon = 2{\pm}13$\% at 68.3\% confidence\textbf{; this constraint arises from the transit ingress/egress durations which provide an independent constraint on the radius ratio, but with less precision.}  Note that $\varepsilon$ is assumed to be time-steady and to have the same value for all planets; in practice the value might vary between planets, say, if some traversed active latitudes.
-This constraint is similar to the analysis of planet b from \citet{Morris2018c}, but our new constraint based on all seven planets does have a median value closer to zero.
-This indicates that from these data alone we cannot rule out a significant systematic error on the planets' radii caused by an inhomogeneous stellar photosphere.
-Improved constraints would likely require a wavelength-dependent analysis \citep[e.g.][]{Rackham2018,Wakeford2019}.
+find that $\varepsilon = 2{\pm}13$\% at 68.3\% confidence\textbf{; this constraint arises from the transit ingress/egress durations which provide an independent constraint on the radius ratio, but with less precision.}  Note that $\varepsilon$ is assumed to be time-steady and to have the same value for all planets; in practice the value might vary between planets, say, if some traversed active latitudes.}
+\textbf{Time-variable contamination should average out with many observations, while 
+time-steady inhomogeneity will not, such as active latitudes, polar spots, or even
+hemispheric asymmetry \citep{Yadav2015,Brown2020}.  We modeled the transit-transmission 
+in the K2, SPECULOOS, LT, near-infrared, and Spitzer bands from \citet{Ducrot2020} for all
+seven planets using the contamination formula from \citet{Rackham2018} with a time-steady, 
+two-temperature model with the temperatures of the two components ranging from 2000-2980 K 
+and the covering fraction varying from 0 to 1.  The mean effective temperature is constrained 
+by our stellar model parameters (Table \ref{tab:stellar_parameters}). We assumed that all seven 
+planets transit the region with the larger covering fraction, and that their transit depths are
+achromatic.  We ran a Markov chain fit to the transmission spectra, interpolating the fluxes in 
+the bands between the effective temperature grid points which were spaced by 20 K. We then computed 
+the expected impact on the transit depths in the two IRAC channels.  The constraints are tight: we 
+find that the observed depths should only change by a factor of $0.9979{\pm}0.0024$ in Channel 1 
+and $0.9973{\pm}0.0030$ in Channel 2.  These factors are consistent with unity within the 
+uncertainties, and have uncertainties which are much smaller than the uncertainties on the 
+absolute planetary radii. We conclude that this form of self-contamination does not influence 
+our results.  This constraint is much stronger than the analysis of \citet{Morris2018c}.}
 
 Our mass precisions are predicated on a complete model of the dynamics of the system.  \textbf{We neglect tides and general relativity, which are too small in amplitude to affect our results at the current survey duration and timing precision \citep{Bolmont2020}.} Should an eighth planet be lurking at longer orbital periods, which has yet to reveal itself via significant transit-timing variations or transits, this may modify our timing solution and shift the masses slightly.  In our timing search for an additional planet, however, we found that such a planet might only cause shifts at the ${\approx} 1\sigma$ level.  This possibility begs for caution in interpreting the potential variation of iron fraction with orbital period:  should an eighth planet be present beyond planet h, its timing impact would likely affect the masses of the exterior planets more significantly than the interior planets.  Drawing stronger conclusions about the variation of planet iron/core mass fractions will likely require longer-term monitoring, especially of planet h, and/or higher precision timing measurements such as are expected with JWST, to place tighter constraints on an eighth planet.
 
