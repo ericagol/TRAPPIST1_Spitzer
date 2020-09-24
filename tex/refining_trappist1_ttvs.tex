@@ -1735,16 +1735,16 @@ CMF [wt\%] &  $25.2_{- 6.0}^{+ 5.3}$ & $26.6_{- 5.1}^{+ 4.6}$ & $19.7_{- 5.1}^{+
 
 \subsubsection{Surface water content} \label{sec:volatiles}
 
-\begin{figure}
+\begin{figure*}
     \centering
-    \includegraphics[width=\hsize]{figures/figure_water_period_TTV_trim.png}
+    \includegraphics[width=0.6\hsize]{figures/figure_water_period_TTV_trim.png}
     %    \includegraphics[width=\hsize]{figures/figure_water_period_TTV_trim.pdf}
     \oscaption{}% TODO
     {Theoretical water content \textbf{estimates} (along with 1$\sigma$ error bar) versus planetary orbital periods. \textbf{Colors depict different compositions for the rocky interior
 (18, 25, 32.5 and 50 wt\% CMF). For high CMF, estimated water contents are larger in order
 to fit the total mass and radius.}}
     \label{fig:water_vs_period}
-\end{figure}
+\end{figure*}
 
 The observed (weak) variation in the planet densities among all seven planets may instead be due to their differing volatile (e.g. water) inventories.
 
@@ -1762,7 +1762,7 @@ Higher estimated water budgets for the outer three or four planets could be a cl
 Given that the data may be consistent with an iso-composition mass-radius relation, we next consider another intriguing possibility:
 that the \textbf{interiors of the planets are fully oxidized.} For example, if, instead of forming a core, all of the iron is oxidized and remains in the mantle, the size of a planet may increase by a few percent \citep{ElkinsTanton2008}.  This turns out to be about the amount of radius inflation necessary to match the TRAPPIST-1 planets when compared with our Solar system planets.
 
-If we assume that the refractory ratios match a Solar composition, and that all seven planets lack an atmosphere, then it turns out that all seven planets are consistent with a core-free, oxidized composition (Fig.\ \ref{fig:mass_radius_relation}; \textbf{red} line).  For this model the bulk mass abundances ratios for Fe/Si/Mg/O are 29.2/17.3/15.3/38.2 wt\% \textbf{with magnesium number of 0.55 (Mg/(Mg+Fe)); this model has } a significant increase in oxygen compared to the bulk Earth with 29.7 wt\% \citep{McDonough2014}.
+If we assume that the refractory ratios match a Solar composition, and that all seven planets lack an atmosphere, then it turns out that all seven planets are consistent with a core-free, oxidized composition (Fig.\ \ref{fig:mass_radius_relation}; \textbf{red} line).  For this model the bulk mass abundances ratios for Fe/Si/Mg/O are 29.2/17.3/15.3/38.2 wt\% \textbf{with a magnesium number of 0.55 (Mg/(Mg+Fe)); this model has } a significant increase in oxygen compared to the bulk Earth with 29.7 wt\% \citep{McDonough2014}.
 Such a scenario would likely require formation of the planets at large distances from the star in a highly oxidizing environment \citep{ElkinsTanton2008} and a lower  devolatization temperature intermediate between that of Earth and chondrites \citep{Wang2019}.  Hence, although this hypothesis efficiently explains the TRAPPIST-1 data, it remains to be seen whether a geochemical model can be constructed which results in high oxidation of iron throughout the processes of planet formation and evolution \textbf{\citep{Kite2020}}.
 
 \section{Discussion} \label{sec:discussion}
@@ -1889,7 +1889,7 @@ a composition which is a mix of silicates and iron \citep{Owen2017}.
 
 \begin{figure*}
     \centering
-    \includegraphics[width = \hsize]{figures/mass_radius_relation_comparison.pdf}
+    \includegraphics[width =0.8\hsize]{figures/mass_radius_relation_comparison.pdf}
     \oscaption{julia/plot_planets.jl}{Radius versus mass for Solar-System terrestrial planets (green dots),
         TRAPPIST-1 (orange error bars), and other potentially rocky exoplanets from the NExSci database, \citet{Dressing2015},
         and \citet{Dai2019}
@@ -2426,7 +2426,7 @@ Hypothetical variations in Fe/Mg can otherwise be caused if large portions of pl
 
 \comment{Can the TRAPPIST-1 planets' densities and core mass fractions be used to differentiate between formation scenarios? At present, the other viable model for super-Earth formation -- sometimes called the {\em drift} model -- invokes accretion close-in from a disk of solids that has been enriched by the inward drift of pebbles~\citep{chatterjee14,chatterjee15,dawson15}.\footnote{We note that any ``in-situ" growth scenario that does not account for orbital migration is clearly ruled out using simple timescale arguments~\citep[i.e., because migration -- and even aerodynamic drift -- is far too fast to ignore; see][]{ogihara15,inamdar15,izidoro2018}.} After large embryos grow they are necessarily subject to migration and then follow the same general dynamical pathway as in the migration model~\citep[involving resonant capture and later breaking of resonant chains; see discussion in][]{raymond18d}. Given that the outer disk represents the main source of drifting pebbles~\citep{lambrechts14,ida16}, one may thus expect the planets that form in the drift model could also be carbonaceous in composition. The main difference with regards to the migration model is that inward-drifting pebbles would lose their water but inward-migrating embryos would not. } %Both models would naively predict the lower iron core mass fractions seen in Fig. \ref{fig:cmf} due to an enhancement in volatile content.
 
-Alternatively, the lower measured bulk densities of the TRAPPIST-1 planets relative to Earth-like composition might be explained by core-free interiors \citep{ElkinsTanton2008} in which the oxygen content is high enough such that all iron is oxidized. If the refractory elements (Mg,Fe,Si) follow Solar abundances, a fully oxidized interior would contain about 38.2 wt\% of oxygen, which lies between the value for Earth (29.7 wt\%) and CI chondrites (45.9 wt\%). Such an interior scenario can easily describe the observed bulk densities (purple line in Fig. \ref{fig:mass_radius_relation}).  And this may bolster the long-range migration scenario in which the planets formed in a highly oxidizing environment which enabled the iron to remain in the mantle even after migration.  \textbf{Based on the elemental composition these models have an oxygen fugacity of $\Delta IW = -0.91$, which is more oxidized than Earth or even Mars, but is comparable to the oxidation state of small bodies, both in our solar system and accreted by white dwarfs \citep{Doyle2019}.}
+Alternatively, the lower measured bulk densities of the TRAPPIST-1 planets relative to Earth-like composition might be explained by core-free interiors \citep{ElkinsTanton2008} in which the oxygen content is high enough such that all iron is oxidized. If the refractory elements (Mg,Fe,Si) follow Solar abundances, a fully oxidized interior would contain about 38.2 wt\% of oxygen, which lies between the value for Earth (29.7 wt\%) and CI chondrites (45.9 wt\%). Such an interior scenario can easily describe the observed bulk densities (purple line in Fig. \ref{fig:mass_radius_relation}).  And this may bolster the long-range migration scenario in which the planets formed in a highly oxidizing environment which enabled the iron to remain in the mantle even after migration.  \textbf{Based on the elemental composition, these models have an oxygen fugacity of $\Delta \mathrm{IW} = -0.91,$\footnote{\textbf{Oxygen fugacity is stated relative to the Iron-W\"ustite equilibrium reaction $\mathbf{\mathrm{Fe}{+}0.5\mathrm{O}_2{=}\mathrm{FeO}}$ (W\"ustite) such that $\mathbf{\Delta \mathrm{IW} = \log(f_{\mathrm{O}_2})_\mathrm{rock} - \log(f_{\mathrm{O}_2})_\mathrm{IW}}$}} which is more oxidized than Earth or even Mars, but is comparable to the oxidation state of small bodies, both in our solar system and accreted by white dwarfs \citep{Doyle2019}.}
 
 However, the evidence for a core-free planet rests on knowing the refractory abundances of the TRAPPIST-1 host star, which have yet to be constrained.  Alas, our interpretation of the planets' compositions may be limited by our imprecise knowledge of the host star:  its radius, its mass, its photospheric inhomogeneity, and its refractory abundances all affect our measurement and interpretation of the masses, radii, and compositions of the TRAPPIST-1 planets.  In this paper our measurements of the relative planetary radii and masses have reached such a precision that the fault may now lie in the star.
 
