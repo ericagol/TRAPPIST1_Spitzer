@@ -1,4 +1,4 @@
-2
+
 
 
 # Read in NexSci planets with non-zero lower limits
@@ -101,9 +101,7 @@ rss = [6371.00e5,2439.7e5,6051.8e5,3389.5e5]./6371.0e5
 #plot(mss,rss./mss.^(1/3.7),"o")
 plot(mss,rss,"o",label="Solar System")
 
-#dmr_carbon = readdlm("../Figures/Dorn/M_R_carbon-rich_Eric.ddat")
 dmr_nocore_solar = readdlm("../../../data/MR_trappist_corefree_Solar_v02.ddat",skipstart=1)
-#dmr_nocore_unter = readdlm("../Figures/Dorn/MR_trappist_corefree_Unterborn.ddat",skipstart=1)
 
 #plot(dmr_carbon[:,1],dmr_carbon[:,2],label="Carbon-rich (Miozzi et al. 2018)")
 plot(dmr_nocore_solar[:,1],dmr_nocore_solar[:,2],label="No-core, Solar",color="C4")
