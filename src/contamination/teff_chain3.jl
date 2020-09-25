@@ -206,3 +206,11 @@ for ip=1:7
   ax.set_xlabel(L"$\lambda$ [micron]")
   ax.set_ylabel("Depth [%]")
 end
+
+ibest = argmax(flatllhoodvals)
+pbest = flatchain[:,ibest]
+tlambest = compute_tlam(pbest)
+for ip=1:7
+  ax = axes[ip]
+  ax.semilogx(lam_mod[isort],pbest[5+ip] .*tlambest[isort],color="b")
+end
