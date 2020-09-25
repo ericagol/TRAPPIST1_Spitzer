@@ -874,8 +874,7 @@ where $\mathbf{p}$ is defined from Hamilton's equations,
 \begin{equation}
     \dot{\mathbf{p}} = -\frac{\partial H}{\partial \mathbf{x}}.
 \end{equation}
-We take the inverse mass matrix, $\mathbf{M}^{-1}$, to be the approximate Hessian matrix evaluated at the maximum likelihood, $\mathbf{M}^{-1} = \mathbf{\mathcal{H}(\mathbf{x}_0)}^{-1}$ (eqn.\ \ref{eqn:hessian}).
-%{\color{red} check that the factor of 1/2 is correct.}
+We take the mass matrix, $\mathbf{M}$, to be the approximate Hessian matrix evaluated at the maximum likelihood, $\mathbf{M} = \mathbf{\mathcal{H}(\mathbf{x}_0)}$ (eqn.\ \ref{eqn:hessian}).
 Similarly, the Hamiltonian can be used to compute the evolution of the parameter ``coordinates,"
 \begin{equation}
     \dot{\mathbf{x}} = +\frac{\partial H}{\partial \mathbf{p}}.
@@ -899,7 +898,7 @@ $N_\mathrm{leap} \sim \mathrm{round}(N_{\mathrm{leap},0} \mathcal{U}(0.8,1.0))$.
 and $N_{\mathrm{leap},0} = 20$ results in a proposal for which the Metropolis rejection gives a high average acceptance rate of 70\%.
 
 We ran 112 HMC chains for 2000 steps each (i.e.\ 2000 leapfrog integrations).   Each leapfrog integration averaged about 7 minutes, and so the chains took nine
-days and four hours to complete\footnote{These were run on four Broadwell Xeon Processors with 28 cores and  128 GB of memory, where each processor is a node in the Hyak Mox cluster at the University of Washington.}.
+days and four hours to complete.\footnote{These were run on four Broadwell Xeon Processors with 28 cores and  128 GB of memory, where each processor is a node in the Hyak Mox cluster at the University of Washington.}
 We found a minimum mean effective sample size of 57 over all chains, for a
 total number of independent samples of 6409.
 
@@ -942,7 +941,7 @@ masses in this paper.
     \centering
     \includegraphics[width=\hsize]{figures/T1_chopping.pdf}
     \oscaption{julia/plot_ttv_diff.jl}%
-    {Transit times with a polynomial subtracted (orange error bars) to reveal short-timescale chopping variations (blue model).  Green dots show the analytic chopping relation from \citet{Deck2015} due to adjacent planets, also with a low-order polynomial removed. For the inner four planets we have
+    {\textbf{Observed} transit times with a polynomial subtracted (orange error bars) \textbf{compared with the} short-timescale chopping variations \textbf{of the best-fit model} (blue model; same polynomial removed).  Green dots show the analytic chopping relation from \citet{Deck2015} due to adjacent planets, also with a low-order polynomial removed. For the inner four planets we have
         only plotted data with
         uncertainties smaller than the chopping semi-amplitude  (many observations have large uncertainties which would obscure the plot).}
     \label{fig:chopping}
