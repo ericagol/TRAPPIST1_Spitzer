@@ -790,10 +790,10 @@ three different approaches:
     \item Markov-chain Monte Carlo.
 \end{enumerate}
 
-First, in our Laplace approximation analysis, we assume a uniform prior on the model parameters and  expand the likelihood as a multi-dimensional normal distribution. %with covariance estimated by the inverse of the Hessian matrix at the maximum likelihood.  
+First, in our Laplace approximation analysis, we assume a uniform prior on the model parameters and  expand the likelihood as a multi-dimensional normal distribution. 
 We maximize the likelihood model using
 the Levenberg-Marquardt algorithm, which requires the gradient and Hessian
-of the log likelihood.  Once the maximum likelihood is found, we compute an approximate Hessian at the maximum log likelihood (see Appendix \ref{sec:hessian}). The inverse of the Hessian matrix yields an estimate of the covariance amongst the
+of the \textbf{negative} log likelihood.  Once the maximum likelihood is found, we compute an approximate Hessian at the maximum likelihood (see Appendix \ref{sec:hessian}). The inverse of the Hessian matrix yields an estimate of the covariance amongst the
 parameters at the maximum likelihood, whose diagonal components
 provide an initial estimate for the parameter uncertainties; we will also use the Hessian for more efficient sampling of the
 Markov chain.
@@ -2540,7 +2540,7 @@ Now, the width of the Gaussian distribution at the maximum likelihood is governe
 \begin{equation}
     \mathcal{H}_{kl}(\mathbf{x}_0) =  -\sum_{i,j} \left.\frac{\partial^2 \log\mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_l}\right\vert_{\mathbf{x}_0},
 \end{equation}
-which involves second derivatives of the log likelihood with respect to the model parameters.  The log likelihood for each data point with indices $i$ and $j$ may be written as a function of the observed transit times and uncertainties, the modeled transit times, and the Student's t-distribution model parameters, such that
+which involves second derivatives of the \textbf{negative} log likelihood with respect to the model parameters.  The log likelihood for each data point with indices $i$ and $j$ may be written as a function of the observed transit times and uncertainties, the modeled transit times, and the Student's t-distribution model parameters, such that
 \begin{equation}
     \mathcal{L}_{ij}(\mathbf{x}) = \mathcal{L}_{ij}(t_{ij}(\mathbf{x}_{dyn});\log{\nu},V_1e^{1/2\nu};t_{ij,obs},\sigma_{ij}),
 \end{equation}
