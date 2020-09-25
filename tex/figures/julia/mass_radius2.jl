@@ -48,8 +48,6 @@ end
 
 # Number of posterior samples to select:
 nsamp = 10000000
-cmf = zeros(nplanet,nsamp)
-#nsamp = 30000
 npoints = [100,100,100,100,100,100,1000]
 i0 = 20001
 # Factor to convert from solar masses to Earth masses:
@@ -98,8 +96,6 @@ for isamp=1:nsamp
   # Compute the radius of planet in Earth radii units:
   # Randomly select a radius ratio:
   rsamp[:,isamp] = flatchain[1:nplanet,ipd] .*(rstar_samp[isamp]*fac_rad)
-  # Compute CMF from Zeng et al. (2016) formula:
-  cmf[:,isamp] = (1.07 .-rsamp[:,isamp] .*msamp[:,isamp].^(-1/3.7))./0.21
   # Now compute density distribution:
   for j=1:nplanet
     if msamp[j,isamp] > m1 && msamp[j,isamp] < m2 && rsamp[j,isamp] > r1 && rsamp[j,isamp] < r2

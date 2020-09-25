@@ -10,7 +10,6 @@ has *jld2), so please contact Eric Agol if you would like these.
 
 References for some of these files:
 
-- massradiusEarthlikeRocky.txt:  Zeng et al. (2019)
 - planets_2020.02.26_11.12.22.csv: NeXSci Exoplanets Database
 - apjab3a3bt2_ascii.txt: Dai et al. (2019), Dressing et al. (2014) for Kepler-93b
 - MR_trappist_corefree_Solar.ddat: Core-free model computed by Caroline Dorn
@@ -38,7 +37,7 @@ The following lists the directories and their contents:
 - Grimm/ This contains data for the histograms and panels of the long-term GLF
    angle plot.
 - POSTERIOR_CMF/ This contains the iron mass fractions for the differentiated
-   models computed by Turbet based on Zeng et al. (2019).  Uses 10^4 draws
+   models computed by Turbet based on Dorn et al. (2018).  Uses 10^4 draws
    from the posterior.
 - POSTERIOR_NORM_DENSITY/ The "normalized density" (relative to a 20%iron/80% rock
    model) computed for 10^4 draws from the posterior.

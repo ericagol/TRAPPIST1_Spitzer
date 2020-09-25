@@ -64,68 +64,11 @@ include("mass_radius2.jl")
 
 #merror = mass_radius2(mass_ratio_total,mstar,smstar,flatchain,false)
 
-# Now, plot mass-radius relations from
-# Zeng https://www.cfa.harvard.edu/~lzeng/tables/mrtable3.txt
-
-dmr = readdlm("../../../data/zeng_mrtable3.txt",skipstart=2)
-
-#plot(dmr[:,1],dmr[:,16],label="30% Fe",linestyle="--")  # 30% Fe
-#plot(dmr[:,1],dmr[:,20],label="10% Fe",linestyle="--")  # 10% Fe
-#plot(dmr[:,1],dmr[:,23],label=" 0% Fe",linestyle="--")  #  0% Fe
 scatter([1.0,0.815],[1.0,0.95])
 
-# Plot new Zeng rocky model:
-# (from https://www.cfa.harvard.edu/~lzeng/planetmodels.html#mrtables)
-dmr1 = readdlm("../../../data/zeng_rock.txt")
-#plot(dmr1[1:18,1],dmr1[1:18,2],label="Rocky (Zeng et al. 2019)",linestyle="--")
-
-# Plot new Zeng Earth-like mode:
-dmr2 = readdlm("../../../data/massradiusEarthlikeRocky.txt")
-plot(dmr2[1:23,1],dmr2[1:23,2],label="Earth-like (Zeng et al. 2019)",linestyle="--")
-
-# Read in Carbon-rich planet model (for kicks):
-
-#dmr_carbon = readdlm("../../../data/M_R_carbon-rich_Eric.ddat")
-#plot(dmr_carbon[:,1],dmr_carbon[:,2],label="Carbon-rich (Miozzi et al. 2018)")
-
-# Interpolate between the two Zeng models:
-nm = 100
-mm = logarithmspace(-2.5,0.2,nm)
-
-function interpolate_models(iron,dmr1,dmr2,mm,nm)
-  # Loop over each model and interpolate/extrapolate:
-  r1 = zeros(nm)
-  r2 = zeros(nm)
-  r = zeros(nm)
-  for i=1:nm
-    if mm[i] < dmr1[1,1]
-      i1 = 1; i2 = 2
-    else
-      for j=1:size(dmr1)[1]
-        if mm[i] > dmr1[j,1] && mm[i] <= dmr1[j+1,1]
-           i1 = j; i2 = j+1
-        end
-      end
-    end
-    r1[i] = dmr1[i1,2]*(dmr1[i2,2]/dmr1[i1,2])^((log(mm[i]/dmr1[i1,1]))/(log(dmr1[i2,1]/dmr1[i1,1])))
-    if mm[i] < dmr2[1,1]
-      i1 = 1; i2 = 2
-    else
-      for j=1:size(dmr2)[1]
-        if mm[i] > dmr2[j,1] && mm[i] <= dmr2[j+1,1]
-           i1 = j; i2 = j+1
-        end
-      end
-    end
-    r2[i] = dmr2[i1,2]*(dmr2[i2,2]/dmr2[i1,2])^(log(mm[i]/dmr2[i1,1])/log(dmr2[i2,1]/dmr2[i1,1]))
-    # Now interpolate to the right iron content:
-    r[i] = r1[i]+(r2[i]-r1[i])*iron/0.325
-  end
-  return r
-end
-
-#plot(mm,interpolate_models(0.10,dmr1,dmr2,mm,nm),label="10% iron (Zeng et al. 2019)",linestyle="--")
-#plot(mm,interpolate_models(0.25,dmr1,dmr2,mm,nm),label="25% iron (Zeng et al. 2019)",linestyle="--")
+# Plot new Dorn et al. models:
+dmr2 = readdlm("../../../data/MR_trappist_Solar.ddat")
+plot(dmr2[:,1],dmr2[:,2],label="Earth-like (Dorn et al. 2018)",linestyle="--")
 
 legend(loc = "lower right",fontsize=10)
 

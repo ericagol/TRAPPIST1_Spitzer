@@ -67,17 +67,11 @@ for i=1:31
   end
 end
 m = collect(0.05:0.01:10.0)
-#semilogx(m,m.^(1/3.7)./m.^(1/3.7))
-#semilogx(m,m.^(1/3.7),label="CMF=0.33")
-#mrearth = readdlm("../../../data/massradiusEarthlikeRocky.txt")
 mrearth = readdlm("../../../data/MR_trappist_Solar.ddat")
 semilogx(mrearth[:,1],mrearth[:,2],label="Solar")
-#mrearth_case5 = readdlm("zeng2013_tab02_case2.txt")
 #plot(mrearth_case5[10:29,1],mrearth_case5[10:29,2],label="Case 2 CMF=0.1787 (Zeng & Sasselov 2013)")
 # Read in the ternary diagram (Table 3) from Zeng & Sasselov (2013), but 
 # without any of the water planet cases:
-#mrearth_cmf = readdlm("zeng2013_tab03_dry.txt",skipstart=1)
-#mrearth_cmf = reshape(mrearth_cmf,5,41,8)
 ## Find a 17% CMF case:
 #mrearth_17pct = zeros(2,41)
 #mrearth_17pct[1,:] = mrearth_cmf[1,:,1]
