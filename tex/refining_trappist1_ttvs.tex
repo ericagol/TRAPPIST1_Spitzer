@@ -820,46 +820,12 @@ Nevertheless, the agreement between the two estimates gives
 a starting point for evaluating our Markov chain analysis, and
 for gauging the convergence of the chains, which we describe below.
 
-In our initial Markov chain sampling, we found that the parameters of the Student's t-distribution, $\nu$ and $V_1$, were strongly non-linearly correlated and displayed a likelihood profile which was non-Gaussian.   After experimenting with reparameterization, we found that $\log{\nu}$ and $V_1 e^{1/(2\nu)}$ gave a parameterization which showed a nearly Gaussian likelihood profile in each parameter, and also showed more linear correlations between these two parameters.  Accordingly we chose to sample in these transformed parameters.
+In our initial Markov chain sampling, we found that the parameters of the Student's t-distribution, $\nu$ and $V_1$, were strongly non-linearly correlated and displayed a likelihood profile which was non-Gaussian.   After experimenting with reparameterization, we found that $\log{\nu}$ and $V_1 e^{1/(2\nu)}$ gave a parameterization which showed a nearly Gaussian likelihood profile in each parameter, and also showed more linear correlations between these two parameters.  Accordingly we chose to sample in these transformed parameters
+\textbf{so that our set of model parameters $\mathbf{x} = (\mathbf{x}_{dyn},\log \nu, V_1 e^{1/2\nu})$.} 
 
-With this likelihood distribution
-defined, we can then sample the probability distribution of
-the model parameters given a prior, which we describe next.
-
-\subsection{Prior}
-
-We use a uniform prior for each mass and orbital element,
-with bounds on each, with the exception of the initial eccentricity vectors.
-Since we sample in the eccentricity vector of each planet, $\mathbf{e}_i = (e_i\cos{\omega_i},e_i\sin{\omega_i})$, the volume
-of parameter space scales $\propto e_i$, and so an $1/e_i$ prior is needed to
-yield a posterior which has a uniform probability with eccentricity, $e_i$,
-for the $i$th planet
-\citep{Eastman2013}.
-
-In addition to the eccentricity prior, we place broad, uniform priors on each parameter, and we require that
-the prior boundaries have an edge to the probability which varies smoothly from 1 to 0.  For each parameter
-we choose two bounds for which the prior starts to transition from 1 to 0 with a cubic dependence at both
-the upper and lower bound.  For the  bound on a parameter of value $\xi$ we specify
-\begin{eqnarray}
-    \Pi_\mathrm{bound}(\xi) =
-    \begin{cases}
-        0                                            & \xi {\le} \xi_1             \\
-        3y^2-2y^3; y = \frac{\xi-\xi_1}{\xi_2-\xi_1} & \xi_1 {<} \xi {<} \xi_2     \\
-        1                                            & \xi_2 {\le} \xi {\le} \xi_3 \\
-        3y^2-2y^3; y = \frac{\xi_4-\xi}{\xi_4-\xi_3} & \xi_3{<} \xi {<} \xi_4      \\
-        0                                            & \xi {\ge} \xi_4
-    \end{cases},
-\end{eqnarray}
-so that the total prior is given by
-\begin{equation}
-    \Pi(\mathbf{x}) = \prod_{i=1}^{N_p} e_i^{-1} {\times} \prod_{j=1}^{N_\mathrm{param}} \Pi_\mathrm{bound}(x_j),
-\end{equation}
-where the values of $\xi_1{-}\xi_4$ for each parameter
-$\mathbf{x} {=} \{x_j; j{=} 1,...,N_\mathrm{param}\}$ are given in Table
-\ref{tab:prior_parameterization}, where $N_\mathrm{param} = 5 N_p + 2$.
-The prior probability, then, is given by $\Pi(\mathbf{x})$, which we
-multiply by the likelihood function before sampling.
-This completes the specification of the posterior probability distribution,
+\textbf{In appendix \ref{sec:prior} we define the prior function $\Pi(\mathbf{x})$
+which multiplies the likelihood to give}
+the posterior probability distribution,
 \begin{equation}
     P(\mathbf{x}) \propto \Pi(\mathbf{x}){\times}\mathcal{L}(\mathbf{x}),
 \end{equation}
@@ -2560,7 +2526,7 @@ Adding in the cases of the Hessian matrix elements which involve the likelihood 
     \begin{cases}
         \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial^2 t_{ij}} \frac{\partial t_{ij}}{\partial x_k} \frac{\partial t_{ij}}{\partial x_l} & 1 \le k,l \le 5N_p \cr
         \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial t_{ij} \partial x_l} \frac{\partial t_{ij}}{\partial x_k}                           & 1 \le k \le 5N_p; l > 5N_p \cr
-        \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial t_{ij} \partial x_k} \frac{\partial t_{ij}}{\partial x_l}                           & l > 5N_p; 1 \le k \le 5N_p \cr
+        \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial t_{ij} \partial x_k} \frac{\partial t_{ij}}{\partial x_l}                           & k > 5N_p; 1 \le l \le 5N_p \cr
         \frac{\partial^2 \log \mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_k}                                                                   & k,l > 5N_p
     \end{cases},
 \end{eqnarray}
@@ -2569,37 +2535,10 @@ are computed with automatic differentiation.
 
 The inverse of the Hessian matrix is used in the Levenberg-Marquardt optimization, and when evaluated at the maximum likelihood, is used to estimate the covariance matrix, from which the square root of the diagonal components are used to estimate the widths of the posterior distribution for each model parameter, $\mathbf{x} = (\mathbf{x}_{dyn},\log \nu, V_1 e^{1/2\nu})$, which are plotted in Figures \ref{fig:mass_likelihood_profile}, \ref{fig:ecc_likelihood_profile}, and \ref{fig:student_param_likelihood_profile}.  This approximated Hessian is also used to define the mass matrix for the HMC simulations.
 
-\section{Corner plots}
-
-Figures \ref{fig:corner_ttv} and \ref{fig:corner_photdyn} 
-show corner plots of the variables
-from the transit-timing and photodynamical analyses, respectively.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\hsize]{figures/corner_ttv.png}
-    \oscaption{python/plotCorner_ttv.py}{Corner plot of variables in the transit-timing analysis with $1\sigma$
-       and $2\sigma$ confidence contours.
-       Lagrangian orbital elements are defined as $k_b = e_b \cos{\omega_b}$ and $h_b = e_b \sin{\omega_b}$,
-       and similarly for the other planets.  Planet masses are defined relative to the star.}
-    \label{fig:corner_ttv}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\hsize]{figures/corner_photdyn.png}
-    \oscaption{python/plotCorner_ttv.py}{Corner plot of variables in the photodynamical analysis with $1\sigma$
-       and $2\sigma$ confidence contours. Planet radii are relative to star.}
-    \label{fig:corner_photdyn}
-\end{figure}
-
-
-\section{Tables}
-
 \begin{table*}
     \centering
     \begin{tabular}{l|c|c|c|c|c}
-        Parameter                 & Variable                         & Lower bound & Lower transition & Upper transition & Upper bound \\
+        Parameter                 & \textbf{Bounds function $f_j$} & Lower bound & Lower transition & Upper transition & Upper bound \\
         \hline
                                   &                                  & $\xi_1$     & $\xi_2$          & $\xi_3$          & $\xi_4$ \cr
         Mass-ratio                & $\log_{10}{\mu}$                 & -8          & -7               & -3               & -2 \cr
@@ -2625,7 +2564,69 @@ from the transit-timing and photodynamical analyses, respectively.
     \label{tab:prior_parameterization}
 \end{table*}
 
-Tables of the HMC prior (Table \ref{tab:prior_parameterization}), the
+\section{Prior}\label{sec:prior}
+
+We use a uniform prior for each mass and orbital element,
+with \textbf{smooth} bounds on each, with the exception of the initial eccentricity vectors.
+Since we sample in the eccentricity vector of each planet, $\mathbf{e}_i = (e_i\cos{\omega_i},e_i\sin{\omega_i})$, the volume
+of parameter space scales $\propto e_i$, and so an $1/e_i$ prior is needed to
+yield a posterior which has a uniform probability with eccentricity, $e_i$,
+for the $i$th planet
+\citep{Eastman2013}.
+
+In addition to the eccentricity prior, we place \textbf{smooth bounds on the parameters}.
+For each \textbf{bound
+we choose upper and lower limits} for which the prior starts to transition from 1 to 0 with a cubic dependence.
+For the bound on a \textbf{function of our parameters} of value $\xi$ we specify
+\begin{eqnarray}
+    \Pi_\mathrm{bound}(\xi) =
+    \begin{cases}
+        0                                            & \xi {\le} \xi_1             \\
+        3y^2-2y^3; y = \frac{\xi-\xi_1}{\xi_2-\xi_1} & \xi_1 {<} \xi {<} \xi_2     \\
+        1                                            & \xi_2 {\le} \xi {\le} \xi_3 \\
+        3y^2-2y^3; y = \frac{\xi_4-\xi}{\xi_4-\xi_3} & \xi_3{<} \xi {<} \xi_4      \\
+        0                                            & \xi {\ge} \xi_4
+    \end{cases},
+\end{eqnarray}
+so that the total prior is given by
+\begin{equation}
+    \Pi(\mathbf{x}) = \prod_{i=1}^{N_p} e_i^{-1} {\times} \prod_{j=1}^{N_\mathrm{bound}} \Pi_\mathrm{bound}(f_j(\mathbf{x})),
+\end{equation}
+where the values of $\xi_1{-}\xi_4$ \textbf{and each transformation of
+parameters,
+$\mathbf{f} {=} \{f_j(\mathbf{x}); j{=} 1,...,N_\mathrm{bound}\}$,} are given in Table
+\ref{tab:prior_parameterization}, where $N_\mathrm{bound} = 4 N_p + 2$.
+The prior probability, then, is given by $\Pi(\mathbf{x})$, which we
+multiply by the likelihood function before sampling.
+
+\section{Corner plots}
+
+Figures \ref{fig:corner_ttv} and \ref{fig:corner_photdyn} 
+show corner plots of the variables
+from the transit-timing and photodynamical analyses, respectively.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\hsize]{figures/corner_ttv.png}
+    \oscaption{python/plotCorner_ttv.py}{Corner plot of variables in the transit-timing analysis with $1\sigma$
+       and $2\sigma$ confidence contours.
+       Lagrangian orbital elements are defined as $k_b = e_b \cos{\omega_b}$ and $h_b = e_b \sin{\omega_b}$,
+       and similarly for the other planets.  Planet masses are defined relative to the star.}
+    \label{fig:corner_ttv}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\hsize]{figures/corner_photdyn.png}
+    \oscaption{python/plotCorner_ttv.py}{Corner plot of variables in the photodynamical analysis with $1\sigma$
+       and $2\sigma$ confidence contours. Planet radii are relative to star.}
+    \label{fig:corner_photdyn}
+\end{figure}
+
+\section{Tables}
+
+%Tables of the HMC prior (Table \ref{tab:prior_parameterization}), the
+Tables of the
 best-fit transit times (Table \ref{tab:transit_times_observed_and_calculated}), and
 the  forecast times (Table \ref{tab:transit_times_forecast})
 are given in this appendix.
