@@ -60,7 +60,7 @@ for ip=1:nplanet
 #  ax[:plot](tobs,ttv_obs)
   ax.errorbar(tobs, ttv_obs, sobs*24*60.,fmt=".")
   if ip == 4 || ip == 7
-    ax.set_xlabel(L"BJD$_\mathrm{TDB}$-2,450,000")
+    ax.set_xlabel(L"BJD$_\mathrm{TDB}$-2,450,000 [d]")
   end
   ax.set_ylabel("TTV [min]")
 #  ax.axis([7260,8860,-range[ip],range[ip]])

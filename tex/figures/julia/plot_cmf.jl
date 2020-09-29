@@ -78,7 +78,7 @@ plot(period_trial,conf[4,:],color="C1",linewidth=2,linestyle=":")
 #plot(period_trial,cmf_avg  .+ 0.0 .* period_trial,color="C0",linewidth=2)
 fill_between([0,20],[cmf_avg-cmf_rms,cmf_avg-cmf_rms],[cmf_avg+cmf_rms,cmf_avg+cmf_rms],alpha=0.2,color="C0")
 xlabel("Orbital Period [d]")
-ylabel("Iron mass fraction (%)")
+ylabel("CMF/Iron mass fraction (%)")
 # Overplot solar system bodies:
 text([16],[28],"Mars")
 plot([0,20],[30.0,30.0],"--",color="k")

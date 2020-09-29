@@ -9,6 +9,7 @@ cp = ["C0","C1","C2","C3","C4","C5","C6","C7"]
 pname=["b","c","d","e","f","g","h"]
 nskip0=[1,1,8,8,8,8,8,8]
 clf()
+figure(figsize=(6.3,6))
 i1=1; i20=[210,210,8233,8233,8353,8383,8083]
 for j=1:7; 
 i2 = i20[j]
@@ -35,6 +36,7 @@ savefig("../T1_evector_forced.pdf",bbox_inches="tight")
 #read(stdin,Char)
 
 clf()
+figure(figsize=(6.3,6))
 for j=7:-1:1; 
 i2 = i20[j]
 nskip = nskip0[j]

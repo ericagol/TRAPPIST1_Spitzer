@@ -167,7 +167,7 @@ ax.plot(x2,prob2,color=cp[n],alpha=0.3,linewidth=3)
 lndof_bin,lndof_hist,lndof_bin_square,lndof_hist_square = histogram(state_total[36,:],50)
 ax.plot(lndof_bin_square,lndof_hist_square./maximum(lndof_hist_square))
 ax.set_xlabel(L"$\log{\nu}$",fontsize=15)
-ax.set_ylabel("Likelihood",fontsize=15)
+ax.set_ylabel("Probability",fontsize=15)
 
 ax = axes[2]
 V1exp2nuinv0 = V1exp2nuinv_grid_all[nparam,16]; x= V1exp2nuinv_grid_all[nparam,:] 

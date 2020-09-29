@@ -9,6 +9,7 @@ using DelimitedFiles
 using Statistics
 using PyPlot
 using Printf
+using Optim
 
 # Read in the Flux vs. Teff:
 star_grid = readdlm("phot_teff_v02.csv",',',skipstart=1)
@@ -134,6 +135,25 @@ for i=1:nwalker
   xstart[:,i] = param
 end
 
+# Optimize the model:
+nllmin = Inf
+pmin = zeros(12)
+for i=1:nwalker
+  xtmp = zeros(12)
+  xprior = xstart[:,i]
+  while maximum(abs.(xtmp-xprior)) > 1e-4
+    xtmp = xprior
+    result = optimize((x)-> -log_likelihood(x),xtmp)
+    xprior = result.minimizer
+  end
+  nlltmp = -log_likelihood(xtmp)
+  if nlltmp < nllmin
+    println(nlltmp," ",xtmp)
+    pmin = xtmp
+    global nllmin = nlltmp
+  end
+end
+
 # Run the chain:
 nsample = 100000
 nthin   = 100
@@ -213,4 +233,35 @@ tlambest = compute_tlam(pbest)
 for ip=1:7
   ax = axes[ip]
   ax.semilogx(lam_mod[isort],pbest[5+ip] .*tlambest[isort],color="b")
+end
+
+t1 = zeros(nflat)
+t2 = zeros(nflat)
+t3 = zeros(nflat)
+f1 = zeros(nflat)
+f2 = zeros(nflat)
+f3 = zeros(nflat)
+for i=1:nflat
+  if flatchain[1,i] > flatchain[2,i] && flatchain[1,i] > flatchain[3,i]
+    t1[i] = flatchain[1,i]; f1[i] = 1-flatchain[4,i]-flatchain[5,i]
+    if flatchain[2,i] > flatchain[3,i]
+      t2[i] = flatchain[2,i]; f2[i] = flatchain[4,i]; t3[i] = flatchain[3,i]; f3[i]=flatchain[5,i]
+    else
+      t2[i] = flatchain[3,i]; f2[i] = flatchain[5,i]; t3[i] = flatchain[2,i]; f3[i]=flatchain[4,i]
+    end
+  elseif flatchain[2,i] > flatchain[1,i] && flatchain[2,i] > flatchain[3,i]
+    t1[i] = flatchain[2,i]; f1[i] = flatchain[4,i]
+    if flatchain[1,i] > flatchain[3,i]
+      t2[i] = flatchain[1,i]; f2[i] = 1-flatchain[4,i]-flatchain[5,i]; t3[i] = flatchain[3,i]; f3[i]=flatchain[5,i]
+    else
+      t2[i] = flatchain[3,i]; f2[i] = flatchain[5,i]; t3[i] = flatchain[1,i]; f3[i]=1-flatchain[4,i]-flatchain[5,i]
+    end
+  else
+    t1[i] = flatchain[3,i]; f1[i] = flatchain[5,i]
+    if flatchain[1,i] > flatchain[2,i]
+      t2[i] = flatchain[1,i]; f2[i] = 1-flatchain[4,i]-flatchain[5,i]; t3[i] = flatchain[2,i]; f3[i]=flatchain[4,i]
+    else
+      t2[i] = flatchain[2,i]; f2[i] = flatchain[4,i]; t3[i] = flatchain[1,i]; f3[i]=1-flatchain[4,i]-flatchain[5,i]
+    end
+  end
 end

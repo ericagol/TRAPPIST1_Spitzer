@@ -59,7 +59,7 @@ for ip=1:nplanet
   iout = abs.(resid) .> 3.0
   ax.errorbar(tobs[iout], ttv_obs[iout], sobs[iout]*(24*60),fmt=".",linewidth=1.5,markersize=4.0,color="C5")
   if ip == 7
-    ax.set_xlabel(L"BJD$_\mathrm{TDB}$-2,450,000")
+    ax.set_xlabel(L"BJD$_\mathrm{TDB}$-2,450,000 [d]")
   end
   ax.grid(linestyle=":")
   ax.set_ylabel("TTV [min]")

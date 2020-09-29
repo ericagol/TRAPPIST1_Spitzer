@@ -564,7 +564,7 @@ For each planet a fixed time of transit for epoch zero ($T_{0}$) and fixed perio
 
 
 The final observed dataset for the transit-timing analysis
-is given by: $\mathbf{y} = (\left{t_{\mathrm{obs},ij},\sigma_{ij}; j = 1,...,N_i\}; i=1,...,7)$, where $i$ labels each of the seven planets, $N_i$ is
+is given by: $\mathbf{y} = (\{t_{\mathrm{obs},ij},\sigma_{ij}; j = 1,...,N_i\}; i=1,...,7)$, where $i$ labels each of the seven planets, $N_i$ is
 the number of transits for the $i$th planet (Table \ref{tab:transit_time_list}),
 and $j$ labels each transit for the $i$th planet, so that
 $t_{\mathrm{obs},ij}$ is the $j$th observation of the $i$th planet, and
@@ -950,10 +950,10 @@ masses in this paper.
 
 \begin{table*}
     \centering
-    \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1\sigma$ uncertainties.  Note that the mass ratios, $\mu \mathbf{=M_p/M_*}$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimate of the planet mass).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
+    \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1\sigma$ uncertainties.  Note that the mass ratios, $\mu \mathbf{=M_p/M_*}$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimates of the planet masses).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
         The parameters $P$, $t_0$, $e\cos{\omega}$, and
         $e\sin{\omega}$ describe the osculating Jacobi elements at the start
-        of the simulation, on date BJD$_\mathrm{TDB}$ $-2,450,000 = 7257.93115525$.}
+        of the simulation, on date BJD$_\mathrm{TDB}$ $-2,450,000 = 7257.93115525$ days.}
     \label{tab:TTV_parameters}
     \begin{tabular}{lccccccc}
         \hline
@@ -1047,7 +1047,7 @@ with the exception of planet e which has decreased and planet h which remains th
     \centering
     \includegraphics[width=\hsize]{figures/T1_eccentricity_vectors_likelihood_profile_hmc.pdf}
     \oscaption{julia/plot_likelihood_profile.jl}%
-    {Eccentricity vector probability distribution for each planet (y-axes are relative probability).  Thick histogram is the posterior distribution from the Markov chain analysis.  Light, thin line is the Laplace approximation.  Thin dark line is the likelihood profile.  The lower right panel shows the distribution of
+    {Eccentricity vector probability distribution for each planet (y-axes are relative probability).  Thick histograms are the \textbf{marginalized} posterior distributions from the Markov chain analysis.  Light, thin lines are the Laplace approximation.  Thin dark lines are the likelihood profiles.  The lower right panel shows the distribution of
         $e\cos{\omega}$ or $e\sin{\omega}$ for a uniform prior on
         $e \in \mathcal{U}(0,0.1)$ and $\omega \in \mathcal{U}(0,2\pi)$.}
     \label{fig:ecc_likelihood_profile}
@@ -1059,8 +1059,8 @@ with the exception of planet e which has decreased and planet h which remains th
     \oscaption{julia/plot_masses.jl}%
     {Probability distribution of the \textbf{planet-to-star mass ratios}, scaled to a stellar mass of $M_*  = 0.09 M_\odot$; panels range from small masses to large.   Thick
         histograms show the posterior probability distribution of the Markov chain analysis.
-        \textbf{Dots connecting with vertical lines show the mean and $1\sigma$ intervals for the} mass-ratios from \citet{Grimm2018}.
-        Dark solid \textbf{bell} curve is the likelihood profile; light, dotted \textbf{bell} curve is the Laplace approximation.}
+        \textbf{Horizontal error bars show the mean and $1\sigma$ intervals for the} mass-ratios from \citet{Grimm2018}.
+        Dark solid \textbf{bell} curves are the likelihood profiles; light, dotted \textbf{bell} curves are the Laplace approximation.}
     \label{fig:mass_likelihood_profile}
 \end{figure*}
 
@@ -1107,7 +1107,7 @@ mid-transit impact parameter ($b_0$), which is constant for all transits of
 a given planet.  We assume that the limb-darkening parameters are a function
 of wavelength for the two Spitzer channels, while we treat the planet radius
 ratios as identical in both wavebands \textbf{based on their consistency across
-all planets in \citep{Ducrot2020}}, giving a total of 19 free parameters
+all planets in \citet{Ducrot2020}}, giving a total of 19 free parameters
 for the photodynamical model.
 
 We ignore acceleration during the transits, treating the impact parameters as
@@ -1131,14 +1131,14 @@ with the transit model multiplied by a cubic polynomial, whose coefficients are 
 for via regression at each step in the Markov chain.
 We
 transform the $q_1, q_2$ limb-darkening
-parameters to $u_1,u_2$ using the formalism of \citet{Kipping2013} for computing the transit model from \citet{Agol2019}.  After carrying out an initial
+parameters to $u_1,u_2$ \textbf{in each band} using the formalism of \citet{Kipping2013} for computing the transit model from \citet{Agol2019}.  After carrying out an initial
 optimization of the model, we take the photometric error to be the
-scatter in each observation window, $\sigma_i$\textbf{,} to yield a reduced chi-square of unity in
+scatter in each observation window to yield a reduced chi-square of unity in
 that  window.  With this photometric
 scatter, we compute a $\chi^2$ of the model with respect to the Spitzer
 photometric data, and we optimize the model using a Nelder-Mead algorithm.
 
-\subsection{\textbf{Results}}
+\subsection{\textbf{Photodynamic Results}}
 
 To compute the uncertainties on the photodynamical model parameters, we
 use an affine-invariant Markov chain Monte Carlo algorithm \citep{Goodman2010}.\footnote{As
@@ -1148,7 +1148,7 @@ The posterior distribution of the results of the fit are given in Table \ref{tab
 \textbf{while the correlations between parameters are shown in Figure \ref{fig:corner_photdyn}.}
 We utilized 100 walkers run for 50,000 generations, discarding the first 1500 generations
 for burn-in.  We computed the effective sample size using the integrated
-auto-correlation length, finding a minimum effective samples size of 6000 over all
+auto-correlation length, finding a minimum effective sample size of 6000 over all
 19 parameters\footnote{Using \texttt{https://github.com/tpapp/MCMCDiagnostics.jl}}.
 
 \begin{table}
@@ -1169,8 +1169,8 @@ auto-correlation length, finding a minimum effective samples size of 6000 over a
 \end{table}
 To help visualize the model, a photodynamical model with the best-fit parameters is
 shown in Figure \ref{fig:riverplot} computed over 1600 days.  Planets b and c have
-short periods, and are far from a $j{:}j{+}1$ period ratio, which is necessary for strong
-TTVs (if the eccentricities are small).  Hence both of these planets show weak TTVs,
+short periods, and are far from a $j{:}j{+}1$ period ratio.
+Hence both of these planets show weak TTVs,
 and straighter, but still slightly meandering, riverplots.  The outer five planets are pairwise
 close to a series of $j{:}j{+}1$ resonances, showing strong transit-timing variations on
 the timescale of the TTV period of $\approx 490$ days.  The other prominent feature
@@ -1232,7 +1232,7 @@ with equal probability.
 \subsection{Mutual inclinations and stellar density}
 
 The outer four planets, $e$ through $h$, have inclinations which are more
-precisely determined, and, remarkably, these are aligned
+precisely determined, and, remarkably, \textbf{their peak probabilities} are aligned
 very closely, to less than 0.1$^\circ$, save for the degeneracy of $I$ vs.
 $180-I$.  The inner three planets have poorer
 constraints upon their inclinations due to the larger uncertainty of their
@@ -1243,8 +1243,8 @@ As just mentioned, since each inclination may only be inferred relative to the c
 the star, the derived distribution is reflected through $180-I$.
 However, if some of the planets orbited above and some below the plane of disk
 of the star, it would be {\it very} improbable for the outer four planets to show
-such a precise alignment.  We conclude that it is likely that all of the planets orbit on
-the same side of the star, and as shown in \citet{Luger2017b}: the planets'
+such a precise alignment.  We conclude that it \textbf{may be} likely that all of the planets \textbf{transit}
+the same \textbf{hemisphere} of the star, and as shown in \citet{Luger2017b}: the planets'
 3D orbital inclinations are likely precisely aligned.   This also implies
 that their longitudes of ascending node are likely aligned as well, and
 so in principle we can place a prior on the scatter of the mutual inclinations
@@ -1635,10 +1635,10 @@ The comparison of measured masses and radii with theoretical mass-radius relatio
     \label{fig:norm_density_histo}
 \end{figure}
 
-We next searched for variations of density across the planets. For this, we normalized each planetary density calculated from $10^4$ samples from the \textbf{planets' mass and radius} posterior distribution by the local density of a fully differentiated 20 wt\% iron, 80 wt\% silicate (MgSiO$_3$) interior planet, which is less iron rich than Earth.  \textbf{The normalized densities were calculated by dividing the density of each pair of mass and radius of the TTV/photodynamic posterior distribution by the local density (i.e. of the closest pair of mass and radius) of a planet with an interior composition of 20 wt\% iron and 80 wt\% MgSiO$_3$. A planet with a normalized density of 1 has exactly the same density as a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet. A normalized density ${>}1$ (or ${<}1$, resp.) is denser (or lighter, resp.) than a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet.}
+We next searched for variations of density across the planets. For this, \textbf{we took} each planetary density calculated from $10^4$ samples \textbf{and divided by the density of the closest pair of mass and radius} of a fully differentiated 20 wt\% iron, 80 wt\% silicate (MgSiO$_3$) interior planet, which is less iron rich than Earth.  \textbf{A planet with a normalized density of 1 has exactly the same density as a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet, while a normalized density ${>}1$ (or ${<}1$, resp.) is denser (or lighter, resp.) than a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet.}
 Fig.~\ref{fig:norm_density_histo} shows the resulting histograms of the posterior probability of the normalized TRAPPIST-1 planet densities. We then \textbf{plot} in Fig.~\ref{fig:norm_density_vs_period} the normalized densities (along with their 1$\sigma$ uncertainty) as a function of the orbital periods of the planets.  The normalized planet density appears very uniform across the seven planets, with perhaps a slight decrease with the increase of the orbital period (or the distance to the host star).  We fit a line to the normalized density, $y$, versus orbital period, $P$, for $10^4$ posterior samples, and found a relation of \textbf{$y=(1.042{\pm}0.034){-}(0.0043{\pm}0.0036)P$} where the
 coefficients are the 68.3\% confidence interval. There is only weak evidence for a declining trend of normalized density with orbital period: \textbf{88\% of the fits to the $10^4$ posterior samples have slopes with a negative value, while 12\% of the slopes fit have a \emph{positive} value}.  If in the future more precise data strengthen this trend, then
-this indicates that either (i) the outer planets are depleted in heavy elements (e.g. iron) compared to the inner ones, or (ii) the outer planets are enriched in volatiles (e.g. water) compared to the inner ones.  However, based on the current data we suggest that the planets' compositions could be rather uniform in nature.
+this \textbf{may indicate} that either (i) the outer planets are depleted in heavy elements (e.g. iron) compared to the inner ones, or (ii) the outer planets are enriched in volatiles (e.g. water) compared to the inner ones.  However, based on the current data we suggest that the planets' compositions could be rather uniform in nature.
 
 The interpretation of these observations in terms of internal compositions is discussed in more detail next.
 
@@ -1737,7 +1737,7 @@ Here we discuss some of the implications of the results in the foregoing section
 \subsection{Timing uncertainties}
 
 As reported in \S \ref{sec:outliers}, the transit timing measurements we have made show an excess of outliers with respect to the measurement uncertainties of each transit.  We were unable to identify a culprit (or culprits) for these discrepancies, but wish to speculate on what may be the origin of these outliers.  The cumulative distribution of these outliers (Fig.\ \ref{fig:timing_residuals}) indicates that about 10\% of transits
-are affected at some level.  It is also interesting to note that the core of the distribution has a slightly smaller width of about 80\% of the measurement errors, indicating that for about 90\% of the transits, the uncertainties may be \emph{overestimated}.  This may be a consequence of inflating the uncertainties to account for correlated noise rather than modeling the data with, for example, a Gaussian process;  further re-analysis of the data will be needed to check this hypothesis.
+are affected at some level.  It is also interesting to note that the core of the distribution has a slightly smaller width of about 87\% of the measurement errors, indicating that for about 90\% of the transits, the uncertainties may be \emph{overestimated}.  This may be a consequence of inflating the uncertainties to account for correlated noise rather than modeling the data with, for example, a Gaussian process;  further re-analysis of the data will be needed to check this hypothesis.
 
 Could the timing outliers be due to stellar flares?  In \citet{Vida_2017} and \citet{Ducrot2020}, the frequency distribution of stellar flares is shown to be rising towards smaller flare energies.  This could mean that the more frequent, but lower energy flares, occur at a level that is swamped by the photon noise, and thus not visible to an observer.  We used the spectrum and energy calibration of Spitzer flares measured by \citet{Ducrot2020} to extrapolate the frequency of lower energy flares (which are not detected in Spitzer due to photon noise).  As an example, for planet h the transit time can be affected by a flare which occurs at ingress or egress (duration $2\tau \approx 10$ min).  %The uncertainty on a typical Spitzer timing measurement is about 0.9 minutes, indicating that the uncertainty on ingress or egress is $\sqrt{2}{\times}0.9 \approx 1.3$ min, while the depth of transit is 0.3375\%, and so three times the product of these two determines the fluence of a flare, which must occur during ingress, to affect the transit time at the $\approx 1.5\sigma$ level. 
 We estimate that a flare of energy $10^{31}$ erg could cause a 1.5$\sigma$
@@ -1801,7 +1801,9 @@ and the covering fraction varying from 0 to 1.  The mean effective temperature i
 by our stellar model parameters (Table \ref{tab:stellar_parameters}). We assumed that all seven 
 planets transit the region with the larger covering fraction, and that their transit depths are
 achromatic.  We ran a Markov chain fit to the transmission spectra, interpolating the fluxes in 
-the bands between the effective temperature grid points which were spaced by 20 K. We then computed 
+the bands between the effective temperature grid points which were spaced by 20 K; we find
+that the posterior parameters with maximum likelihood are temperatures of $(2980,2331,2071)$ K 
+with covering fractions of  $(0.8,82.1,17.1)$\%.  We then computed 
 the expected impact on the transit depths in the two IRAC channels.  The constraints are tight: we 
 find that the observed radii should only change by a factor of $1.0072{\pm}0.0097$ in Channel 1 
 and $1.0071{\pm}0.0108$ in Channel 2 (these are the ratios of the observed radii to the actual
@@ -1958,7 +1960,7 @@ the inner two planets, b and c, had significant eccentricities \citep{Grimm2018}
 In \textbf{contrast, with} the current analysis we find that the eccentricity probability
 distributions of these two planets are significant \textbf{near} zero eccentricity.
 This is consistent with N-body models which include tidal damping of
-the orbits, which predict that the planets should have low eccentricities,
+the orbits, which predict that the planets \textbf{b and c} should have low eccentricities,
 $\la 10^{-3}$ \citep{Luger2017a,Turbet2018}.  The other planets are
 all consistent with the predictions of the tidal evolution model
 \citep{Luger2017b}.
@@ -1990,7 +1992,7 @@ Now, the eccentricity vectors plotted in Figure \ref{fig:eccentricity_vectors} s
 values at the initial time. However, over time, the eccentricity vector of each planet can be decomposed into two components: the mean eccentricity vector (over some timescale) and the variable component (which is time variable, with multiple oscillation timescales driven by the mutual planetary perturbations).   Figure \ref{fig:forced_eccentricity}
 shows the eccentricity over a single oscillation for all seven planets.  The outer five
 planets are close to first-order resonances with adjacent planets, and the super-period
-for each of these planets is close to $\mathbf{P_{TTV}{\approx}}485$ days thanks to the near-GLR commensurability
+for each of these planets is close to $\mathbf{P_{TTV}{\approx}}490$ days thanks to the near-GLR commensurability
 for all triplets of planets.  This leads to a nearly circular oscillation over this timescale
 due to circulation of the first-order resonances driving oscillations in the eccentricity
 vectors of each of these planets.  The inner two planets are close to second and third
@@ -2015,7 +2017,7 @@ planets (Figure \ref{fig:corner_ttv}).}
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/T1_evector_forced.pdf}
-    \oscaption{julia/plot_eccentricities.jl}{Variable component of the osculating eccentricity vectors plotted from a simulation over 12 days for planets b and c, and over $\approx 485$
+    \oscaption{julia/plot_eccentricities.jl}{Variable component of the osculating eccentricity vectors plotted from a simulation over 12 days for planets b and c, and over $\approx 490$
         days for planets d-h, with initial parameters drawn from the posterior distribution.}
     \label{fig:forced_eccentricity}
 \end{figure}
@@ -2027,7 +2029,7 @@ planets (Figure \ref{fig:corner_ttv}).}
         the posterior:  the first with eccentricities nearest the median of the posterior distribution;
         the second with eccentricties furthest from the median, and a third drawn randomly from
         the posterior.  As with Figure \ref{fig:forced_eccentricity}, planets b and c are plotted
-        over 12 days, while planets d-h are plotted over $\approx 485$ days.}
+        over 12 days, while planets d-h are plotted over $\approx 490$ days.}
     \label{fig:total_eccentricity}
 \end{figure}
 

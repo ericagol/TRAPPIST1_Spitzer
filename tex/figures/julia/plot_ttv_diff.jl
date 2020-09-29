@@ -126,7 +126,7 @@ for ip=1:nplanet
   println("Fraction of points: ",sum(igood)/size(sobs)[1])
   ax.errorbar(tobs[igood], ttv_obs[igood], sobs_min[igood],fmt=".")
   if ip == 7
-    ax.set_xlabel(L"BJD$_\mathrm{TDB}$-2,450,000")
+    ax.set_xlabel(L"BJD$_\mathrm{TDB}$-2,450,000 [d]")
   end
   if ip == 4
     ax.set_ylabel("TTV - Polynomial [min]")

@@ -66,7 +66,7 @@ for j=1:nplanet
   println(j," ",mean(ecossamp)," ",std(ecossamp)," fractional error: ",std(ecossamp)/mean(ecossamp)*100.0,"%")
 end
 mopt = readdlm("../../../data/optimum_values.txt")
-figure(figsize=(6,6))
+figure(figsize=(6.3,6))
 # Plot maximum likelihood values:
 for j=1:nplanet
   cs = contour(ecosgrid,esingrid,evecgrid[j,:,:],levels = level_ecc[j,:],colors=cname[j],linewidth=2.0)
