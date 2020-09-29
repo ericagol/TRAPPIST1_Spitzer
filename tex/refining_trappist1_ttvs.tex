@@ -2272,13 +2272,13 @@ To estimate the {\it maximum} possible precision of observations with JWST, we h
 
 We have carried out simulations of transits of each of the planets as observed by NIRSPEC.  We include realistic estimates of photon noise and correlated stellar variability based on the pattern of variations detected with the Spitzer Space Telescope, using a Gaussian Process model created with \texttt{celerite} \citep{ForemanMackey2017}.  We do not include instrumental systematics under the assumption that over the timescales of ingress/egress, which are what limit the timing precision, that the noise contribution will be dominated by photon noise and stellar variations.
 From these simulations, we
-next found the posterior probabilities of the transit times.   We found that the posterior timing precision ranges from 0.6-1.7 second per transit, much more precise than the measurements reported in the present paper.
+found that the posterior timing precision ranges from 0.6-1.7 second per transit, much more precise than the measurements reported in the present paper.
 
-Next, we created a simulated set of transit-timing observations at the two windows each year when the TRAPPIST-1 system is observable with JWST (Figure \ref{fig:JWST_all_the_transits}).   For each transit time, we drew the time from the distribution of uncertainties from the posteriors of the simulated transit data.  We did not include the presence of outliers in our analysis as we do not currently understand the origin of the outliers in our present data (and there is some hope that JWST will provide a stable platform for transit observations, and that the large number of photons collected with JWST over a range of wavelengths might enable the identification and removal of astrophysical sources of correlated noise).
+Next, we created a simulated set of transit-timing observations at the two windows each year when the TRAPPIST-1 system is observable with JWST (Figure \ref{fig:JWST_all_the_transits}).   For each transit time, we drew the time from the distribution of uncertainties from the posteriors of the simulated transit data.  %We did not include the presence of outliers in our analysis as we do not currently understand the origin of the outliers in our present data (and there is some hope that JWST will provide a stable platform for transit observations, and that the large number of photons collected with JWST over a range of wavelengths might enable the identification and removal of astrophysical sources of correlated noise).
 
-Finally, we utilized our code for transit-timing analysis  to optimize a plane-parallel model with seven planets.  At the maximum likelihood of the fit, we computed the Hessian to estimate the uncertainties on the model parameters.  Figure \ref{fig:JWST_all_the_transits} shows the simulated transit-timing observations with JWST.   This includes about 600 transits observed with the telescope (again, the maximum possible over the nominal 5-year JWST mission).  Figure \ref{fig:JWST_all_mass} shows the results of the mass measurements in the simulations.  We find that the masses can be recovered to better than 0.02\% for planets d-h, and to 0.05\% for planets b and c.
+Finally, we utilized our code for transit-timing analysis  to optimize a plane-parallel model with seven planets.  At the maximum likelihood of the fit, we computed the Hessian to estimate the uncertainties on the model parameters.  Figure \ref{fig:JWST_all_the_transits} shows the simulated transit-timing observations with JWST.   This includes about 600 transits observed with the telescope (again, the maximum possible over the nominal 5-year JWST mission).  Figure \ref{fig:JWST_all_mass} shows the results of the mass measurements in the simulations.  We find that the masses can be recovered to better than 0.02\% for planets d-h, and to \textbf{0.1}\% for planets b and c.
 
-Of course, it will be impossible to arrange such a large number of transit observations of this system.  But, even if the number of observations is an order of magnitude smaller, we expect that the noise should scale with the square root of the number of measurements made, and thus most of the planets will still have mass measurements precise to the order of a part-per-thousand.
+Of course, it will be impossible to arrange such a large number of transit observations of this system.  But, even if the number of observations is an order of magnitude smaller, we expect that the \textbf{signal-to-noise} should scale with the square root of the number of measurements made, and thus \textbf{the outer} planets will still have mass measurements precise to the order of a part-per-thousand.
 
 
 \begin{figure*}
@@ -2299,8 +2299,8 @@ Of course, it will be impossible to arrange such a large number of transit obser
     \centering
     \includegraphics[width=\hsize]{figures/Recovered_masses_JWST_5yr_all_transits_NIRSPEC.pdf}
     \oscaption{julia/plot_mass_recovery.jl}{Simulated planet massses based on 5 years of JWST observations
-        of \emph{every} TRAPPIST-1 transit with NIRSPEC.  The recovered minus
-        the input mass versus the input mass.  The masses can be recovered to
+        of \emph{every} TRAPPIST-1 transit with NIRSPEC.  The recovered mass ($M_{out}$) minus
+        the input mass versus the input mass ($M_{in}$).  The masses \textbf{relative to the star} can be recovered to
         better than 0.1\% precision.}
     \label{fig:JWST_all_mass}
 \end{figure}
@@ -2497,8 +2497,13 @@ Julia \citep{Bezanson2017}, Limbdark.jl \citep{Agol2020}.}}
 
 \section{Approximate Hessian matrix} \label{sec:hessian}
 
-Here we approximate the posterior probability distribution as a multi-dimensional Gaussian, assuming a uniform prior.  The maximum posterior probability also corresponds to the maximum likelihood in this limit, in which case we expand the log likelihood for the $i$th planet and $j$th transit
-as a Taylor series:
+Here we approximate the posterior probability distribution as a multi-dimensional Gaussian, assuming a uniform prior.  
+The log likelihood for each data point with indices $i$ and $j$ may be written as a function of the observed transit times and uncertainties, the modeled transit times, and the Student's t-distribution model parameters, such that
+\begin{equation}
+    \mathcal{L}_{ij}(\mathbf{x}) = \mathcal{L}_{ij}(t_{ij}(\mathbf{x}_{dyn});\log{\nu},V_1e^{1/2\nu};t_{ij,obs},\sigma_{ij}),
+\end{equation}
+where all of the dependence on the dynamical model parameters enters through $t_{ij}(\mathbf{x}_{dyn})$.  
+The maximum posterior probability also corresponds to the maximum likelihood in this limit, in which case we expand the log likelihood for the $i$th planet and $j$th transit as a Taylor series:
 \begin{equation}
     \begin{split}
         \log{\mathcal{L}_{ij}(\mathbf{x})} &\approx  \log \mathcal{L}_{ij}(\mathbf{x_0})\\
@@ -2510,11 +2515,8 @@ Now, the width of the Gaussian distribution at the maximum likelihood is governe
 \begin{equation}
     \mathcal{H}_{kl}(\mathbf{x}_0) =  -\sum_{i,j} \left.\frac{\partial^2 \log\mathcal{L}_{ij}(\mathbf{x})}{\partial x_k \partial x_l}\right\vert_{\mathbf{x}_0},
 \end{equation}
-which involves second derivatives of the \textbf{negative} log likelihood with respect to the model parameters.  The log likelihood for each data point with indices $i$ and $j$ may be written as a function of the observed transit times and uncertainties, the modeled transit times, and the Student's t-distribution model parameters, such that
-\begin{equation}
-    \mathcal{L}_{ij}(\mathbf{x}) = \mathcal{L}_{ij}(t_{ij}(\mathbf{x}_{dyn});\log{\nu},V_1e^{1/2\nu};t_{ij,obs},\sigma_{ij}),
-\end{equation}
-where all of the dependence on the dynamical model parameters enters through $t_{ij}(\mathbf{x}_{dyn})$.  The derivatives of $t_{ij}$ with respect to $\mathbf{x}_{dyn}$ we compute with the \textsf{NbodyGradient} code;  however, the second derivatives of the transit times with respect to the dynamical model parameters are not computed with our N-body code.  We drop these transit time second derivative terms, which we justify as follows.
+which involves second derivatives of the \textbf{negative} log likelihood with respect to the model parameters.  
+The derivatives of $t_{ij}$ with respect to $\mathbf{x}_{dyn}$ we compute with the \textsf{NbodyGradient} code;  however, the second derivatives of the transit times with respect to the dynamical model parameters are not computed with our N-body code.  We drop these transit time second derivative terms, which we justify as follows.
 
 For the Hessian matrix elements which involve second derivatives with respect to both dynamical model parameters, $1 \le k,l \le 5N_p$, we can write:
 \begin{equation}
@@ -2568,7 +2570,7 @@ The inverse of the Hessian matrix is used in the Levenberg-Marquardt optimizatio
     \label{tab:prior_parameterization}
 \end{table*}
 
-\section{Prior}\label{sec:prior}
+\section{Transit Timing Prior}\label{sec:prior}
 
 We use a uniform prior for each mass and orbital element,
 with \textbf{smooth} bounds on each, with the exception of the initial eccentricity vectors.
