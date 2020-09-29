@@ -100,12 +100,14 @@ savefig("../T1_eccentricity_vectors_likelihood_profile_hmc.pdf",bbox_inches="tig
 clf()
 for i=1:7
   ecc_bin,ecc_hist,ecc_bin_square,ecc_hist_square = histogram(sqrt.(state_total[(i-1)*5+4,:].^2+state_total[(i-1)*5+5,:].^2),50)
-  plot(ecc_bin_square,ecc_hist_square./maximum(ecc_hist_square),color=cp[i],linewidth=2,label=planet[i])
+  plot(ecc_bin_square,ecc_hist_square./maximum(ecc_hist_square),color=cp[i],linewidth=3,label=planet[i])
 end
 xlabel("Eccentricity",fontsize=15)
 ylabel("Probability",fontsize=15)
-legend()
+legend(fontsize=15)
 axis([0,0.015,0,1.05])
+xticks(fontsize=15)
+yticks(fontsize=15)
 #read(stdin,Char)
 
 savefig("../eccentricity_posterior.pdf",bbox_inches="tight")

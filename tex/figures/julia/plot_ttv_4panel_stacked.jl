@@ -50,7 +50,7 @@ for ip=1:nplanet
   println(ip," ",coeff)
   tt_ref1 = coeff[1] .+coeff[2] .*fn[2,:]
   ttv1 = (tti1 .-tt_ref1) .*(24*60)
-  ax.plot(tti1,ttv1,label=plabel[ip],linewidth=1.5)
+  ax.plot(tti1,ttv1,label=plabel[ip],linewidth=1.5,zorder=-32)
   ttv_obs = (tobs .- coeff[1] .- coeff[2] .*(eobs .+eoffset[ip]))*(24*60)
   ax.errorbar(tobs, ttv_obs, sobs*(24*60),fmt=".",linewidth=1.5,markersize=4.0)
   i2 = i1 + count1[ip+1] - 1

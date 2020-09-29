@@ -109,7 +109,7 @@ for ip=1:nplanet
   end
 #  ax.plot(tti1,(mod_poly .-tt_ref1) .*(24*60))
   ttv_mod = (tti1 .- mod_poly) .*(24*60)
-  ax.plot(tti1,ttv_mod,label=plabel[ip])
+  ax.plot(tti1,ttv_mod,label=plabel[ip],zorder=-32)
 #  ttv_obs = tobs .- coeff_poly[1] .- coeff_poly[2] .*(eobs .+eoffset[ip])
   ttv_obs = tobs .- coeff_poly[1] .- coeff_poly[2] .*eobs
   for j=2:ord[ip]

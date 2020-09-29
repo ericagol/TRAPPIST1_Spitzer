@@ -55,7 +55,7 @@ for ip=1:nplanet
   coeff,cov = regress(fn,tti1,sig)
   tt_ref1 = coeff[1] .+coeff[2]*fn[2,:]
   ttv1 = (tti1 .-tt_ref1)*24*60.
-  ax.plot(tti1,ttv1,label=plabel[ip])
+  ax.plot(tti1,ttv1,label=plabel[ip],zorder=-32)
   ttv_obs = (tobs .- coeff[1] .- coeff[2]*eobs)*24*60.
 #  ax[:plot](tobs,ttv_obs)
   ax.errorbar(tobs, ttv_obs, sobs*24*60.,fmt=".")

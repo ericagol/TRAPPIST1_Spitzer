@@ -28,7 +28,7 @@ plot(ecos1 .- mean(ecos1),esin1 .- mean(esin1),color=cp[j],label=pname[j],linewi
 xlabel(L"e \cos{\omega} - \langle e \cos{\omega}\rangle",fontsize=15)
 ylabel(L"e \sin{\omega} - \langle e \sin{\omega}\rangle",fontsize=15)
 end
-legend(fontsize=15)
+legend(fontsize=10)
 tight_layout()
 axis([-0.01,0.01,-0.01,0.01])
 savefig("../T1_evector_forced.pdf",bbox_inches="tight")
@@ -50,7 +50,7 @@ plot(ecos3 ,esin3,color=cp[j],linewidth=2)
 xlabel(L"e \cos{\omega}",fontsize=15)
 ylabel(L"e \sin{\omega}",fontsize=15)
 end
-legend(fontsize=15)
+legend(fontsize=12)
 tight_layout()
 axis([-0.02,0.01,-0.015,0.015])
 savefig("../T1_evector.pdf",bbox_inches="tight")
