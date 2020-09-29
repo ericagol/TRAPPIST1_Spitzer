@@ -409,7 +409,7 @@ Telescope \textbf{\citep{Werner2004}} resolved the
 confusion, revealing the periods of six of the seven transiting planets \citep{Gillon2017},
 but only a single transit observed of the outermost planet left its orbit in question.
 A subsequent observation campaign of the system with the K2 \textbf{mission} included four
-additional transits of the outer planet, identifying its period, and reveals a series
+additional transits of the outer planet, identifying its period, and revealed a series
 of generalized three-body Laplace relations (GLRs)\footnote{This refers to the condition
 $pP_1^{-1}-(p+q)P_2^{-1}+qP_3^{-1} \approx 0$, which is a generalization of the Laplace
 resonance with $p=1$ and $q=2$ \citep{Papaloizou2014}. } between adjacent triplets of
@@ -451,7 +451,8 @@ an Earth-like composition (with the exception of planet e), indicating that thes
 have a significant volatile content.  However, these conclusions were subject to significant
 uncertainty in the planet masses, making the determination of the compositions less definitive as the uncertainties were still consistent with rocky bodies at the $1-2\sigma$ level.
 In addition, the masses of all of the planets are highly correlated due to the fact that the
-dynamical state of all of the planets needs to be solved together, so model comparisons with individual planets
+dynamical state of all of the planets needs to be solved together \textbf{and their masses and
+radii are measured relative to the star}, so model comparisons with individual planets
 are not independent.
 
 In this paper we revisit a transit-timing and photometric analysis with the completed
@@ -460,14 +461,14 @@ this program is to provide a more precise understanding of the masses, radii, an
 densities of the planets.  These measurements may be used for planetary science with the extrasolar planets in the TRAPPIST-1 system, whose similarity to the sizes, masses  and effective insolation range of the terrestrial planets in our Solar System is the closest match known.  In addition, we refine the dynamical
 state of the system, revisiting some of the questions explored in \citet{Grimm2018}.
 Our final goal is to prepare for upcoming observations with the James Webb Space
-Telescope \citep[JWST][]{Gardner2006}.  More precise constraints on the parameters of the planets will not only improve the precision with which we can schedule observations, but also provide the best possible predictions of potential environmental characteristics that could be discriminated observationally.  This work will therefore help to optimize both the acquisition and interpretation of observations of the TRAPPIST-1 system with JWST.
+Telescope \citep[JWST;][]{Gardner2006}.  More precise constraints on the parameters of the planets will not only improve the precision with which we can schedule observations, but also provide the best possible predictions of potential environmental characteristics that could be discriminated observationally.  This work will therefore help to optimize both the acquisition and interpretation of observations of the TRAPPIST-1 system with JWST.
 
 In \S \ref{sec:observations} we summarize the observational data which are analyzed
 in this paper.  In \S \ref{sec:outliers} we discuss the nature of transit
 timing outliers, and the robust likelihood function we use for characterizing the
 system.  This is followed by a description of our N-body transit-timing analysis
 in \S \ref{sec:transit_timing}.  With the improved N-body model, we revisit the
-photometric fit to the Spitzer data, providing a photodynamical model in \S
+photometric fit to the Spitzer data \textbf{using} a photodynamical model in \S
 \ref{sec:photodynamics}.  The results of these two analyses are combined to
 obtain the planet bulk properties in \S \ref{sec:mass_radius_relation}.  In \S \ref{sec:stellar_params} we derive revised parameters for the host star.  In \S \ref{sec:detection} we search for an eighth planet with transit-timing.  In \S \ref{sec:theoretical_interpretation} we interpret the mass-radius measurements for the planets in terms of interior and atmospheric structure models.  Discussion and conclusions
 are given in \S \ref{sec:discussion} and \S \ref{sec:conclusions}.
@@ -476,7 +477,7 @@ We provide \texttt{Julia} and \texttt{python} code for running the Markov chains
 \textbf{creating the figures,}
 and creating the paper PDF in
 \texttt{https://github.com/ericagol/TRAPPIST1\_Spitzer}.  
-The 3.2 GB \texttt{data/} directory in the repository may be found as a
+The 3.5 GB \texttt{data/} directory in the repository may be found as a
 zip file, \texttt{data.zip}, at 
 \texttt{\scriptsize https://drive.google.com/file/d/14iEW6jupY8dnGlYGXJIrWlFftdwRcfLo}.
 In each figure we embed links to the code (\texttt{</>}) which produced that figure.
@@ -486,8 +487,8 @@ In each figure we embed links to the code (\texttt{</>}) which produced that fig
 Since the work described in \citet{Grimm2018} based on 284 transits, we
 have added an additional 163 transit times from a combination of Spitzer
 (\S \ref{sec:spitzerobs}) and ground-based observations (\S
-\ref{sec:groundbasedobs}) \textbf{for a total of 447 transits}.  Based 
-on preliminary transit-timing fits, we find evidence for outliers amongst 
+\ref{sec:groundbasedobs}) \textbf{for a total of 447 transits}.  
+\textbf{With} preliminary transit-timing fits, we \textbf{found} evidence for outliers amongst 
 the measured times (\S \ref{sec:outliers}), which we account for with a robust 
 likelihood model.  Each transit time is measured as a Barycentric Julian Date 
 (BJD$_\mathrm{TDB}$), correcting for the location of the Earth/spacecraft relative 
@@ -508,7 +509,7 @@ transit observation.  We next describe our data.}
 
 The dataset used in this work includes the entire photometry database of TRAPPIST-1 observations \textbf{with Spitzer Space \textbf{Telescope}'s Infrared Array Camera \citep[IRAC;][] {Carey2004}} since the discovery of its planetary system. This represents all time series observations gathered within the DDT programs 12126 (PI: M. Gillon), 13175 (PI: L. Delrez) and 14223 (PI: E. Agol). \textbf{These cover} a total of 188 transits observed from Feb 2016 to Oct 2019 and \textbf{include} 64, 47, 23, 18, 16, 13, and 7 transits of planets b, c, d, e, f, g, and h, respectively \citep{Ducrot2020}. All \textbf{of} these data can be accessed through the online Spitzer Heritage Archive database\footnote{\url{http://sha.ipac.caltech.edu}}.  \textbf{Spitzer IRAC Channels 1 (3.6 $\mu$m, 0.75 $\mu$m wide) and
 2 (4.5 $\mu$m, 1.015 $\mu$m wide) were used during the Spitzer Warm Mission \textbf{\citep{Fazio2004,StorrieLombardi2010}} with 61 and 127 transits observed in each band, respectively.}
-Observations were obtained with \textbf{IRAC} in subarray mode ($32{\times}32$ pixels windowing of the detector) with an exposure time of 1.92 s and a cadence of \textbf{2.15} min. In order to minimize the pixel-phase effect \citep{Knutson2008} the peak-up mode was used \citep{Ingalls2016} to \textbf{fine-tune} the positioning of the target on the detector following the IRAC Instrument Handbook.\footnote{\url{https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/iracinstrumenthandbook/}} Finally, calibration was performed using Spitzer pipeline S19.2.0 to output data as cubes of 64 subarray images of $32{\times}32$ pixels (the pixel scale being 1.2 arcsec). Each set of exposures was summed over the \textbf{2.15} minute cadence to allow for a tractable data volume for carrying out the photometric analysis, which is described in detail in \citet{Delrez2018a} and \citet{Ducrot2020}.
+Observations were obtained with \textbf{IRAC} in subarray mode ($32{\times}32$ pixel windowing of the detector) with an exposure time of 1.92 s and a cadence of \textbf{2.02 s}. In order to minimize the pixel-phase effect \citep{Knutson2008} the peak-up mode was used \citep{Ingalls2016} to \textbf{fine-tune} the positioning of the target on the detector following the IRAC Instrument Handbook.\footnote{\url{https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/iracinstrumenthandbook/}} Finally, calibration was performed using Spitzer pipeline S19.2.0 to output data as cubes of 64 subarray images of $32{\times}32$ pixels (the pixel scale being 1.2 arcsec). Each set of exposures was summed over  \textbf{a 2.15} minute cadence to allow for a tractable data volume for carrying out the photometric analysis, which is described in detail in \citet{Delrez2018a} and \citet{Ducrot2020}.
 
 \subsection{Ground-based observations} \label{sec:groundbasedobs}
 
@@ -516,18 +517,18 @@ Observations were obtained with \textbf{IRAC} in subarray mode ($32{\times}32$ p
 
 %{\color{red} Artem Burdanov, Amaury Triaud, Manu Jehin and Susan Lederer could you help to write this section?}
 
-In addition to the new Spitzer times, 125 transits were observed by the SPECULOOS-South Observatory \citetext{SSO, \citealt{Burdanov2018,Jehin2018}, \citealt{Gillon2018}, \citealt{Delrez2018b}} at Cerro Paranal, Chile, TRAPPIST-South at La Silla Chile, \citep[TS;][]{Jehin2011,Gillon2011}, and TRAPPIST-North at \textbf{Ouka\"imeden,} Morocco, \citep[TN;][]{Barkaoui2019AJ}. These observations were carried out in an I+z filter with exposure times 23s, 50s and 50s, respectively; characteristics of this filter are described in \cite{Murray2020}.
-Observations were also performed with the Liverpool Telescope  \citep[LT,][]{Steele2004} and the William-Herschel Telescope (WHT), both installed at the Roque de los Muchachos \textbf{Observatory}, La Palma. Only one transit of planet b and one of d were targeted with the WHT whereas 15 transits of several planets were targeted with LT. For LT observations, the IO:O optical wide field camera was used in Sloan z' band with 20s exposure time. One transit of b was observed with the  Himalayan Chandra Telescope (HCT). Finally, a total of 26 transits were observed in the near-IR (1.2~-2.1~$\mu$m) with the WFCAM near-IR imager of the the United Kingdom Infra-Red Telescope (UKIRT) \citep{Casali2007}, the IRIS2IR-imager installed on the the Anglo-Australian Telescope (AAT) \citep{Tinney2004}, and the HAWK-I cryogenic wide-field imager installed on Unit Telescope 4 (Yepun) of the ESO Very Large Telescope (VLT) \citep{Siebenmorgen2011}.
+In addition to the new Spitzer times, 125 transits were observed by the SPECULOOS-South Observatory  at Cerro Paranal, Chile \citetext{SSO; \citealt{Burdanov2018}, \citealt{Jehin2018}, \citealt{Gillon2018}, \citealt{Delrez2018b}}, TRAPPIST-South at La Silla Chile, \citep[TS;][]{Jehin2011,Gillon2011}, and TRAPPIST-North at \textbf{Ouka\"imeden,} Morocco, \citep[TN;][]{Barkaoui2019AJ}. These observations were carried out in an I+z filter with exposure times 23s, 50s and 50s, respectively; characteristics of this filter are described in \cite{Murray2020}.
+Observations were also performed with the Liverpool Telescope  \citep[LT;][]{Steele2004} and the William-Herschel Telescope (WHT), both installed at the Roque de los Muchachos \textbf{Observatory}, La Palma. Only one transit of planet b and one of d were targeted with the WHT whereas 15 transits of several planets were targeted with LT. For LT observations, the IO:O optical wide field camera was used in Sloan z' band with 20s exposure time. One transit of b was observed with the  Himalayan Chandra Telescope (HCT). Finally, a total of 26 transits were observed in the near-IR (1.2~-2.1~$\mu$m) with the WFCAM near-IR imager of the the United Kingdom Infra-Red Telescope \citep[UKIRT;][]{Casali2007}, the IRIS2IR-imager installed on the the Anglo-Australian Telescope \citep[AAT;][]{Tinney2004}, and the HAWK-I cryogenic wide-field imager installed on Unit Telescope 4 (Yepun) of the ESO Very Large Telescope \citep[VLT;][]{Siebenmorgen2011}.
 These observations are summarized in Table \ref{tab:transit_time_list} \textbf{: 504 transit observations were collected with 57 duplicate (or triplicate) transits which were observed by a second (or third) observatory simultaneously, for a total of 447 unique planetary transit times which are used in our analysis.  Additional} information may be found in \citet{Gillon2016} for WHT and TRAPPIST, in  \citet{Ducrot2018} for SSO and LT, and in \citet{Gillon2017} and \citet{Burdanov2019} for AAT, UKIRT and VLT.
 
-For all ground-based observations, a standard calibration (bias, dark and flat-field corrections) was applied to each image, and fluxes were measured for the stars in the field with the DAOPHOT aperture photometry software \citep{Stetson1987}. \textbf{Differential photometry was then performed using an algorithm developed by \cite{Murray2020} to automatically choose and combine multiple comparison stars, it is optimized to use as many stars as possible, weighted appropriately (accounting for variability, color and distance to target star), to reduce the noise levels in the final differential lightcurves. This reduction and photometry was followed by an MCMC analysis to retrieve transit parameters.}
+For all ground-based observations, a standard calibration (bias, dark and flat-field correction) was applied to each image, and fluxes were measured for the stars in the field with the DAOPHOT aperture photometry software \citep{Stetson1987}. \textbf{Differential photometry was then performed using an algorithm developed by \cite{Murray2020} to automatically choose and combine multiple comparison stars, optimized to use as many stars as possible, weighted appropriately (accounting for variability, color and distance to target star), to reduce the noise levels in the final differential lightcurves. This reduction and photometry was followed by an MCMC analysis to retrieve transit parameters.}
 
 
 \begin{table*}
     \centering
     \begin{tabular}{c c c c c c c c c c c}
         \hline
-        Planet & HCT & SSO/TS/TN & LT & WHT & VLT/AAT/UKIRT & HST & Spitzer & K2  & Duplicates & Total \\
+        Planet & HCT & SSO/TS/TN & LT & WHT & VLT/AAT/UKIRT & HST & Spitzer & K2  & Duplicates & Total ($N_i$)\\
         \hline
         b      & 1   & 45    & 7   & 1   & 10       & 1   & 64      & 48   & \textbf{17}        & 160   \\
         c      & 0   & 28    & 8   & 0   & 7        & 1   & 47      & 30   & 14        & 107   \\
@@ -559,11 +560,11 @@ Transit times for Hubble Space Telescope observations were utilized, as describe
 \textbf{Gathering together} the heterogeneous sample of transits obtained from a variety of ground- and space-based telescopes,  \textbf{we transformed the time stamps} to \textbf{the} $BJD_\mathrm{TDB}$ time standard prior to \textbf{photometric} analysis. \textbf{We} analyzed \textbf{the datasets} together with a global photometric analysis of \textbf{all single-planet} transits, as described in
 \citet{Ducrot2020}, with a separate analysis of the overlapping transits once the single-transit analysis was completed.
 
-For each planet a fixed time of transit for epoch zero ($T_{0}$) and fixed period ($P$) were used, but with timing offset (``TTV") as a fitted parameter for each transit as described by \cite{Ducrot2020}.  \textbf{To derive $T_{0}$ and $P$, a linear regression of the timings as a function of their epochs was performed for each planet to derive an updated mean transit ephemeris, their exact values can be found in Table 4 of \cite{Ducrot2020}.} The timing offsets are then added back to the ephemeris to obtain the measured transit times and uncertainties.
+For each planet a fixed time of transit for epoch zero ($T_{0}$) and fixed period ($P$) were used, but with timing offset (``TTV") as a fitted parameter for each transit as described by \cite{Ducrot2020}.  \textbf{To derive $T_{0}$ and $P$, a linear regression of the timings as a function of their epochs was performed for each planet to derive an updated mean transit ephemeris; their exact values can be found in Table 4 of \cite{Ducrot2020}.} The timing offsets are then added back to the ephemeris to obtain the measured transit times and uncertainties.
 
 
 The final observed dataset for the transit-timing analysis
-is given by: $\mathbf{y} = \{t_{\mathrm{obs},i,j},\sigma_{i,j}; i=1,...,7; j = 1,...,N_i\}$, where $i$ labels each of the seven planets, $N_i$ is
+is given by: $\mathbf{y} = (\left{t_{\mathrm{obs},ij},\sigma_{ij}; j = 1,...,N_i\}; i=1,...,7)$, where $i$ labels each of the seven planets, $N_i$ is
 the number of transits for the $i$th planet (Table \ref{tab:transit_time_list}),
 and $j$ labels each transit for the $i$th planet, so that
 $t_{\mathrm{obs},ij}$ is the $j$th observation of the $i$th planet, and
@@ -821,7 +822,7 @@ a starting point for evaluating our Markov chain analysis, and
 for gauging the convergence of the chains, which we describe below.
 
 In our initial Markov chain sampling, we found that the parameters of the Student's t-distribution, $\nu$ and $V_1$, were strongly non-linearly correlated and displayed a likelihood profile which was non-Gaussian.   After experimenting with reparameterization, we found that $\log{\nu}$ and $V_1 e^{1/(2\nu)}$ gave a parameterization which showed a nearly Gaussian likelihood profile in each parameter, and also showed more linear correlations between these two parameters.  Accordingly we chose to sample in these transformed parameters
-\textbf{so that our set of model parameters $\mathbf{x} = (\mathbf{x}_{dyn},\log \nu, V_1 e^{1/2\nu})$.} 
+\textbf{so that our set of model parameters is $\mathbf{x} = (\mathbf{x}_{dyn},\log \nu, V_1 e^{1/2\nu})$.} 
 
 \textbf{In appendix \ref{sec:prior} we define the prior function $\Pi(\mathbf{x})$
 which multiplies the likelihood to give}
@@ -1008,13 +1009,12 @@ and $e_i\sin{\omega_i}$ as Markov chain parameters which favors
 higher eccentricities \citep{Ford2006}.
 
 
-The posterior distribution of the {\it ratio} of the planet masses to the star, scaled to a stellar mass of 0.09 $M_\odot$, are given in Table \ref{tab:TTV_parameters} and shown in Figure \ref{fig:mass_likelihood_profile}.  The likelihood profile of
+The \textbf{marginalized} posterior distributions of the {\it ratio} of the planet masses to the star, scaled to a stellar mass of 0.09 $M_\odot$, are given in Table \ref{tab:TTV_parameters} and shown in Figure \ref{fig:mass_likelihood_profile}.  The likelihood profile of
 the \textbf{planet-to-star mass ratios} is also plotted in
 Figure \ref{fig:mass_likelihood_profile} and appears to be well-behaved. These
-likelihood profiles are also approximately Gaussian in shape, and track the inverse Hessian evaluated at the maximum likelihood to estimate the covariance (also plotted), albeit with a stronger
-tail for planet e at lower mass.  Compared with the \textbf{mass
+likelihood profiles are also approximately Gaussian in shape, and track the inverse Hessian evaluated at the maximum likelihood to estimate the covariance (also plotted).  Compared with the \textbf{mass
 estimates from} \citet{Grimm2018}, the masses of each planet have increased
-with the exception of planet e which has decreased and planet h which remains the same (Table \ref{tab:grimm_vs_agol}).   The mass ratios of the posterior distribution from the Markov chain  are slightly shifted to smaller values than the likelihood profile and Laplace approximation probabilities for all planets save b and g.
+with the exception of planet e which has decreased and planet h which remains the same (Table \ref{tab:grimm_vs_agol}).   The mass ratios of the posterior distribution from the Markov chain are slightly shifted to smaller values than the likelihood profile and Laplace approximation probabilities for all planets save b and g.
 
 \begin{table*}
     \centering
@@ -1077,7 +1077,7 @@ In addition to the N-body code described above, we use the GPU hybrid symplectic
 likelihood is assumed to be a normal distribution with the timing errors derived from
 the timing analyses.  For comparison, we have re-run the likelihood-profile
 computation described above using a normal distribution in place of a Student's t-distribution.
-The derived masses from the two different analyses agree well with a maximal deviation of the median masses of better than 0.4\%, and in all cases less than 13\% of the mass-ratio uncertainty.  The eccentricities and longitudes of periastron at the initial time agree as well.  We interpret this as a validation of the numerical techniques being employed in this paper.
+The derived masses from the two different analyses agree well with a maximal deviation of the median masses of better than 0.4\%, \textbf{while the mass-ratio uncertainties agree to better than} 13\%.  The eccentricities and longitudes of periastron at the initial time agree as well.  We interpret this as a validation of the numerical techniques being employed in this paper.
 
 With the transit-timing analysis completed, we now use the N-body model to improve the estimate of the stellar density and the \textbf{planet-to-star radius ratios}.  To do so we create a photodynamic model, described next.
 
@@ -1087,7 +1087,7 @@ With the mass-ratios and orbital parameters derived from the transit-timing
 analysis, we wish to improve our derivation of the planet and stellar parameters
 from the Spitzer photometry.   The transit depth, transit duration, and ingress/egress
 duration combined with  orbital period constrain the impact parameters and density
-of the star for each planet \citep{Seager2003}.  Combining these constraints for
+of the star \citep{Seager2003}.  Combining these constraints for
 each of the planets  enables a more precise constraint upon the density of the
 star \citep{Kipping2012a}.
 The transit durations are affected by the (small) eccentricities, but to a lesser extent.  We account
