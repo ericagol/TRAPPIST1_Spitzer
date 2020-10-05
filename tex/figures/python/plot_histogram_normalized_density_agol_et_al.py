@@ -45,7 +45,8 @@ mpl.plot([-2,-1],[-2,-1],alpha=1.0,color='saddlebrown',lw=1.3,label='g')
 mpl.plot([-2,-1],[-2,-1],alpha=1.0,color='fuchsia',lw=1.3,label='h')
 
 
-mpl.xlim(0.75,1.15)
+#mpl.xlim(0.75,1.15)
+mpl.xlim(0.75,1.25)
 mpl.ylim(0.,16.)
 mpl.ylabel(r'Probability Density Function')
 mpl.xlabel(r'Normalized density (by a 20$\%$ Fe, 80$\%$ MgSiO$_3$ interior)')
