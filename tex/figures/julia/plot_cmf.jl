@@ -16,6 +16,7 @@ fname = ["T1b_IRON_FRAC.out","T1c_IRON_FRAC.out","T1d_IRON_FRAC.out","T1e_IRON_F
 
 np = 7; nsamp = 10000
 
+feonmg(cmf) = 1.778/(100/cmf-1)
 
 cmf_norm = zeros(np,nsamp)
 cmf_mean = zeros(np)
@@ -23,6 +24,10 @@ cmf_median = zeros(np)
 cmf_sig = zeros(np)
 cmf_sig1 = zeros(np)
 cmf_sig2 = zeros(np)
+feonmg_median = zeros(np)
+feonmg_sig1 = zeros(np)
+feonmg_sig2 = zeros(np)
+
 for ip=1:np
   data = readdlm(string(dir,fname[ip]))
   cmf_norm[ip,:] .= data[:,2]
@@ -31,6 +36,9 @@ for ip=1:np
   cmf_sig[ip] = std(cmf_norm[ip,:])
   cmf_sig1[ip] = cmf_median[ip]-sort(cmf_norm[ip,:])[1587]
   cmf_sig2[ip] = sort(cmf_norm[ip,:])[8413]-cmf_median[ip]
+  feonmg_median[ip] = median(feonmg.(cmf_norm[ip,:]))
+  feonmg_sig1[ip] = feonmg_median[ip]-sort(feonmg.(cmf_norm[ip,:]))[1587]
+  feonmg_sig2[ip] = sort(feonmg.(cmf_norm[ip,:]))[8413]-feonmg_median[ip]
 end
 
 # Now, carry out regressions for each of these:
@@ -107,10 +115,19 @@ savefig("../Norm_cmf_vs_period.pdf",bbox_inches = "tight")
 println("Coefficients of fit: ",mean(coeff_samp[1,:]),"+-",std(coeff_samp[1,:])," ",mean(coeff_samp[2,:]),"+-",std(coeff_samp[2,:]))
 
 # Now, print out first line of Table 9:
-tab09 = "CMF [wt\\%] & "
+tab09_01 = "CMF [wt\\%] & "
 for i=1:7
-  global tab09 = string(tab09," \$",@sprintf("%4.1f",cmf_median[i]),"_{-",@sprintf("%4.1f",cmf_sig1[i]),"}^{+",@sprintf("%4.1f",cmf_sig2[i]),"}\$ &")
+  global tab09_01 = string(tab09_01," \$",@sprintf("%4.1f",cmf_median[i]),"_{-",@sprintf("%4.1f",cmf_sig1[i]),"}^{+",@sprintf("%4.1f",cmf_sig2[i]),"}\$ &")
 end
 
-tab09 = string(tab09," \$",@sprintf("%4.1f",cmf_avg),"\\pm",@sprintf("%4.1f",cmf_rms),"\$ \\cr")
-println(tab09)
+tab09_01 = string(tab09_01," \$",@sprintf("%4.1f",cmf_avg),"\\pm",@sprintf("%4.1f",cmf_rms),"\$ \\cr")
+println(tab09_01)
+
+# Now, print out second line of Table 9:
+tab09_02 = "Fe/Mg molar ratio & "
+for i=1:7
+  global tab09_02 = string(tab09_02," \$",@sprintf("%4.2f",feonmg_median[i]),"_{-",@sprintf("%4.2f",feonmg_sig1[i]),"}^{+",@sprintf("%4.2f",feonmg_sig2[i]),"}\$ &")
+end
+
+tab09_02 = string(tab09_02," \$",@sprintf("%4.2f",feonmg.(cmf_avg)),"\\pm",@sprintf("%4.2f",feonmg.(cmf_rms)),"\$ \\cr")
+println(tab09_02)
