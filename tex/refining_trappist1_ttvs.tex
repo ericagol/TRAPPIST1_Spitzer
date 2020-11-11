@@ -368,7 +368,7 @@
 
 The TRAPPIST-1 planetary system took the exoplanet community by surprise
 thanks to the high multiplicity of small transiting planets orbiting a very-low-mass star ($\sim0.09 M_\odot$; \citealt{Gillon2016, Gillon2017, Luger2017a, vanGrootel2018}).
-The unexpected nature stems from the fact that this system was found through a survey
+These unexpected nature stems from the fact that this system was found in a survey
 of only 50 nearby ultracool dwarf stars \citep{Jehin2011, Gillon2013}, suggesting either a high-frequency of such systems around the latest of the M-dwarfs \citep{He2016}, or perhaps this discovery was fortuitous \citep{Sestovic2020, Sagear2020}.
 The proximity of the host star ($\sim$12pc) makes
 it brighter in the infrared ($K=10.3$) than most ultracool dwarfs.
@@ -404,10 +404,10 @@ The TRAPPIST-1 system was \textbf{initially} found with a ground-based pilot sur
 revealing two short-period transiting planets, and two additional orphan transits
 \citep{Gillon2016, Burdanov2018}.  Subsequent \textbf{ground-based} study of the system revealed several
 additional orphan transits, leading to an incomplete picture of the number of planets
-and the architecture of the system.  A 20-day observation run with the Spitzer Space
+and the architecture of the system.  A 20-day observation campaign with the Spitzer Space
 Telescope \textbf{\citep{Werner2004}} resolved the
 confusion, revealing the periods of six of the seven transiting planets \citep{Gillon2017},
-but only a single transit observed of the outermost planet left its orbit in question.
+while only a single transit observed of the outermost planet left its orbit in question.
 A subsequent observation campaign of the system with the K2 \textbf{mission} included four
 additional transits of the outer planet, identifying its period, and revealed a series
 of generalized three-body Laplace relations (GLRs)\footnote{This refers to the condition
@@ -417,8 +417,8 @@ planets \citep{Luger2017a}.  Additional observations with Spitzer
 continued to monitor the transit times of the seven planets at higher precision than
 afforded by ground-based observations. An initial analysis of the Spitzer data to determine
 planetary radii and masses was presented in \citet{Delrez2018a} and \citet{Grimm2018}. In total,
-Spitzer observed TRAPPIST-1 for more than 1000hrs, and the resulting time-series photometry
-includes 188 transits \citep{Ducrot2020}. \textbf{In this paper we complement and
+Spitzer observed TRAPPIST-1 for more than 1075 hrs (nearly 45 days), and the resulting time-series 
+photometry includes 188 transits \citep{Ducrot2020}. \textbf{In this paper we complement and
 extend the analysis of \citet{Ducrot2020} to include a transit-timing and photodynamic
 analysis of the system.}
 
@@ -442,7 +442,7 @@ the amplitude and phase of the cycles may be distinguished from the planets' orb
 transit-timing variations), which can help to break a degeneracy between mass and eccentricity for the resonant terms
 \citep{Lithwick2012,Deck2015}.  As a consequence, we expect the measurements of the masses
 of the system to require sampling on a timescale of $t_{min} \approx 2 P_{TTV} \approx 2.7$ years.
-Consequently, the current paper is the first with a survey time, $t_{survey} \mathbf{= 4.114}$ \textbf{yr}, such that $t_{survey} {>} t_{min}$ for the TRAPPIST-1 system.
+The current paper is the first with a survey time, $t_{survey} \mathbf{= 4.114}$ \textbf{yr}, such that $t_{survey} {>} t_{min}$ for the TRAPPIST-1 system.
 
 Prior studies used the data available at the time \citep{Delrez2018a}, with $t_{survey} {<} t_{min}$, causing ample
 degeneracy in the dynamical model, and hence larger uncertainties in the masses of the planets
@@ -582,7 +582,7 @@ dynamical analysis, starting with the likelihood function and evidence for outli
 \section{Excess of outliers and robust likelihood model} \label{sec:outliers}
 
 We first carried out a preliminary 7-planet, plane-parallel N-body model fit to the transit times using a $\chi^2$ log likelihood function, i.e.\ assuming a Gaussian uncertainty for each transit time given by the derived timing uncertainty, which \textbf{we} optimized using the Levenberg-Marquardt algorithm.
-We found that the residuals of the fit have many more outliers than is probable assuming
+We found that the residuals of the fit contain many more outliers than is probable assuming
 a Gaussian distribution for the timing uncertainties.
 
 Figure \ref{fig:timing_residuals} shows the cumulative distribution
@@ -611,7 +611,7 @@ appear for each of the planets \textbf{(save h)}, in both ground- and space-base
 and for measurements with different sizes of uncertainties.  We do
 not think that our N-body model is in error (and we have tried to fit
 with an extra planet, without a significant improvement in the number
-of outliers; see below).  Consequently, we believe that these outliers
+of outliers; see \S \ref{sec:detection}).  Consequently, we believe that these outliers
 are due to variations in the measured times of transits which are not
 associated with dynamics of the system.
 
@@ -634,7 +634,7 @@ the model parameters.   This can cause both the parameters {\it and}
 the uncertainties to be mis-estimated.  To make progress, we have
 modified the likelihood model to account for outliers.
 
-We \textbf{used} a heavy-tailed likelihood function which
+We \textbf{use} a heavy-tailed likelihood function which
 better describes the \textbf{residual distribution}:  %a mixture model \citep{Hogg2010,ForemanMackey2014} and
 a Student's t-distribution \citep{JontofHutter2016}.   %In both cases
 \textbf{We} fit the normalized residuals to a model
@@ -680,10 +680,10 @@ With the description of the dataset complete, we next describe our efforts to mo
     \includegraphics[width=\hsize]{figures/Students_t_optimized.pdf}
     \oscaption{julia/plot_residuals_rescale.jl}%
     {Probability distribution of \textbf{normalized residuals}.  Left:  Cumulative distribution
-        function of the normalized residuals, $z$.  Blue line is a sequence of normalized residuals.
+        function of the normalized residuals, $z$.  Blue and brown line is a sequence of normalized residuals.
         Orange line is the CDF of a Gaussian distribution. % Green line is the CDF of a  mixture-model (double-Gaussian). 
-        Dashed green line is the CDF of a Student's t-
-        distribution.  Right: Histogram of the normalized residuals.  Blue data points
+        Dotted green line is the CDF of a Student's t-
+        distribution.  Right: Histogram of the normalized residuals.  Blue and brown data points
         are a histogram of the normalized residuals with Poisson uncertainties.  The other lines
         have the same meaning as the left panel for the probability distribution function
         (PDF),  scaled to match the histogram. \textbf{In both panels the $>3\sigma$ outliers are indicated
@@ -860,7 +860,7 @@ integration \citep{Agol2020}, which is multiplied by the Jacobian of the coordin
 
 When a transit time is found during the N-body integration with \textsf{NbodyGradient}, we compute the derivative of each transit time with respect to
 the coordinates at the preceding time step, which we multiply times the Jacobian
-at that step to obtain the derivatives of each transit time with respect to the
+at that step to obtain the gradient of each transit time with respect to the
 initial conditions.
 The gradient of the prior with respect to the model parameters, and the gradient of the likelihood with respect to the model times and the Student's t-distribution parameters, are each computed with automatic
 differentiation, using forward-mode derivatives  \citep{Revels2016}.  The gradient of the likelihood with
@@ -953,7 +953,7 @@ masses in this paper.
 
 \begin{table*}
     \centering
-    \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1\sigma$ uncertainties.  Note that the mass ratios, $\mu \mathbf{=M_p/M_*}$, of the planets are computed relative to a star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimates of the planet masses).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
+    \caption{Parameters of the TRAPPIST-1 system from transit-timing analysis and their $1\sigma$ uncertainties.  Note that the mass ratios, $\mu \mathbf{=M_p/M_*}$, of the planets are computed relative to the star, which is assumed to have a mass of 0.09 $M_\odot$ (this is later combined with the estimate of stellar mass to give our estimates of the planet masses).  We also report $\mu$ in units of $10^{-5}$, and the fractional precision on the measurement of $\mu$, $\sigma_\mu/\mu$.
         The parameters $P$, $t_0$, $e\cos{\omega}$, and
         $e\sin{\omega}$ describe the osculating Jacobi elements at the start
         of the simulation, on date BJD$_\mathrm{TDB}$ $-2,450,000 = 7257.93115525$ days.}
@@ -1100,9 +1100,9 @@ at the maximum likelihood.
 
 We fit a ``photo-dynamical" model \citep{Carter2012} to the data with the following procedure.
 From the best-fit plane-parallel, edge-on transit time model,
-we compute the sky velocity, $v_\mathrm{sky}$, at each of the mid-transit times, $t_0$,
+we compute the sky velocity at each of the mid-transit times, $t_0$,
 from the model (in N-body code units).  We then convert the code units to physical
-units using the density of the star, obtaining the sky velocity in units
+units using the density of the star, obtaining the sky velocity, $v_\mathrm{sky}$, in units
 of $R_*/\mathrm{day}$.
 We account for quadratic limb-darkening of the star with parameters ($q_\mathrm{1,Ch1}, q_\mathrm{2,Ch1},q_\mathrm{1,Ch2},q_\mathrm{2,Ch2}$) in the two Spitzer channels, and for each
 planet we specify a \textbf{planet-to-star} radius ratio ($R_p/R_*$) and we assume
@@ -1146,7 +1146,7 @@ photometric data, and we optimize the model using a Nelder-Mead algorithm.
 To compute the uncertainties on the photodynamical model parameters, we
 use an affine-invariant Markov chain Monte Carlo algorithm \citep{Goodman2010}.\footnote{As
     implemented in the package \texttt{https://github.com/madsjulia/AffineInvariantMCMC.jl}}
-We used a prior which places bounds on each parameter given in Table \ref{tab:pd_bounds}.
+We used a uniform prior with bounds on each parameter given in Table \ref{tab:pd_bounds}.
 The posterior distribution of the results of the fit are given in Table \ref{tab:photodynamic_params},
 \textbf{while the correlations between parameters are shown in Figure \ref{fig:corner_photdyn}.}
 We utilized 100 walkers run for 50,000 generations, discarding the first 1500 generations
@@ -1220,7 +1220,7 @@ we derive the semi-major axis of each planet in units of the stellar radius,
 With the measured impact parameters, we compute the inclinations of the planets
 from \textbf{\citep{Winn2010}}
 \begin{equation}
-    I = \cos^{-1}\left[ \left(\frac{b}{R_*}\right)
+    I = \cos^{-1}\left[ b_0
         \left(\frac{a}{R_*}\right)^{-1}\right],
 \end{equation}
 where we have neglected the eccentricity in this formula due to the extremely
@@ -1247,7 +1247,7 @@ the star, the derived distribution is reflected through $180-I$.
 However, if some of the planets orbited above and some below the plane of disk
 of the star, it would be {\it very} improbable for the outer four planets to show
 such a precise alignment.  We conclude that it \textbf{may be} likely that all of the planets \textbf{transit}
-the same \textbf{hemisphere} of the star, and as shown in \citet{Luger2017b}: the planets'
+the same \textbf{hemisphere} of the star as shown in \citet{Luger2017b}: the planets'
 3D orbital inclinations are likely precisely aligned.   This also implies
 that their longitudes of ascending node are likely aligned as well, and
 so in principle we can place a prior on the scatter of the mutual inclinations
@@ -1333,8 +1333,8 @@ densities of the planets given the assumptions inherent in the inclination prior
         $ I $[$^\circ$] & $89.728{\pm}  0.165$           & $89.778{\pm}  0.118$          & $89.896{\pm}  0.077$          & $89.793{\pm}  0.048$          & $89.740{\pm}  0.019$          & $89.742{\pm}  0.012$          & $89.805{\pm}  0.013$ \cr
         \hline
     \end{tabular}
-    \caption{Parameters derived from the photodynamic model.  Top: Stellar density (in units of solar density), limb-darkening parameters ($q_1/q_2$) in Spitzer Channel 1 and 2, and stellar density in cgs units and limb-darkening parameters $u_1$ and $u_2$. Bottom: \textbf{Planet-to-star radius ratio}, $R_p/R_*$; transit depth, $(R_p/R_*)^2$;  transit duration, $T$ (from first to fourth contact); ingress/\textbf{egress} duration, $\tau$ (from first to second contact \textbf{or} third to fourth contact); impact parameter in units of stellar radius, $b/R_*$; ratio of semi-major axis to stellar radius,
-        $a/R_*$\textbf{; and inclination $I$ in degrees.}}
+    \caption{Parameters derived from the photodynamic model.  Top: Stellar density (in units of solar density), limb-darkening parameters ($q_1, q_2$) in Spitzer Channel 1 and 2, and stellar density in cgs units and limb-darkening parameters $u_1$ and $u_2$. Bottom: \textbf{Planet-to-star radius ratio}, $R_p/R_*$; transit depth, $(R_p/R_*)^2$;  transit duration, $T$ (from first to fourth contact); ingress/\textbf{egress} duration, $\tau$ (from first to second contact \textbf{or} third to fourth contact); impact parameter in units of stellar radius, $b_0$ (assumed to be positive); ratio of semi-major axis to stellar radius,
+        $a/R_*$\textbf{; and inclination $I$ in degrees (for $b_0>0$).}}
     % Add in: a/R_*, inclination angle for each planet.
     \label{tab:photodynamic_params}
 \end{table*}
@@ -1377,7 +1377,7 @@ from 57\% of Earth (planet h) to 110\% of Earth (planet b).
         (see colorbar), with the intensity proportional to probability, while the 1 and 2$\sigma$
         confidence levels from the Markov chain posterior are plotted with solid lines.
         Theoretical mass-radius relations are overplotted using the model in \citet{Dorn2016} for an Earth-like \textbf{molar} Fe/Mg=0.83 ratio with a core (\textbf{black} dashed) and core-free (\textbf{red}), and a range of cored models with \textbf{molar} Fe/Mg = $0.75{\pm}0.2$ (\textbf{grey}).  \textbf{{\it U18}} refers to \citet{Unterborn2018a} (see text).
-        The solid black line was calculated for a 5$\%$ water composition, for irradiation low enough (i.e. for planets e, f, g and h) that water is condensed on the surface  (assuming a surface pressure of 1 bar and a surface temperature of 300 K). The \textbf{umber} dashed and solid lines were calculated for a 0.01$\%$ and a 5$\%$ water composition, respectively, for irradiation high enough (i.e. for planets b, c and d) that water has fully evaporated in the atmosphere, with the \textbf{U18} interior model \citep{Turbet2020}.
+        The solid black line was calculated for a 5$\%$ water composition, for irradiation low enough (i.e. for planets e, f, g and h) that water is condensed on the surface  (assuming a surface pressure of 1 bar and a surface temperature of 300 K). The \textbf{umber} dashed and solid lines were calculated for a 0.01$\%$ and a 5$\%$ water composition, respectively, for irradiation high enough (i.e. for planets b, c and d) that water has fully evaporated in the atmosphere, with the \textbf{U18} interior model with CMF = 32.5\% \citep{Turbet2020}.
         The Earth, Venus and Mars are plotted as single points, also colored by their equilibrium temperatures.}
     \label{fig:mass_radius_relation}
 \end{figure*}
@@ -1638,7 +1638,7 @@ The comparison of measured masses and radii with theoretical mass-radius relatio
     \label{fig:norm_density_histo}
 \end{figure}
 
-We next searched for variations of density across the planets. For this, \textbf{we took} each planetary density calculated from $10^4$ samples \textbf{and divided by the density of the closest pair of mass and radius} of a fully differentiated 20 wt\% iron, 80 wt\% silicate (MgSiO$_3$) interior planet, which is less iron rich than Earth.  \textbf{A planet with a normalized density of 1 has exactly the same density, while a normalized density ${>}1$ (or ${<}1$, resp.) is denser (or lighter, resp.), than a 20 wt\% iron, 80 wt\% MgSiO$_3$ planet with no surface layer(s).}
+We next searched for variations of density across the planets. For this, \textbf{we took} each planetary density calculated from $10^4$ samples \textbf{and divided by the density of the closest pair of mass and radius} of a fully differentiated 20 wt\% iron, 80 wt\% silicate (MgSiO$_3$) interior planet with no surface layers, which is less iron rich than Earth.  \textbf{A planet with a normalized density of 1 has exactly the same density as the reference model, while a normalized density ${>}1$ (${<}1$) is denser (lighter), than the reference model, respectively.}
 Fig.~\ref{fig:norm_density_histo} shows the resulting histograms of the posterior probability of the normalized TRAPPIST-1 planet densities. We then \textbf{plot} in Fig.~\ref{fig:norm_density_vs_period} the normalized densities (along with their 1$\sigma$ uncertainty) as a function of the orbital periods of the planets.  The normalized planet density appears very uniform across the seven planets, with perhaps a slight decrease with the increase of the orbital period (or the distance to the host star).  We fit a line to the normalized density, $y$, versus orbital period, $P$, for $10^4$ posterior samples, and found a relation of \textbf{$y=(1.042{\pm}0.034){-}(0.0043{\pm}0.0036)P$} where the
 coefficients are the 68.3\% confidence interval. There is only weak evidence for a declining trend of normalized density with orbital period: \textbf{88\% of the fits to the $10^4$ posterior samples have slopes with a negative value, while 12\% of the slopes fit have a \emph{positive} value}.  If in the future more precise data strengthen this trend, then
 this \textbf{may indicate} that either (i) the outer planets are depleted in heavy elements (e.g. iron) compared to the inner ones, or (ii) the outer planets are enriched in volatiles (e.g. water) compared to the inner ones.  However, based on the current data we suggest that the planets' compositions could be rather uniform in nature.
@@ -1679,7 +1679,7 @@ There may be a slight trend of the inferred CMF, which decreases with increasing
     \centering
     \includegraphics[width=\hsize]{figures/Norm_cmf_vs_period.pdf}
     \oscaption{julia/plot_cmf.jl}%
-    {Iron core mass fraction versus the planetary orbital periods \textbf{for a fully-differentiated model with molar Mg/Si = 1.02 and no water layer}.  The approximate values for Earth \citep{McDonough2014}, Mars \citep{Khan2018}, the Moon \citep{Barr2016}, and common chondrites \citep{Palme2014} are indicated, as well as the 1$\sigma$ confidence intervals of the TRAPPIST-1 planets.
+    {Iron core mass fraction versus the planetary orbital periods \textbf{for a fully-differentiated model with molar Mg/Si = 1.02 and no surface layer}.  The approximate values for Earth \citep{McDonough2014}, Mars \citep{Khan2018}, the Moon \citep{Barr2016}, and common chondrites \citep{Palme2014} are indicated, as well as the 1$\sigma$ confidence intervals of the TRAPPIST-1 planets.
         The light blue box is the 68.3\% confidence region of the weighted mean of all seven planets. The orange lines show the median and 68.3\% confidence interval for linear fits to the $10^4$ posterior values for all seven planets.}
     \label{fig:cmf}
 \end{figure}
@@ -1698,7 +1698,7 @@ Fe/Mg molar ratio &  $0.60_{-0.18}^{+0.18}$ & $0.64_{-0.16}^{+0.16}$ & $0.44_{-0
         CMF=32.5\% & ${<}10^{-3}$ & ${<}10^{-3}$ & ${<}10^{-3}$ & $2.9_{-1.5}^{+1.7}$ & $4.5_{-1.2}^{+1.8}$ & $6.4_{-1.6}^{+2.0}$ & $5.5_{-3.1}^{+4.5}$ &  \cr
         CMF=50\% &  $0.05_{-0.03}^{+0.08}$ & $0.03_{-0.02}^{+0.05} $ & $0.002_{-0.0009}^{+0.002}$ & $9.4_{-1.8}^{+2.2}$ & $12_{-1.7}^{+2.0}$ & $14_{-1.7}^{+2.0}$ & $12_{-3.9}^{+4.4}$ & \cr
     \end{tabular}
-    \caption{Core mass \textbf{fractions and molar Fe/Mg ratio (for fully-differentiated model), and water mass fractions} inferred for each TRAPPIST-1 planet, as well as the weighted means.}
+    \caption{Core mass \textbf{fractions and molar Fe/Mg ratio (for a fully-differentiated model), and water mass fractions} inferred for each TRAPPIST-1 planet, as well as the weighted means.}
     \label{tab:cmf}
 \end{table*}}
 
@@ -1729,9 +1729,9 @@ Higher estimated water budgets for the outer three or four planets could be a cl
 \subsubsection{Core-free planets} \label{sec:core_free}
 
 Given that the data may be consistent with an iso-composition mass-radius relation, we next consider another intriguing possibility:
-that the \textbf{interiors of the planets are fully oxidized.} For example, if, instead of forming a core, all of the iron is oxidized and remains in the mantle, the size of a planet may increase by a few percent \citep{ElkinsTanton2008}.  This turns out to be about the amount of radius inflation necessary to match the TRAPPIST-1 planets when compared with our Solar system planets.
+that the \textbf{interiors of the planets are fully oxidized.} If, instead of forming a core, all of the iron is oxidized and remains in the mantle, the size of a planet may increase by a few percent \citep{ElkinsTanton2008}.  This turns out to be about the amount of radius inflation necessary to match the TRAPPIST-1 planets when compared with our Solar system planets.
 
-If we assume that the refractory ratios match a Solar composition, and that all seven planets lack an atmosphere, then it turns out that all seven planets are consistent with a core-free, oxidized composition (Fig.\ \ref{fig:mass_radius_relation}; \textbf{red} line).  For this model the bulk mass abundances ratios for Fe/Si/Mg/O are 29.2/17.3/15.3/38.2 wt\% \textbf{with a magnesium number of 0.55 (Mg/(Mg+Fe)) \textbf{mol fraction}; this model has } a significant increase in oxygen compared to the bulk Earth with 29.7 wt\% \citep{McDonough2014}.
+If we assume that the refractory ratios match a Solar composition, and that all seven planets lack an atmosphere, then it turns out that all seven planets are consistent with a core-free, oxidized composition (Fig.\ \ref{fig:mass_radius_relation}; \textbf{red} line).  For this model the bulk mass abundance ratios for Fe/Si/Mg/O are 29.2/17.3/15.3/38.2 wt\% \textbf{with a magnesium number of 0.55 (Mg/(Mg+Fe)) \textbf{mol fraction}; this model has } a significant increase in oxygen compared to the bulk Earth with 29.7 wt\% \citep{McDonough2014}.
 Such a scenario would likely require formation of the planets at large distances from the star in a highly oxidizing environment \citep{ElkinsTanton2008} and a lower  devolatization temperature intermediate between that of Earth and chondrites \citep{Wang2019}.  Hence, although this hypothesis efficiently explains the TRAPPIST-1 data, it remains to be seen whether a geochemical model can be constructed which results in high oxidation of iron throughout the processes of planet formation and evolution \textbf{\citep{Kite2020}}.
 
 \section{Discussion} \label{sec:discussion}
@@ -1892,7 +1892,7 @@ with current RV measurements?
 Recently \citet{Hirano2020} were able to make high precision
 measurements of the radial velocity (RV) of the TRAPPIST-1 host star,
 achieving a constraint on the linear variation of the star to
-a precision of 2.5 m/sec which they ascribe to
+a precision of 2.5 m/sec which they ascribe
 to stellar variability.  To compare this with our
 transit-timing results, the semi-amplitude precision
 which would be needed to achieve the same mass error bars that
@@ -2175,8 +2175,7 @@ the system.  Given the much tighter constraints we have placed upon
 the masses of the planets and the orbital eccentricities, here we
 re-examine the long-term stability of our posterior distribution.
 
-We have used the GPU N-body integrator GENGA \citep{Grimm2014} to carry out long-term simulations of a set of $10^4$ posterior samples from the timing analysis.  These simulations were carried out for $10^7$ years, which corresponds to 2.4 billion orbital periods of planet b, and 195 million orbital periods of planet h. We used a time step of 0.06 days, which gives a total number of $6.1 \cdot 10^{10}$ integration steps. We find that 100\% of these posterior samples are stable over this entire timescale. %Text added by Simon Grimm
-%as shown in Figures \ref{fig:taM} and \ref{fig:teM}. 
+We have used the GPU N-body integrator GENGA \citep{Grimm2014} to carry out long-term simulations of a set of $10^4$ posterior samples from the timing analysis.  These simulations were carried out for $10^7$ years, which corresponds to 2.4 billion orbital periods of planet b, and 195 million orbital periods of planet h. We used a time step of 0.06 days, which gives a total number of $6.1 \cdot 10^{10}$ integration steps. We find that 100\% of these posterior samples are stable over this entire timescale. 
 To check the stability of the samples, we analyzed the evolution of the semi-major axis, $a$, and eccentricity, $e$, of all samples and planets. We compared the average values over the first Myr and the last Myr. Table \ref{tab:averageAE} gives the average over all samples, and the maximum differences between the first and the last Myr.  In all cases the variations are small, ${\le}0.002$.  These results suggest that the simulations could be stable even on a much longer time scale. In addition, we have carried out long-term (50 Myr) integrations with tidal damping for two posterior samples, one with low and one with high values of the eccentricity of planet b. Using a range of values of tidal damping (from 1/10 to 100 times Earth's), we find in all cases that the system remained stable \citep[using Posidonius;][]{Bolmont2020}.
 
 More interesting is the evolution of the five GLR resonant angles, shown in Figure \ref{fig:tlM}. In order to describe the evolution of the GLR angles, we define three categories:
@@ -2186,7 +2185,7 @@ More interesting is the evolution of the five GLR resonant angles, shown in Figu
     \item Category III: not remaining in GLR for 10Myr.
 \end{itemize}
 The threshold of $45^\circ$ is chosen arbitrarily, but is found to be practical to distinguish simulations where the GLR angles jump between different states (Category II), or remain in the same state (Category I). Figure \ref{fig:tlM} shows the three different categories in different colors, as well as a histogram of all 10,000 simulations over 10~Myr for all five GLR angles.  The exact number of simulations in the three categories are given in Table \ref{tab:cat}. The GLR angles from Planets b,c and d as well as Planets d,e,f show a unique resonant state. Planets c,d,e and Planets e,f,g have a dominant state and a subdominant state, while Planets f,g,h have a dominant state and two symmetric subdominant states.
-Our new samples show a better conservation of the GLR angles than was found in \citep{Grimm2018}, where the longest resonance time was found to be 2 Myr.
+Our new samples show a better conservation of the GLR angles than was found in \citet{Grimm2018}, where the longest resonance time was found to be 2 Myr.
 
 %\begin{figure}
 %    \centering
@@ -2259,7 +2258,7 @@ Our new samples show a better conservation of the GLR angles than was found in \
 With our transit timing model we can forecast the probabilities of future transit times,
 and hence better help to plan transit observations with JWST.  This is
 important for both optimizing the efficient use of the telescope, and for
-determining when transits might overlap (i.e.\ two or more planets crossing the face
+determining concurrent transits (i.e.\ two or more planets crossing the face
 of the star at the same time).  This is especially important for transit
 transmission spectroscopy as the signal will be small, and hence many
 transits may need to be observed.  With observation of initial transits
@@ -2381,7 +2380,7 @@ In general, planets which formed within the same proto-planetary disk \textbf{ar
 very different volatile element budgets \citep{oberg2016excess}. Similar relative refractory elements (Fe, Mg, Si) implies
 similar core mass fractions for all seven planets, assuming full differentiation. As suggested by \citet{Dorn2018}, the refractory composition may best be described by studying the densest planet of the system, planet c with \textbf{22-31\%} CMF. Thus, with this assumption, all of the planets may likely have a \textbf{22-31\%} CMF but different \textbf{light element} mass fractions (that may increase slightly with orbital period, Fig. 19).
 
-Is an overall CMF of \textbf{22-31\%} realistic for terrestrial planet interiors? This range of CMF implies lower Fe/Mg and Fe/Si values compared to Earth (and the Sun). Elemental abundances of rocky interiors are expected to be reflected in the photospheric abundance of the host star as argued by \citet{Unterborn2018a} and \citet{Dorn2018}. Unfortunately, measuring the photospheric abundances of this cool and active host star remains very challenging. However, \citet{Unterborn2018a} estimated the stellar \textbf{molar} Fe/Mg number ratio to be $0.75{\pm}0.2$ by analysing Sun-like stars of similar metallicity to TRAPPIST-1, which may be slightly lower than the Solar value. The corresponding mass-radius curve for a rocky interior of this range of Fe/Mg value is plotted in Figure \ref{fig:mass_radius_relation} (brown curve and shaded region). It overlaps well with the densest planets c and b. This means that the expected range of stellar abundances supports a possible overall CMF value of \textbf{22-31\%}, assuming full differentiation.
+Is an overall CMF of \textbf{22-31\%} realistic for terrestrial planet interiors? This range of CMF implies lower Fe/Mg and Fe/Si values compared to Earth (and the Sun). Elemental abundances of rocky interiors are expected to be reflected in the photospheric abundance of the host star as argued by \citet{Unterborn2018a} and \citet{Dorn2018}. Unfortunately, measuring the photospheric abundances of this cool and active host star remains very challenging. However, \citet{Unterborn2018a} estimated the stellar \textbf{molar} Fe/Mg number ratio to be $0.75{\pm}0.2$ by analysing Sun-like stars of similar metallicity to TRAPPIST-1, which may be slightly lower than the Solar value. \textbf{This corresponds to a CMF of 23.6-34.8\% for a fully-differentiated model.} The corresponding mass-radius curve for a rocky interior of this range of Fe/Mg value is plotted in Figure \ref{fig:mass_radius_relation} (brown curve and shaded region). It overlaps well with the densest planets c and b. This means that the expected range of stellar abundances supports a possible overall CMF value of \textbf{22-31\%}, assuming full differentiation.
 
 Could there be a variation of Fe/Mg ratios among the planets?
 Rocky planet accretion should preserve the integrated iron/rock ratio. Consider a population of planetary embryos and planetesimals that accrete into a system of rocky planets. Giant collisions between growing planetary embryos can change the iron/rock ratios of individual objects by preferentially stripping the outer, rock-dominated layers from differentiated embryos~\citep[e.g.][]{benz88,marcus10,asphaug14}. But from a system-wide perspective, it is a zero-sum game unless rock or iron is preferentially lost from all of the planets. Rock is the major component of loosely-bound impact debris and more likely to be lost either by differential aerodynamic drag~\citep{weidenschilling77} or solar wind drag~\citep{spalding20}, and so the integrated iron/rock ratio should only increase.
@@ -2401,7 +2400,7 @@ Hypothetical variations in Fe/Mg can otherwise be caused if large portions of pl
 
 Alternatively, the lower measured bulk densities of the TRAPPIST-1 planets relative to Earth-like composition might be explained by core-free interiors \citep{ElkinsTanton2008} in which the oxygen content is high enough such that all iron is oxidized. If the refractory elements (Mg, Fe, Si) follow Solar abundances, a fully oxidized interior would contain about 38.2 wt\% of oxygen, which lies between the value for Earth (29.7 wt\%) and CI chondrites (45.9 wt\%). Such an interior scenario can easily describe the observed bulk densities (purple line in Fig. \ref{fig:mass_radius_relation}).  And this may bolster the long-range migration scenario in which the planets formed in a highly oxidizing environment which enabled the iron to remain in the mantle even after migration.  \textbf{Based on the elemental composition, these models have an oxygen fugacity of $\Delta \mathrm{IW} = -0.91,$\footnote{\textbf{Oxygen fugacity is stated relative to the Iron-W\"ustite equilibrium reaction $\mathbf{\mathrm{Fe}{+}0.5\mathrm{O}_2{=}\mathrm{FeO}}$ (W\"ustite) such that $\mathbf{\Delta \mathrm{IW} = \log(f_{\mathrm{O}_2})_\mathrm{rock} - \log(f_{\mathrm{O}_2})_\mathrm{IW}}$}} which is more oxidized than Earth or even Mars, but is comparable to the oxidation state of small bodies, both in our solar system and accreted by white dwarfs \citep{Doyle2019}.}
 
-However, the evidence for a core-free planet rests on knowing the refractory abundances of the TRAPPIST-1 host star, which have yet to be constrained.  Alas, our interpretation of the planets' compositions may be limited by our imprecise knowledge of the host star:  its radius, its mass, its photospheric inhomogeneity, and its refractory abundances all affect our measurement and interpretation of the masses, radii, and compositions of the TRAPPIST-1 planets.  In this paper our measurements of the relative planetary radii and masses have reached such a precision that the fault may now lie in the star.
+However, the evidence for a core-free planet may rest on knowing the refractory abundances of the TRAPPIST-1 host star, which have yet to be constrained.  Alas, our interpretation of the planets' compositions may be limited by our imprecise knowledge of the host star:  its radius, its mass, its photospheric inhomogeneity, and its refractory abundances all affect our measurement and interpretation of the masses, radii, and compositions of the TRAPPIST-1 planets.  In this paper our measurements of the relative planetary radii and masses have reached such a precision that the fault may now lie in the star.
 
 
 % SEAN: THESE ARE JUST EXTRA TEXT/THOUGHTS TO BE ERASED BEFORE SUBMISSION
@@ -2420,7 +2419,7 @@ We conclude by pointing out directions for building upon the work described in t
     \item Our analysis assumes a plane-parallel system with seven planets, and
           does not yet couple the dynamical and photometric analysis (our photodynamics
           held the dynamical model fixed).  Future analysis with a fully-coupled
-          photodynamical model with 3D orbits and more than seven planets may be warranted.
+          photodynamical model with 3D orbits and more than seven planets may be valuable.
     \item We need more transits measured for planets d and h, in order
           to better measure the amplitude and phase on the transit-timing variation
           timescale, as well as to better constrain the presence of planets beyond h.
