@@ -552,7 +552,7 @@ For all ground-based observations, a standard calibration (bias, dark and flat-f
 
 %{\color{red} Marko Sestovic, Brice Demory and Julien de Wit:  could you briefly summarize the analysis of the K2 and HST data, and add references to the sources of the transit times used in this analysis.}
 
-The K2 mission \citep{Howell2014} observed the TRAPPIST-1 system over campaigns 12 and 19 \citep{Luger2017a}, in both long- and short-cadence imaging modes. We only use the short-cadence data from campaign 12 for this analysis, with $\sim1$ minute sampling. We use our own photometric pipeline to track the star and produce a light curve from the Target Pixel Files (TPF). To model and correct TRAPPIST-1's stellar variability and K2's pointing-drift-correlated systematic noise, we use a Gaussian process with a quasi-periodic kernel, following the procedure described in \cite{Grimm2018}. The campaign 12 data contains 48, 30, 19, 12, 7, 6 and 4 transits of planets b, c, d, e, f, g and h, respectively. %{\color{red} Note: I believe not all were used for the TTV analysis, i.e due to overlap with flares. The numbers given are the total of the transits that overlap with the lightcurve points.}
+The K2 mission \citep{Howell2014} observed the TRAPPIST-1 system over campaigns 12 and 19 \citep{Luger2017a}, in both long- and short-cadence imaging modes. We only use the short-cadence data from campaign 12 for this analysis, with $\sim1$ minute sampling. We use our own photometric pipeline to track the star and produce a light curve from the Target Pixel Files (TPF). To model and correct TRAPPIST-1's stellar variability and K2's pointing-drift-correlated systematic noise, we use a Gaussian process with a quasi-periodic kernel, following the procedure described in \cite{Grimm2018}. The campaign 12 data contains 48, 30, 19, 12, 7, 6 and 4 transits of planets b, c, d, e, f, g and h, respectively.
 
 Transit times for Hubble Space Telescope observations were utilized, as described in \citet{Grimm2018}, \citet{deWit2016,deWit2018}, and \citet{Wakeford2019}.
 
@@ -600,12 +600,11 @@ are 8 data points with $z {<} -3$ and 7 with $z {>} 3$.  With 447
 transit time measurements, we would only {expect} $\approx 1.2$ data points
 with $\vert z\vert {>} \mathbf{3}$ if the distribution were Gaussian with accurately estimated
 uncertainties.  This excess is even more apparent at
-$\vert z \vert {>} 4$. % {\color{red} Discuss the total chi-square, and the low probability of its value.}
+$\vert z \vert {>} 4$.
 
 We have examined the individual transits that show these discrepancies,
 and there is nothing unusual about their light curves, such as flares,
-overlapping transits, or other anomalies.  %{\color{red} Discuss the timing 
-%offset discrepancy which was corrected.}  
+overlapping transits, or other anomalies. 
 The outliers
 appear for each of the planets {(save h)}, in both ground- and space-based data,
 and for measurements with different sizes of uncertainties.  We do
@@ -635,20 +634,20 @@ the uncertainties to be mis-estimated.  To make progress, we have
 modified the likelihood model to account for outliers.
 
 We {use} a heavy-tailed likelihood function which
-better describes the {residual distribution}:  %a mixture model \citep{Hogg2010,ForemanMackey2014} and
-a Student's t-distribution \citep{JontofHutter2016}.   %In both cases
+better describes the {residual distribution}: 
+a Student's t-distribution \citep{JontofHutter2016}.  
 {We} fit the normalized residuals to a model
 in which the width of the distribution was
 allowed to vary, which we parameterize with
-an additional factor multiplying the variance, which we refer to below as $V_1$.  %In the case of the mixture
+an additional factor multiplying the variance, which we refer to below as $V_1$. 
 {For the} Student's t-distribution there is only one
 additional free parameter:  the number of
 degrees of freedom, $\nu$, {which} we treat as a continuous parameter.
 
 Figure \ref{fig:timing_residuals} shows a histogram of the outliers of the best-fit transit-timing model (described below),
-and shows that %both distributions, the mixture model and 
+and shows that
 the Student's t-distribution gives a much higher probability
-for outliers. %, while both distribution functions have a very similar shape.  
+for outliers.
 
 With the description of the dataset complete, we next describe our efforts to model the data.
 
@@ -658,7 +657,7 @@ With the description of the dataset complete, we next describe our efforts to mo
     \oscaption{julia/plot_residuals_rescale.jl}%
     {Probability distribution of {normalized residuals}.  Left:  Cumulative distribution
         function of the normalized residuals, $z$.  Blue and brown line is a sequence of normalized residuals.
-        Orange line is the CDF of a Gaussian distribution. % Green line is the CDF of a  mixture-model (double-Gaussian). 
+        Orange line is the CDF of a Gaussian distribution.
         Dotted green line is the CDF of a Student's t-
         distribution.  Right: Histogram of the normalized residuals.  Blue and brown data points
         are a histogram of the normalized residuals with Poisson uncertainties.  The other lines
@@ -676,7 +675,7 @@ In this section we describe our transit-timing analysis in detail, starting firs
 
 We integrate the N-body dynamics in Cartesian coordinates with a novel symplectic
 integrator, \textsf{NbodyGradient}, which is based on the algorithm originally described in \cite{Hernandez2015}, derived from the non-symplectic operator of \cite{GoncalvesFerrari2014}.\footnote{The code may be found at
-    \texttt{https://github.com/ericagol/NbodyGradient}}  The time-evolution operator of the integrator is a succession of Kepler $2$-body problems and simple ``kick" and ``drift" operators.  %{\color{red} Eric, are we using Kepler solvers for all interactions?  I assumed this in my comments. -Yes} 
+    \texttt{https://github.com/ericagol/NbodyGradient}}  The time-evolution operator of the integrator is a succession of Kepler $2$-body problems and simple ``kick" and ``drift" operators. 
 The advantage over traditional symplectic methods \citep{Wisdom1991} is that the dominant error is due to three-body interactions, while in the standard methods, the dominant error is due to two-body interactions, meaning close encounters between non-stellar bodies are treated poorly \citep{Hernandez2017}.    The Kepler problem
 for each pair is solved with an efficient universal Kepler solver \citep{Wisdom2015}.
 The symplectic integrator is made to be time-symmetric to yield second-order
@@ -898,7 +897,7 @@ masses in this paper.
     {Transit time variation measurements ({orange/red} error bars) and best-fit
         transit-time model ({blue/green} lines) for a subset of our
         Spitzer/K2/ground-based data set.  The TTVs are the transit times for each planet
-        with a best-fit linear ephemeris removed.  Brown error bars indicate $>3\sigma$ outliers.  %The light green/brown curves are polynomial fits
+        with a best-fit linear ephemeris removed.  Brown error bars indicate $>3\sigma$ outliers. 
 }
     \label{fig:T1_TTVs}
 \end{figure*}
@@ -947,7 +946,7 @@ for the Student's t-distribution, $ \log{\nu} = 1.3609{\pm}0.2337$
 and $ V_1 e^{1/(2\nu)} = 0.9688{\pm}0.1166$ (Figure \ref{fig:student_param_likelihood_profile}).  The posterior mass-ratios
 and ephemerides are consistent with nearly Gaussian distributions. {The}
 eccentricity vectors show deviations from a Gaussian distribution for the inner
-two planets b and c, as shown in Figure \ref{fig:ecc_likelihood_profile}.  %Hence, the $1\sigma$ uncertainties
+two planets b and c, as shown in Figure \ref{fig:ecc_likelihood_profile}. 
 {The} Laplace approximation covariance uncertainty estimates are overplotted as
 Gaussian distributions very closely match the likelihood profile
 for each parameter.  This agreement is reassuring:  it indicates
@@ -1132,7 +1131,7 @@ Hence both of these planets show weak TTVs,
 and straighter, but still slightly meandering, riverplots.  The outer five planets are pairwise
 close to a series of $j{:}j{+}1$ resonances, showing strong transit-timing variations on
 the timescale of the TTV period of $\approx 490$ days.  The other prominent feature
-for the outer 4 planets is the slight zig-zag of transits due to chopping (shown in Figure \ref{fig:chopping}).  %This occurs on the synodic timescale between pairs of planets, and 
+for the outer 4 planets is the slight zig-zag of transits due to chopping (shown in Figure \ref{fig:chopping}). 
 
 \begin{figure*}
     \centering
@@ -1267,11 +1266,9 @@ densities of the planets given the assumptions inherent in the inclination prior
 \begin{table*}
     \centering
     \scriptsize
-    \setlength\tabcolsep{3pt} % default 6pt
+    \setlength\tabcolsep{3pt}
     \begin{tabular}{l|c|c|c|c|c|c|c}
         \hline
-        %        Stellar param: & $\rho_*/\rho_\odot$ & $q_{1,Ch 1}$  & $q_{2,Ch 1}$ &  $q_{1,Ch 2}$ & $q_{2,Ch 2}$ & \cr
-        %   Value: & $53.7192 \pm 0.8517$ & $0.0599 \pm 0.0265 $  & $0.4700 \pm 0.2092 $  & $0.4830 \pm 0.2904 $  & $0.5139 \pm 0.2879 $  &\cr
         Parameter:      & $\rho_*/\rho_\odot$            & $q_{1,Ch 1}$                  & $q_{2,Ch 1}$                  & $ q_{1,Ch 2}$                 & $q_{2,Ch 2}$                  &                               & \cr
         Value:          & $53.17_{- 1.18}^{+0.72}$ & $0.133{\pm} 0.052 $         & $0.26{\pm} 0.19 $         & $0.059{\pm} 0.024 $         & $0.49{\pm} 0.20 $         &                               & \cr
         Parameter:      & $ \rho_*$ [g/cm$^3$]         & $u_\mathrm{1,Ch 1}$           & $u_\mathrm{2,Ch 1}$           & $u_\mathrm{1,Ch 2}$           & $u_\mathrm{2,Ch 2}$           &                               & \cr
@@ -1289,7 +1286,6 @@ densities of the planets given the assumptions inherent in the inclination prior
     \end{tabular}
     \caption{Parameters derived from the photodynamic model.  Top: Stellar density (in units of solar density), limb-darkening parameters ($q_1, q_2$) in Spitzer Channel 1 and 2, and stellar density in cgs units and limb-darkening parameters $u_1$ and $u_2$. Bottom: {Planet-to-star radius ratio}, $R_p/R_*$; transit depth, $(R_p/R_*)^2$;  transit duration, $T$ (from first to fourth contact); ingress/{egress} duration, $\tau$ (from first to second contact {or} third to fourth contact); impact parameter in units of stellar radius, $b_0$ (assumed to be positive); ratio of semi-major axis to stellar radius,
         $a/R_*${; and inclination $I$ in degrees (for $b_0>0$).}}
-    % Add in: a/R_*, inclination angle for each planet.
     \label{tab:photodynamic_params}
 \end{table*}
 
@@ -1322,7 +1318,6 @@ from 57\% of Earth (planet h) to 110\% of Earth (planet b).
 
 \begin{figure*}
     \centering
-    % \includegraphics[width=\hsize]{figures/T1_mass_radius_000.png}
     \includegraphics[width=\hsize]{figures/Figure_MR_v8.png}
     \oscaption{matlab/Plot_Eric.m}%
     {Mass-radius relation for the seven TRAPPIST-1 planets based on
@@ -1338,7 +1333,7 @@ from 57\% of Earth (planet h) to 110\% of Earth (planet b).
 
 \begin{table*}
     \centering
-    \setlength\tabcolsep{3pt} % default 6pt
+    \setlength\tabcolsep{3pt}
     \begin{tabular}{l|c|c|c|c|c|c|c|}
         Planet:                                                    & b                              & c                              & d                              & e                              & f                              & g                              & h \cr
         \hline
@@ -1542,7 +1537,6 @@ The comparison of measured masses and radii with theoretical mass-radius relatio
 
 \begin{figure}
     \centering
-    %\includegraphics[width=\hsize]{figures/figure_TTV_norm_density_histograms.png}
     \includegraphics[width=\hsize]{figures/plot_normalized_density_agol_et_al.pdf}
     \oscaption{python/plot_histogram_normalized_density_agol_et_al.py}%
     {Probability density function of the normalized density of all seven planets in the system.
@@ -1571,7 +1565,7 @@ The interpretation of these observations in terms of internal compositions is di
 
 In this subsection, we discuss {a} range of possible compositions of the planets based on their measured densities,
 starting with a volatile-poor model in which the densities are fit by varying the core-mass fraction (\S \ref{sec:subsection_CMF}),
-and followed by an analysis in which the solid planets are taken to have an Earth-like composition, to which is added a water fraction needed to create the observed densities (\S \ref{sec:volatiles}). %The latter may be the more likely scenario since planet formation processes easily lead to variable water mass fractions but similar bulk rock compositions with direct implications for core-mass fractions (\S \ref{sec:formation}).   
+and followed by an analysis in which the solid planets are taken to have an Earth-like composition, to which is added a water fraction needed to create the observed densities (\S \ref{sec:volatiles}).
 Alternatively, the planets might be explained with an {enhanced oxygen content by} which all of the iron is oxidized making the planets core-free (\S \ref{sec:core_free}).
 
 \subsubsection{Core Mass Fraction}
@@ -1619,8 +1613,6 @@ Fe/Mg molar ratio &  $0.60_{-0.18}^{+0.18}$ & $0.64_{-0.16}^{+0.16}$ & $0.44_{-0
 \begin{figure*}
     \centering
     \includegraphics[width=0.6\hsize]{figures/figure_water_period_TTV_trim.png}
-    %    \includegraphics[width=\hsize]{figures/figure_water_period_TTV_trim.pdf}
-    \oscaption{}% TODO
     {Theoretical water content {estimates} (along with 1$\sigma$ error bar) versus planetary orbital periods. {Colors depict different compositions for the rocky interior
 (18, 25, 32.5 and 50 wt\% CMF). For high CMF, estimated water contents are larger in order
 to fit the total mass and radius.}}
@@ -1634,7 +1626,7 @@ The lower densities of planets d, f, g, and h can allow for two to three times a
 
 Actual surface conditions {and assumed iron content} can, however, lead to much larger differences in the estimated water budgets between the inner three and outer four planets. This stems from the fact that the inner three planets are more irradiated than the runaway greenhouse irradiation limit \citep{Kopparapu2013,Wolf2017,Turbet2018} for which all water is vaporized, forming a thick H$_2$O-dominated steam atmosphere. Taking into account the expectation that water should be vaporized for the three inner TRAPPIST-1 planets \citep{Turbet2019,Turbet2020}, their water mass fractions drop drastically to less than $0.01$ wt\%, i.e. more than several times lower than the water ocean mass fraction of the Earth.
 
-Figure~\ref{fig:water_vs_period} shows the expected water mass fractions for each of the TRAPPIST-1 planets, and for four distinct interior compositions (18, 25, 32.5 and 50 wt\% iron content). It shows that the same {qualitative} trend of water versus orbital period is relatively robust across a large range of assumptions on the interior composition thanks to the transition from runaway greenhouse for planets b-d to surface liquid water for planets e-h.  %Note that the 18 wt\% iron interior only requires a non-zero water fraction for planet g;  as shown above, a {21} wt\% iron core is consistent with all of the planets to $\approx$1$\sigma$ confidence {(save g)}.
+Figure~\ref{fig:water_vs_period} shows the expected water mass fractions for each of the TRAPPIST-1 planets, and for four distinct interior compositions (18, 25, 32.5 and 50 wt\% iron content). It shows that the same {qualitative} trend of water versus orbital period is relatively robust across a large range of assumptions on the interior composition thanks to the transition from runaway greenhouse for planets b-d to surface liquid water for planets e-h. 
 
 Higher estimated water budgets for the outer three or four planets could be a clue that they formed beyond the water condensation line at $\approx$0.025 AU \citep{Unterborn2018a}. This could also be due to the significant differences in water loss (through atmospheric escape) arising from variations of irradiation and gravity among the TRAPPIST-1 planets \citep{Lissauer2007, Bolmont2017,Bourrier2017}.  However, again, we caution again that trends in the planetary volatile content are only weakly supported by the current data.
 
@@ -1655,7 +1647,7 @@ Here we discuss some of the implications of the results in the foregoing section
 As reported in \S \ref{sec:outliers}, the transit timing measurements we have made show an excess of outliers with respect to the measurement uncertainties of each transit.  We were unable to identify a culprit (or culprits) for these discrepancies, but wish to speculate on what may be the origin of these outliers.  The cumulative distribution of these outliers (Fig.\ \ref{fig:timing_residuals}) indicates that about 10\% of transits
 are affected at some level.  It is also interesting to note that the core of the distribution has a slightly smaller width of about 87\% of the measurement errors, indicating that for about 90\% of the transits, the uncertainties may be \emph{overestimated}.  This may be a consequence of inflating the uncertainties to account for correlated noise rather than modeling the data with, for example, a Gaussian process;  further re-analysis of the data will be needed to check this hypothesis.
 
-Could the timing outliers be due to stellar flares?  In \citet{Vida_2017} and \citet{Ducrot2020}, the frequency distribution of stellar flares is shown to be rising towards smaller flare energies.  This could mean that the more frequent, but lower energy flares, occur at a level that is swamped by the photon noise, and thus not visible to an observer.  We used the spectrum and energy calibration of Spitzer flares measured by \citet{Ducrot2020} to extrapolate the frequency of lower energy flares (which are not detected in Spitzer due to photon noise).  As an example, for planet h the transit time can be affected by a flare which occurs at ingress or egress (duration $2\tau \approx 10$ min).  %The uncertainty on a typical Spitzer timing measurement is about 0.9 minutes, indicating that the uncertainty on ingress or egress is $\sqrt{2}{\times}0.9 \approx 1.3$ min, while the depth of transit is 0.3375\%, and so three times the product of these two determines the fluence of a flare, which must occur during ingress, to affect the transit time at the $\approx 1.5\sigma$ level. 
+Could the timing outliers be due to stellar flares?  In \citet{Vida_2017} and \citet{Ducrot2020}, the frequency distribution of stellar flares is shown to be rising towards smaller flare energies.  This could mean that the more frequent, but lower energy flares, occur at a level that is swamped by the photon noise, and thus not visible to an observer.  We used the spectrum and energy calibration of Spitzer flares measured by \citet{Ducrot2020} to extrapolate the frequency of lower energy flares (which are not detected in Spitzer due to photon noise).  As an example, for planet h the transit time can be affected by a flare which occurs at ingress or egress (duration $2\tau \approx 10$ min). 
 We estimate that a flare of energy $10^{31}$ erg could cause a 1.5$\sigma$
 timing outlier if it occurs during ingress or egress.  This has a probability of only $\approx 0.3$\% to occur during the 10 minutes of ingress or egress,
 and thus cannot be responsible for 10\% of outliers for planet h.  We carried out a similar estimate for
@@ -2058,7 +2050,7 @@ We have carried out simulations of transits of each of the planets as observed b
 From these simulations, we
 found that the posterior timing precision ranges from 0.6-1.7 second per transit, much more precise than the measurements reported in the present paper.
 
-Next, we created a simulated set of transit-timing observations at the two windows each year when the TRAPPIST-1 system is observable with JWST (Figure \ref{fig:JWST_all_the_transits}).   For each transit time, we drew the time from the distribution of uncertainties from the posteriors of the simulated transit data.  %We did not include the presence of outliers in our analysis as we do not currently understand the origin of the outliers in our present data (and there is some hope that JWST will provide a stable platform for transit observations, and that the large number of photons collected with JWST over a range of wavelengths might enable the identification and removal of astrophysical sources of correlated noise).
+Next, we created a simulated set of transit-timing observations at the two windows each year when the TRAPPIST-1 system is observable with JWST (Figure \ref{fig:JWST_all_the_transits}).   For each transit time, we drew the time from the distribution of uncertainties from the posteriors of the simulated transit data. 
 
 Finally, we utilized our code for transit-timing analysis  to optimize a plane-parallel model with seven planets.  At the maximum likelihood of the fit, we computed the Hessian to estimate the uncertainties on the model parameters.  Figure \ref{fig:JWST_all_the_transits} shows the simulated transit-timing observations with JWST.   This includes about 600 transits observed with the telescope (again, the maximum possible over the nominal 5-year JWST mission).  Figure \ref{fig:JWST_all_mass} shows the results of the mass measurements in the simulations.  We find that the masses can be recovered to better than 0.02\% for planets d-h, and to {0.1}\% for planets b and c.
 
@@ -2067,7 +2059,6 @@ Of course, it will be impossible to arrange such a large number of transit obser
 
 \begin{figure*}
     \centering
-    %\includegraphics[width=\hsize]{figures/T1_JWST_all_transits.pdf}
     \includegraphics[width=\hsize]{figures/T1_JWST_all_transits_tight.pdf}
     \oscaption{julia/plot_TTV_JWST_T1.jl}%
     {Simulated observations of all of the transits of TRAPPIST-1
@@ -2093,7 +2084,7 @@ Of course, it will be impossible to arrange such a large number of transit obser
 
 The stellar density we derive using the photodynamic model, $\rho_* =
     53.17_{- 1.18}^{+0.72} \rho_\odot$, is {in $1\sigma$
-agreement with} prior analyses.  %\citet{Gillon2017} found a density of
+agreement with} prior analyses. 
 Most recently, \citet{Delrez2018a}
 found a density of $\rho_* = (52.3{\pm}2.2)\rho_\odot$,
 twice as uncertain as our analysis.   {Our} approach yields a density of superior
@@ -2383,9 +2374,6 @@ the  forecast times (Table \ref{tab:transit_times_forecast})
 are given in this appendix.
 
 \begin{longtable}{|c|c|c|c|c|c|c|}
-    %\centering
-    %   \begin{tabular}{c|c|c|c|c|c}
-    %{|m{0.1\linewidth}|m{0.1\linewidth}|m{0.1\linewidth}|}
     \hline
     Planet                & Epoch             & $t_\mathrm{obs}$ &
     $\sigma_\mathrm{obs}$ & $t_\mathrm{post}$ & $\sigma_{post}$  & Source \endfirsthead
@@ -2394,7 +2382,6 @@ are given in this appendix.
     \hline
     \input{tables/timings_table_with_sources}
     \hline
-    %   \end{tabular}
     \caption{Observed transit times with uncertainties, along with the mean, $t_\mathrm{post}$, and standard deviation, $\sigma_{post}$ of
         the times from the posterior sample.  Times are in $BJD_\mathrm{TDB} - 2,450,000$ while uncertainties are in days.}
     \label{tab:transit_times_observed_and_calculated}
@@ -2408,7 +2395,6 @@ are given in this appendix.
     \hline
     \input{timings_forecast}
     \hline
-    %   \end{tabular}
     \caption{Mean, $t_\mathrm{post}$, and standard deviation, $\sigma_\mathrm{post}$ of
         forecast times from the posterior sample.  Times are in $BJD_\mathrm{TDB} - 2,450,000$ while uncertainties are in days.  Thirty lines are previewed; full table is available electronically.}
     \label{tab:transit_times_forecast}
