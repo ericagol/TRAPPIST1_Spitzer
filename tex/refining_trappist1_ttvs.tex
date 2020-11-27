@@ -475,14 +475,14 @@ photometric fit to the Spitzer data {using} a photodynamical model in \S
 obtain the planet bulk properties in \S \ref{sec:mass_radius_relation}.  In \S \ref{sec:stellar_params} we derive revised parameters for the host star.  In \S \ref{sec:detection} we search for an eighth planet with transit-timing.  In \S \ref{sec:theoretical_interpretation} we interpret the mass-radius measurements for the planets in terms of interior and atmospheric structure models.  Discussion and conclusions
 are given in \S \ref{sec:discussion} and \S \ref{sec:conclusions}.
 
-We provide \texttt{Julia} and \texttt{python} code for running the Markov chains,
+We provide \texttt{Julia}, \texttt{python}, and \texttt{Matlab} code for running the Markov chains,
 {creating the figures,}
 and creating the paper PDF in
 \texttt{https://github.com/ericagol/TRAPPIST1\_Spitzer}.  
-The 3.5 GB \texttt{data/} directory in the repository may be found as a
-zip file, \texttt{data.zip}, at 
-\texttt{\scriptsize https://drive.google.com/file/d/14iEW6jupY8dnGlYGXJIrWlFftdwRcfLo}
-and \doi{10.5281/zenodo.4060252}.
+The 3.5 GB \texttt{data/} directory in the repository may be found 
+%as a zip file, \texttt{data.zip}, at 
+%\texttt{\scriptsize https://drive.google.com/file/d/14iEW6jupY8dnGlYGXJIrWlFftdwRcfLo} and 
+at \doi{10.5281/zenodo.4060252}.
 In each figure we embed links to the code (\texttt{</>}) which produced that figure.
 
 \section{New TRAPPIST-1 observations} \label{sec:observations}
@@ -1326,7 +1326,7 @@ from 57\% of Earth (planet h) to 110\% of Earth (planet b).
         (see colorbar), with the intensity proportional to probability, while the 1 and 2$\sigma$
         confidence levels from the Markov chain posterior are plotted with solid lines.
         Theoretical mass-radius relations are overplotted using the model in \citet{Dorn2016} for an Earth-like {molar} Fe/Mg=0.83 ratio with a core ({black} dashed) and core-free ({red}), and a range of cored models with {molar} Fe/Mg = $0.75{\pm}0.2$ ({grey}).  {{\it U18}} refers to \citet{Unterborn2018a} (see text).
-        The solid black line was calculated for a 5$\%$ water composition, for irradiation low enough (i.e. for planets e, f, g and h) that water is condensed on the surface  (assuming a surface pressure of 1 bar and a surface temperature of 300 K). The {umber} dashed and solid lines were calculated for a 0.01$\%$ and a 5$\%$ water composition, respectively, for irradiation high enough (i.e. for planets b, c and d) that water has fully evaporated in the atmosphere, with the {U18} interior model with CMF = 32.5\% \citep{Turbet2020}.
+        The solid black line was calculated for a 5$\%$ water composition, for irradiation low enough (i.e. for planets e, f, g and h) that water is condensed on the surface  (assuming a surface pressure of 1 bar and a surface temperature of 300 K). The {umber} dashed and solid lines were calculated for a 0.01$\%$ and a 5$\%$ water composition, respectively, for irradiation high enough (i.e. for planets b, c and d) that water has fully evaporated in the atmosphere, with the {U18} interior model with Fe/Mg = 0.83 and Mg/Si = 1.02 \citep{Turbet2020}.
         The Earth, Venus and Mars are plotted as single points, also colored by their equilibrium temperatures.}
     \label{fig:mass_radius_relation}
 \end{figure*}
@@ -1556,7 +1556,7 @@ The interpretation of these observations in terms of internal compositions is di
     \includegraphics[width=\hsize]{figures/Norm_dens_vs_period.pdf}
     \oscaption{julia/plot_norm_density.jl}%
     {Normalized planet densities (with 1$\sigma$ error-bars) versus planet orbital periods. The light blue band is the 68\% confidence interval of the weighted mean normalized density of all seven planets.  The orange lines show the 68.3\% confidence intervals of linear fits to the normalized densities computed from $10^4$
-        draws from the posterior.  The mean fit to the normalized density versus period is {$y = a P + b$ where $\mathbf{a= 1.042{\pm}0.034}$ and $\mathbf{b=-0.0043{\pm}0.0036}$.}}
+        draws from the posterior.  The mean fit to the normalized density versus period is {$y = a P + b$ where ${a= 1.042{\pm}0.034}$ and ${b=-0.0043{\pm}0.0036}$.}}
     \label{fig:norm_density_vs_period}
 \end{figure}
 
@@ -1576,8 +1576,8 @@ amount to their total radius, and that the planets are fully differentiated, com
 
 We evaluated the core mass fractions {(CMF)} of the TRAPPIST-1 planets as follows. For each mass/radius pair in our posterior distribution we have estimated the core-mass fraction by linearly interpolating {between pre-calculated mass-radius relationships with our employed interior model.} We arbitrarily set each mass/radius pair lighter than a pure silicate (MgSiO$_3$) planet to a CMF of 0. Alternatively, we repeated the same procedure but discarding all CMF values lower or equal to 0. However, we found that the estimate of the core mass fraction is only marginally changed (and only for planets g and h).
 
-Our core mass fraction estimates are provided in Fig~\ref{fig:cmf} and Table~\ref{tab:cmf}.  Estimates range from {$\mathbf{16.1_{-4.2}^{+3.5}}$ wt\% for planet g up to $\mathbf{26.6_{-5.1}^{+4.6}}$ wt\% for planet c}, which,  despite the different central values, have considerable overlapping probability distributions.
-Fig~\ref{fig:cmf} shows that within the uncertainties, the CMF/Iron fraction of the planets are very consistent with one another, with the mean of all planets of {$\mathbf{21{\pm}4}$} wt\% (taking into account the correlations between the planets' core-mass fractions).
+Our core mass fraction estimates are provided in Fig~\ref{fig:cmf} and Table~\ref{tab:cmf}.  Estimates range from {${16.1_{-4.2}^{+3.5}}$ wt\% for planet g up to ${26.6_{-5.1}^{+4.6}}$ wt\% for planet c}, which,  despite the different central values, have considerable overlapping probability distributions.
+Fig~\ref{fig:cmf} shows that within the uncertainties, the CMF/Iron fraction of the planets are very consistent with one another, with the mean of all planets of {${21{\pm}4}$} wt\% (taking into account the correlations between the planets' core-mass fractions).
 
 There may be a slight trend of the inferred CMF, which decreases with increasing orbital period. The trend is qualitatively similar to that reported on the normalized density (see Fig.~\ref{fig:norm_density_vs_period}), with similarly weak support: {only 88\% of the linear fits to the $10^4$ posterior CMF values have a slope with orbital period which is negative, whilst 12\% are positive.}
 
@@ -1610,18 +1610,19 @@ Fe/Mg molar ratio &  $0.60_{-0.18}^{+0.18}$ & $0.64_{-0.16}^{+0.16}$ & $0.44_{-0
 
 \subsubsection{Surface water content} \label{sec:volatiles}
 
-\begin{figure*}
+\begin{figure}
     \centering
-    \includegraphics[width=0.6\hsize]{figures/figure_water_period_TTV_trim.png}
+    \includegraphics[width=\hsize]{figures/figure_water_period_TTV_trim.png}
+    \oscaption{julia/copy_figure18.jl}%
     {Theoretical water content {estimates} (along with 1$\sigma$ error bar) versus planetary orbital periods. {Colors depict different compositions for the rocky interior
 (18, 25, 32.5 and 50 wt\% CMF). For high CMF, estimated water contents are larger in order
 to fit the total mass and radius.}}
     \label{fig:water_vs_period}
-\end{figure*}
+\end{figure}
 
 The observed (weak) variation in the planet densities among all seven planets may instead be due to their differing volatile (e.g. water) inventories.
 
-If we assume a rocky Earth-like interior {(CMF=32.5\%, fully-differentiated)} and only allow an additional {\it condensed}\footnote{Note that it is likely unwarranted to assume condensed surface water for the inner three planets given their location within the runaway greenhouse zone \citep{Turbet2020}.} water layer to contribute to the total radius, we can estimate the water mass fractions of the seven planets (b: $\mathbf{2.8^{+2.1}_{-1.9}}$ wt\%, c: $\mathbf{2.3^{+1.8}_{-1.7}}$ wt\%, d: $\mathbf{4.4^{+2.0}_{-1.5}}$ wt\%, e: $\mathbf{2.9^{+1.7}_{-1.5}}$ wt\%, f: $\mathbf{4.5^{+1.8}_{-1.2}}$ wt\%, g: $\mathbf{6.4^{+2.0}_{-1.6}}$  wt\%, h: $\mathbf{5.5^{+4.5}_{-3.1}}$ wt\%).
+If we assume a rocky Earth-like interior {(CMF=32.5\%, fully-differentiated)} and only allow an additional {\it condensed}\footnote{Note that it is likely unwarranted to assume condensed surface water for the inner three planets given their location within the runaway greenhouse zone \citep{Turbet2020}.} water layer to contribute to the total radius, we can estimate the water mass fractions of the seven planets (b: ${2.8^{+2.1}_{-1.9}}$ wt\%, c: ${2.3^{+1.8}_{-1.7}}$ wt\%, d: ${4.4^{+2.0}_{-1.5}}$ wt\%, e: ${2.9^{+1.7}_{-1.5}}$ wt\%, f: ${4.5^{+1.8}_{-1.2}}$ wt\%, g: ${6.4^{+2.0}_{-1.6}}$  wt\%, h: ${5.5^{+4.5}_{-3.1}}$ wt\%).
 The lower densities of planets d, f, g, and h can allow for two to three times as much water than for planets b, c, and e. For this simple estimate we assumed a water layer with a surface temperature of 300 K at 1 bar.
 
 Actual surface conditions {and assumed iron content} can, however, lead to much larger differences in the estimated water budgets between the inner three and outer four planets. This stems from the fact that the inner three planets are more irradiated than the runaway greenhouse irradiation limit \citep{Kopparapu2013,Wolf2017,Turbet2018} for which all water is vaporized, forming a thick H$_2$O-dominated steam atmosphere. Taking into account the expectation that water should be vaporized for the three inner TRAPPIST-1 planets \citep{Turbet2019,Turbet2020}, their water mass fractions drop drastically to less than $0.01$ wt\%, i.e. more than several times lower than the water ocean mass fraction of the Earth.
@@ -1868,7 +1869,7 @@ Now, the eccentricity vectors plotted in Figure \ref{fig:eccentricity_vectors} s
 values at the initial time. However, over time, the eccentricity vector of each planet can be decomposed into two components: the mean eccentricity vector (over some timescale) and the variable component (which is time variable, with multiple oscillation timescales driven by the mutual planetary perturbations).   Figure \ref{fig:forced_eccentricity}
 shows the eccentricity over a single oscillation for all seven planets.  The outer five
 planets are close to first-order resonances with adjacent planets, and the super-period
-for each of these planets is close to $\mathbf{P_{TTV}{\approx}}490$ days thanks to the near-GLR commensurability
+for each of these planets is close to ${P_{TTV}{\approx}}490$ days thanks to the near-GLR commensurability
 for all triplets of planets.  This leads to a nearly circular oscillation over this timescale
 due to circulation of the first-order resonances driving oscillations in the eccentricity
 vectors of each of these planets.  The inner two planets are close to second and third
@@ -2120,7 +2121,7 @@ are:
     \item  We have measured the masses, radii and densities to high {fractional} precision, {1-8\%}, based on an N-body model {and a photodynamical model} with seven planets.  This improves upon RV current precision by {up to} two orders of magnitude.
     \item  The pattern of masses and radii {may be} consistent with a uniform planetary composition for all seven planets
           which have lower uncompressed densities than the Earth, Mars or Venus, with weaker evidence for a declining normalized density with orbital period ({88\%} confidence). The planet properties may either be consistent with
-          a core mass fraction of $\mathbf{21{\pm}4}$ {wt\%}, or an Earth-like core and mantle with a {surface water}
+          a core mass fraction of ${21{\pm}4}$ {wt\%}, or an Earth-like core and mantle with a {surface water}
           content which varies from {${<}0.001$\%} for the inner three planets to {${\approx} 5$\%}
           for the outer four, or core-free planets with highly oxidized iron in the mantle which elevates the interior {light element} content.  These are not unique explanations.
     \item  The planets appear to be dynamically-cold, with eccentricities {less} than
@@ -2147,7 +2148,7 @@ Could there be a variation of Fe/Mg ratios among the planets?
 Rocky planet accretion should preserve the integrated iron/rock ratio. Consider a population of planetary embryos and planetesimals that accrete into a system of rocky planets. Giant collisions between growing planetary embryos can change the iron/rock ratios of individual objects by preferentially stripping the outer, rock-dominated layers from differentiated embryos~\citep[e.g.][]{benz88,marcus10,asphaug14}. But from a system-wide perspective, it is a zero-sum game unless rock or iron is preferentially lost from all of the planets. Rock is the major component of loosely-bound impact debris and more likely to be lost either by differential aerodynamic drag~\citep{weidenschilling77} or solar wind drag~\citep{spalding20}, and so the integrated iron/rock ratio should only increase.
 Hypothetical variations in Fe/Mg can otherwise be caused if large portions of planetary building blocks condense at different high temperatures (${>} 1200$ K). During planet formation, such temperatures are only reached in a tiny region very close to the ultracool dwarf star. Consequently, both \citet{Unterborn2018a} and \citet{Dorn2018} have assumed that all seven planets have similar refractory element ratios (i.e., Fe/Si, Fe/Mg). {Whether rocky planets can have a wider compositional distribution than that of stars remains to be seen \citep{Plotnykov2020}.}
 
-Alternatively, the lower measured bulk densities of the TRAPPIST-1 planets relative to Earth-like composition might be explained by core-free interiors \citep{ElkinsTanton2008} in which the oxygen content is high enough such that all iron is oxidized. If the refractory elements (Mg, Fe, Si) follow Solar abundances, a fully oxidized interior would contain about 38.2 wt\% of oxygen, which lies between the value for Earth (29.7 wt\%) and CI chondrites (45.9 wt\%). Such an interior scenario can easily describe the observed bulk densities (purple line in Fig. \ref{fig:mass_radius_relation}).  And this may bolster the long-range migration scenario in which the planets formed in a highly oxidizing environment which enabled the iron to remain in the mantle even after migration.  {Based on the elemental composition, these models have an oxygen fugacity of $\Delta \mathrm{IW} = -0.91,$\footnote{{Oxygen fugacity is stated relative to the Iron-W\"ustite equilibrium reaction $\mathbf{\mathrm{Fe}{+}0.5\mathrm{O}_2{=}\mathrm{FeO}}$ (W\"ustite) such that $\mathbf{\Delta \mathrm{IW} = \log(f_{\mathrm{O}_2})_\mathrm{rock} - \log(f_{\mathrm{O}_2})_\mathrm{IW}}$}} which is more oxidized than Earth or even Mars, but is comparable to the oxidation state of small bodies, both in our solar system and accreted by white dwarfs \citep{Doyle2019}.}
+Alternatively, the lower measured bulk densities of the TRAPPIST-1 planets relative to Earth-like composition might be explained by core-free interiors \citep{ElkinsTanton2008} in which the oxygen content is high enough such that all iron is oxidized. If the refractory elements (Mg, Fe, Si) follow Solar abundances, a fully oxidized interior would contain about 38.2 wt\% of oxygen, which lies between the value for Earth (29.7 wt\%) and CI chondrites (45.9 wt\%). Such an interior scenario can easily describe the observed bulk densities (purple line in Fig. \ref{fig:mass_radius_relation}).  And this may bolster the long-range migration scenario in which the planets formed in a highly oxidizing environment which enabled the iron to remain in the mantle even after migration.  {Based on the elemental composition, these models have an oxygen fugacity of $\Delta \mathrm{IW} = -0.91,$\footnote{{Oxygen fugacity is stated relative to the Iron-W\"ustite equilibrium reaction ${\mathrm{Fe}{+}0.5\mathrm{O}_2{=}\mathrm{FeO}}$ (W\"ustite) such that ${\Delta \mathrm{IW} = \log(f_{\mathrm{O}_2})_\mathrm{rock} - \log(f_{\mathrm{O}_2})_\mathrm{IW}}$}} which is more oxidized than Earth or even Mars, but is comparable to the oxidation state of small bodies, both in our solar system and accreted by white dwarfs \citep{Doyle2019}.}
 
 However, the evidence for a core-free planet may rest on knowing the refractory abundances of the TRAPPIST-1 host star, which have yet to be constrained.  Alas, our interpretation of the planets' compositions may be limited by our imprecise knowledge of the host star:  its radius, its mass, its photospheric inhomogeneity, and its refractory abundances all affect our measurement and interpretation of the masses, radii, and compositions of the TRAPPIST-1 planets.  In this paper our measurements of the relative planetary radii and masses have reached such a precision that the fault may now lie in the star.
 
@@ -2351,7 +2352,7 @@ from the transit-timing and photodynamical analyses, respectively.
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/corner_ttv.png}
-    \oscaption{python/plotCorner_ttv.py}{Corner plot of variables in the transit-timing analysis with $1\sigma$
+    \oscaption{python/plotCorner_ttv.py.script}{Corner plot of variables in the transit-timing analysis with $1\sigma$
        and $2\sigma$ confidence contours.
        Lagrangian orbital elements are defined as $k_b = e_b \cos{\omega_b}$ and $h_b = e_b \sin{\omega_b}$,
        and similarly for the other planets.  Planet masses are defined relative to the star.}
@@ -2361,7 +2362,7 @@ from the transit-timing and photodynamical analyses, respectively.
 \begin{figure}
     \centering
     \includegraphics[width=\hsize]{figures/corner_photdyn.png}
-    \oscaption{python/plotCorner_ttv.py}{Corner plot of variables in the photodynamical analysis with $1\sigma$
+    \oscaption{python/plotCorner_photdyn.py}{Corner plot of variables in the photodynamical analysis with $1\sigma$
        and $2\sigma$ confidence contours. Planet radii are relative to star.}
     \label{fig:corner_photdyn}
 \end{figure}
