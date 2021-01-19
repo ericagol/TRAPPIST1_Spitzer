@@ -19,6 +19,16 @@ Look at GettingStarted.md for a guide to the repository.
 <img width = "600" src="https://github.com/ericagol/TRAPPIST1_Spitzer/blob/master/Figure_MR_Grimm_vs_Agol.gif?raw=true"/>
  </p>
 
+<script type="text/javascript">
+var total_images = 3;
+var random_number = Math.floor((Math.random()*total_images));
+var random_img = new Array();
+random_img[0] = '<p><img src="images/Figure_MR_Grimm_vs_Agol.gif"></p>';
+random_img[1] = '<p><img src="images/Figure_MR_coreless.png"></p>';
+random_img[2] = '<p><img src="images/Figure_MR_bare.png"></p>';
+document.write(random_img[random_number]);
+</script>
+
  <a href="https://www.google.com/logos/doodles/2017/seven-earth-size-exoplanets-discovered-6423181526040576.2-hp2x.gif">
  <p align="center">
 <img width = "450" src="https://github.com/ericagol/TRAPPIST1_Spitzer/blob/master/Google_Doodle_TRAPPIST1.jpg?raw=true"/>
