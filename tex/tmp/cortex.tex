@@ -1,0 +1,30 @@
+% !TeX root = ./ms.tex
+% All the packages
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{etoolbox}
+\usepackage{xspace}
+\usepackage[T1]{fontenc} % https://tex.stackexchange.com/a/166791
+\usepackage{textcomp}
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec}
+  \defaultfontfeatures{Extension = .otf}
+\fi
+\usepackage{fontawesome}
+
+
+% Add code, proof, and animation hyperlinks
+\usepackage{ifmtarg}
+\definecolor{linkcolor}{rgb}{0.1216,0.4667,0.7059}
+\newcommand{\codeicon}[1]{{\color{linkcolor}\faFileCodeO}}
+\newcommand{\missingcodeicon}[1]{{\color{red}\faFileCodeO}}
+\makeatletter
+\newcommand{\codelink}[1]%
+{\href{https://github.com/ericagol/TRAPPIST1_Spitzer/blob/master/tex/figures/#1}%
+  {\@ifmtarg{#1}{\missingcodeicon{#1}}{\codeicon{#1}}}\,\,}
+\makeatother
+
+% Define the `oscaption` command for open source figure captions
+\newcommand{\oscaption}[2]{\caption{#2 \codelink{#1}}}

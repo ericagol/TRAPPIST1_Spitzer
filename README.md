@@ -15,6 +15,10 @@ if you use the source code in src/NbodyGradient, please cite Agol & Hernandez 20
 Look at GettingStarted.md for a guide to the repository.
   </p>
  
+ <p align="center">
+<img width = "450" src="https://github.com/ericagol/TRAPPIST1_Spitzer/blob/master/Figure_MR_Grimm_vs_Agol.gif?raw=true"/>
+ </p>
+
  <a href="https://www.google.com/logos/doodles/2017/seven-earth-size-exoplanets-discovered-6423181526040576.2-hp2x.gif">
  <p align="center">
 <img width = "450" src="https://github.com/ericagol/TRAPPIST1_Spitzer/blob/master/Google_Doodle_TRAPPIST1.jpg?raw=true"/>
