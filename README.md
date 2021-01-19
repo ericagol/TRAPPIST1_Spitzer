@@ -31,9 +31,9 @@ Look at GettingStarted.md for a guide to the repository.
    }
  }
  image = new ImageArray(3)
- image[0] = 'Figure_MR_coreless.png'
- image[1] = 'Figure_MR_Grimm_vs_Agol.png'
- image[2] = 'Figure_MR_CU.png'
+ image[0] = 'Figure_MR_coreless.png?raw=true'
+ image[1] = 'Figure_MR_Grimm_vs_Agol.png?raw=true'
+ image[2] = 'Figure_MR_CU.png?raw=true'
  var rand = 60/image.length
  function randomimage() {
  	currentdate = new Date()
