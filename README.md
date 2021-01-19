@@ -20,13 +20,29 @@ Look at GettingStarted.md for a guide to the repository.
  </p>
 
 <script type="text/javascript">
-var total_images = 3;
-var random_number = Math.floor((Math.random()*total_images));
-var random_img = new Array();
-random_img[0] = '<p><img src="images/Figure_MR_Grimm_vs_Agol.gif"></p>';
-random_img[1] = '<p><img src="images/Figure_MR_coreless.png"></p>';
-random_img[2] = '<p><img src="images/Figure_MR_bare.png"></p>';
-document.write(random_img[random_number]);
+<!--
+ var imlocation = "https://github.com/ericagol/TRAPPIST1_Spitzer/blob/master/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(3)
+ image[0] = 'Figure_MR_coreless.png'
+ image[1] = 'Figure_MR_Grimm_vs_Agol.png'
+ image[2] = 'Figure_MR_CU.png'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ document.write("<img src='" + imlocation + randomimage()+ "'>");
+//-->
 </script>
 
  <a href="https://www.google.com/logos/doodles/2017/seven-earth-size-exoplanets-discovered-6423181526040576.2-hp2x.gif">
