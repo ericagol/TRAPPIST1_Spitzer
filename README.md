@@ -21,7 +21,7 @@ Look at GettingStarted.md for a guide to the repository.
 
  <a href="https://www.google.com/logos/doodles/2017/seven-earth-size-exoplanets-discovered-6423181526040576.2-hp2x.gif">
  <p align="center">
-<img width = "450" src="https://github.com/ericagol/TRAPPIST1_Spitzer/blob/master/Google_Doodle_TRAPPIST1.jpg?raw=true"/>
+<img width = "450" src="https://www.nasa.gov/sites/default/files/thumbnails/image/pia23870-1c.jpg?raw=true"/>
  </p></a>
  
  <p align="center">
