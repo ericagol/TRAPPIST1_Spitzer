@@ -1,4 +1,4 @@
-2
+
 <h1>
   <p align="center">
   TRAPPIST-1 TTVs and Spitzer photodynamics
