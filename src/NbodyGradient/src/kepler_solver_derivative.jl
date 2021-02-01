@@ -85,7 +85,8 @@ while iter == 0 || (abs(ds) > KEPLER_TOL && iter < ITMAX)
   ypp = signb*zeta*beta0inv*sx + eta*cx
   y  = (-ypp + eta +k*s)*beta0inv - h  # eqn 35
 # Now, compute fourth-order estimate:
-  ds = calc_ds_opt(y,yp,ypp,yppp)
+#  ds = calc_ds_opt(y,yp,ypp,yppp)
+  ds = -y/yp
   s += ds
   iter +=1
 end
