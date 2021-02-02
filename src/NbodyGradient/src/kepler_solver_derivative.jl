@@ -40,7 +40,8 @@ beta0inv = inv(beta0)
 signb = sign(beta0)
 sqb = sqrt(signb*beta0)
 zeta = k-r0*beta0
-eta = dot(x0,v0)
+#eta = dot(x0,v0)
+eta = x0[1]*v0[1]+x0[2]*v0[2]+x0[3]*v0[3]
 sguess = 0.0
 if s0 == zero(T)
   # Use cubic estimate:
@@ -72,7 +73,8 @@ ITMAX = 20
 while iter == 0 || (abs(ds) > KEPLER_TOL && iter < ITMAX)
   xx = sqb*s
   if beta0 > 0
-    sx = sin(xx); cx = cos(xx)
+    #sx = sin(xx); cx = cos(xx)
+    sx,cx = sincos(xx)
   else
     cx = cosh(xx); sx = exp(xx)-cx
   end
@@ -97,7 +99,8 @@ end
 # Since we updated s, need to recompute:
 xx = 0.5*sqb*s
 if beta0 > 0
-  sx = sin(xx); cx = cos(xx)
+  #sx = sin(xx); cx = cos(xx)
+  sx,cx = sincos(xx)
 else
   cx = cosh(xx); sx = exp(xx)-cx
 end
