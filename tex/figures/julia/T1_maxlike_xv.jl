@@ -20,8 +20,7 @@ x,v = init_nbody(elements,t0,n)
 println("x: ",x)
 println("v: ",v)
 
-writedlm("T1_maxlike_xv.txt",x)
-writedlm("T1_maxlike_xv.txt",v)
+writedlm("T1_maxlike_xv.txt",[x;v])
 
 open("T1_maxlike_tt.txt","w") do io
 for i=2:8
