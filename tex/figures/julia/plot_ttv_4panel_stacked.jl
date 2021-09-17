@@ -33,7 +33,7 @@ for ip=1:nplanet
   fn[1,:] .= 1.0
   fn[2,:] .= eobs
   coeff,cov = regress(fn,tobs,sobs)
-  println(ip," ",coeff)
+  println(ip," obs: ",coeff[1]," ",coeff[2])
   # Now plot TTVFast:
   fn = zeros(Float64,2,count1[ip+1])
   sig = ones(count1[ip+1])
@@ -47,7 +47,7 @@ for ip=1:nplanet
     tt_ref1[j] = coeff[1]+coeff[2]*epoch[j]
   end
   coeff,cov = regress(fn,tti1,sig)
-  println(ip," ",coeff)
+  println(ip," model: ",coeff[1]," ",coeff[2])
   tt_ref1 = coeff[1] .+coeff[2] .*fn[2,:]
   ttv1 = (tti1 .-tt_ref1) .*(24*60)
   ax.plot(tti1,ttv1,label=plabel[ip],linewidth=1.5,zorder=-32)
