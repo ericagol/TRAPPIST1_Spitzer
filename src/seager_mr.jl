@@ -11,8 +11,8 @@ if comp == "Fe"
 end
 if comp == "Earth"
   m1=6.41
-#  r1=3.19
-  r1=2.84
+  r1=3.19
+#  r1=2.84
 end
 if comp == "MgSiO3"
   m1=7.38
