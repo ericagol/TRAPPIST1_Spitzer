@@ -36,11 +36,13 @@ for ip=1:nplanet
   coeff = zeros(Float64,2)
   # Plot each "Mode"
   eobs,tobs,sobs,nobs = extract_planet(data,ip)
-  fn = zeros(2,nobs)
-  fn[1,:] .= 1.0
-  fn[2,:] .= eobs
-  coeff,cov = regress(fn,tobs,sobs)
-  println(ip," ",coeff)
+  if nobs > 1
+    fn = zeros(2,nobs)
+    fn[1,:] .= 1.0
+    fn[2,:] .= eobs
+    coeff,cov = regress(fn,tobs,sobs)
+    println(ip," ",coeff)
+  end
   # Now plot TTVFast:
   fn = zeros(Float64,2,count1[ip+1])
   sig = ones(count1[ip+1])
@@ -56,9 +58,11 @@ for ip=1:nplanet
   tt_ref1 = coeff[1] .+coeff[2]*fn[2,:]
   ttv1 = (tti1 .-tt_ref1)*24*60.
   ax.plot(tti1,ttv1,label=plabel[ip],zorder=-32)
-  ttv_obs = (tobs .- coeff[1] .- coeff[2]*eobs)*24*60.
+  if nobs > 0
+    ttv_obs = (tobs .- coeff[1] .- coeff[2]*eobs)*24*60.
 #  ax[:plot](tobs,ttv_obs)
-  ax.errorbar(tobs, ttv_obs, sobs*24*60.,fmt=".")
+    ax.errorbar(tobs, ttv_obs, sobs*24*60.,fmt=".")
+  end
   if ip == 4 || ip == 7
     ax.set_xlabel(L"BJD$_\mathrm{TDB}$-2,450,000 [d]")
   end
