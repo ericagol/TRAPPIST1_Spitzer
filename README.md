@@ -8,7 +8,7 @@
 Code, data, figures, tables, and latex supporting material for TRAPPIST-1 transit timing paper.  The
 directory <code>data/</code> may be found here: <a href="https://doi.org/10.5281/zenodo.4060252">data/</a>
 If you use the processed Spitzer photometry, please cite <a href="https://doi.org/10.1051/0004-6361/201937392">Ducrot et al. (2020)</a>.
-If you use the markov chains or code, please cite <a href="https://iopscience.iop.org/article/10.3847/PSJ/abd022">Agol et al. (2020)</a>. If you use the source code in src/Limbdark, please cite <a href="https://doi.org/10.3847/1538-3881/ab4fee">Agol et al. 2019, AJ, 159:123</a>, and 
+If you use the markov chains or code, please cite <a href="https://iopscience.iop.org/article/10.3847/PSJ/abd022">Agol et al. (2021)</a>. If you use the source code in src/Limbdark, please cite <a href="https://doi.org/10.3847/1538-3881/ab4fee">Agol et al. 2019, AJ, 159:123</a>, and 
 if you use the source code in src/NbodyGradient, please cite Agol & Hernandez 2020, in prep.
   </p>
 <p align="center">
